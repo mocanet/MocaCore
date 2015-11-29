@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ConstantDataSet" targetNamespace="http://tempuri.org/ConstantDataSet.xsd" xmlns:mstns="http://tempuri.org/ConstantDataSet.xsd" xmlns="http://tempuri.org/ConstantDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ConstantDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ConstantDataSet" msprop:Generator_DataSetName="ConstantDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Constant" msprop:Generator_UserTableName="Constant" msprop:Generator_RowDeletedName="ConstantRowDeleted" msprop:Generator_RowChangedName="ConstantRowChanged" msprop:Generator_RowClassName="ConstantRow" msprop:Generator_RowChangingName="ConstantRowChanging" msprop:Generator_RowEvArgName="ConstantRowChangeEvent" msprop:Generator_RowEvHandlerName="ConstantRowChangeEventHandler" msprop:Generator_TableClassName="ConstantDataTable" msprop:Generator_TableVarName="tableConstant" msprop:Generator_RowDeletingName="ConstantRowDeleting" msprop:Generator_TablePropName="Constant">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Text" msprop:Generator_UserColumnName="Text" msprop:Generator_ColumnPropNameInRow="Text" msprop:Generator_ColumnVarNameInTable="columnText" msprop:Generator_ColumnPropNameInTable="TextColumn" type="xs:string" default="&quot;&quot;" minOccurs="0" />
+              <xs:element name="Value" msprop:Generator_UserColumnName="Value" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInTable="ValueColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ValueText" msprop:Generator_UserColumnName="ValueText" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnValueText" msprop:Generator_ColumnPropNameInTable="ValueTextColumn" msprop:Generator_ColumnPropNameInRow="ValueText" type="xs:string" minOccurs="0" />
+              <xs:element name="Display" msprop:Generator_UserColumnName="Display" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnDisplay" msprop:Generator_ColumnPropNameInTable="DisplayColumn" msprop:Generator_ColumnPropNameInRow="Display" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

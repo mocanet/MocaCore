@@ -1,0 +1,888 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Moca.Action.ActionManager" Collapsed="true">
+    <Position X="26.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Action\ActionManager.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Ad.AdUtil" Collapsed="true">
+    <Position X="28" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAACQIAICAAIAAAAAAAAwCAAAAAAAAAAAAAAAICA=</HashCode>
+      <FileName>Ad\AdUtil.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Aop.AopProxy" Collapsed="true">
+    <Position X="29.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAQAAAAgAAAAQAAAAEABAAAAAAAAAAA=</HashCode>
+      <FileName>Aop\AopProxy.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Aop.Aspect" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAQAABBgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Aop\Aspect.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_advice" />
+      <Field Name="_pointcut" />
+      <Property Name="Advice" />
+      <Property Name="Pointcut" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Moca.Aop.MethodInvocation" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.75" Y="9.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAIABAAAABgAAAAQCAAAgAAIACAAAAAAQA=</HashCode>
+      <FileName>Aop\MethodInvocation.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_advice" />
+      <Field Name="_nextInvocation" />
+      <Property Name="NextInvocation" />
+      <Property Name="Advice" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Moca.Aop.Pointcut" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="35" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgCAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Aop\Pointcut.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Moca.Attr.AspectAttribute" Collapsed="true">
+    <Position X="31.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAIAAQAAAA=</HashCode>
+      <FileName>Attr\AspectAttribute.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Attr.AspectAttributeAnalyzer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attr\AspectAttributeAnalyzer.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Moca.Attr.AttributeAnalyzer" Collapsed="true">
+    <Position X="16.5" Y="20.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAEAAIAAAECAAAAAAEAAgABAEAAAEQACAAACAA=</HashCode>
+      <FileName>Attr\AttributeAnalyzer.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Attr.ImplementationAttribute" Collapsed="true">
+    <Position X="28" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAIAAAABAA=</HashCode>
+      <FileName>Attr\ImplementationAttribute.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Attr.ImplementationAttributeAnalyzer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attr\ImplementationAttributeAnalyzer.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Moca.Db.AbstractDao" Collapsed="true">
+    <Position X="3.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gABCAKAAAGJAAAcAgAAAg0AiAVkAAAQBAwgEEgAAIik=</HashCode>
+      <FileName>Db\AbstractDao.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_dbms" />
+      <Field Name="_dbaHelper" />
+      <Field Name="_commandWrapper" />
+      <Property Name="Dbms" />
+      <Property Name="Helper" />
+      <Property Name="TargetDbms" />
+      <Property Name="CommandWrapper" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Moca.Db.DbAccess" Collapsed="true">
+    <Position X="3.75" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAKIEAAAAAEAAgEIAAgAIEAAAAAYAAAAAAAA=</HashCode>
+      <FileName>Db\DbAccess.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Moca.Db.DbAccessException" Collapsed="true">
+    <Position X="6.75" Y="18.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAIAAAAIAEAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\DbAccessException.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="useDBAccess" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Moca.Db.DbInfo" Collapsed="true">
+    <Position X="13.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIABAAAAKAAAEAAAAAAYFAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\DbInfo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Db.DbInfoColumn" Collapsed="true">
+    <Position X="10" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAIAAAAQAAAAAAAAAMAAAAAAAAAQEAAAAAQAAAAECA=</HashCode>
+      <FileName>Db\DbInfoColumn.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Db.DbInfoColumnCollection" Collapsed="true">
+    <Position X="16.5" Y="15.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\DbInfoColumnCollection.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Db.DbInfoFunction" Collapsed="true">
+    <Position X="12.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Db\DbInfoFunction.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Db.DbInfoFunctionCollection" Collapsed="true">
+    <Position X="26.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\DbInfoFunctionCollection.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Db.DbInfoProcedure" Collapsed="true">
+    <Position X="14.5" Y="13.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Db\DbInfoProcedure.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Db.DbInfoProcedureCollection" Collapsed="true">
+    <Position X="28" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\DbInfoProcedureCollection.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Db.DbInfoTable" Collapsed="true">
+    <Position X="17" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Db\DbInfoTable.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_columns" />
+      <Property Name="Columns" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Moca.Db.DbInfoTableCollection" Collapsed="true">
+    <Position X="19.5" Y="17.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\DbInfoTableCollection.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Table(System.String)" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Moca.Db.Dbms" Collapsed="true">
+    <Position X="10" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gEAAAAAAAAIAAAABAAAABAAAAAAAAAAAAAAAAABAgEg=</HashCode>
+      <FileName>Db\Dbms.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_dbSetting" />
+      <Property Name="Setting" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Moca.Db.DbmsManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAKIAAAAAAAAQAAAAAAAAAAACAAAEAgCAAgA=</HashCode>
+      <FileName>Db\DbmsManager.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_myInstance" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Moca.Db.DbSetting" Collapsed="true">
+    <Position X="10" Y="20.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASJoJAAAkCAAAAAQAAAAAQhACAAQIQCAAAAggAQAEA=</HashCode>
+      <FileName>Db\DbSetting.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Db.DbUtil" Collapsed="true">
+    <Position X="16.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAAUAQgAAEAAEAABIABgALAggAEAECEACACQRAAAAA=</HashCode>
+      <FileName>Db\DbUtil.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_entityBuilder" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Moca.Db.EntityBuilder" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAABIAAAAgAAAAEIEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\EntityBuilder.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Db.OdbcSetting" Collapsed="true">
+    <Position X="33.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoAIAAAAAAEAAGECAAAAAICAAAJCAASAQCEAACXAAI=</HashCode>
+      <FileName>Db\OdbcSetting.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Db.Attr.ColumnAttribute" Collapsed="true">
+    <Position X="24.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\Attr\ColumnAttribute.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Db.Attr.ColumnIgnoreAttribute" Collapsed="true">
+    <Position X="26.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\Attr\ColumnIgnoreAttribute.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Db.Attr.DaoAttribute" Collapsed="true">
+    <Position X="12.75" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAIAAAABAA=</HashCode>
+      <FileName>Db\Attr\DaoAttribute.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Db.Attr.DaoAttributeAnalyzer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="35" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\Attr\DaoAttributeAnalyzer.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Moca.Db.Attr.DbmsAttribute" Collapsed="true">
+    <Position X="12.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAACAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\Attr\DbmsAttribute.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Db.Attr.TableAttribute" Collapsed="true">
+    <Position X="28" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAACAAAAAAAQAAAAAAAAAAAAAAQAABIA=</HashCode>
+      <FileName>Db\Attr\TableAttribute.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Db.Attr.TableAttributeAnalyzer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\Attr\TableAttributeAnalyzer.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Moca.Db.Attr.TransactionAttribute" Collapsed="true">
+    <Position X="31.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Db\Attr\TransactionAttribute.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Db.Attr.TransactionAttributeAnalyzer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\Attr\TransactionAttributeAnalyzer.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Moca.Db.CommandWrapper.DDLCommandWrapper" Collapsed="true">
+    <Position X="7.5" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\CommandWrapper\DDLCommandWrapper.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Moca.Db.CommandWrapper.DeleteCommandWrapper" Collapsed="true">
+    <Position X="10.25" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\CommandWrapper\DeleteCommandWrapper.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Moca.Db.CommandWrapper.InsertCommandWrapper" Collapsed="true">
+    <Position X="13.25" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\CommandWrapper\InsertCommandWrapper.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Moca.Db.CommandWrapper.Select4UpdateCommandWrapper" Collapsed="true">
+    <Position X="20" Y="8.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAYAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\CommandWrapper\Select4UpdateCommandWrapper.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Moca.Db.CommandWrapper.SelectCommandWrapper" Collapsed="true">
+    <Position X="18.25" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAYAAACAAAAAACAAAAQBAAAAAAAAAgA=</HashCode>
+      <FileName>Db\CommandWrapper\SelectCommandWrapper.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Moca.Db.CommandWrapper.SqlCommandWrapper" Collapsed="true">
+    <Position X="12.75" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAhACAAAACAQQBSAAAYABgAAAYABwEAAAAACAAAAAAA=</HashCode>
+      <FileName>Db\CommandWrapper\SqlCommandWrapper.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="dba" />
+      <Field Name="entityBuilder" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Moca.Db.CommandWrapper.StoredProcedureCommandWrapper" Collapsed="true">
+    <Position X="16.25" Y="8.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAECAAkAAAACAAACAAAAAAAA=</HashCode>
+      <FileName>Db\CommandWrapper\StoredProcedureCommandWrapper.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Moca.Db.CommandWrapper.UpdateCommandWrapper" Collapsed="true">
+    <Position X="4.5" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\CommandWrapper\UpdateCommandWrapper.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Moca.Db.Helper.DbAccessHelper" Collapsed="true">
+    <Position X="11" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACAgAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Db\Helper\DbAccessHelper.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="targetDba" />
+      <Field Name="myDba" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Moca.Db.Helper.OdbcAccessHelper" Collapsed="true">
+    <Position X="7" Y="10.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABgBAIAAAAIAAAAAwgAAAAAAIAAAAAEAgIAAA=</HashCode>
+      <FileName>Db\Helper\OdbcAccessHelper.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Moca.Db.Helper.OleDbAccessHelper" Collapsed="true">
+    <Position X="9.5" Y="10.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABgBAIAAAAIAAAAAwgAAAAAAIAAAAAEAgIAAA=</HashCode>
+      <FileName>Db\Helper\OleDbAccessHelper.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Moca.Db.Helper.OracleDbAccessHelper" Collapsed="true">
+    <Position X="12" Y="10.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABgBAIAAAAIAAAAAwgAAAAAAIAAAAAEAgIAAA=</HashCode>
+      <FileName>Db\Helper\OracleDbAccessHelper.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Moca.Db.Helper.SqlDbAccessHelper" Collapsed="true">
+    <Position X="14.75" Y="10.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAARgBAIABAAoAAAAAwgAAACAAIQAAAAEAgIAAA=</HashCode>
+      <FileName>Db\Helper\SqlDbAccessHelper.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Moca.Db.Interceptor.AbstractDaoInterceptor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQIIAAAgAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\Interceptor\AbstractDaoInterceptor.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Moca.Db.Interceptor.ColumnInfoInterceptor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIIAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Db\Interceptor\ColumnInfoInterceptor.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_info" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Moca.Db.Tx.TransactionInterceptor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="35" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\Tx\TransactionInterceptor.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Moca.Di.MocaComponent" Collapsed="true">
+    <Position X="9.75" Y="15.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAAABAACAQAgQAAACAIAAAARAAAEABAAAIAgAAAAA=</HashCode>
+      <FileName>Di\MocaComponent.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_aspects" />
+      <Property Name="Aspects" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Moca.Di.MocaComponent4Db" Collapsed="true">
+    <Position X="9.75" Y="16.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAIgA=</HashCode>
+      <FileName>Di\MocaComponent4Db.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_dbms" />
+      <Property Name="Dbms" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Moca.Di.MocaContainer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAIBAAAAAABAAAIABAAAAAAAACAkAAAAA=</HashCode>
+      <FileName>Di\MocaContainer.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Moca.Di.MocaContainerFactory" Collapsed="true">
+    <Position X="21.5" Y="15.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAQAAAAAAAAAAAAAAAAAAABAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Di\MocaContainerFactory.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_instance" />
+      <Property Name="Container" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Moca.Di.MocaInjector" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.75" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACYAAAAAAAACAAAAAAAAAEAAACAgQgAAAAA=</HashCode>
+      <FileName>Di\MocaInjector.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_analyzer" />
+      <Property Name="Analyzer" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Moca.Exceptions.CommonException" Collapsed="true">
+    <Position X="6.75" Y="15.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAEAAAAgAAEAAAAAIAAAgQBAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Exceptions\CommonException.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Exceptions.MocaRuntimeException" Collapsed="true">
+    <Position X="6.75" Y="17" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\MocaRuntimeException.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Install.ConfigProtectionInstaller" Collapsed="true">
+    <Position X="29.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAEAACAAAACAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Install\ConfigProtectionInstaller.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Interceptor.FieldGetterInterceptor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="35" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interceptor\FieldGetterInterceptor.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Moca.Interceptor.FieldSetterInterceptor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interceptor\FieldSetterInterceptor.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Moca.My.MySettings" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="defaultInstance" />
+      <Property Name="Default" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Moca.Security.DPAPIConfiguration" Collapsed="true">
+    <Position X="31.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAIAAAAEAAAAEAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Security\DPAPIConfiguration.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Security.DPAPICryptosystem" Collapsed="true">
+    <Position X="33.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQEAAAAAAAAgBgAQAAAAgAAAAAAAAAAAAAAAAgAAAAI=</HashCode>
+      <FileName>Security\DPAPICryptosystem.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Security.HashCryptosystem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQAAAAAAACAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Security\HashCryptosystem.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Moca.Security.PublicKeyCryptosystem" Collapsed="true">
+    <Position X="24.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Security\PublicKeyCryptosystem.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Serialization.DataSerializer" Collapsed="true">
+    <Position X="24.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAgAAAAAAACAAAAAACBABAAAAAAAABAAAAA=</HashCode>
+      <FileName>Serialization\DataSerializer.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Html.AbstractTag" Collapsed="true">
+    <Position X="19" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAACAAAAAAAAAAQ=</HashCode>
+      <FileName>Text\Html\AbstractTag.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Html.TagTD" Collapsed="true">
+    <Position X="17.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgACAEAQAAAAAAAAAAACAAAABAAAAAAAA=</HashCode>
+      <FileName>Text\Html\TagTD.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Html.TagTR" Collapsed="true">
+    <Position X="20" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAiAEAABAAAAAAACAAAAgEABAAAAAAAA=</HashCode>
+      <FileName>Text\Html\TagTR.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Util.ClassUtil" Collapsed="true">
+    <Position X="35" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAACAAAgAAAAAAAAAACAABAAAACAAgAAAAAAAAACAI=</HashCode>
+      <FileName>Util\ClassUtil.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Util.StopWatch" Collapsed="true">
+    <Position X="26.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACIAAAAAAAAAAAAIMABAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Util\StopWatch.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Util.ValidateUtil" Collapsed="true">
+    <Position X="24.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAQAAAAAACAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Util\ValidateUtil.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Util.Validator" Collapsed="true">
+    <Position X="26.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Util\Validator.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.Util.VBUtil" Collapsed="true">
+    <Position X="28" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAKBABAAAAAAAAAAAAACAAAAEQCAAAJAIBA=</HashCode>
+      <FileName>Util\VBUtil.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.ConstantDataSet" Collapsed="true">
+    <Position X="31.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAwAAAAJABAAIQgAABAgCQBgAgAEQAAEABBA=</HashCode>
+      <FileName>Util\ConstantDataSet.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moca.CultureUtil" Collapsed="true">
+    <Position X="33.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Util\CultureUtil.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Moca.Aop.IAdvice" Collapsed="true">
+    <Position X="3.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Aop\IAdvice.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Aop.IAspect" Collapsed="true">
+    <Position X="9.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Aop\IAspect.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Advice" />
+      <Property Name="Pointcut" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="Moca.Aop.IInterceptor" Collapsed="true">
+    <Position X="3.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Aop\IInterceptor.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Aop.IInvocation" Collapsed="true">
+    <Position X="3.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Aop\IInvocation.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Aop.IJoinpoint" Collapsed="true">
+    <Position X="3.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIABAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Aop\IJoinpoint.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Aop.IMethodInterceptor" Collapsed="true">
+    <Position X="3.75" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Aop\IMethodInterceptor.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Aop.IMethodInvocation" Collapsed="true">
+    <Position X="3.75" Y="18.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Aop\IMethodInvocation.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Aop.IPointcut" Collapsed="true">
+    <Position X="26.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Aop\IPointcut.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Attr.IAttributeAnalyzer" Collapsed="true">
+    <Position X="24.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attr\IAttributeAnalyzer.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Db.IDao" Collapsed="true">
+    <Position X="6.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABCAKAAAABAAAcAAAAAAUACABAAAAQBAwAEAAAAICA=</HashCode>
+      <FileName>Db\IDao.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Dbms" />
+      <Property Name="Helper" />
+      <Property Name="CommandWrapper" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="Moca.Db.IDbAccess" Collapsed="true">
+    <Position X="6.75" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAIAAAAAAAEAAAEIAAAAIEAAAAAYAAAAAAAA=</HashCode>
+      <FileName>Db\IDbAccess.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Db.IDbAccessHelper" Collapsed="true">
+    <Position X="0.5" Y="12.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABgBAIAAAAIAAAAAwgAAAAAAIAAAAAAAgIAAA=</HashCode>
+      <FileName>Db\IDbAccessHelper.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Db.IDbCommandDDL" Collapsed="true">
+    <Position X="16.25" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\IDbCommandDDL.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Db.IDbCommandDelete" Collapsed="true">
+    <Position X="18.75" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\IDbCommandDelete.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Db.IDbCommandInsert" Collapsed="true">
+    <Position X="4.5" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\IDbCommandInsert.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Db.IDbCommandSelect" Collapsed="true">
+    <Position X="9" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAACAAAAAAAAAAAQBAAAAAAAAAoA=</HashCode>
+      <FileName>Db\IDbCommandSelect.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Db.IDbCommandSelect4Update" Collapsed="true">
+    <Position X="7" Y="3.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\IDbCommandSelect4Update.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Db.IDbCommandSql" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AABACAAAAAAAQASAAAAABAAAAIABgQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\IDbCommandSql.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Db.IDbCommandStoredProcedure" Collapsed="true">
+    <Position X="10.25" Y="3.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAECAAkAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\IDbCommandStoredProcedure.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Db.IDbCommandUpdate" Collapsed="true">
+    <Position X="13.5" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\IDbCommandUpdate.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Moca.Di.IContainer" Collapsed="true">
+    <Position X="21.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAABAAAAABAAAAAAAACAEAAAAA=</HashCode>
+      <FileName>Di\IContainer.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Moca.Attr.AttributeAnalyzerTargets" Collapsed="true">
+    <Position X="24.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAJgAAAAAAAAAAAAAAAAAQAAgAA=</HashCode>
+      <FileName>Attr\AttributeAnalyzer.vb</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Moca.Db.SortDirectionValue" Collapsed="true">
+    <Position X="29.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Db\DbUtil.vb</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Moca.Db.SQLCommandTypes" Collapsed="true">
+    <Position X="31.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAgAAAAEAAACAgAIAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Db\SQLCommandTypes.vb</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Moca.Db.Helper.OdbcErrorNumbers" Collapsed="true">
+    <Position X="26.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\Helper\OdbcAccessHelper.vb</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Moca.Db.Helper.OleDbErrorNumbers" Collapsed="true">
+    <Position X="28" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\Helper\OleDbAccessHelper.vb</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Moca.Db.Helper.SqlDbErrorNumbers" Collapsed="true">
+    <Position X="33.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\Helper\SqlDbAccessHelper.vb</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Moca.Util.ValidateTypes" Collapsed="true">
+    <Position X="35" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAACAAAEogAEAAAAACAADAABAIAAAAEAgAAEAAAA=</HashCode>
+      <FileName>Util\Validator.vb</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Module Name="Moca.My.Resources.Resources" Collapsed="true">
+    <Position X="26.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="Moca.My.MySettingsProperty" Collapsed="true">
+    <Position X="24.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Settings" />
+    </ShowAsAssociation>
+  </Module>
+  <Font Name="メイリオ" Size="9" />
+</ClassDiagram>
