@@ -520,7 +520,6 @@
     <None Include="..\MocaCore\Util\ConstantDataSet.xsd">
       <Link>Util\ConstantDataSet.xsd</Link>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ConstantDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="..\MocaCore\Util\ConstantDataSet.xss">
