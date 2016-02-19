@@ -47,8 +47,9 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>Moca.xml</DocumentationFile>
-    <NoWarn>42353,42354,42355</NoWarn>
-    <WarningsAsErrors>41999,42016</WarningsAsErrors>
+    <NoWarn>41999,42016,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -57,8 +58,9 @@
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>Moca.xml</DocumentationFile>
-    <NoWarn>42353,42354,42355</NoWarn>
-    <WarningsAsErrors>41999,42016</WarningsAsErrors>
+    <NoWarn>41999,42016,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -307,8 +309,14 @@
     <Compile Include="..\MocaCore\Db\Helper\OleDbSQLAccessHelper.vb">
       <Link>Db\Helper\OleDbSQLAccessHelper.vb</Link>
     </Compile>
+    <Compile Include="..\MocaCore\Db\Helper\OracleAccessHelper.vb">
+      <Link>Db\Helper\OracleAccessHelper.vb</Link>
+    </Compile>
     <Compile Include="..\MocaCore\Db\Helper\OracleMSAccessHelper.vb">
       <Link>Db\Helper\OracleMSAccessHelper.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaCore\Db\Helper\SqlCeDbAccessHelper.vb">
+      <Link>Db\Helper\SqlCeDbAccessHelper.vb</Link>
     </Compile>
     <Compile Include="..\MocaCore\Db\Helper\SqlDbAccessHelper.vb">
       <Link>Db\Helper\SqlDbAccessHelper.vb</Link>

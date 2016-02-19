@@ -46,8 +46,9 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>Moca.xml</DocumentationFile>
-    <NoWarn>42353,42354,42355</NoWarn>
-    <WarningsAsErrors>41999,42016</WarningsAsErrors>
+    <NoWarn>41999,42016,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -56,8 +57,9 @@
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>Moca.xml</DocumentationFile>
-    <NoWarn>42353,42354,42355</NoWarn>
-    <WarningsAsErrors>41999,42016</WarningsAsErrors>
+    <NoWarn>41999,42016,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -119,7 +121,9 @@
     <Compile Include="Db\Helper\OdbcAccessHelper.vb" />
     <Compile Include="Db\Helper\OleDbOraAccessHelper.vb" />
     <Compile Include="Db\Helper\OleDbSQLAccessHelper.vb" />
+    <Compile Include="Db\Helper\OracleAccessHelper.vb" />
     <Compile Include="Db\Helper\OracleMSAccessHelper.vb" />
+    <Compile Include="Db\Helper\SqlCeDbAccessHelper.vb" />
     <Compile Include="Db\Interceptor\AbstractDaoInterceptor.vb" />
     <Compile Include="Db\Interceptor\ColumnInfoInterceptor.vb" />
     <Compile Include="Db\Attr\TableAttribute.vb" />
