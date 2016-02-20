@@ -107,6 +107,12 @@
     <Compile Include="..\MocaCore35\Entity\SelectedEntity.vb">
       <Link>Entity\SelectedEntity.vb</Link>
     </Compile>
+    <Compile Include="..\MocaCore40\Db\Helper\DbAccessHelperFactory.vb">
+      <Link>Db\Helper\DbAccessHelperFactory.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaCore40\Db\Helper\OracleManagedAccessHelper.vb">
+      <Link>Db\Helper\OracleManagedAccessHelper.vb</Link>
+    </Compile>
     <Compile Include="..\MocaCore\Action\ActionManager.vb">
       <Link>Action\ActionManager.vb</Link>
     </Compile>
@@ -295,9 +301,6 @@
     </Compile>
     <Compile Include="..\MocaCore\Db\Helper\DbAccessHelper.vb">
       <Link>Db\Helper\DbAccessHelper.vb</Link>
-    </Compile>
-    <Compile Include="..\MocaCore\Db\Helper\DbAccessHelperFactory.vb">
-      <Link>Db\Helper\DbAccessHelperFactory.vb</Link>
     </Compile>
     <Compile Include="..\MocaCore\Db\Helper\OdbcAccessHelper.vb">
       <Link>Db\Helper\OdbcAccessHelper.vb</Link>

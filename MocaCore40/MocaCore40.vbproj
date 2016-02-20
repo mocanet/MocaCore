@@ -294,9 +294,6 @@
     <Compile Include="..\MocaCore\Db\Helper\DbAccessHelper.vb">
       <Link>Db\Helper\DbAccessHelper.vb</Link>
     </Compile>
-    <Compile Include="..\MocaCore\Db\Helper\DbAccessHelperFactory.vb">
-      <Link>Db\Helper\DbAccessHelperFactory.vb</Link>
-    </Compile>
     <Compile Include="..\MocaCore\Db\Helper\OdbcAccessHelper.vb">
       <Link>Db\Helper\OdbcAccessHelper.vb</Link>
     </Compile>
@@ -492,6 +489,8 @@
     <Compile Include="..\MocaCore\Util\VBUtil.vb">
       <Link>Util\VBUtil.vb</Link>
     </Compile>
+    <Compile Include="Db\Helper\DbAccessHelperFactory.vb" />
+    <Compile Include="Db\Helper\OracleManagedAccessHelper.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="..\MocaCore\My Project\Application.Designer.vb">
       <Link>My Project\Application.Designer.vb</Link>

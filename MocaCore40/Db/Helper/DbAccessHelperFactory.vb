@@ -47,7 +47,7 @@ Namespace Db.Helper
                     Return New OracleAccessHelper(dba)
 
                 Case "Oracle.ManagedDataAccess.Client"
-                    Throw New NotSupportedException
+                    Return New OracleManagedAccessHelper(dba)
 
                 Case "System.Data.OracleClient", "OraOLEDB.Oracle.1"
                     Return New OracleMSAccessHelper(dba)
