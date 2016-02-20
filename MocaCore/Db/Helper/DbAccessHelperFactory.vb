@@ -36,27 +36,18 @@ Namespace Db.Helper
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Public Function Create(ByVal dba As IDao) As IDbAccessHelper
-            Dim asm As System.Reflection.Assembly
-            Dim typ As Type
-
             Select Case _dbSetting.ProviderName
                 Case "System.Data.SqlClient"
                     Return New SqlDbAccessHelper(dba)
 
                 Case "System.Data.SqlServerCe.3.5", "System.Data.SqlServerCe.4.0"
-                    asm = System.Reflection.Assembly.Load("MocaSQLCe")
-                    typ = asm.GetType("Moca.Db.Helper.SqlCeDbAccessHelper")
-                    Return CType(Util.ClassUtil.NewInstance(typ, New Object() {dba}), IDbAccessHelper)
+                    Return New SqlCeDbAccessHelper(dba)
 
                 Case "Oracle.DataAccess.Client"
-                    asm = System.Reflection.Assembly.Load("MocaOracle")
-                    typ = asm.GetType("Moca.Db.Helper.OracleAccessHelper")
-                    Return CType(Util.ClassUtil.NewInstance(typ, New Object() {dba}), IDbAccessHelper)
+                    Return New OracleAccessHelper(dba)
 
                 Case "Oracle.ManagedDataAccess.Client"
-                    asm = System.Reflection.Assembly.Load("MocaOracle")
-                    typ = asm.GetType("Moca.Db.Helper.OracleManagedAccessHelper")
-                    Return CType(Util.ClassUtil.NewInstance(typ, New Object() {dba}), IDbAccessHelper)
+                    Return Nothing
 
                 Case "System.Data.OracleClient", "OraOLEDB.Oracle.1"
                     Return New OracleMSAccessHelper(dba)
@@ -79,7 +70,7 @@ Namespace Db.Helper
                 Case Else
                     Return Nothing
             End Select
-		End Function
+        End Function
 
 #End Region
 
