@@ -14,6 +14,32 @@ PM> Install-Package Moca.NETCore
 ```
 
 
+Moca.NET Templates.
+==========
+
+https://github.com/mocanet/TemplateVSPackage
+
+
+Moca.NET Code snippet
+==========
+
+https://github.com/mocanet/SnippetsVSPackage
+
+
+Other Libraries
+==========
+
+* https://github.com/mocanet/MocaWin
+* https://github.com/mocanet/MocaControls
+* https://github.com/mocanet/MocaOffice
+* https://github.com/mocanet/MocaConfiguration
+* https://github.com/mocanet/MocaSQLCLR
+ 
+## Old version
+
+https://moca.codeplex.com/
+
+
 License
 =======
 
