@@ -501,8 +501,11 @@ Namespace Attr
 					If aspects Is Nothing Then
 						Continue For
 					End If
-					results.AddRange(aspects)
-				Next
+                    For Each aspect As IAspect In aspects
+                        Analyze(aspect.Advice)
+                    Next
+                    results.AddRange(aspects)
+                Next
 			End If
 
 			Return DirectCast(results.ToArray(GetType(IAspect)), IAspect())
