@@ -419,6 +419,9 @@
     <Compile Include="..\MocaCore\Entity\AbstractEntity.vb">
       <Link>Entity\AbstractEntity.vb</Link>
     </Compile>
+    <Compile Include="..\MocaCore\Entity\EntityBase.vb">
+      <Link>Entity\EntityBase.vb</Link>
+    </Compile>
     <Compile Include="..\MocaCore\Entity\UpdateEntityValidateArgs.vb">
       <Link>Entity\UpdateEntityValidateArgs.vb</Link>
     </Compile>
