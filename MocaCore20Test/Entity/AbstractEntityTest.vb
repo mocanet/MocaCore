@@ -275,6 +275,8 @@ Public Class TestEntityS
     Public Property KeyVal As KeyValuePair(Of Integer, String)
     Public Property Hoge As HogeEntity
 
+    Public Property ImgByte As Byte()
+
     Public Overrides Sub DeepCopy(valueTo As TestEntityS)
         MyBase.DeepCopy(valueTo)
 
