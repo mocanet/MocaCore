@@ -4,23 +4,23 @@ Imports Moca.Exceptions
 Namespace Db
 
 	''' <summary>
-	''' ƒf[ƒ^ƒx[ƒXƒAƒNƒZƒXŠÖŒW‚Ì—áŠO
+	''' ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¯ã‚»ã‚¹é–¢ä¿‚ã®ä¾‹å¤–
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class DbAccessException
 		Inherits MocaRuntimeException
 
-		''' <summary>Žg—p‚µ‚Ä‚¢‚éDBAccessƒCƒ“ƒXƒ^ƒ“ƒX</summary>
+		''' <summary>ä½¿ç”¨ã—ã¦ã„ã‚‹DBAccessã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</summary>
 		Protected useDBAccess As IDao
 
 #Region " Constructor/DeConstructor "
 
 		''' -----------------------------------------------------------------------------
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="useDBAccess">Žg—p‚µ‚Ä‚¢‚éDBAccessƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <param name="Message">ƒGƒ‰[ƒƒbƒZ[ƒW</param>
+		''' <param name="useDBAccess">ä½¿ç”¨ã—ã¦ã„ã‚‹DBAccessã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <param name="Message">ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸</param>
 		''' <remarks>
 		''' </remarks>
 		''' -----------------------------------------------------------------------------
@@ -31,10 +31,10 @@ Namespace Db
 
 		''' -----------------------------------------------------------------------------
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="useDBAccess">Žg—p‚µ‚Ä‚¢‚éDBAccessƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <param name="ex">—áŠOƒCƒ“ƒXƒ^ƒ“ƒX</param>
+		''' <param name="useDBAccess">ä½¿ç”¨ã—ã¦ã„ã‚‹DBAccessã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <param name="ex">ä¾‹å¤–ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
 		''' <remarks>
 		''' </remarks>
 		''' -----------------------------------------------------------------------------
@@ -45,11 +45,11 @@ Namespace Db
 
 		''' -----------------------------------------------------------------------------
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="useDBAccess">Žg—p‚µ‚Ä‚¢‚éDBAccessƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <param name="ex">—áŠOƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <param name="Message">ƒGƒ‰[ƒƒbƒZ[ƒW</param>
+		''' <param name="useDBAccess">ä½¿ç”¨ã—ã¦ã„ã‚‹DBAccessã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <param name="ex">ä¾‹å¤–ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <param name="Message">ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸</param>
 		''' <remarks>
 		''' </remarks>
 		''' -----------------------------------------------------------------------------
@@ -61,7 +61,7 @@ Namespace Db
 #End Region
 
 		''' <summary>
-		''' ƒGƒ‰[”Ô†‚½‚¿
+		''' ã‚¨ãƒ©ãƒ¼ç•ªå·ãŸã¡
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>
@@ -74,9 +74,9 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' d•¡ƒGƒ‰[‚ª”­¶‚µ‚½—áŠO‚É‘¶Ý‚·‚é‚©•Ô‚·
+		''' é‡è¤‡ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸä¾‹å¤–ã«å­˜åœ¨ã™ã‚‹ã‹è¿”ã™
 		''' </summary>
-		''' <returns>True:‘¶Ý‚·‚éAFalse:‘¶Ý‚µ‚È‚¢</returns>
+		''' <returns>True:å­˜åœ¨ã™ã‚‹ã€False:å­˜åœ¨ã—ãªã„</returns>
 		''' <remarks>
 		''' </remarks>
 		Public Function HasSqlNativeErrorDuplicationPKey() As Boolean
@@ -88,9 +88,9 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' ƒ^ƒCƒ€ƒAƒEƒgƒGƒ‰[‚ª”­¶‚µ‚½—áŠO‚É‘¶Ý‚·‚é‚©•Ô‚·
+		''' ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸä¾‹å¤–ã«å­˜åœ¨ã™ã‚‹ã‹è¿”ã™
 		''' </summary>
-		''' <returns>True:‘¶Ý‚·‚éAFalse:‘¶Ý‚µ‚È‚¢</returns>
+		''' <returns>True:å­˜åœ¨ã™ã‚‹ã€False:å­˜åœ¨ã—ãªã„</returns>
 		''' <remarks>
 		''' </remarks>
 		Public Function HasSqlNativeErrorTimtout() As Boolean
@@ -102,10 +102,10 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' Žw’è‚³‚ê‚½ƒGƒ‰[”Ô†‚ª”­¶‚µ‚½—áŠO‚É‘¶Ý‚·‚é‚©•Ô‚·
+		''' æŒ‡å®šã•ã‚ŒãŸã‚¨ãƒ©ãƒ¼ç•ªå·ãŒç™ºç”Ÿã—ãŸä¾‹å¤–ã«å­˜åœ¨ã™ã‚‹ã‹è¿”ã™
 		''' </summary>
-		''' <param name="errorNumber">ƒGƒ‰[”Ô†</param>
-		''' <returns>True:‘¶Ý‚·‚éAFalse:‘¶Ý‚µ‚È‚¢</returns>
+		''' <param name="errorNumber">ã‚¨ãƒ©ãƒ¼ç•ªå·</param>
+		''' <returns>True:å­˜åœ¨ã™ã‚‹ã€False:å­˜åœ¨ã—ãªã„</returns>
 		''' <remarks>
 		''' </remarks>
 		Public Function HasSqlNativeError(ByVal errorNumber As Long) As Boolean
@@ -117,11 +117,11 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' Žw’è‚³‚ê‚½ƒGƒ‰[”Ô†‚ª”­¶‚µ‚½—áŠO‚É‘¶Ý‚·‚é‚©•Ô‚·
+		''' æŒ‡å®šã•ã‚ŒãŸã‚¨ãƒ©ãƒ¼ç•ªå·ãŒç™ºç”Ÿã—ãŸä¾‹å¤–ã«å­˜åœ¨ã™ã‚‹ã‹è¿”ã™
 		''' </summary>
-		''' <param name="ex">—áŠO</param>
-		''' <param name="errorNumber">ƒGƒ‰[”Ô†</param>
-		''' <returns>True:‘¶Ý‚·‚éAFalse:‘¶Ý‚µ‚È‚¢</returns>
+		''' <param name="ex">ä¾‹å¤–</param>
+		''' <param name="errorNumber">ã‚¨ãƒ©ãƒ¼ç•ªå·</param>
+		''' <returns>True:å­˜åœ¨ã™ã‚‹ã€False:å­˜åœ¨ã—ãªã„</returns>
 		''' <remarks>
 		''' </remarks>
 		Protected Function hasSqlNativeError(ByVal ex As Exception, ByVal errorNumber As Long) As Boolean

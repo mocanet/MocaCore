@@ -5,7 +5,7 @@ Imports Moca.Util
 Namespace Attr
 
 	''' <summary>
-	''' ƒAƒXƒyƒNƒg‘®«‰ğÍ
+	''' ã‚¢ã‚¹ãƒšã‚¯ãƒˆå±æ€§è§£æ
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class AspectAttributeAnalyzer

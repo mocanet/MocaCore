@@ -5,11 +5,11 @@ Imports Moca.Db.CommandWrapper
 Namespace Db
 
 	''' <summary>
-	''' Data Access Object ‚ÌƒCƒ“ƒ^ƒtƒF[ƒX‚ÌÀ‘•’ŠÛƒNƒ‰ƒX
+	''' Data Access Object ã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã®å®Ÿè£…æŠ½è±¡ã‚¯ãƒ©ã‚¹
 	''' </summary>
 	''' <remarks>
-	''' ƒf[ƒ^ƒx[ƒXƒAƒNƒZƒX‚·‚éÛ‚ÉÅ’áŒÀ•K—v‚Æv‚í‚ê‚é‹@”\‚ğ’ñ‹Ÿ‚µ‚Ü‚·B<br/>
-	''' ŠeƒVƒXƒeƒ€‚Å Data Access ObjectiDAOj‚ğg—p‚·‚é‚Æ‚«‚ÍA“™ƒNƒ‰ƒX‚ğŒp³‚µ‚Ü‚·B<br/>
+	''' ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹éš›ã«æœ€ä½é™å¿…è¦ã¨æ€ã‚ã‚Œã‚‹æ©Ÿèƒ½ã‚’æä¾›ã—ã¾ã™ã€‚<br/>
+	''' å„ã‚·ã‚¹ãƒ†ãƒ ã§ Data Access Objectï¼ˆDAOï¼‰ã‚’ä½¿ç”¨ã™ã‚‹ã¨ãã¯ã€ç­‰ã‚¯ãƒ©ã‚¹ã‚’ç¶™æ‰¿ã—ã¾ã™ã€‚<br/>
 	''' </remarks>
 	Public MustInherit Class AbstractDao
 		Inherits MarshalByRefObject
@@ -19,24 +19,24 @@ Namespace Db
 
 		''' <summary>DBMS</summary>
 		Private _dbms As Dbms
-		''' <summary>ƒRƒlƒNƒVƒ‡ƒ“ƒIƒuƒWƒFƒNƒg</summary>
+		''' <summary>ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</summary>
 		Private _conn As IDbConnection
-		''' <summary>ƒAƒ_ƒvƒ^ƒIƒuƒWƒFƒNƒg</summary>
+		''' <summary>ã‚¢ãƒ€ãƒ—ã‚¿ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</summary>
 		Private _adp As IDbDataAdapter
-		''' <summary>ƒwƒ‹ƒp[ƒIƒuƒWƒFƒNƒg</summary>
+		''' <summary>ãƒ˜ãƒ«ãƒ‘ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</summary>
 		Private _dbaHelper As IDbAccessHelper
-		''' <summary>ƒRƒ}ƒ“ƒhƒ‰ƒbƒp[ƒIƒuƒWƒFƒNƒg</summary>
+		''' <summary>ã‚³ãƒãƒ³ãƒ‰ãƒ©ãƒƒãƒ‘ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</summary>
 		Private _commandWrapper As IDbCommandSql
-		''' <summary>ƒRƒ}ƒ“ƒh—š—ğ—L–³</summary>
+		''' <summary>ã‚³ãƒãƒ³ãƒ‰å±¥æ­´æœ‰ç„¡</summary>
 		Private _executeHistory As Boolean
-		''' <summary>XVƒRƒ}ƒ“ƒh—š—ğ—L–³</summary>
+		''' <summary>æ›´æ–°ã‚³ãƒãƒ³ãƒ‰å±¥æ­´æœ‰ç„¡</summary>
 		Private _executeUpdateHistory As Boolean
-		''' <summary>ƒRƒ}ƒ“ƒh—š—ğ</summary>
+		''' <summary>ã‚³ãƒãƒ³ãƒ‰å±¥æ­´</summary>
 		Private _executeHistoryList As IList(Of String)
-		''' <summary>ƒ[ƒ‹ƒoƒbƒN—L–³</summary>
+		''' <summary>ãƒ­ãƒ¼ãƒ«ãƒãƒƒã‚¯æœ‰ç„¡</summary>
 		Private _rollbackStatus As Boolean
 
-		''' <summary>ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“§Œäî•ñ</summary>
+		''' <summary>ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³åˆ¶å¾¡æƒ…å ±</summary>
 		Private _txContext As Tx.ITransactionContext
 
 #Region " log4net "
@@ -48,10 +48,10 @@ Namespace Db
 #Region " Constructor/DeConstructor "
 
 		''' <summary>
-		''' ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
 		''' <remarks>
-		''' ŠO•”‚©‚ç‚Í—˜—p•s‰Â
+		''' å¤–éƒ¨ã‹ã‚‰ã¯åˆ©ç”¨ä¸å¯
 		''' </remarks>
 		Protected Sub New()
 			_executeHistory = False
@@ -59,9 +59,9 @@ Namespace Db
 		End Sub
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="myDbms">Ú‘±æ‚ÌDBMS</param>
+		''' <param name="myDbms">æ¥ç¶šå…ˆã®DBMS</param>
 		''' <remarks></remarks>
 		Public Sub New(ByVal myDbms As Dbms)
 			MyClass.New()
@@ -71,7 +71,7 @@ Namespace Db
 		End Sub
 
 		''' <summary>
-		''' ƒfƒXƒgƒ‰ƒNƒ^
+		''' ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
 		''' <remarks></remarks>
 		Protected Overrides Sub Finalize()
@@ -81,16 +81,16 @@ Namespace Db
 #End Region
 #Region " IDisposable Support "
 
-		Private disposedValue As Boolean = False		' d•¡‚·‚éŒÄ‚Ño‚µ‚ğŒŸo‚·‚é‚É‚Í
+		Private disposedValue As Boolean = False		' é‡è¤‡ã™ã‚‹å‘¼ã³å‡ºã—ã‚’æ¤œå‡ºã™ã‚‹ã«ã¯
 
 		' IDisposable
 		Protected Overridable Sub Dispose(ByVal disposing As Boolean)
 			If Not Me.disposedValue Then
 				If disposing Then
-					' TODO: –¾¦“I‚ÉŒÄ‚Ño‚³‚ê‚½‚Æ‚«‚Éƒ}ƒl[ƒW ƒŠƒ\[ƒX‚ğ‰ğ•ú‚µ‚Ü‚·
+					' TODO: æ˜ç¤ºçš„ã«å‘¼ã³å‡ºã•ã‚ŒãŸã¨ãã«ãƒãƒãƒ¼ã‚¸ ãƒªã‚½ãƒ¼ã‚¹ã‚’è§£æ”¾ã—ã¾ã™
 				End If
 
-				' TODO: ‹¤—L‚ÌƒAƒ“ƒ}ƒl[ƒW ƒŠƒ\[ƒX‚ğ‰ğ•ú‚µ‚Ü‚·
+				' TODO: å…±æœ‰ã®ã‚¢ãƒ³ãƒãƒãƒ¼ã‚¸ ãƒªã‚½ãƒ¼ã‚¹ã‚’è§£æ”¾ã—ã¾ã™
 				Me.Disposing()
 
 				If _dbaHelper IsNot Nothing Then
@@ -107,9 +107,9 @@ Namespace Db
 			Me.disposedValue = True
 		End Sub
 
-		' ‚±‚ÌƒR[ƒh‚ÍA”jŠü‰Â”\‚Èƒpƒ^[ƒ“‚ğ³‚µ‚­À‘•‚Å‚«‚é‚æ‚¤‚É Visual Basic ‚É‚æ‚Á‚Ä’Ç‰Á‚³‚ê‚Ü‚µ‚½B
+		' ã“ã®ã‚³ãƒ¼ãƒ‰ã¯ã€ç ´æ£„å¯èƒ½ãªãƒ‘ã‚¿ãƒ¼ãƒ³ã‚’æ­£ã—ãå®Ÿè£…ã§ãã‚‹ã‚ˆã†ã« Visual Basic ã«ã‚ˆã£ã¦è¿½åŠ ã•ã‚Œã¾ã—ãŸã€‚
 		Public Sub Dispose() Implements IDisposable.Dispose
-			' ‚±‚ÌƒR[ƒh‚ğ•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢BƒNƒŠ[ƒ“ƒAƒbƒv ƒR[ƒh‚ğã‚Ì Dispose(ByVal disposing As Boolean) ‚É‹Lq‚µ‚Ü‚·B
+			' ã“ã®ã‚³ãƒ¼ãƒ‰ã‚’å¤‰æ›´ã—ãªã„ã§ãã ã•ã„ã€‚ã‚¯ãƒªãƒ¼ãƒ³ã‚¢ãƒƒãƒ— ã‚³ãƒ¼ãƒ‰ã‚’ä¸Šã® Dispose(ByVal disposing As Boolean) ã«è¨˜è¿°ã—ã¾ã™ã€‚
 			Dispose(True)
 			GC.SuppressFinalize(Me)
 		End Sub
@@ -122,7 +122,7 @@ Namespace Db
 #Region " Property "
 
 		''' <summary>
-		''' ƒRƒlƒNƒVƒ‡ƒ“ƒIƒuƒWƒFƒNƒg
+		''' ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 		''' </summary>
 		''' <value></value>
 		''' <remarks>
@@ -134,7 +134,7 @@ Namespace Db
 		End Property
 
 		''' <summary>
-		''' ƒAƒ_ƒvƒ^ƒIƒuƒWƒFƒNƒg
+		''' ã‚¢ãƒ€ãƒ—ã‚¿ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -158,7 +158,7 @@ Namespace Db
 		End Property
 
 		''' <summary>
-		''' ƒwƒ‹ƒp[ƒNƒ‰ƒX‚ğ•Ô‚·
+		''' ãƒ˜ãƒ«ãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’è¿”ã™
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -229,7 +229,7 @@ Namespace Db
 		End Property
 
 		''' <summary>
-		''' ƒ[ƒ‹ƒoƒbƒN—L–³
+		''' ãƒ­ãƒ¼ãƒ«ãƒãƒƒã‚¯æœ‰ç„¡
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -254,13 +254,13 @@ Namespace Db
 #Region " Check "
 
 		''' <summary>
-		''' Ú‘±Šm”F‚Ìˆ×‚Éˆê“xÚ‘±‚µ‚Ä‚İ‚é
+		''' æ¥ç¶šç¢ºèªã®ç‚ºã«ä¸€åº¦æ¥ç¶šã—ã¦ã¿ã‚‹
 		''' </summary>
 		''' <remarks>
-		''' Ú‘±o—ˆ‚½‚Æ‚«‚ÍØ’f‚µ‚Ü‚·B
+		''' æ¥ç¶šå‡ºæ¥ãŸã¨ãã¯åˆ‡æ–­ã—ã¾ã™ã€‚
 		''' </remarks>
 		''' <exception cref="DbAccessException">
-		''' DBƒAƒNƒZƒX‚ÅƒGƒ‰[‚ª”­¶‚µ‚½
+		''' DBã‚¢ã‚¯ã‚»ã‚¹ã§ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
 		''' </exception>
 		Public Sub CheckConnect() Implements IDao.CheckConnect
 			Try
@@ -278,14 +278,14 @@ Namespace Db
 #Region " Create "
 
 		''' <summary>
-		''' w’è‚³‚ê‚½ƒ^ƒCƒv‚ÌDbCommandƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬‚·‚é
+		''' æŒ‡å®šã•ã‚ŒãŸã‚¿ã‚¤ãƒ—ã®DbCommandã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç”Ÿæˆã™ã‚‹
 		''' </summary>
-		''' <param name="sqlCommandType">ƒRƒ}ƒ“ƒhí•Ê</param>
-		''' <param name="commandText">Às‚·‚éSQL•¶–”‚ÍAƒXƒgƒAƒh–¼</param>
-		''' <param name="useConn">g—p‚·‚éƒRƒlƒNƒVƒ‡ƒ“</param>
-		''' <returns>w’è‚³‚ê‚½ƒ^ƒCƒv‚ÌƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+		''' <param name="sqlCommandType">ã‚³ãƒãƒ³ãƒ‰ç¨®åˆ¥</param>
+		''' <param name="commandText">å®Ÿè¡Œã™ã‚‹SQLæ–‡åˆã¯ã€ã‚¹ãƒˆã‚¢ãƒ‰å</param>
+		''' <param name="useConn">ä½¿ç”¨ã™ã‚‹ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³</param>
+		''' <returns>æŒ‡å®šã•ã‚ŒãŸã‚¿ã‚¤ãƒ—ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
 		''' <remarks>
-		''' ƒRƒ}ƒ“ƒhí•Ê‚ÉŠY“–‚·‚éISqlCommand‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬‚µ‚Ü‚·B<br/>
+		''' ã‚³ãƒãƒ³ãƒ‰ç¨®åˆ¥ã«è©²å½“ã™ã‚‹ISqlCommandã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç”Ÿæˆã—ã¾ã™ã€‚<br/>
 		''' <list>
 		''' <item><term>SelectText</term><description>ISelectCommand</description></item>
 		''' <item><term>Select4Update</term><description>ISelect4UpdateCommand</description></item>
@@ -297,14 +297,14 @@ Namespace Db
 		''' </list>
 		''' </remarks>
 		''' <exception cref="DbAccessException">
-		''' DBƒAƒNƒZƒX‚ÅƒGƒ‰[‚ª”­¶‚µ‚½
+		''' DBã‚¢ã‚¯ã‚»ã‚¹ã§ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
 		''' </exception>
 		Protected Friend Overridable Function createCommandWrapper(ByVal sqlCommandType As SQLCommandTypes, ByVal commandText As String, ByVal useConn As IDbConnection) As IDbCommandSql
 			Dim cmd As IDbCommand
 			Dim cmdWrapper As IDbCommandSql
 
 			Try
-				' ƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚Ì¶¬
+				' ã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ç”Ÿæˆ
 				cmd = _dbms.ProviderFactory.CreateCommand()
 
 				cmd.Connection = _conn
@@ -342,8 +342,8 @@ Namespace Db
 						cmdWrapper = Nothing
 				End Select
 
-				' –¢g—p‚É‚µ‚Ä‚Ü‚·B
-				'' ƒpƒ‰ƒ[ƒ^ƒLƒƒƒbƒVƒ…‚ğæ“¾
+				' æœªä½¿ç”¨ã«ã—ã¦ã¾ã™ã€‚
+				'' ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚’å–å¾—
 				'_sqlParameterCacheMgr.GetParameterSet(cmd)
 
 #If DEBUG Then
@@ -358,9 +358,9 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' SELECT•¶‚ğÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX‚ğ¶¬‚·‚éB
+		''' SELECTæ–‡ã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’ç”Ÿæˆã™ã‚‹ã€‚
 		''' </summary>
-		''' <param name="commandText">SELECT•¶•¶š—ñ</param>
+		''' <param name="commandText">SELECTæ–‡æ–‡å­—åˆ—</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Public Overridable Function CreateCommandSelect(ByVal commandText As String) As IDbCommandSelect Implements IDao.CreateCommandSelect
@@ -368,9 +368,9 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' SELECT•¶‚ğÀs‚µADataSet‚ğg‚Á‚ÄUPDATE‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX‚ğ¶¬‚·‚éB
+		''' SELECTæ–‡ã‚’å®Ÿè¡Œã—ã€DataSetã‚’ä½¿ã£ã¦UPDATEã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’ç”Ÿæˆã™ã‚‹ã€‚
 		''' </summary>
-		''' <param name="commandText">SELECT•¶•¶š—ñ</param>
+		''' <param name="commandText">SELECTæ–‡æ–‡å­—åˆ—</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Public Overridable Function CreateCommandSelect4Update(ByVal commandText As String) As IDbCommandSelect4Update Implements IDao.CreateCommandSelect4Update
@@ -378,9 +378,9 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' INSERT•¶‚ğÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX‚ğ¶¬‚·‚éB
+		''' INSERTæ–‡ã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’ç”Ÿæˆã™ã‚‹ã€‚
 		''' </summary>
-		''' <param name="commandText">INSERT•¶•¶š—ñ</param>
+		''' <param name="commandText">INSERTæ–‡æ–‡å­—åˆ—</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Public Overridable Function CreateCommandInsert(ByVal commandText As String) As IDbCommandInsert Implements IDao.CreateCommandInsert
@@ -388,9 +388,9 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' UPDATE•¶‚ğÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX‚ğ¶¬‚·‚éB
+		''' UPDATEæ–‡ã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’ç”Ÿæˆã™ã‚‹ã€‚
 		''' </summary>
-		''' <param name="commandText">UPDATE•¶•¶š—ñ</param>
+		''' <param name="commandText">UPDATEæ–‡æ–‡å­—åˆ—</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Public Overridable Function CreateCommandUpdate(ByVal commandText As String) As IDbCommandUpdate Implements IDao.CreateCommandUpdate
@@ -398,9 +398,9 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' DELETE•¶‚ğÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX‚ğ¶¬‚·‚éB
+		''' DELETEæ–‡ã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’ç”Ÿæˆã™ã‚‹ã€‚
 		''' </summary>
-		''' <param name="commandText">DELETE•¶•¶š—ñ</param>
+		''' <param name="commandText">DELETEæ–‡æ–‡å­—åˆ—</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Public Overridable Function CreateCommandDelete(ByVal commandText As String) As IDbCommandDelete Implements IDao.CreateCommandDelete
@@ -408,9 +408,9 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' StoredProcedure‚ğÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX‚ğ¶¬‚·‚éB
+		''' StoredProcedureã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’ç”Ÿæˆã™ã‚‹ã€‚
 		''' </summary>
-		''' <param name="commandText">ƒXƒgƒAƒh–¼</param>
+		''' <param name="commandText">ã‚¹ãƒˆã‚¢ãƒ‰å</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Public Overridable Function CreateCommandStoredProcedure(ByVal commandText As String) As IDbCommandStoredProcedure Implements IDao.CreateCommandStoredProcedure
@@ -418,9 +418,9 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' DDL‚ğÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX‚ğ¶¬‚·‚éB
+		''' DDLã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’ç”Ÿæˆã™ã‚‹ã€‚
 		''' </summary>
-		''' <param name="commandText">DDL•¶•¶š—ñ</param>
+		''' <param name="commandText">DDLæ–‡æ–‡å­—åˆ—</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Public Overridable Function CreateCommandDDL(ByVal commandText As String) As IDbCommandDDL Implements IDao.CreateCommandDDL
@@ -431,14 +431,14 @@ Namespace Db
 #Region " Execute "
 
 		''' <summary>
-		''' ƒNƒGƒŠ‚ğÀs‚µA‚»‚ÌƒNƒGƒŠ‚ª•Ô‚·Œ‹‰ÊƒZƒbƒg‚ÌÅ‰‚Ìs‚É‚ ‚éÅ‰‚Ì—ñ‚ğ•Ô‚µ‚Ü‚·B—]•ª‚È—ñ‚Ü‚½‚Ís‚Í–³‹‚³‚ê‚Ü‚·B
+		''' ã‚¯ã‚¨ãƒªã‚’å®Ÿè¡Œã—ã€ãã®ã‚¯ã‚¨ãƒªãŒè¿”ã™çµæœã‚»ãƒƒãƒˆã®æœ€åˆã®è¡Œã«ã‚ã‚‹æœ€åˆã®åˆ—ã‚’è¿”ã—ã¾ã™ã€‚ä½™åˆ†ãªåˆ—ã¾ãŸã¯è¡Œã¯ç„¡è¦–ã•ã‚Œã¾ã™ã€‚
 		''' </summary>
 		''' <param name="commandWrapper"></param>
-		''' <returns>Œ‹‰ÊƒZƒbƒg‚ÌÅ‰‚Ìs‚É‚ ‚éÅ‰‚Ì—ñB</returns>
+		''' <returns>çµæœã‚»ãƒƒãƒˆã®æœ€åˆã®è¡Œã«ã‚ã‚‹æœ€åˆã®åˆ—ã€‚</returns>
 		''' <remarks>
-		''' “–ƒƒ\ƒbƒh‚Í—\‚ßƒf[ƒ^ƒx[ƒX‚ğƒI[ƒvƒ“‚µ‚Ä‚¨‚­•K—v‚ª‚ ‚è‚Ü‚·‚ªA
-		''' ƒI[ƒvƒ“‚³‚ê‚Ä‚¢‚È‚¢‚Æ‚«‚ÍA©“®‚ÅƒI[ƒvƒ“‚µ‚ÄI—¹‚ÉƒNƒ[ƒY‚µ‚Ü‚·B<br/>
-		''' Ú×‚ÍA<seealso cref="IDbCommand.ExecuteScalar"/> ‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢B
+		''' å½“ãƒ¡ã‚½ãƒƒãƒ‰ã¯äºˆã‚ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‚’ã‚ªãƒ¼ãƒ—ãƒ³ã—ã¦ãŠãå¿…è¦ãŒã‚ã‚Šã¾ã™ãŒã€
+		''' ã‚ªãƒ¼ãƒ—ãƒ³ã•ã‚Œã¦ã„ãªã„ã¨ãã¯ã€è‡ªå‹•ã§ã‚ªãƒ¼ãƒ—ãƒ³ã—ã¦çµ‚äº†æ™‚ã«ã‚¯ãƒ­ãƒ¼ã‚ºã—ã¾ã™ã€‚<br/>
+		''' è©³ç´°ã¯ã€<seealso cref="IDbCommand.ExecuteScalar"/> ã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
 		''' </remarks>
 		Public Overridable Function ExecuteScalar(ByVal commandWrapper As IDbCommandSelect) As Object Implements IDao.ExecuteScalar
 			Dim cmd As IDbCommand = Nothing
@@ -462,7 +462,7 @@ Namespace Db
 
 				result = cmd.ExecuteScalar()
 
-				' –¢g—p‚É‚µ‚Ä‚Ü‚·B
+				' æœªä½¿ç”¨ã«ã—ã¦ã¾ã™ã€‚
 				'If Not commandWrapper.PreparedStatement Then
 				'    If Not _sqlParameterCacheMgr.Contains(cmd) Then
 				'        _sqlParameterCacheMgr.PutParameterSet(cmd)
@@ -485,14 +485,14 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' SELECT•¶‚ÌÀs
+		''' SELECTæ–‡ã®å®Ÿè¡Œ
 		''' </summary>
-		''' <param name="commandWrapper">SELECT•¶‚ğÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <returns>ƒf[ƒ^Œ”</returns>
+		''' <param name="commandWrapper">SELECTæ–‡ã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <returns>ãƒ‡ãƒ¼ã‚¿ä»¶æ•°</returns>
 		''' <remarks>
 		''' </remarks>
 		''' <exception cref="DbAccessException">
-		''' DBƒAƒNƒZƒX‚ÅƒGƒ‰[‚ª”­¶‚µ‚½
+		''' DBã‚¢ã‚¯ã‚»ã‚¹ã§ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
 		''' </exception>
 		Public Overridable Function Execute(ByVal commandWrapper As IDbCommandSelect) As Integer Implements IDao.Execute
 			Dim cmd As IDbCommand = Nothing
@@ -515,7 +515,7 @@ Namespace Db
 				result = fill(ds)
 				commandWrapper.ResultDataSet = ds
 
-				' –¢g—p‚É‚µ‚Ä‚Ü‚·B
+				' æœªä½¿ç”¨ã«ã—ã¦ã¾ã™ã€‚
 				'If Not commandWrapper.PreparedStatement Then
 				'    If Not _sqlParameterCacheMgr.Contains(cmd) Then
 				'        _sqlParameterCacheMgr.PutParameterSet(cmd)
@@ -535,10 +535,10 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' SELECT•¶‚ÌÀs(ExecuteReader)
+		''' SELECTæ–‡ã®å®Ÿè¡Œ(ExecuteReader)
 		''' </summary>
-		''' <typeparam name="T">ƒGƒ“ƒeƒBƒeƒB</typeparam>
-		''' <param name="commandWrapper">ƒRƒ}ƒ“ƒhƒ‰ƒbƒp[</param>
+		''' <typeparam name="T">ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£</typeparam>
+		''' <param name="commandWrapper">ã‚³ãƒãƒ³ãƒ‰ãƒ©ãƒƒãƒ‘ãƒ¼</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Public Function Execute(Of T)(commandWrapper As IDbCommandSelect) As ISQLStatementResult Implements IDao.Execute
@@ -566,7 +566,7 @@ Namespace Db
 				reader = cmd.ExecuteReader(commandWrapper.Behavior)
 				result = New ExecuteReaderResult(cmd, myOpen, reader)
 
-				' –¢g—p‚É‚µ‚Ä‚Ü‚·B
+				' æœªä½¿ç”¨ã«ã—ã¦ã¾ã™ã€‚
 				'If Not commandWrapper.PreparedStatement Then
 				'    If Not _sqlParameterCacheMgr.Contains(cmd) Then
 				'        _sqlParameterCacheMgr.PutParameterSet(cmd)
@@ -585,16 +585,16 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' SELECT•¶‚ÌÀs(Œã‚ÉAdapter‚ğ—˜—p‚µ‚½XV‚ğs‚¤ê‡)
+		''' SELECTæ–‡ã®å®Ÿè¡Œ(å¾Œã«Adapterã‚’åˆ©ç”¨ã—ãŸæ›´æ–°ã‚’è¡Œã†å ´åˆ)
 		''' </summary>
-		''' <param name="commandWrapper">SELECT•¶‚ğÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <returns>ƒf[ƒ^Œ”</returns>
+		''' <param name="commandWrapper">SELECTæ–‡ã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <returns>ãƒ‡ãƒ¼ã‚¿ä»¶æ•°</returns>
 		''' <remarks>
-		''' SELECTÀsŒã‚Ìƒf[ƒ^XV‚ğDataSet‚ğg‚Á‚ÄXV‚·‚éê‡‚ÍA‚±‚¿‚ç‚ğg—p‚µ‚Ä‚­‚¾‚³‚¢B<br/>
-		''' —\‚ßAdapter‚ÆCommand‚ğŠÖ˜A•t‚¯‚Ü‚·B
+		''' SELECTå®Ÿè¡Œå¾Œã®ãƒ‡ãƒ¼ã‚¿æ›´æ–°ã‚’DataSetã‚’ä½¿ã£ã¦æ›´æ–°ã™ã‚‹å ´åˆã¯ã€ã“ã¡ã‚‰ã‚’ä½¿ç”¨ã—ã¦ãã ã•ã„ã€‚<br/>
+		''' äºˆã‚Adapterã¨Commandã‚’é–¢é€£ä»˜ã‘ã¾ã™ã€‚
 		''' </remarks>
 		''' <exception cref="DbAccessException">
-		''' DBƒAƒNƒZƒX‚ÅƒGƒ‰[‚ª”­¶‚µ‚½
+		''' DBã‚¢ã‚¯ã‚»ã‚¹ã§ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
 		''' </exception>
 		Public Overridable Function Execute(ByVal commandWrapper As IDbCommandSelect4Update) As Integer Implements IDao.Execute
 			Dim cmd As IDbCommand = Nothing
@@ -619,7 +619,7 @@ Namespace Db
 				result = fill(ds, commandWrapper.Adapter)
 				commandWrapper.ResultDataSet = ds
 
-				' –¢g—p‚É‚µ‚Ä‚Ü‚·B
+				' æœªä½¿ç”¨ã«ã—ã¦ã¾ã™ã€‚
 				'If Not commandWrapper.PreparedStatement Then
 				'    If Not _sqlParameterCacheMgr.Contains(cmd) Then
 				'        _sqlParameterCacheMgr.PutParameterSet(cmd)
@@ -639,14 +639,14 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' INSERT,UPDATE,DELETE•¶‚ÌÀs
+		''' INSERT,UPDATE,DELETEæ–‡ã®å®Ÿè¡Œ
 		''' </summary>
-		''' <param name="commandWrapper">Às‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <returns>XVŒ”</returns>
+		''' <param name="commandWrapper">å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <returns>æ›´æ–°ä»¶æ•°</returns>
 		''' <remarks>
 		''' </remarks>
 		''' <exception cref="DbAccessException">
-		''' DBƒAƒNƒZƒX‚ÅƒGƒ‰[‚ª”­¶‚µ‚½
+		''' DBã‚¢ã‚¯ã‚»ã‚¹ã§ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
 		''' </exception>
 		Public Overridable Function ExecuteNonQuery(ByVal commandWrapper As IDbCommandSql) As Integer Implements IDao.ExecuteNonQuery
 			Dim result As Integer
@@ -662,14 +662,14 @@ Namespace Db
 
 				result = cmd.ExecuteNonQuery()
 
-				' –¢g—p‚É‚µ‚Ä‚Ü‚·B
+				' æœªä½¿ç”¨ã«ã—ã¦ã¾ã™ã€‚
 				'If Not commandWrapper.PreparedStatement Then
 				'    If Not _sqlParameterCacheMgr.Contains(cmd) Then
 				'        _sqlParameterCacheMgr.PutParameterSet(cmd)
 				'    End If
 				'End If
 
-				' –ß‚è’l‚ğæ“¾‚·‚é
+				' æˆ»ã‚Šå€¤ã‚’å–å¾—ã™ã‚‹
 				getResultOutParameter(commandWrapper)
 
 				Return result
@@ -685,21 +685,21 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' ƒf[ƒ^‚ğXV
+		''' ãƒ‡ãƒ¼ã‚¿ã‚’æ›´æ–°
 		''' </summary>
-		''' <param name="ds">ƒf[ƒ^ƒZƒbƒgƒIƒuƒWƒFƒNƒg</param>
-		''' <param name="adp">‘ÎÛ‚Æ‚È‚éƒAƒ_ƒvƒ^[</param>
-		''' <returns>DataSet ‚Å³í‚É’Ç‰Á‚Ü‚½‚ÍXV‚³‚ê‚½s”</returns>
+		''' <param name="ds">ãƒ‡ãƒ¼ã‚¿ã‚»ãƒƒãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</param>
+		''' <param name="adp">å¯¾è±¡ã¨ãªã‚‹ã‚¢ãƒ€ãƒ—ã‚¿ãƒ¼</param>
+		''' <returns>DataSet ã§æ­£å¸¸ã«è¿½åŠ ã¾ãŸã¯æ›´æ–°ã•ã‚ŒãŸè¡Œæ•°</returns>
 		''' <remarks>
-		''' DataAdapter‚ğg‚Á‚ÄDataSet“à‚Ì•ÏX‚³‚ê‚½î•ñ‚É‚æ‚èXV‚ğs‚¢‚Ü‚·B
+		''' DataAdapterã‚’ä½¿ã£ã¦DataSetå†…ã®å¤‰æ›´ã•ã‚ŒãŸæƒ…å ±ã«ã‚ˆã‚Šæ›´æ–°ã‚’è¡Œã„ã¾ã™ã€‚
 		''' </remarks>
 		''' <exception cref="DbAccessException">
-		''' DBƒAƒNƒZƒX‚ÅƒGƒ‰[‚ª”­¶‚µ‚½
+		''' DBã‚¢ã‚¯ã‚»ã‚¹ã§ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
 		''' </exception>
 		Public Function UpdateAdapter(ByVal ds As DataSet, ByVal adp As IDbDataAdapter) As Integer Implements IDao.UpdateAdapter
 			Dim result As Integer
 
-			' XVI
+			' æ›´æ–°ï¼
 			Try
 				result = adp.Update(ds)
 
@@ -712,7 +712,7 @@ Namespace Db
 #End Region
 
 		''' <summary>
-		''' •¶š—ñ‚ª‹ó‚Ì‚ÍNothing‚É•ÏŠ·
+		''' æ–‡å­—åˆ—ãŒç©ºã®æ™‚ã¯Nothingã«å¤‰æ›
 		''' </summary>
 		''' <param name="value"></param>
 		''' <returns></returns>
@@ -725,7 +725,7 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' ”’l‚ª0iƒfƒtƒHƒ‹ƒgj‚Ì‚ÍNothing‚É•ÏŠ·
+		''' æ•°å€¤ãŒ0ï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆï¼‰ã®æ™‚ã¯Nothingã«å¤‰æ›
 		''' </summary>
 		''' <param name="value"></param>
 		''' <returns></returns>
@@ -738,50 +738,50 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' ƒf[ƒ^‚ğæ“¾
+		''' ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
 		''' </summary>
-		''' <param name="ds">æ“¾‚µ‚½ƒf[ƒ^‚Ìƒf[ƒ^ƒZƒbƒg</param>
-		''' <returns>ƒf[ƒ^Œ”</returns>
+		''' <param name="ds">å–å¾—ã—ãŸãƒ‡ãƒ¼ã‚¿ã®ãƒ‡ãƒ¼ã‚¿ã‚»ãƒƒãƒˆ</param>
+		''' <returns>ãƒ‡ãƒ¼ã‚¿ä»¶æ•°</returns>
 		''' <remarks>
 		''' </remarks>
 		''' <exception cref="DbAccessException">
-		''' DBƒAƒNƒZƒX‚ÅƒGƒ‰[‚ª”­¶‚µ‚½
+		''' DBã‚¢ã‚¯ã‚»ã‚¹ã§ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
 		''' </exception>
 		Protected Friend Function fill(ByRef ds As DataSet) As Integer
 			Return fill(ds, "Results Data", Nothing)
 		End Function
 
 		''' <summary>
-		''' ƒf[ƒ^‚ğæ“¾
+		''' ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
 		''' </summary>
-		''' <param name="ds">æ“¾‚µ‚½ƒf[ƒ^‚Ìƒf[ƒ^ƒZƒbƒg</param>
-		''' <param name="adp">ƒAƒ_ƒvƒ^</param>
-		''' <returns>ƒf[ƒ^Œ”</returns>
+		''' <param name="ds">å–å¾—ã—ãŸãƒ‡ãƒ¼ã‚¿ã®ãƒ‡ãƒ¼ã‚¿ã‚»ãƒƒãƒˆ</param>
+		''' <param name="adp">ã‚¢ãƒ€ãƒ—ã‚¿</param>
+		''' <returns>ãƒ‡ãƒ¼ã‚¿ä»¶æ•°</returns>
 		''' <remarks>
-		''' ƒAƒ_ƒvƒ^‚ğg—p‚µ‚ÄXV‚·‚é‚Æ‚«‚Ég—p‚·‚éB
+		''' ã‚¢ãƒ€ãƒ—ã‚¿ã‚’ä½¿ç”¨ã—ã¦æ›´æ–°ã™ã‚‹ã¨ãã«ä½¿ç”¨ã™ã‚‹ã€‚
 		''' </remarks>
 		Protected Friend Function fill(ByRef ds As DataSet, ByVal adp As IDbDataAdapter) As Integer
 			Return fill(ds, "Results Data", adp)
 		End Function
 
 		''' <summary>
-		''' ƒf[ƒ^‚ğæ“¾
+		''' ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
 		''' </summary>
-		''' <param name="ds">æ“¾‚µ‚½ƒf[ƒ^‚Ìƒf[ƒ^ƒZƒbƒg</param>
-		''' <param name="DataSetName">ƒf[ƒ^ƒZƒbƒg‚Ì–¼Ì</param>
-		''' <param name="adapter">ƒAƒ_ƒvƒ^</param>
-		''' <returns>ƒf[ƒ^Œ”</returns>
+		''' <param name="ds">å–å¾—ã—ãŸãƒ‡ãƒ¼ã‚¿ã®ãƒ‡ãƒ¼ã‚¿ã‚»ãƒƒãƒˆ</param>
+		''' <param name="DataSetName">ãƒ‡ãƒ¼ã‚¿ã‚»ãƒƒãƒˆã®åç§°</param>
+		''' <param name="adapter">ã‚¢ãƒ€ãƒ—ã‚¿</param>
+		''' <returns>ãƒ‡ãƒ¼ã‚¿ä»¶æ•°</returns>
 		''' <remarks>
 		''' </remarks>
 		''' <exception cref="DbAccessException">
-		''' DBƒAƒNƒZƒX‚ÅƒGƒ‰[‚ª”­¶‚µ‚½
+		''' DBã‚¢ã‚¯ã‚»ã‚¹ã§ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
 		''' </exception>
 		Protected Friend Function fill(ByRef ds As DataSet, ByVal dataSetName As String, ByVal adapter As IDbDataAdapter) As Integer
-			' ƒf[ƒ^æ“¾
+			' ãƒ‡ãƒ¼ã‚¿å–å¾—
 			Try
 				Dim result As Integer
 
-				' ƒf[ƒ^ƒZƒbƒg‚ªƒCƒ“ƒXƒ^ƒ“ƒX‰»‚³‚ê‚Ä‚¢‚È‚¢‚ÍƒCƒ“ƒXƒ^ƒ“ƒX‰»
+				' ãƒ‡ãƒ¼ã‚¿ã‚»ãƒƒãƒˆãŒã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–ã•ã‚Œã¦ã„ãªã„æ™‚ã¯ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–
 				If ds Is Nothing Then
 					ds = New DataSet
 					ds.DataSetName = dataSetName
@@ -793,7 +793,7 @@ Namespace Db
 					result = adapter.Fill(ds)
 				End If
 
-				' –ß‚è’l‚ğæ“¾‚·‚é
+				' æˆ»ã‚Šå€¤ã‚’å–å¾—ã™ã‚‹
 				getResultOutParameter(CommandWrapper)
 
 				Return result
@@ -809,7 +809,7 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' –ß‚è’l‚ğæ“¾‚·‚é
+		''' æˆ»ã‚Šå€¤ã‚’å–å¾—ã™ã‚‹
 		''' </summary>
 		''' <param name="commandWrapper"></param>
 		''' <remarks></remarks>
@@ -818,12 +818,12 @@ Namespace Db
 
 			cmd = commandWrapper.Command
 
-			' –ß‚è’l‚ª–³‚¢‚ÍI—¹
+			' æˆ»ã‚Šå€¤ãŒç„¡ã„æ™‚ã¯çµ‚äº†
 			If Not commandWrapper.HaveOutParameter() Then
 				Exit Sub
 			End If
 
-			' –ß‚è’l‚ğæ“¾‚·‚é
+			' æˆ»ã‚Šå€¤ã‚’å–å¾—ã™ã‚‹
 			Dim ee As IEnumerator = cmd.Parameters.GetEnumerator
 			While ee.MoveNext
 				Dim param As IDbDataParameter
@@ -842,7 +842,7 @@ Namespace Db
 #Region " Transaction "
 
 		''' <summary>
-		''' ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“§Œäî•ñ
+		''' ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³åˆ¶å¾¡æƒ…å ±
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -857,7 +857,7 @@ Namespace Db
 		End Property
 
 		''' <summary>
-		''' DBÚ‘±
+		''' DBæ¥ç¶š
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>
@@ -871,7 +871,7 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“
+		''' ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>
@@ -884,7 +884,7 @@ Namespace Db
 			Return tx
 		End Function
 
-		'TODO: C³‚·‚é•K—v—L‚è
+		'TODO: ä¿®æ­£ã™ã‚‹å¿…è¦æœ‰ã‚Š
 		Protected Friend WriteOnly Property ConnectionJoin() As IDbConnection
 			Set(ByVal value As IDbConnection)
 				_conn = value
@@ -894,7 +894,7 @@ Namespace Db
 #End Region
 
 		''' <summary>
-		''' ƒRƒ}ƒ“ƒhÀs—š—ğ‚Ì’Ç‰Á
+		''' ã‚³ãƒãƒ³ãƒ‰å®Ÿè¡Œå±¥æ­´ã®è¿½åŠ 
 		''' </summary>
 		''' <param name="cmd"></param>
 		''' <remarks></remarks>

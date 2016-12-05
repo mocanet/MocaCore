@@ -8,21 +8,21 @@ Imports System.Reflection
 Namespace Serialization
 
 	''' <summary>
-	''' ƒIƒuƒWƒFƒNƒg‚ğXMLƒtƒ@ƒCƒ‹‚ÉƒVƒŠƒAƒ‹‰»–”‚Í‹tƒVƒŠƒAƒ‹‰»‚·‚é‚½‚ß‚Ì’ŠÛƒNƒ‰ƒX
+	''' ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’XMLãƒ•ã‚¡ã‚¤ãƒ«ã«ã‚·ãƒªã‚¢ãƒ«åŒ–åˆã¯é€†ã‚·ãƒªã‚¢ãƒ«åŒ–ã™ã‚‹ãŸã‚ã®æŠ½è±¡ã‚¯ãƒ©ã‚¹
 	''' </summary>
 	''' <remarks></remarks>
 	<SerializableAttribute()> _
 	Public MustInherit Class DataSerializer
 
-		''' <summary>‘ÎÛ‚Æ‚È‚éXMLƒtƒ@ƒCƒ‹ƒpƒX</summary>
+		''' <summary>å¯¾è±¡ã¨ãªã‚‹XMLãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹</summary>
 		Protected dataFilename As String
-		''' <summary>‘ÎÛ‚Æ‚È‚éXMLƒtƒ@ƒCƒ‹‚ÌXSDƒXƒL[ƒ}ƒtƒ@ƒCƒ‹ƒpƒX</summary>
+		''' <summary>å¯¾è±¡ã¨ãªã‚‹XMLãƒ•ã‚¡ã‚¤ãƒ«ã®XSDã‚¹ã‚­ãƒ¼ãƒãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹</summary>
 		Protected schemaFilename As String
 
 #Region " XmlIgnoreAttribute "
 
 		''' <summary>
-		''' ‘ÎÛ‚Æ‚È‚éXMLƒtƒ@ƒCƒ‹ƒpƒXƒvƒƒpƒeƒB
+		''' å¯¾è±¡ã¨ãªã‚‹XMLãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -38,7 +38,7 @@ Namespace Serialization
 		End Property
 
 		''' <summary>
-		''' ‘ÎÛ‚Æ‚È‚éXMLƒtƒ@ƒCƒ‹‚ÌXSDƒXƒL[ƒ}ƒtƒ@ƒCƒ‹ƒpƒXƒvƒƒpƒeƒB
+		''' å¯¾è±¡ã¨ãªã‚‹XMLãƒ•ã‚¡ã‚¤ãƒ«ã®XSDã‚¹ã‚­ãƒ¼ãƒãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -58,45 +58,45 @@ Namespace Serialization
 #Region " Deserialize "
 
 		''' <summary>
-		''' XMLƒtƒ@ƒCƒ‹‚ğ‹tƒVƒŠƒAƒ‹‰»‚µ‚Ü‚·
+		''' XMLãƒ•ã‚¡ã‚¤ãƒ«ã‚’é€†ã‚·ãƒªã‚¢ãƒ«åŒ–ã—ã¾ã™
 		''' </summary>
-		''' <typeparam name="T">ƒVƒŠƒAƒ‰ƒCƒY‘ÎÛ‚Ìƒ^ƒCƒv</typeparam>
+		''' <typeparam name="T">ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºå¯¾è±¡ã®ã‚¿ã‚¤ãƒ—</typeparam>
 		''' <returns></returns>
 		''' <remarks>
-		''' Šù’è‚Ì–¼‘O‹óŠÔ‚ÆƒXƒL[ƒ}ŒŸØ‚Í–³‚µ‚Å‹tƒVƒŠƒAƒ‹‰»‚·‚éB
+		''' æ—¢å®šã®åå‰ç©ºé–“ã¨ã‚¹ã‚­ãƒ¼ãƒæ¤œè¨¼ã¯ç„¡ã—ã§é€†ã‚·ãƒªã‚¢ãƒ«åŒ–ã™ã‚‹ã€‚
 		''' </remarks>
 		Public Function Deserialize(Of T)() As T
 			Return Deserialize(Of T)(String.Empty)
 		End Function
 
 		''' <summary>
-		''' XMLƒtƒ@ƒCƒ‹‚ğ‹tƒVƒŠƒAƒ‹‰»‚µ‚Ü‚·
+		''' XMLãƒ•ã‚¡ã‚¤ãƒ«ã‚’é€†ã‚·ãƒªã‚¢ãƒ«åŒ–ã—ã¾ã™
 		''' </summary>
-		''' <typeparam name="T">ƒVƒŠƒAƒ‰ƒCƒY‘ÎÛ‚Ìƒ^ƒCƒv</typeparam>
-		''' <param name="defaultNamespace">Šù’è‚Ì–¼‘O‹óŠÔ</param>
-		''' <returns>‹tƒVƒŠƒAƒ‰ƒCƒY‚³‚ê‚½ƒIƒuƒWƒFƒNƒg‚ÌƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+		''' <typeparam name="T">ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºå¯¾è±¡ã®ã‚¿ã‚¤ãƒ—</typeparam>
+		''' <param name="defaultNamespace">æ—¢å®šã®åå‰ç©ºé–“</param>
+		''' <returns>é€†ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºã•ã‚ŒãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
 		''' <remarks>
-		''' XsdFilename ƒvƒƒpƒeƒB‚É‚Ä XMLƒXƒL[ƒ}ƒtƒ@ƒCƒ‹iXSDj‚ªw’è‚³‚ê‚Ä‚¢‚é‚Æ‚«‚ÍAƒXƒL[ƒ}ŒŸØ‚ğÀ{‚µ‚Ü‚·B<br/>
-		''' ƒXƒL[ƒ}ŒŸØ‚Í–³‚µ‚Å‹tƒVƒŠƒAƒ‹‰»‚·‚éB
+		''' XsdFilename ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã«ã¦ XMLã‚¹ã‚­ãƒ¼ãƒãƒ•ã‚¡ã‚¤ãƒ«ï¼ˆXSDï¼‰ãŒæŒ‡å®šã•ã‚Œã¦ã„ã‚‹ã¨ãã¯ã€ã‚¹ã‚­ãƒ¼ãƒæ¤œè¨¼ã‚’å®Ÿæ–½ã—ã¾ã™ã€‚<br/>
+		''' ã‚¹ã‚­ãƒ¼ãƒæ¤œè¨¼ã¯ç„¡ã—ã§é€†ã‚·ãƒªã‚¢ãƒ«åŒ–ã™ã‚‹ã€‚
 		''' </remarks>
-		''' <exception cref="ArgumentNullException">XmlFilename ƒvƒƒpƒeƒB‚ªw’è‚³‚ê‚Ä‚¢‚È‚¢‚Æ‚«</exception>
-		''' <exception cref="System.Xml.Schema.XmlSchemaValidationException">XMLƒXƒL[ƒ}ŒŸØ‚ÅƒGƒ‰[‚ª‚ ‚Á‚½‚Æ‚«</exception>
+		''' <exception cref="ArgumentNullException">XmlFilename ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ãŒæŒ‡å®šã•ã‚Œã¦ã„ãªã„ã¨ã</exception>
+		''' <exception cref="System.Xml.Schema.XmlSchemaValidationException">XMLã‚¹ã‚­ãƒ¼ãƒæ¤œè¨¼ã§ã‚¨ãƒ©ãƒ¼ãŒã‚ã£ãŸã¨ã</exception>
 		Public Function Deserialize(Of T)(ByVal defaultNamespace As String) As T
 			Return Deserialize(Of T)(defaultNamespace, False)
 		End Function
 
 		''' <summary>
-		''' XMLƒtƒ@ƒCƒ‹‚ğ‹tƒVƒŠƒAƒ‹‰»‚µ‚Ü‚·
+		''' XMLãƒ•ã‚¡ã‚¤ãƒ«ã‚’é€†ã‚·ãƒªã‚¢ãƒ«åŒ–ã—ã¾ã™
 		''' </summary>
-		''' <typeparam name="T">ƒVƒŠƒAƒ‰ƒCƒY‘ÎÛ‚Ìƒ^ƒCƒv</typeparam>
-		''' <param name="defaultNamespace">Šù’è‚Ì–¼‘O‹óŠÔ</param>
-		''' <param name="varidate">ƒXƒL[ƒ}ŒŸØ‚Ì—L–³</param>
-		''' <returns>‹tƒVƒŠƒAƒ‰ƒCƒY‚³‚ê‚½ƒIƒuƒWƒFƒNƒg‚ÌƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+		''' <typeparam name="T">ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºå¯¾è±¡ã®ã‚¿ã‚¤ãƒ—</typeparam>
+		''' <param name="defaultNamespace">æ—¢å®šã®åå‰ç©ºé–“</param>
+		''' <param name="varidate">ã‚¹ã‚­ãƒ¼ãƒæ¤œè¨¼ã®æœ‰ç„¡</param>
+		''' <returns>é€†ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºã•ã‚ŒãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
 		''' <remarks>
-		''' XsdFilename ƒvƒƒpƒeƒB‚É‚Ä XMLƒXƒL[ƒ}ƒtƒ@ƒCƒ‹iXSDj‚ªw’è‚³‚ê‚Ä‚¢‚é‚Æ‚«‚ÍAƒXƒL[ƒ}ŒŸØ‚ğÀ{‚µ‚Ü‚·B<br/>
+		''' XsdFilename ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã«ã¦ XMLã‚¹ã‚­ãƒ¼ãƒãƒ•ã‚¡ã‚¤ãƒ«ï¼ˆXSDï¼‰ãŒæŒ‡å®šã•ã‚Œã¦ã„ã‚‹ã¨ãã¯ã€ã‚¹ã‚­ãƒ¼ãƒæ¤œè¨¼ã‚’å®Ÿæ–½ã—ã¾ã™ã€‚<br/>
 		''' </remarks>
-		''' <exception cref="ArgumentNullException">XmlFilename ƒvƒƒpƒeƒB‚ªw’è‚³‚ê‚Ä‚¢‚È‚¢‚Æ‚«</exception>
-		''' <exception cref="System.Xml.Schema.XmlSchemaValidationException">XMLƒXƒL[ƒ}ŒŸØ‚ÅƒGƒ‰[‚ª‚ ‚Á‚½‚Æ‚«</exception>
+		''' <exception cref="ArgumentNullException">XmlFilename ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ãŒæŒ‡å®šã•ã‚Œã¦ã„ãªã„ã¨ã</exception>
+		''' <exception cref="System.Xml.Schema.XmlSchemaValidationException">XMLã‚¹ã‚­ãƒ¼ãƒæ¤œè¨¼ã§ã‚¨ãƒ©ãƒ¼ãŒã‚ã£ãŸã¨ã</exception>
 		Public Function Deserialize(Of T)(ByVal defaultNamespace As String, ByVal varidate As Boolean) As T
 			Dim serializer As XmlSerializer
 			Dim xml As T
@@ -105,19 +105,19 @@ Namespace Serialization
 				Throw New ArgumentNullException("XmlFilename", "The XML file name is not specified.")
 			End If
 
-			' ƒXƒL[ƒ}ŒŸØ
+			' ã‚¹ã‚­ãƒ¼ãƒæ¤œè¨¼
 			If varidate Then
 				VaridateSchema()
 			End If
 
-			' XmlSerializerƒIƒuƒWƒFƒNƒg‚ğì¬(‘‚«‚ŞƒIƒuƒWƒFƒNƒg‚ÌŒ^‚ğw’è‚·‚é)
+			' XmlSerializerã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œæˆ(æ›¸ãè¾¼ã‚€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å‹ã‚’æŒ‡å®šã™ã‚‹)
 			If defaultNamespace.Length.Equals(0) Then
 				serializer = New XmlSerializer(GetType(T))
 			Else
 				serializer = New XmlSerializer(GetType(T), defaultNamespace)
 			End If
 
-			' XML“Ç‚İ‚İ
+			' XMLèª­ã¿è¾¼ã¿
 			Using fs As FileStream = New FileStream(dataFilename, System.IO.FileMode.Open)
 				Dim reader As New XmlTextReader(fs)
 				xml = DirectCast(serializer.Deserialize(reader), T)
@@ -127,11 +127,11 @@ Namespace Serialization
 		End Function
 
 		''' <summary>
-		''' XMLƒtƒ@ƒCƒ‹‚ÌƒXƒL[ƒ}ŒŸØ‚ğ‚µ‚Ü‚·
+		''' XMLãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚¹ã‚­ãƒ¼ãƒæ¤œè¨¼ã‚’ã—ã¾ã™
 		''' </summary>
 		''' <remarks></remarks>
-		''' <exception cref="ArgumentNullException">XsdFilename ƒvƒƒpƒeƒB‚ªw’è‚³‚ê‚Ä‚¢‚È‚¢‚Æ‚«</exception>
-		''' <exception cref="System.Xml.Schema.XmlSchemaValidationException">XMLƒXƒL[ƒ}ŒŸØ‚ÅƒGƒ‰[‚ª‚ ‚Á‚½‚Æ‚«</exception>
+		''' <exception cref="ArgumentNullException">XsdFilename ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ãŒæŒ‡å®šã•ã‚Œã¦ã„ãªã„ã¨ã</exception>
+		''' <exception cref="System.Xml.Schema.XmlSchemaValidationException">XMLã‚¹ã‚­ãƒ¼ãƒæ¤œè¨¼ã§ã‚¨ãƒ©ãƒ¼ãŒã‚ã£ãŸã¨ã</exception>
 		Public Sub VaridateSchema()
 			If schemaFilename.Length.Equals(0) Then
 				Throw New ArgumentNullException("XsdFilename", "The XSD file name is not specified.")
@@ -164,21 +164,21 @@ Namespace Serialization
 #Region " Serialize "
 
 		''' <summary>
-		''' XMLƒtƒ@ƒCƒ‹‚ÖƒVƒŠƒAƒ‹‰»‚µ‚Ü‚·
+		''' XMLãƒ•ã‚¡ã‚¤ãƒ«ã¸ã‚·ãƒªã‚¢ãƒ«åŒ–ã—ã¾ã™
 		''' </summary>
-		''' <typeparam name="T">ƒVƒŠƒAƒ‰ƒCƒY‘ÎÛ‚Ìƒ^ƒCƒv</typeparam>
+		''' <typeparam name="T">ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºå¯¾è±¡ã®ã‚¿ã‚¤ãƒ—</typeparam>
 		''' <remarks></remarks>
 		Public Sub Serialize(Of T)()
 			Serialize(Of T)(String.Empty)
 		End Sub
 
 		''' <summary>
-		''' XMLƒtƒ@ƒCƒ‹‚ÖƒVƒŠƒAƒ‹‰»‚µ‚Ü‚·
+		''' XMLãƒ•ã‚¡ã‚¤ãƒ«ã¸ã‚·ãƒªã‚¢ãƒ«åŒ–ã—ã¾ã™
 		''' </summary>
-		''' <typeparam name="T">ƒVƒŠƒAƒ‰ƒCƒY‘ÎÛ‚Ìƒ^ƒCƒv</typeparam>
-		''' <param name="defaultNamespace">Šù’è‚Ì–¼‘O‹óŠÔ</param>
+		''' <typeparam name="T">ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºå¯¾è±¡ã®ã‚¿ã‚¤ãƒ—</typeparam>
+		''' <param name="defaultNamespace">æ—¢å®šã®åå‰ç©ºé–“</param>
 		''' <remarks></remarks>
-		''' <exception cref="ArgumentNullException">XmlFilename ƒvƒƒpƒeƒB‚ªw’è‚³‚ê‚Ä‚¢‚È‚¢‚Æ‚«</exception>
+		''' <exception cref="ArgumentNullException">XmlFilename ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ãŒæŒ‡å®šã•ã‚Œã¦ã„ãªã„ã¨ã</exception>
 		Public Sub Serialize(Of T)(ByVal defaultNamespace As String)
 			Dim serializer As XmlSerializer
 
@@ -186,14 +186,14 @@ Namespace Serialization
 				Throw New ArgumentNullException("XmlFilename", "The XML file name is not specified.")
 			End If
 
-			' XmlSerializerƒIƒuƒWƒFƒNƒg‚ğì¬(‘‚«‚ŞƒIƒuƒWƒFƒNƒg‚ÌŒ^‚ğw’è‚·‚é)
+			' XmlSerializerã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œæˆ(æ›¸ãè¾¼ã‚€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å‹ã‚’æŒ‡å®šã™ã‚‹)
 			If defaultNamespace.Length.Equals(0) Then
 				serializer = New XmlSerializer(GetType(T))
 			Else
 				serializer = New XmlSerializer(GetType(T), defaultNamespace)
 			End If
 
-			' XML‘‚«‚İ
+			' XMLæ›¸ãè¾¼ã¿
 			Using fs As FileStream = New FileStream(dataFilename, FileMode.Create)
 				serializer.Serialize(fs, Me)
 			End Using

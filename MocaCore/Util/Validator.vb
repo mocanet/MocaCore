@@ -8,42 +8,42 @@ Namespace Util
 #Region " ValidateTypes "
 
 	''' <summary>
-	''' ŒŸØí•Ê‹y‚ÑŒŸØŒ‹‰Ê
+	''' æ¤œè¨¼ç¨®åˆ¥åŠã³æ¤œè¨¼çµæœ
 	''' </summary>
 	''' <remarks></remarks>
 	<Flags()> _
 	Public Enum ValidateTypes As Integer
-		''' <summary>u–³‚µv–”‚Íu³ív</summary>
+		''' <summary>ã€Œç„¡ã—ã€åˆã¯ã€Œæ­£å¸¸ã€</summary>
 		None = 0
-		''' <summary>•K{</summary>
+		''' <summary>å¿…é ˆ</summary>
 		Required = 1
-		''' <summary>”š‚Ì‚İ</summary>
+		''' <summary>æ•°å­—ã®ã¿</summary>
 		Numeric = Required * 2
-		''' <summary>”’l‚Ì‚İ</summary>
+		''' <summary>æ•°å€¤ã®ã¿</summary>
 		[Decimal] = Numeric * 2
-		''' <summary>•„†•t”’l‚Ì‚İ</summary>
+		''' <summary>ç¬¦å·ä»˜æ•°å€¤ã®ã¿</summary>
 		WithNumericSigned = [Decimal] * 2
-		''' <summary>§</summary>
+		''' <summary>ã€’</summary>
 		Zip = WithNumericSigned * 2
-		''' <summary>“d˜b”Ô†</summary>
+		''' <summary>é›»è©±ç•ªå·</summary>
 		Tel = Zip * 2
-		''' <summary>•¶š—ñ‚É‘SŠp•¶š‚ªŠÜ‚Ü‚ê‚Ä‚¢‚é‚©</summary>
+		''' <summary>æ–‡å­—åˆ—ã«å…¨è§’æ–‡å­—ãŒå«ã¾ã‚Œã¦ã„ã‚‹ã‹</summary>
 		InJis = Tel * 2
-		''' <summary>Å¬Œ…”</summary>
+		''' <summary>æœ€å°æ¡æ•°</summary>
 		LenghtMin = InJis * 2
-		''' <summary>Å‘åŒ…”</summary>
+		''' <summary>æœ€å¤§æ¡æ•°</summary>
 		LenghtMax = LenghtMin * 2
-		''' <summary>Å¬Œ…”i”¼Šp 1 ƒoƒCƒgA‘SŠp 2 ƒoƒCƒg‚Æ‚µ‚Äj</summary>
+		''' <summary>æœ€å°æ¡æ•°ï¼ˆåŠè§’ 1 ãƒã‚¤ãƒˆã€å…¨è§’ 2 ãƒã‚¤ãƒˆã¨ã—ã¦ï¼‰</summary>
 		LenghtMinB = LenghtMax * 2
-		''' <summary>Å‘åŒ…”i”¼Šp 1 ƒoƒCƒgA‘SŠp 2 ƒoƒCƒg‚Æ‚µ‚Äj</summary>
+		''' <summary>æœ€å¤§æ¡æ•°ï¼ˆåŠè§’ 1 ãƒã‚¤ãƒˆã€å…¨è§’ 2 ãƒã‚¤ãƒˆã¨ã—ã¦ï¼‰</summary>
 		LenghtMaxB = LenghtMinB * 2
-		''' <summary>“ú•t</summary>
+		''' <summary>æ—¥ä»˜</summary>
 		DateFormat = LenghtMaxB * 2
-		''' <summary>Å¬”’l</summary>
+		''' <summary>æœ€å°æ•°å€¤</summary>
 		Minimum = DateFormat * 2
-		''' <summary>Å‘å”’l</summary>
+		''' <summary>æœ€å¤§æ•°å€¤</summary>
 		Maximum = Minimum * 2
-		''' <summary>”¼Šp‰p”</summary>
+		''' <summary>åŠè§’è‹±æ•°</summary>
 		HalfWidthAlphanumeric = Maximum * 2
 		''' <summary>Mail</summary>
 		Mail = HalfWidthAlphanumeric * 2
@@ -54,7 +54,7 @@ Namespace Util
 #End Region
 
 	''' <summary>
-	''' ’l‚ÌŒŸØƒNƒ‰ƒX
+	''' å€¤ã®æ¤œè¨¼ã‚¯ãƒ©ã‚¹
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class Validator
@@ -62,16 +62,16 @@ Namespace Util
 #Region " Methods "
 
 		''' <summary>
-		''' ŒŸØÀs
+		''' æ¤œè¨¼å®Ÿè¡Œ
 		''' </summary>
-		''' <param name="value">ŒŸØ‘ÎÛ‚Ì’l</param>
-		''' <param name="validates">ŒŸØ“à—eiOR ‚É‚Ä•¡”“¯w’è‰Â”\j</param>
-		''' <param name="min">ŒŸØ“à—e‚É‚ÄÅ¬’l‚ª•K—v‚È‚Æ‚«w’è‚·‚é</param>
-		''' <param name="max">ŒŸØ“à—e‚É‚ÄÅ‘å’l‚ª•K—v‚È‚Æ‚«w’è‚·‚é</param>
-		''' <returns>ŒŸØŒ‹‰Êi•¡”ƒGƒ‰[‚ª”­¶‚µ‚½‚Æ‚«‚Í•¡”w’è‚³‚ê‚éj</returns>
+		''' <param name="value">æ¤œè¨¼å¯¾è±¡ã®å€¤</param>
+		''' <param name="validates">æ¤œè¨¼å†…å®¹ï¼ˆOR ã«ã¦è¤‡æ•°åŒæ™‚æŒ‡å®šå¯èƒ½ï¼‰</param>
+		''' <param name="min">æ¤œè¨¼å†…å®¹ã«ã¦æœ€å°å€¤ãŒå¿…è¦ãªã¨ãæŒ‡å®šã™ã‚‹</param>
+		''' <param name="max">æ¤œè¨¼å†…å®¹ã«ã¦æœ€å¤§å€¤ãŒå¿…è¦ãªã¨ãæŒ‡å®šã™ã‚‹</param>
+		''' <returns>æ¤œè¨¼çµæœï¼ˆè¤‡æ•°ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸã¨ãã¯è¤‡æ•°æŒ‡å®šã•ã‚Œã‚‹ï¼‰</returns>
 		''' <remarks>
-		''' •K{ƒ`ƒFƒbƒN‚ªw’è‚³‚ê‚Ä‚¢‚ÄƒGƒ‰[‚Æ‚È‚Á‚½‚Æ‚«‚ÍA‘¼‚Ìƒ`ƒFƒbƒN‚ªw’è‚³‚ê‚Ä‚¢‚½‚Æ‚µ‚Ä‚àƒ`ƒFƒbƒN‚µ‚Ü‚¹‚ñB
-		''' i•K{ƒGƒ‰[‚¾‚¯‚ğ•Ô‚µ‚Ü‚·Bj
+		''' å¿…é ˆãƒã‚§ãƒƒã‚¯ãŒæŒ‡å®šã•ã‚Œã¦ã„ã¦ã‚¨ãƒ©ãƒ¼ã¨ãªã£ãŸã¨ãã¯ã€ä»–ã®ãƒã‚§ãƒƒã‚¯ãŒæŒ‡å®šã•ã‚Œã¦ã„ãŸã¨ã—ã¦ã‚‚ãƒã‚§ãƒƒã‚¯ã—ã¾ã›ã‚“ã€‚
+		''' ï¼ˆå¿…é ˆã‚¨ãƒ©ãƒ¼ã ã‘ã‚’è¿”ã—ã¾ã™ã€‚ï¼‰
 		''' </remarks>
 		Public Function Verify(ByVal value As String, ByVal validates As ValidateTypes, Optional ByVal min As Object = Nothing, Optional ByVal max As Object = Nothing) As ValidateTypes
 			Dim val As String
@@ -88,22 +88,22 @@ Namespace Util
 			End If
 			rc = ValidateTypes.None
 
-			' •K{
+			' å¿…é ˆ
 			If _IsValidateType(validates, ValidateTypes.Required) Then
 				If val.Length = 0 Then
 					rc = rc Or ValidateTypes.Required
 				End If
 			End If
-			' •K{ƒ`ƒFƒbƒN‚ÅƒGƒ‰[‚Ì‚Æ‚«‚Í”²‚¯‚é
+			' å¿…é ˆãƒã‚§ãƒƒã‚¯ã§ã‚¨ãƒ©ãƒ¼ã®ã¨ãã¯æŠœã‘ã‚‹
 			If rc <> ValidateTypes.None Then
 				Return rc
 			End If
-			' –¢“ü—Í‚Í‚±‚±‚Ü‚Å
+			' æœªå…¥åŠ›æ™‚ã¯ã“ã“ã¾ã§
 			If val.Length = 0 Then
 				Return rc
 			End If
 
-			' ”š‚Ì‚İ, •„†•t”’l‚Ì‚İ
+			' æ•°å­—ã®ã¿, ç¬¦å·ä»˜æ•°å€¤ã®ã¿
 			If _IsValidateType(validates, ValidateTypes.Numeric) Then
 				If _IsValidateType(validates, ValidateTypes.WithNumericSigned) Then
 					If Not Regex.IsMatch(val, "^(?![-+]0+$)(?:|-?[0-9]+)*(?:|[0-9])?$") Then
@@ -116,7 +116,7 @@ Namespace Util
 				End If
 			End If
 
-			' ”’l‚Ì‚İ, •„†•t”’l‚Ì‚İ
+			' æ•°å€¤ã®ã¿, ç¬¦å·ä»˜æ•°å€¤ã®ã¿
 			If _IsValidateType(validates, ValidateTypes.Decimal) Then
 				If _IsValidateType(validates, ValidateTypes.WithNumericSigned) Then
 					If Not Regex.IsMatch(val, "^(?![-+]0+$)(?:|-?[0-9]+)*(?:|[0-9]*\.[0-9]+)$") Then	' (?![-+]0+$)[-+]?([1-9][0-9]*)?[0-9](\.[0-9]*[1-9])?
@@ -129,29 +129,29 @@ Namespace Util
 				End If
 			End If
 
-			' §
+			' ã€’
 			If _IsValidateType(validates, ValidateTypes.Zip) Then
 				If Not Regex.IsMatch(val, "^([0-9]{3}\-?[0-9]{4})?$") Then
 					rc = rc Or ValidateTypes.Zip
 				End If
 			End If
 
-			' “d˜b”Ô†
+			' é›»è©±ç•ªå·
 			If _IsValidateType(validates, ValidateTypes.Tel) Then
 				If Not Regex.IsMatch(val, "^([0-9]{1,5}[\-]?[0-9]{1,4}[\-]?[0-9]{3,4})?$") Then
 					rc = rc Or ValidateTypes.Tel
 				End If
 			End If
 
-			' •¶š—ñ‚É‘SŠp•¶š‚ªŠÜ‚Ü‚ê‚Ä‚¢‚é‚©’²‚×‚é
+			' æ–‡å­—åˆ—ã«å…¨è§’æ–‡å­—ãŒå«ã¾ã‚Œã¦ã„ã‚‹ã‹èª¿ã¹ã‚‹
 			If _IsValidateType(validates, ValidateTypes.InJis) Then
-				' ‘SŠp•¶š‚ªŠÜ‚Ü‚ê‚Ä‚¢‚éê‡‚ÍTrueA‚»‚¤‚Å‚È‚¢ê‡False
+				' å…¨è§’æ–‡å­—ãŒå«ã¾ã‚Œã¦ã„ã‚‹å ´åˆã¯Trueã€ãã†ã§ãªã„å ´åˆFalse
 				If Len(value) <> System.Text.Encoding.GetEncoding("Shift_JIS").GetByteCount(value) Then
 					rc = rc Or ValidateTypes.InJis
 				End If
 			End If
 
-			' ”¼Šp‰p”
+			' åŠè§’è‹±æ•°
 			If _IsValidateType(validates, ValidateTypes.HalfWidthAlphanumeric) Then
 				If Not Regex.IsMatch(val, "^[a-zA-Z0-9]+$") Then
 					rc = rc Or ValidateTypes.HalfWidthAlphanumeric
@@ -172,35 +172,35 @@ Namespace Util
 				End If
 			End If
 
-			' Å¬Œ…”
+			' æœ€å°æ¡æ•°
 			If _IsValidateType(validates, ValidateTypes.LenghtMin) And min IsNot Nothing Then
 				If val.Length < CInt(min) Then
 					rc = rc Or ValidateTypes.LenghtMin
 				End If
 			End If
 
-			' Å‘åŒ…”
+			' æœ€å¤§æ¡æ•°
 			If _IsValidateType(validates, ValidateTypes.LenghtMax) And max IsNot Nothing Then
 				If val.Length > CInt(max) Then
 					rc = rc Or ValidateTypes.LenghtMax
 				End If
 			End If
 
-			' Å¬Œ…”i”¼Šp 1 ƒoƒCƒgA‘SŠp 2 ƒoƒCƒg‚Æ‚µ‚Äj
+			' æœ€å°æ¡æ•°ï¼ˆåŠè§’ 1 ãƒã‚¤ãƒˆã€å…¨è§’ 2 ãƒã‚¤ãƒˆã¨ã—ã¦ï¼‰
 			If _IsValidateType(validates, ValidateTypes.LenghtMinB) And min IsNot Nothing Then
 				If VBUtil.LenB(val) < CInt(min) Then
 					rc = rc Or ValidateTypes.LenghtMinB
 				End If
 			End If
 
-			' Å‘åŒ…”i”¼Šp 1 ƒoƒCƒgA‘SŠp 2 ƒoƒCƒg‚Æ‚µ‚Äj
+			' æœ€å¤§æ¡æ•°ï¼ˆåŠè§’ 1 ãƒã‚¤ãƒˆã€å…¨è§’ 2 ãƒã‚¤ãƒˆã¨ã—ã¦ï¼‰
 			If _IsValidateType(validates, ValidateTypes.LenghtMaxB) And max IsNot Nothing Then
 				If VBUtil.LenB(val) > CInt(max) Then
 					rc = rc Or ValidateTypes.LenghtMaxB
 				End If
 			End If
 
-			' “ú•t
+			' æ—¥ä»˜
 			Dim dateVal As Date
 			If _IsValidateType(validates, ValidateTypes.DateFormat) Then
 				If Not Date.TryParse(value, dateVal) Then
@@ -208,7 +208,7 @@ Namespace Util
 				End If
 			End If
 
-			' ”’lA“ú•tˆÈŠO‚Í‚±‚±‚Ü‚Å
+			' æ•°å€¤ã€æ—¥ä»˜ä»¥å¤–ã¯ã“ã“ã¾ã§
 			If Not _IsValidateType(validates, ValidateTypes.Numeric) _
 			And Not _IsValidateType(validates, ValidateTypes.WithNumericSigned) _
 			And Not _IsValidateType(validates, ValidateTypes.Decimal) _
@@ -216,7 +216,7 @@ Namespace Util
 				Return rc
 			End If
 
-			' ƒGƒ‰[‚É‚È‚Á‚Ä‚é‚à‚±‚±‚Ü‚Å
+			' ã‚¨ãƒ©ãƒ¼ã«ãªã£ã¦ã‚‹æ™‚ã‚‚ã“ã“ã¾ã§
 			If _IsValidateType(rc, ValidateTypes.Numeric) _
 			OrElse _IsValidateType(rc, ValidateTypes.WithNumericSigned) _
 			OrElse _IsValidateType(rc, ValidateTypes.Decimal) _
@@ -224,7 +224,7 @@ Namespace Util
 				Return rc
 			End If
 
-			' Å¬”’l
+			' æœ€å°æ•°å€¤
 			If _IsValidateType(validates, ValidateTypes.Minimum) And min IsNot Nothing Then
 				If _IsValidateType(validates, ValidateTypes.DateFormat) Then
 					If CDate(val) < CDate(min) Then
@@ -237,7 +237,7 @@ Namespace Util
 				End If
 			End If
 
-			' Å‘å”’l
+			' æœ€å¤§æ•°å€¤
 			If _IsValidateType(validates, ValidateTypes.Maximum) And max IsNot Nothing Then
 				If _IsValidateType(validates, ValidateTypes.DateFormat) Then
 					If CDate(val) > CDate(max) Then
@@ -254,33 +254,33 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' ŒŸØí•Ê‚Ìƒ`ƒFƒbƒN
+		''' æ¤œè¨¼ç¨®åˆ¥ã®ãƒã‚§ãƒƒã‚¯
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒN‘ÎÛ</param>
-		''' <param name="targetType">ŠÜ‚Ü‚ê‚Ä‚¢‚é‚©ƒ`ƒFƒbƒN‚·‚éŒŸØí•Ê</param>
-		''' <returns>True: ŠÜ‚Ü‚ê‚Ä‚¢‚éAFalse: ŠÜ‚Ü‚ê‚Ä‚¢‚È‚¢</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯å¯¾è±¡</param>
+		''' <param name="targetType">å«ã¾ã‚Œã¦ã„ã‚‹ã‹ãƒã‚§ãƒƒã‚¯ã™ã‚‹æ¤œè¨¼ç¨®åˆ¥</param>
+		''' <returns>True: å«ã¾ã‚Œã¦ã„ã‚‹ã€False: å«ã¾ã‚Œã¦ã„ãªã„</returns>
 		''' <remarks></remarks>
 		Private Function _IsValidateType(ByVal validates As ValidateTypes, ByVal targetType As ValidateTypes) As Boolean
 			Return ((validates And targetType) = targetType)
 		End Function
 
 		''' <summary>
-		''' ŒŸØí•Ê‚Ìƒ`ƒFƒbƒN
+		''' æ¤œè¨¼ç¨®åˆ¥ã®ãƒã‚§ãƒƒã‚¯
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒN‘ÎÛ</param>
-		''' <param name="targetType">ŠÜ‚Ü‚ê‚Ä‚¢‚é‚©ƒ`ƒFƒbƒN‚·‚éŒŸØí•Ê</param>
-		''' <returns>True: ŠÜ‚Ü‚ê‚Ä‚¢‚éAFalse: ŠÜ‚Ü‚ê‚Ä‚¢‚È‚¢</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯å¯¾è±¡</param>
+		''' <param name="targetType">å«ã¾ã‚Œã¦ã„ã‚‹ã‹ãƒã‚§ãƒƒã‚¯ã™ã‚‹æ¤œè¨¼ç¨®åˆ¥</param>
+		''' <returns>True: å«ã¾ã‚Œã¦ã„ã‚‹ã€False: å«ã¾ã‚Œã¦ã„ãªã„</returns>
 		''' <remarks></remarks>
-		<Obsolete("ŒÂ•Ê‚ÌIsValidXxxx‚ğg—p‚µ‚Ä‚­‚¾‚³‚¢B")> _
+		<Obsolete("å€‹åˆ¥ã®IsValidXxxxã‚’ä½¿ç”¨ã—ã¦ãã ã•ã„ã€‚")> _
 		Public Function IsValidateType(ByVal validates As ValidateTypes, ByVal targetType As ValidateTypes) As Boolean
 			Return ((validates And targetType) = targetType)
 		End Function
 
 		''' <summary>
-		''' •K{ƒGƒ‰[—L–³
+		''' å¿…é ˆã‚¨ãƒ©ãƒ¼æœ‰ç„¡
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒNŒ‹‰Ê</param>
-		''' <returns>True:³íAFalse:ƒGƒ‰[</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯çµæœ</param>
+		''' <returns>True:æ­£å¸¸ã€False:ã‚¨ãƒ©ãƒ¼</returns>
 		''' <remarks></remarks>
 		Public Function IsValidRequired(ByVal validates As ValidateTypes) As Boolean
 			Dim chk As ValidateTypes = ValidateTypes.Required
@@ -288,10 +288,10 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' ”š‚Ì‚İƒGƒ‰[—L–³
+		''' æ•°å­—ã®ã¿ã‚¨ãƒ©ãƒ¼æœ‰ç„¡
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒNŒ‹‰Ê</param>
-		''' <returns>True:³íAFalse:ƒGƒ‰[</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯çµæœ</param>
+		''' <returns>True:æ­£å¸¸ã€False:ã‚¨ãƒ©ãƒ¼</returns>
 		''' <remarks></remarks>
 		Public Function IsValidNumeric(ByVal validates As ValidateTypes) As Boolean
 			Dim chk As ValidateTypes = ValidateTypes.Numeric
@@ -299,10 +299,10 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' ”’l‚Ì‚İƒGƒ‰[—L–³
+		''' æ•°å€¤ã®ã¿ã‚¨ãƒ©ãƒ¼æœ‰ç„¡
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒNŒ‹‰Ê</param>
-		''' <returns>True:³íAFalse:ƒGƒ‰[</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯çµæœ</param>
+		''' <returns>True:æ­£å¸¸ã€False:ã‚¨ãƒ©ãƒ¼</returns>
 		''' <remarks></remarks>
 		Public Function IsValidDecimal(ByVal validates As ValidateTypes) As Boolean
 			Dim chk As ValidateTypes = ValidateTypes.Decimal
@@ -310,10 +310,10 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' •„†•t”’l‚Ì‚İƒGƒ‰[—L–³
+		''' ç¬¦å·ä»˜æ•°å€¤ã®ã¿ã‚¨ãƒ©ãƒ¼æœ‰ç„¡
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒNŒ‹‰Ê</param>
-		''' <returns>True:³íAFalse:ƒGƒ‰[</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯çµæœ</param>
+		''' <returns>True:æ­£å¸¸ã€False:ã‚¨ãƒ©ãƒ¼</returns>
 		''' <remarks></remarks>
 		Public Function IsValidWithNumericSigned(ByVal validates As ValidateTypes) As Boolean
 			Dim chk As ValidateTypes = ValidateTypes.WithNumericSigned
@@ -321,10 +321,10 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' §ƒGƒ‰[—L–³
+		''' ã€’ã‚¨ãƒ©ãƒ¼æœ‰ç„¡
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒNŒ‹‰Ê</param>
-		''' <returns>True:³íAFalse:ƒGƒ‰[</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯çµæœ</param>
+		''' <returns>True:æ­£å¸¸ã€False:ã‚¨ãƒ©ãƒ¼</returns>
 		''' <remarks></remarks>
 		Public Function IsValidZip(ByVal validates As ValidateTypes) As Boolean
 			Dim chk As ValidateTypes = ValidateTypes.Zip
@@ -332,10 +332,10 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' “d˜b”Ô†ƒGƒ‰[—L–³
+		''' é›»è©±ç•ªå·ã‚¨ãƒ©ãƒ¼æœ‰ç„¡
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒNŒ‹‰Ê</param>
-		''' <returns>True:³íAFalse:ƒGƒ‰[</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯çµæœ</param>
+		''' <returns>True:æ­£å¸¸ã€False:ã‚¨ãƒ©ãƒ¼</returns>
 		''' <remarks></remarks>
 		Public Function IsValidTel(ByVal validates As ValidateTypes) As Boolean
 			Dim chk As ValidateTypes = ValidateTypes.Tel
@@ -343,10 +343,10 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' •¶š—ñ‚É‘SŠp•¶š‚ªŠÜ‚Ü‚ê‚Ä‚¢‚é‚©ƒGƒ‰[—L–³
+		''' æ–‡å­—åˆ—ã«å…¨è§’æ–‡å­—ãŒå«ã¾ã‚Œã¦ã„ã‚‹ã‹ã‚¨ãƒ©ãƒ¼æœ‰ç„¡
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒNŒ‹‰Ê</param>
-		''' <returns>True:³íAFalse:ƒGƒ‰[</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯çµæœ</param>
+		''' <returns>True:æ­£å¸¸ã€False:ã‚¨ãƒ©ãƒ¼</returns>
 		''' <remarks></remarks>
 		Public Function IsValidInJis(ByVal validates As ValidateTypes) As Boolean
 			Dim chk As ValidateTypes = ValidateTypes.InJis
@@ -354,10 +354,10 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' Å¬Œ…”ƒGƒ‰[—L–³
+		''' æœ€å°æ¡æ•°ã‚¨ãƒ©ãƒ¼æœ‰ç„¡
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒNŒ‹‰Ê</param>
-		''' <returns>True:³íAFalse:ƒGƒ‰[</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯çµæœ</param>
+		''' <returns>True:æ­£å¸¸ã€False:ã‚¨ãƒ©ãƒ¼</returns>
 		''' <remarks></remarks>
 		Public Function IsValidLenghtMin(ByVal validates As ValidateTypes) As Boolean
 			Dim chk As ValidateTypes = ValidateTypes.LenghtMin
@@ -365,10 +365,10 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' Å‘åŒ…”ƒGƒ‰[—L–³
+		''' æœ€å¤§æ¡æ•°ã‚¨ãƒ©ãƒ¼æœ‰ç„¡
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒNŒ‹‰Ê</param>
-		''' <returns>True:³íAFalse:ƒGƒ‰[</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯çµæœ</param>
+		''' <returns>True:æ­£å¸¸ã€False:ã‚¨ãƒ©ãƒ¼</returns>
 		''' <remarks></remarks>
 		Public Function IsValidLenghtMax(ByVal validates As ValidateTypes) As Boolean
 			Dim chk As ValidateTypes = ValidateTypes.LenghtMax
@@ -376,10 +376,10 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' Å¬Œ…”i”¼Šp 1 ƒoƒCƒgA‘SŠp 2 ƒoƒCƒg‚Æ‚µ‚ÄjƒGƒ‰[—L–³
+		''' æœ€å°æ¡æ•°ï¼ˆåŠè§’ 1 ãƒã‚¤ãƒˆã€å…¨è§’ 2 ãƒã‚¤ãƒˆã¨ã—ã¦ï¼‰ã‚¨ãƒ©ãƒ¼æœ‰ç„¡
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒNŒ‹‰Ê</param>
-		''' <returns>True:³íAFalse:ƒGƒ‰[</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯çµæœ</param>
+		''' <returns>True:æ­£å¸¸ã€False:ã‚¨ãƒ©ãƒ¼</returns>
 		''' <remarks></remarks>
 		Public Function IsValidLenghtMinB(ByVal validates As ValidateTypes) As Boolean
 			Dim chk As ValidateTypes = ValidateTypes.LenghtMinB
@@ -387,10 +387,10 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' Å‘åŒ…”i”¼Šp 1 ƒoƒCƒgA‘SŠp 2 ƒoƒCƒg‚Æ‚µ‚ÄjƒGƒ‰[—L–³
+		''' æœ€å¤§æ¡æ•°ï¼ˆåŠè§’ 1 ãƒã‚¤ãƒˆã€å…¨è§’ 2 ãƒã‚¤ãƒˆã¨ã—ã¦ï¼‰ã‚¨ãƒ©ãƒ¼æœ‰ç„¡
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒNŒ‹‰Ê</param>
-		''' <returns>True:³íAFalse:ƒGƒ‰[</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯çµæœ</param>
+		''' <returns>True:æ­£å¸¸ã€False:ã‚¨ãƒ©ãƒ¼</returns>
 		''' <remarks></remarks>
 		Public Function IsValidLenghtMaxB(ByVal validates As ValidateTypes) As Boolean
 			Dim chk As ValidateTypes = ValidateTypes.LenghtMaxB
@@ -398,10 +398,10 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' “ú•tƒGƒ‰[—L–³
+		''' æ—¥ä»˜ã‚¨ãƒ©ãƒ¼æœ‰ç„¡
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒNŒ‹‰Ê</param>
-		''' <returns>True:³íAFalse:ƒGƒ‰[</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯çµæœ</param>
+		''' <returns>True:æ­£å¸¸ã€False:ã‚¨ãƒ©ãƒ¼</returns>
 		''' <remarks></remarks>
 		Public Function IsValidDateFormat(ByVal validates As ValidateTypes) As Boolean
 			Dim chk As ValidateTypes = ValidateTypes.DateFormat
@@ -409,10 +409,10 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' Å¬”’lƒGƒ‰[—L–³
+		''' æœ€å°æ•°å€¤ã‚¨ãƒ©ãƒ¼æœ‰ç„¡
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒNŒ‹‰Ê</param>
-		''' <returns>True:³íAFalse:ƒGƒ‰[</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯çµæœ</param>
+		''' <returns>True:æ­£å¸¸ã€False:ã‚¨ãƒ©ãƒ¼</returns>
 		''' <remarks></remarks>
 		Public Function IsValidMinimum(ByVal validates As ValidateTypes) As Boolean
 			Dim chk As ValidateTypes = ValidateTypes.Minimum
@@ -420,10 +420,10 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' Å‘å”’lƒGƒ‰[—L–³
+		''' æœ€å¤§æ•°å€¤ã‚¨ãƒ©ãƒ¼æœ‰ç„¡
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒNŒ‹‰Ê</param>
-		''' <returns>True:³íAFalse:ƒGƒ‰[</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯çµæœ</param>
+		''' <returns>True:æ­£å¸¸ã€False:ã‚¨ãƒ©ãƒ¼</returns>
 		''' <remarks></remarks>
 		Public Function IsValidMaximum(ByVal validates As ValidateTypes) As Boolean
 			Dim chk As ValidateTypes = ValidateTypes.Maximum
@@ -431,10 +431,10 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' ”¼Šp‰p”ƒGƒ‰[—L–³
+		''' åŠè§’è‹±æ•°ã‚¨ãƒ©ãƒ¼æœ‰ç„¡
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒNŒ‹‰Ê</param>
-		''' <returns>True:³íAFalse:ƒGƒ‰[</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯çµæœ</param>
+		''' <returns>True:æ­£å¸¸ã€False:ã‚¨ãƒ©ãƒ¼</returns>
 		''' <remarks></remarks>
 		Public Function IsValidHalfWidthAlphanumeric(ByVal validates As ValidateTypes) As Boolean
 			Dim chk As ValidateTypes = ValidateTypes.HalfWidthAlphanumeric
@@ -442,10 +442,10 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' MailƒGƒ‰[—L–³
+		''' Mailã‚¨ãƒ©ãƒ¼æœ‰ç„¡
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒNŒ‹‰Ê</param>
-		''' <returns>True:³íAFalse:ƒGƒ‰[</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯çµæœ</param>
+		''' <returns>True:æ­£å¸¸ã€False:ã‚¨ãƒ©ãƒ¼</returns>
 		''' <remarks></remarks>
 		Public Function IsValidMail(ByVal validates As ValidateTypes) As Boolean
 			Dim chk As ValidateTypes = ValidateTypes.Mail
@@ -453,10 +453,10 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' URLƒGƒ‰[—L–³
+		''' URLã‚¨ãƒ©ãƒ¼æœ‰ç„¡
 		''' </summary>
-		''' <param name="validates">ƒ`ƒFƒbƒNŒ‹‰Ê</param>
-		''' <returns>True:³íAFalse:ƒGƒ‰[</returns>
+		''' <param name="validates">ãƒã‚§ãƒƒã‚¯çµæœ</param>
+		''' <returns>True:æ­£å¸¸ã€False:ã‚¨ãƒ©ãƒ¼</returns>
 		''' <remarks></remarks>
 		Public Function IsValidURL(ByVal validates As ValidateTypes) As Boolean
 			Dim chk As ValidateTypes = ValidateTypes.URL

@@ -2,7 +2,7 @@
 Namespace Db
 
 	''' <summary>
-	''' INSERT文を実行する為のDBCommandをラッピングするインタフェース
+	''' INSERT譁�繧貞ｮ溯｡後☆繧狗ぜ縺ｮDBCommand繧偵Λ繝�繝斐Φ繧ｰ縺吶ｋ繧､繝ｳ繧ｿ繝輔ぉ繝ｼ繧ｹ
 	''' </summary>
 	''' <remarks>
 	''' <example>

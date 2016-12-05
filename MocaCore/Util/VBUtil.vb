@@ -5,44 +5,44 @@ Imports System.Text
 Namespace Util
 
 	''' <summary>
-	''' VB.NET �֗����\�b�h�W
+	''' VB.NET 便利メソッド集
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class VBUtil
 
-		''' <summary>���K�\���̃��^�����W</summary>
+		''' <summary>正規表現のメタ文字集</summary>
 		Private Const C_REGEX_META As String = ".,^,$,[,],*,+,?,|,(,)"
-		''' <summary>���K�\���̃��^�����W�z��</summary>
+		''' <summary>正規表現のメタ文字集配列</summary>
 		Private Shared _regexMeata() As String = C_REGEX_META.Split(CChar(","))
 
 		''' <summary>
-		''' ���ݓW�J����Ă���f�B���N�g���̃J�����g�p�X��Ԃ�
+		''' 現在展開されているディレクトリのカレントパスを返す
 		''' </summary>
-		''' <returns>�J�����g�p�X</returns>
+		''' <returns>カレントパス</returns>
 		''' <remarks>
-		''' VB6 �ȑO�ł������� App.Path �Ɠ����ł��B
+		''' VB6 以前でいう所の App.Path と同じです。
 		''' </remarks>
 		Public Shared Function AppPath() As String
 			Return My.Application.Info.DirectoryPath
 		End Function
 
 		''' <summary>
-		''' ���ݓW�J����Ă���f�B���N�g���̃J�����g�p�X��Ԃ�
+		''' 現在展開されているディレクトリのカレントパスを返す
 		''' </summary>
-		''' <param name="value">�J�����g�p�X�ɕt������p�X</param>
-		''' <returns>�J�����g�p�X</returns>
+		''' <param name="value">カレントパスに付加するパス</param>
+		''' <returns>カレントパス</returns>
 		''' <remarks>
-		''' VB6 �ȑO�ł������� App.Path �Ɠ����ł����A�w�肳�ꂽ�p�X��t�������`�Ŗ߂��܂��B
+		''' VB6 以前でいう所の App.Path と同じですが、指定されたパスを付加した形で戻します。
 		''' </remarks>
 		Public Shared Function AppPath(ByVal value As String) As String
 			Return Path.Combine(My.Application.Info.DirectoryPath, value)
 		End Function
 
 		''' <summary>
-		''' �w�肳�ꂽ�t�H���_�����݂��邩�𔻒肷��
+		''' 指定されたフォルダが存在するかを判定する
 		''' </summary>
-		''' <param name="path">�ΏۂƂȂ�t�H���_</param>
-		''' <returns>True:���݂���AFalse:���݂��Ȃ�</returns>
+		''' <param name="path">対象となるフォルダ</param>
+		''' <returns>True:存在する、False:存在しない</returns>
 		''' <remarks>
 		''' </remarks>
 		Public Shared Function ExistsDir(ByVal path As String) As Boolean
@@ -50,11 +50,11 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' �w�肳�ꂽ�t�H���_�����݂��邩�𔻒肵�A���݂��Ȃ����͍쐬���邩�ǂ����w��ł���
+		''' 指定されたフォルダが存在するかを判定し、存在しない時は作成するかどうか指定できる
 		''' </summary>
-		''' <param name="path">�ΏۂƂȂ�t�H���_</param>
-		''' <param name="autoMake">���݂��Ȃ��Ƃ��̓���<br/>True:�쐬����AFalse:�쐬���Ȃ�</param>
-		''' <returns>True:���݂���AFalse:���݂��Ȃ�</returns>
+		''' <param name="path">対象となるフォルダ</param>
+		''' <param name="autoMake">存在しないときの動作<br/>True:作成する、False:作成しない</param>
+		''' <returns>True:存在する、False:存在しない</returns>
 		''' <remarks>
 		''' </remarks>
 		Public Shared Function ExistsDir(ByVal path As String, ByVal autoMake As Boolean) As Boolean
@@ -67,9 +67,9 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' ���K�\���̃��^�������G�X�P�[�v����
+		''' 正規表現のメタ文字をエスケープする
 		''' </summary>
-		''' <param name="value">���K�\��������</param>
+		''' <param name="value">正規表現文字列</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Public Shared Function RegexMeataEscape(ByVal value As String) As String
@@ -80,7 +80,7 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' �C���[�W���o�C�g�^�̔z��Ɏ擾
+		''' イメージをバイト型の配列に取得
 		''' </summary>
 		''' <param name="filePath"></param>
 		''' <returns></returns>
@@ -90,32 +90,32 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' �萔�l�f�[�^���쐬����ׂ�ConstantDataSet���쐬����
+		''' 定数値データを作成する為のConstantDataSetを作成する
 		''' </summary>
-		''' <param name="tableName">�萔�l�e�[�u������</param>
-		''' <param name="blankRow">�u�����N�s��ǉ����邩�ǂ����i�f�t�H���g�F�쐬�j</param>
-		''' <param name="blankValue">�u�����N�s�̒l�i�f�t�H���g�F-1�j</param>
+		''' <param name="tableName">定数値テーブル名称</param>
+		''' <param name="blankRow">ブランク行を追加するかどうか（デフォルト：作成）</param>
+		''' <param name="blankValue">ブランク行の値（デフォルト：-1）</param>
 		''' <returns></returns>
 		''' <remarks>
-		''' <c>blankRow</c> ��True��ݒ肷��ΐ擪�֋�f�[�^����s�����Œǉ����܂��B<br/>
-		''' ����͉��L�̒ʂ�ł��B<br/>
+		''' <c>blankRow</c> にTrueを設定すれば先頭へ空データを一行自動で追加します。<br/>
+		''' 列情報は下記の通りです。<br/>
 		''' <br/>
 		''' <list type="table">
 		'''  <item>
 		'''   <term>Display</term>
-		'''   <description>�u�l�F���́v�iText &amp; ":" &amp; Value�j�ɂ����������ێ����܂��B</description>
+		'''   <description>「値：名称」（Text &amp; ":" &amp; Value）にした文字列を保持します。</description>
 		'''  </item>
 		'''  <item>
 		'''   <term>Text</term>
-		'''   <description>���̂�ێ����܂��B</description>
+		'''   <description>名称を保持します。</description>
 		'''  </item>
 		'''  <item>
 		'''   <term>Value</term>
-		'''   <description>�l��ێ����܂��B</description>
+		'''   <description>値を保持します。</description>
 		'''  </item>
 		'''  <item>
 		'''   <term>ValueText</term>
-		'''   <description>�l�̕������ێ����܂��B</description>
+		'''   <description>値の文字列を保持します。</description>
 		'''  </item>
 		''' </list>
 		''' </remarks>
@@ -124,38 +124,38 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' �񋓌^�̖��̂�Ԃ�
+		''' 列挙型の名称を返す
 		''' </summary>
-		''' <typeparam name="T">�񋓌^</typeparam>
-		''' <param name="value">�ΏۂƂȂ�l</param>
-		''' <returns>����</returns>
+		''' <typeparam name="T">列挙型</typeparam>
+		''' <param name="value">対象となる値</param>
+		''' <returns>名称</returns>
 		''' <remarks></remarks>
 		Public Shared Function GetEnumName(Of T)(ByVal value As Object) As String
 			Return [Enum].GetName(GetType(T), value)
 		End Function
 
-#Region "�@LeftB ���\�b�h�@"
+#Region "　LeftB メソッド　"
 
 		''' <summary>
-		''' ������̍��[����w�肵���o�C�g�����̕������Ԃ��܂��B
+		''' 文字列の左端から指定したバイト数分の文字列を返します。
 		''' </summary>
-		''' <param name="stTarget">���o�����ɂȂ镶����B</param>
-		''' <param name="iByteSize">���o���o�C�g���B</param>
-		''' <returns>���[����w�肳�ꂽ�o�C�g�����̕�����B</returns>
+		''' <param name="stTarget">取り出す元になる文字列。</param>
+		''' <param name="iByteSize">取り出すバイト数。</param>
+		''' <returns>左端から指定されたバイト数分の文字列。</returns>
 		Public Shared Function LeftB(ByVal stTarget As String, ByVal iByteSize As Integer) As String
 			Return MidB(stTarget, 1, iByteSize)
 		End Function
 
 #End Region
 
-#Region "�@MidB ���\�b�h (+1)�@"
+#Region "　MidB メソッド (+1)　"
 
 		' ''' <summary>
-		' ''' ������̎w�肳�ꂽ�o�C�g�ʒu�ȍ~�̂��ׂĂ̕������Ԃ��܂��B
+		' ''' 文字列の指定されたバイト位置以降のすべての文字列を返します。
 		' ''' </summary>
-		' ''' <param name="stTarget">���o�����ɂȂ镶����B</param>
-		' ''' <param name="iStart">���o�����J�n����ʒu�B</param>
-		' ''' <returns>�w�肳�ꂽ�o�C�g�ʒu�ȍ~�̂��ׂĂ̕�����B</returns>
+		' ''' <param name="stTarget">取り出す元になる文字列。</param>
+		' ''' <param name="iStart">取り出しを開始する位置。</param>
+		' ''' <returns>指定されたバイト位置以降のすべての文字列。</returns>
 		'Public Shared Function MidB(ByVal stTarget As String, ByVal iStart As Integer) As String
 		'	Dim hEncoding As Encoding = Encoding.GetEncoding("Shift_JIS")
 		'	Dim bBytes As Byte() = hEncoding.GetBytes(stTarget)
@@ -164,12 +164,12 @@ Namespace Util
 		'End Function
 
 		' ''' <summary>
-		' ''' ������̎w�肳�ꂽ�o�C�g�ʒu����A�w�肳�ꂽ�o�C�g�����̕������Ԃ��܂��B
+		' ''' 文字列の指定されたバイト位置から、指定されたバイト数分の文字列を返します。
 		' ''' </summary>
-		' ''' <param name="stTarget">���o�����ɂȂ镶����B</param>
-		' ''' <param name="iStart">���o�����J�n����ʒu�B</param>
-		' ''' <param name="iByteSize">���o���o�C�g���B</param>
-		' ''' <returns>�w�肳�ꂽ�o�C�g�ʒu����w�肳�ꂽ�o�C�g�����̕�����B</returns>
+		' ''' <param name="stTarget">取り出す元になる文字列。</param>
+		' ''' <param name="iStart">取り出しを開始する位置。</param>
+		' ''' <param name="iByteSize">取り出すバイト数。</param>
+		' ''' <returns>指定されたバイト位置から指定されたバイト数分の文字列。</returns>
 		'Public Shared Function MidB _
 		'(ByVal stTarget As String, ByVal iStart As Integer, ByVal iByteSize As Integer) As String
 		'	Dim hEncoding As Encoding = Encoding.GetEncoding("Shift_JIS")
@@ -179,11 +179,11 @@ Namespace Util
 		'End Function
 
 		''' <summary>
-		''' ������̎w�肳�ꂽ�o�C�g�ʒu�ȍ~�̂��ׂĂ̕������Ԃ��܂��B
+		''' 文字列の指定されたバイト位置以降のすべての文字列を返します。
 		''' </summary>
-		''' <param name="value">���o�����ɂȂ镶����B</param>
-		''' <param name="startPos">���o�����J�n����ʒu�B</param>
-		''' <returns>�w�肳�ꂽ�o�C�g�ʒu�ȍ~�̂��ׂĂ̕�����B</returns>
+		''' <param name="value">取り出す元になる文字列。</param>
+		''' <param name="startPos">取り出しを開始する位置。</param>
+		''' <returns>指定されたバイト位置以降のすべての文字列。</returns>
 		Public Shared Function MidB(ByVal value As String, ByVal startPos As Integer) As String
 			Dim enc As Encoding = Encoding.GetEncoding("Shift_JIS")
 			Dim getLength As Integer = enc.GetByteCount(value) - startPos + 1
@@ -191,12 +191,12 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' ������̎w�肳�ꂽ�o�C�g�ʒu����A�w�肳�ꂽ�o�C�g�����̕������Ԃ��܂��B
+		''' 文字列の指定されたバイト位置から、指定されたバイト数分の文字列を返します。
 		''' </summary>
-		''' <param name="value">���o�����ɂȂ镶����B</param>
-		''' <param name="startPos">���o�����J�n����ʒu�B</param>
-		''' <param name="getLength">���o���o�C�g���B</param>
-		''' <returns>�w�肳�ꂽ�o�C�g�ʒu����w�肳�ꂽ�o�C�g�����̕�����B</returns>
+		''' <param name="value">取り出す元になる文字列。</param>
+		''' <param name="startPos">取り出しを開始する位置。</param>
+		''' <param name="getLength">取り出すバイト数。</param>
+		''' <returns>指定されたバイト位置から指定されたバイト数分の文字列。</returns>
 		Public Shared Function MidB(ByVal value As String, ByVal startPos As Integer, ByVal getLength As Integer) As String
 			If value Is Nothing OrElse value.Length = 0 Then
 				Return String.Empty
@@ -210,7 +210,7 @@ Namespace Util
 				getLength = len
 			End If
 
-			'���؂蔲�������ʁA�Ō�̂P�o�C�g���S�p�����̔����������ꍇ�A���̔����͐؂�̂Ă�B
+			'▼切り抜いた結果、最後の１バイトが全角文字の半分だった場合、その半分は切り捨てる。
 
 			rc = enc.GetString(bytes, startPos - 1, getLength)
 			Dim rcLength As Integer = enc.GetByteCount(rc)
@@ -224,14 +224,14 @@ Namespace Util
 
 #End Region
 
-#Region "�@RightB ���\�b�h�@"
+#Region "　RightB メソッド　"
 
 		''' <summary>
-		''' ������̉E�[����w�肳�ꂽ�o�C�g�����̕������Ԃ��܂��B
+		''' 文字列の右端から指定されたバイト数分の文字列を返します。
 		''' </summary>
-		''' <param name="stTarget">���o�����ɂȂ镶����B</param>
-		''' <param name="iByteSize">���o���o�C�g���B</param>
-		''' <returns>�E�[����w�肳�ꂽ�o�C�g�����̕�����B</returns>
+		''' <param name="stTarget">取り出す元になる文字列。</param>
+		''' <param name="iByteSize">取り出すバイト数。</param>
+		''' <returns>右端から指定されたバイト数分の文字列。</returns>
 		Public Shared Function RightB(ByVal stTarget As String, ByVal iByteSize As Integer) As String
 			Dim hEncoding As Encoding = Encoding.GetEncoding("Shift_JIS")
 			Dim bBytes As Byte() = hEncoding.GetBytes(stTarget)
@@ -241,13 +241,13 @@ Namespace Util
 
 #End Region
 
-#Region "�@LenB ���\�b�h�@"
+#Region "　LenB メソッド　"
 
 		''' <summary>
-		''' ���p 1 �o�C�g�A�S�p 2 �o�C�g�Ƃ��āA�w�肳�ꂽ������̃o�C�g����Ԃ��܂��B
+		''' 半角 1 バイト、全角 2 バイトとして、指定された文字列のバイト数を返します。
 		''' </summary>
-		''' <param name="stTarget">�o�C�g���擾�̑ΏۂƂȂ镶����B</param>
-		''' <returns>���p 1 �o�C�g�A�S�p 2 �o�C�g�ŃJ�E���g���ꂽ�o�C�g���B</returns>
+		''' <param name="stTarget">バイト数取得の対象となる文字列。</param>
+		''' <returns>半角 1 バイト、全角 2 バイトでカウントされたバイト数。</returns>
 		Public Shared Function LenB(ByVal stTarget As String) As Integer
 			Return Encoding.GetEncoding("Shift_JIS").GetByteCount(stTarget)
 		End Function
@@ -255,9 +255,9 @@ Namespace Util
 #End Region
 
 		''' <summary>
-		''' ������𕶎��R�[�h��\�������l�ɕϊ�����
+		''' 文字列を文字コードを表す整数値に変換する
 		''' </summary>
-		''' <param name="targetValue">�ϊ��Ώۂ̕�����</param>
+		''' <param name="targetValue">変換対象の文字列</param>
 		''' <returns></returns>
 		''' <remarks>
 		''' </remarks>
@@ -289,9 +289,9 @@ Namespace Util
 			Dim enc As Encoding
 			Dim rc As String
 
-			' ��������o�C�g�z��ɕϊ�
+			' 文字列をバイト配列に変換
 			srcB = Encoding.Unicode.GetBytes(str)
-			' Unicode����V�t�gJIS�ɕϊ�
+			' UnicodeからシフトJISに変換
 			enc = Encoding.GetEncoding(932)
 			encB = Encoding.Convert(Encoding.Unicode, enc, srcB)
 
@@ -304,10 +304,10 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' ShiftJIS�ɕϊ��ł��Ȃ��������܂܂�Ă��邩�Ԃ�
+		''' ShiftJISに変換できない文字が含まれているか返す
 		''' </summary>
-		''' <param name="val">�Ώۂ̕�����</param>
-		''' <returns>True:�܂܂�Ă��Ȃ��AFalse:�܂܂�Ă���</returns>
+		''' <param name="val">対象の文字列</param>
+		''' <returns>True:含まれていない、False:含まれている</returns>
 		''' <remarks></remarks>
 		Public Shared Function IsShiftJISOnlyText(ByVal val As String) As Boolean
 			Dim encoderFallback As New EncoderExceptionFallback
@@ -324,7 +324,7 @@ Namespace Util
 		End Function
 
 		''' <summary>
-		''' �C���[�W���o�C�g�֕ϊ�
+		''' イメージをバイトへ変換
 		''' </summary>
 		''' <param name="source"></param>
 		''' <param name="format"></param>
@@ -333,11 +333,11 @@ Namespace Util
 		Private Function CBytes(ByVal source As System.Drawing.Image, ByVal format As System.Drawing.Imaging.ImageFormat) As Byte()
 			Dim blob() As Byte
 
-			' �t�@�C���X�g���[���ŃC���[�W�f�[�^��ǂݍ���
+			' ファイルストリームでイメージデータを読み込み
 			Using tempStream As System.IO.MemoryStream = New System.IO.MemoryStream()
-				' �������X�g���[��(Byte[])��Image�f�[�^��ۑ�
+				' メモリストリーム(Byte[])にImageデータを保存
 				source.Save(tempStream, format)
-				' �������X�g���[������Byte[]�f�[�^���擾
+				' メモリストリームからByte[]データを取得
 				blob = tempStream.ToArray()
 			End Using
 

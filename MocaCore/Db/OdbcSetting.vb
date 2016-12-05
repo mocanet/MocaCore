@@ -5,22 +5,22 @@ Imports System.ComponentModel
 Namespace Db
 
 	''' <summary>
-	''' ODBCİ’è‚ÌŠÇ—
+	''' ODBCè¨­å®šã®ç®¡ç†
 	''' </summary>
 	''' <remarks>
-	''' ODBCƒf[ƒ^ƒ\[ƒXİ’è‚ÌŠÇ—‚ğ‚µ‚Ü‚·B
+	''' ODBCãƒ‡ãƒ¼ã‚¿ã‚½ãƒ¼ã‚¹è¨­å®šã®ç®¡ç†ã‚’ã—ã¾ã™ã€‚
 	''' </remarks>
 	Public Class OdbcSetting
 
-		''' <summary>ƒf[ƒ^ƒ\[ƒX‚ÌƒVƒXƒeƒ€ƒL[’l</summary>
+		''' <summary>ãƒ‡ãƒ¼ã‚¿ã‚½ãƒ¼ã‚¹ã®ã‚·ã‚¹ãƒ†ãƒ ã‚­ãƒ¼å€¤</summary>
 		Private Const C_DSN_SYS As String = "CONFIGSYSDSN"
-		''' <summary>ƒf[ƒ^ƒ\[ƒX‚Ìƒ†[ƒU[ƒL[’l</summary>
+		''' <summary>ãƒ‡ãƒ¼ã‚¿ã‚½ãƒ¼ã‚¹ã®ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‚­ãƒ¼å€¤</summary>
 		Private Const C_DSN_USR As String = "CONFIGDSN"
-		''' <summary>ƒf[ƒ^ƒ\[ƒX‚ÌƒŒƒWƒXƒgƒŠƒL[’l</summary>
+		''' <summary>ãƒ‡ãƒ¼ã‚¿ã‚½ãƒ¼ã‚¹ã®ãƒ¬ã‚¸ã‚¹ãƒˆãƒªã‚­ãƒ¼å€¤</summary>
 		Private Const C_DSN_REG_KEY As String = "SOFTWARE\ODBC\ODBC.INI\"
 
 		''' <summary>
-		''' “o˜^‚Ìí—Ş
+		''' ç™»éŒ²ã®ç¨®é¡
 		''' </summary>
 		''' <remarks></remarks>
 		Public Enum RegistrationType As Integer
@@ -29,34 +29,34 @@ Namespace Db
 		End Enum
 
 		''' <summary>
-		''' —˜—po—ˆ‚éƒvƒƒoƒCƒ_‚Ìí—Ş
+		''' åˆ©ç”¨å‡ºæ¥ã‚‹ãƒ—ãƒ­ãƒã‚¤ãƒ€ã®ç¨®é¡
 		''' </summary>
 		''' <remarks></remarks>
 		Public Enum ProviderType As Integer
 			SQLServer
 		End Enum
 
-		''' <summary>“o˜^‚Ìí—Ş</summary>
+		''' <summary>ç™»éŒ²ã®ç¨®é¡</summary>
 		Private _dsnRegist As RegistrationType
-		''' <summary>ƒvƒƒoƒCƒ_‚Ìí—Ş</summary>
+		''' <summary>ãƒ—ãƒ­ãƒã‚¤ãƒ€ã®ç¨®é¡</summary>
 		Private _dbProvider As ProviderType
-		''' <summary>ƒvƒƒoƒCƒ_[–¼Ì</summary>
+		''' <summary>ãƒ—ãƒ­ãƒã‚¤ãƒ€ãƒ¼åç§°</summary>
 		Private _dsnName As String
-		''' <summary>à–¾</summary>
+		''' <summary>èª¬æ˜</summary>
 		Private _dsnDescription As String
-		''' <summary>ƒT[ƒo[–¼</summary>
+		''' <summary>ã‚µãƒ¼ãƒãƒ¼å</summary>
 		Private _dbServer As String
-		''' <summary>ƒf[ƒ^ƒx[ƒX–¼</summary>
+		''' <summary>ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹å</summary>
 		Private _dbName As String
-		''' <summary>ƒf[ƒ^ƒx[ƒXÚ‘±ƒ†[ƒU[</summary>
+		''' <summary>ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹æ¥ç¶šãƒ¦ãƒ¼ã‚¶ãƒ¼</summary>
 		Private _dbUser As String
-		''' <summary>ƒf[ƒ^ƒx[ƒXÚ‘±ƒ†[ƒU[ƒpƒXƒ[ƒh</summary>
+		''' <summary>ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹æ¥ç¶šãƒ¦ãƒ¼ã‚¶ãƒ¼ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰</summary>
 		Private _dbUserPassword As String
 
-#Region " ƒvƒƒpƒeƒB "
+#Region " ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ "
 
 		''' <summary>
-		''' “o˜^‚Ìí—Ş
+		''' ç™»éŒ²ã®ç¨®é¡
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -74,7 +74,7 @@ Namespace Db
 		End Property
 
 		''' <summary>
-		''' “o˜^‚Ìí—Ş
+		''' ç™»éŒ²ã®ç¨®é¡
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -96,7 +96,7 @@ Namespace Db
 		End Property
 
 		''' <summary>
-		''' ƒvƒƒoƒCƒ_[
+		''' ãƒ—ãƒ­ãƒã‚¤ãƒ€ãƒ¼
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -114,7 +114,7 @@ Namespace Db
 		End Property
 
 		''' <summary>
-		''' ƒvƒƒoƒCƒ_[–¼Ì
+		''' ãƒ—ãƒ­ãƒã‚¤ãƒ€ãƒ¼åç§°
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -152,7 +152,7 @@ Namespace Db
 		End Property
 
 		''' <summary>
-		''' à–¾
+		''' èª¬æ˜
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -170,7 +170,7 @@ Namespace Db
 		End Property
 
 		''' <summary>
-		''' ƒT[ƒo[–¼
+		''' ã‚µãƒ¼ãƒãƒ¼å
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -187,7 +187,7 @@ Namespace Db
 		End Property
 
 		''' <summary>
-		''' ƒf[ƒ^ƒx[ƒX–¼
+		''' ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹å
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -204,7 +204,7 @@ Namespace Db
 		End Property
 
 		''' <summary>
-		''' ƒf[ƒ^ƒx[ƒXÚ‘±ƒ†[ƒU[
+		''' ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹æ¥ç¶šãƒ¦ãƒ¼ã‚¶ãƒ¼
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -221,7 +221,7 @@ Namespace Db
 		End Property
 
 		''' <summary>
-		''' ƒf[ƒ^ƒx[ƒXÚ‘±ƒ†[ƒU[ƒpƒXƒ[ƒh
+		''' ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹æ¥ç¶šãƒ¦ãƒ¼ã‚¶ãƒ¼ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -240,7 +240,7 @@ Namespace Db
 #End Region
 
 		''' <summary>
-		''' İ’è‚ª‘¶İ‚·‚é‚©•Ô‚·
+		''' è¨­å®šãŒå­˜åœ¨ã™ã‚‹ã‹è¿”ã™
 		''' </summary>
 		''' <param name="dsn"></param>
 		''' <returns></returns>
@@ -254,7 +254,7 @@ Namespace Db
 		End Function
 
 		''' <summary>
-		''' ’Ç‰Á‚·‚é
+		''' è¿½åŠ ã™ã‚‹
 		''' </summary>
 		''' <remarks></remarks>
 		Public Sub Add()
@@ -268,7 +268,7 @@ Namespace Db
 		End Sub
 
 		''' <summary>
-		''' C³‚·‚é
+		''' ä¿®æ­£ã™ã‚‹
 		''' </summary>
 		''' <remarks></remarks>
 		Public Sub Modify()
@@ -286,40 +286,40 @@ Namespace Db
 		End Sub
 
 		''' <summary>
-		''' ODBCİ’èƒRƒ}ƒ“ƒhÀs
+		''' ODBCè¨­å®šã‚³ãƒãƒ³ãƒ‰å®Ÿè¡Œ
 		''' </summary>
 		''' <remarks></remarks>
 		Protected Sub execODBCconf()
 			Dim psi As New System.Diagnostics.ProcessStartInfo
 
-			'ComSpec‚ÌƒpƒX‚ğæ“¾‚·‚é
+			'ComSpecã®ãƒ‘ã‚¹ã‚’å–å¾—ã™ã‚‹
 			psi.FileName = System.Environment.GetEnvironmentVariable("ComSpec")
 
-			'o—Í‚ğ“Ç‚İæ‚ê‚é‚æ‚¤‚É‚·‚é
+			'å‡ºåŠ›ã‚’èª­ã¿å–ã‚Œã‚‹ã‚ˆã†ã«ã™ã‚‹
 			psi.RedirectStandardInput = False
 			psi.RedirectStandardOutput = True
 			psi.UseShellExecute = False
 
-			'ƒEƒBƒ“ƒhƒE‚ğ•\¦‚µ‚È‚¢‚æ‚¤‚É‚·‚é
+			'ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’è¡¨ç¤ºã—ãªã„ã‚ˆã†ã«ã™ã‚‹
 			psi.CreateNoWindow = True
 
-			'ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚ğw’èi"/c"‚ÍÀsŒã•Â‚¶‚é‚½‚ß‚É•K—vj
+			'ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã‚’æŒ‡å®šï¼ˆ"/c"ã¯å®Ÿè¡Œå¾Œé–‰ã˜ã‚‹ãŸã‚ã«å¿…è¦ï¼‰
 			psi.Arguments = "/c ODBCconf /A {" & makeCommandParam() & "}"
 
-			'‹N“®
+			'èµ·å‹•
 			Dim p As Process = Process.Start(psi)
 
-			'o—ÍŒ‹‰Ê‚ğŠi”[
+			'å‡ºåŠ›çµæœã‚’æ ¼ç´
 			Dim results As String = p.StandardOutput.ReadToEnd
 
-			'WaitForExit‚ÍReadToEnd‚ÌŒã‚Å‚ ‚é•K—v‚ª‚ ‚é(eƒvƒƒZƒXAqƒvƒƒZƒX‚ÅƒuƒƒbƒN–h~‚Ì‚½‚ß)
+			'WaitForExitã¯ReadToEndã®å¾Œã§ã‚ã‚‹å¿…è¦ãŒã‚ã‚‹(è¦ªãƒ—ãƒ­ã‚»ã‚¹ã€å­ãƒ—ãƒ­ã‚»ã‚¹ã§ãƒ–ãƒ­ãƒƒã‚¯é˜²æ­¢ã®ãŸã‚)
 			p.WaitForExit()
 
-			p.Close() 'ƒvƒƒZƒXŠJ•ú
+			p.Close() 'ãƒ—ãƒ­ã‚»ã‚¹é–‹æ”¾
 		End Sub
 
 		''' <summary>
-		''' ODBCİ’èƒRƒ}ƒ“ƒh‚Ìƒpƒ‰ƒ[ƒ^•¶š—ñì¬
+		''' ODBCè¨­å®šã‚³ãƒãƒ³ãƒ‰ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿æ–‡å­—åˆ—ä½œæˆ
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>

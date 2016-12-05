@@ -4,42 +4,42 @@ Imports System.Security.Cryptography
 Namespace Security
 
 	''' <summary>
-	''' ƒnƒbƒVƒ…ƒAƒ‹ƒSƒŠƒYƒ€ ‚ğg—p‚µ‚Äƒf[ƒ^‚ÌˆÃ†‰»‚ğs‚¤
+	''' ãƒãƒƒã‚·ãƒ¥ã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ  ã‚’ä½¿ç”¨ã—ã¦ãƒ‡ãƒ¼ã‚¿ã®æš—å·åŒ–ã‚’è¡Œã†
 	''' </summary>
 	''' <remarks>
 	''' </remarks>
 	Public Class HashCryptosystem
 		Implements IDisposable
 
-		''' <summary>ˆÃ†‰»‚·‚éƒƒ\ƒbƒh‚ÌƒfƒŠƒQ[ƒg</summary>
+		''' <summary>æš—å·åŒ–ã™ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰ã®ãƒ‡ãƒªã‚²ãƒ¼ãƒˆ</summary>
 		Protected Delegate Function ComputeHashDelegate(ByVal buffer() As Byte) As Byte()
 
-		''' <summary>ˆÃ†‰»‚·‚éí•Ê</summary>
+		''' <summary>æš—å·åŒ–ã™ã‚‹ç¨®åˆ¥</summary>
 		Public Enum ComputeHashType
-			''' <summary>MD5 ƒnƒbƒVƒ… ƒAƒ‹ƒSƒŠƒYƒ€</summary>
+			''' <summary>MD5 ãƒãƒƒã‚·ãƒ¥ ã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ </summary>
 			MD5 = 1
-			''' <summary>SH1 ƒnƒbƒVƒ… ƒAƒ‹ƒSƒŠƒYƒ€</summary>
+			''' <summary>SH1 ãƒãƒƒã‚·ãƒ¥ ã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ </summary>
 			SH1
-			''' <summary>SH256 ƒnƒbƒVƒ… ƒAƒ‹ƒSƒŠƒYƒ€</summary>
+			''' <summary>SH256 ãƒãƒƒã‚·ãƒ¥ ã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ </summary>
 			SH256
-			''' <summary>SH384 ƒnƒbƒVƒ… ƒAƒ‹ƒSƒŠƒYƒ€</summary>
+			''' <summary>SH384 ãƒãƒƒã‚·ãƒ¥ ã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ </summary>
 			SH384
-			''' <summary>SH512 ƒnƒbƒVƒ… ƒAƒ‹ƒSƒŠƒYƒ€</summary>
+			''' <summary>SH512 ãƒãƒƒã‚·ãƒ¥ ã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ </summary>
 			SH512
 		End Enum
 
-		''' <summary>ˆÃ†‰»‚·‚éƒAƒ‹ƒSƒŠƒYƒ€ƒCƒ“ƒXƒ^ƒ“ƒX</summary>
+		''' <summary>æš—å·åŒ–ã™ã‚‹ã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</summary>
 		Private _hashAlgorithm As HashAlgorithm
 
-		''' <summary>ˆÃ†‰»‚·‚éƒƒ\ƒbƒh</summary>
+		''' <summary>æš—å·åŒ–ã™ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰</summary>
 		Private _computeHash As ComputeHashDelegate
 
 #Region " Constructor/DeConstructor "
 
 		''' <summary>
-		''' ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="hashType">ˆÃ†‰»‚·‚éí•Ê</param>
+		''' <param name="hashType">æš—å·åŒ–ã™ã‚‹ç¨®åˆ¥</param>
 		''' <remarks>
 		''' </remarks>
 		Public Sub New(ByVal hashType As ComputeHashType)
@@ -63,7 +63,7 @@ Namespace Security
 #Region " Implements IDisposable "
 
 		''' <summary>
-		''' ƒŠƒ\[ƒX‚Ì‰ğ•ú
+		''' ãƒªã‚½ãƒ¼ã‚¹ã®è§£æ”¾
 		''' </summary>
 		''' <remarks>
 		''' </remarks>
@@ -74,10 +74,10 @@ Namespace Security
 #End Region
 
 		''' <summary>
-		''' ˆÃ†‰»
+		''' æš—å·åŒ–
 		''' </summary>
-		''' <param name="plainText">‘ÎÛ‚Ì•¶š—ñ</param>
-		''' <returns>Œ‹‰Ê•¶š—ñ</returns>
+		''' <param name="plainText">å¯¾è±¡ã®æ–‡å­—åˆ—</param>
+		''' <returns>çµæœæ–‡å­—åˆ—</returns>
 		''' <remarks>
 		''' </remarks>
 		Public Function Encrypt(ByVal plainText As String) As String
@@ -95,10 +95,10 @@ Namespace Security
 		End Function
 
 		''' <summary>
-		''' ˆÃ†‰»
+		''' æš—å·åŒ–
 		''' </summary>
-		''' <param name="plainText">‘ÎÛ‚ÌƒoƒCƒg”z—ñ</param>
-		''' <returns>Œ‹‰ÊƒoƒCƒg”z—ñ</returns>
+		''' <param name="plainText">å¯¾è±¡ã®ãƒã‚¤ãƒˆé…åˆ—</param>
+		''' <returns>çµæœãƒã‚¤ãƒˆé…åˆ—</returns>
 		''' <remarks>
 		''' </remarks>
 		Public Function Encrypt(ByVal plainText As Byte()) As Byte()

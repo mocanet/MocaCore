@@ -4,7 +4,7 @@ Imports Moca.Util
 Namespace Attr
 
 	''' <summary>
-	''' À‘Ô‚ğw’è‚·‚é‘®«‚Ì‰ğÍ
+	''' å®Ÿæ…‹ã‚’æŒ‡å®šã™ã‚‹å±æ€§ã®è§£æ
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class ImplementationAttributeAnalyzer

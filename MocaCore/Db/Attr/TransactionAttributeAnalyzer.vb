@@ -6,7 +6,7 @@ Imports Moca.Util
 Namespace Db.Attr
 
 	''' <summary>
-	''' ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“‘®«‰ğÍ
+	''' ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³å±æ€§è§£æ
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class TransactionAttributeAnalyzer

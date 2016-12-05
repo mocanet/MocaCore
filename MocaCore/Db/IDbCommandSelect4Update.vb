@@ -2,7 +2,7 @@
 Namespace Db
 
 	''' <summary>
-	''' SELECT•¶‚ğÀs‚µADataSet‚ğg‚Á‚ÄUPDATE‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒsƒ“ƒO‚·‚éƒCƒ“ƒ^ƒtƒF[ƒX
+	''' SELECTæ–‡ã‚’å®Ÿè¡Œã—ã€DataSetã‚’ä½¿ã£ã¦UPDATEã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ”ãƒ³ã‚°ã™ã‚‹ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 	''' </summary>
 	''' <remarks>
 	''' <example>
@@ -13,7 +13,7 @@ Namespace Db
 	''' 			Return Nothing
 	''' 		End If
 	''' 
-	''' 		... cmd.ResultDataSet ‚É‘Î‚µ‚ÄXVˆ— ...
+	''' 		... cmd.ResultDataSet ã«å¯¾ã—ã¦æ›´æ–°å‡¦ç† ...
 	''' 
 	''' 		Dim rc As Integer
 	''' 		rc = cmd.Update()
@@ -29,7 +29,7 @@ Namespace Db
 #Region " Property "
 
 		''' <summary>
-		''' ƒAƒ_ƒvƒ^ƒCƒ“ƒXƒ^ƒ“ƒX
+		''' ã‚¢ãƒ€ãƒ—ã‚¿ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -39,7 +39,7 @@ Namespace Db
 #End Region
 
 		''' <summary>
-		''' Adapter Update ÀsI
+		''' Adapter Update å®Ÿè¡Œï¼
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>

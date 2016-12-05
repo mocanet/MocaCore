@@ -2,24 +2,24 @@
 Namespace Util
 
 	''' <summary>
-	''' ƒXƒgƒbƒvƒEƒHƒbƒ`
+	''' ã‚¹ãƒˆãƒƒãƒ—ã‚¦ã‚©ãƒƒãƒ
 	''' </summary>
 	''' <remarks>
-	''' ‚±‚ÌƒNƒ‰ƒX‚ÍA.NET Framework version 1.1 —p‚Å‚·B<br/>
-	''' .NET Framework version 2.0 ‚Å‚Í <see cref="System.Diagnostics.Stopwatch"/> ‚ªV‚µ‚­’Ç‰Á‚³‚ê‚Ä‚Ü‚·B<br/>
-	''' Šî–{“I‚É‚Í•W€‚ğg‚Á‚Ä‚­‚¾‚³‚¢B‹@”\Šg’£‚µ‚½‚¢‚Í‚±‚¿‚ç‚ğg‚Á‚Ä‹@”\Šg’£‚·‚é‚Ì‚à‚ ‚è‚©‚ÆB
+	''' ã“ã®ã‚¯ãƒ©ã‚¹ã¯ã€.NET Framework version 1.1 ç”¨ã§ã™ã€‚<br/>
+	''' .NET Framework version 2.0 ã§ã¯ <see cref="System.Diagnostics.Stopwatch"/> ãŒæ–°ã—ãè¿½åŠ ã•ã‚Œã¦ã¾ã™ã€‚<br/>
+	''' åŸºæœ¬çš„ã«ã¯æ¨™æº–ã‚’ä½¿ã£ã¦ãã ã•ã„ã€‚æ©Ÿèƒ½æ‹¡å¼µã—ãŸã„æ™‚ã¯ã“ã¡ã‚‰ã‚’ä½¿ã£ã¦æ©Ÿèƒ½æ‹¡å¼µã™ã‚‹ã®ã‚‚ã‚ã‚Šã‹ã¨ã€‚
 	''' </remarks>
 	Public Class StopWatch
 
-		''' <summary>ŠJn</summary>
+		''' <summary>é–‹å§‹æ™‚åˆ»</summary>
 		Private _sTime As DateTime
-		''' <summary>I—¹</summary>
+		''' <summary>çµ‚äº†æ™‚åˆ»</summary>
 		Private _eTime As DateTime
 
 #Region " Constructor/DeConstructor "
 
 		''' <summary>
-		''' ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
 		''' <remarks></remarks>
 		Public Sub New()
@@ -32,7 +32,7 @@ Namespace Util
 #Region " Properties "
 
 		''' <summary>
-		''' ŠJn
+		''' é–‹å§‹æ™‚åˆ»
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -44,7 +44,7 @@ Namespace Util
 		End Property
 
 		''' <summary>
-		''' I—¹
+		''' çµ‚äº†æ™‚åˆ»
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -56,9 +56,9 @@ Namespace Util
 		End Property
 
 		''' <summary>
-		''' Œv‘ª‚µ‚½•b”‚ğQÆ
+		''' è¨ˆæ¸¬ã—ãŸç§’æ•°ã‚’å‚ç…§
 		''' </summary>
-		''' <value>Œv‘ªŒ‹‰Ê•b”</value>
+		''' <value>è¨ˆæ¸¬çµæœç§’æ•°</value>
 		''' <remarks>
 		''' </remarks>
 		Public ReadOnly Property ElapsedMilliseconds() As Double
@@ -70,7 +70,7 @@ Namespace Util
 #End Region
 
 		''' <summary>
-		''' ƒXƒ^[ƒg
+		''' ã‚¹ã‚¿ãƒ¼ãƒˆ
 		''' </summary>
 		''' <remarks>
 		''' </remarks>
@@ -79,7 +79,7 @@ Namespace Util
 		End Sub
 
 		''' <summary>
-		''' ƒXƒgƒbƒv
+		''' ã‚¹ãƒˆãƒƒãƒ—
 		''' </summary>
 		''' <remarks>
 		''' </remarks>

@@ -109,7 +109,7 @@
     <Compile Include="Attr\AspectAttributeAnalyzer.vb" />
     <Compile Include="Attr\AttributeAnalyzer.vb" />
     <Compile Include="Attr\CaptionAttribute.vb" />
-    <Compile Include="Attr\ControlAttribute.vb" />
+    <Compile Include="Attr\BindControlAttribute.vb" />
     <Compile Include="Attr\FormatAttribute.vb" />
     <Compile Include="Attr\IAttributeAnalyzer.vb" />
     <Compile Include="Attr\ValidateAttribute.vb" />

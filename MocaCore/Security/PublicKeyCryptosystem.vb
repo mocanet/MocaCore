@@ -3,30 +3,30 @@ Imports System.Security.Cryptography
 Namespace Security
 
 	''' <summary>
-	''' ŒöŠJŒ®ˆÃ†•û–@‚ÅˆÃ†‰»‚·‚é
+	''' å…¬é–‹éµæš—å·æ–¹æ³•ã§æš—å·åŒ–ã™ã‚‹
 	''' </summary>
 	''' <remarks>
-	''' –¢À‘•
+	''' æœªå®Ÿè£…
 	''' </remarks>
 	Public Class PublicKeyCryptosystem
 
-		''' <summary>ˆÃ†‰»‚·‚éí•Ê</summary>
+		''' <summary>æš—å·åŒ–ã™ã‚‹ç¨®åˆ¥</summary>
 		Public Enum AlgorithmType
-			''' <summary>RSA ƒAƒ‹ƒSƒŠƒYƒ€</summary>
+			''' <summary>RSA ã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ </summary>
 			RSA = 1
-			''' <summary>DSA ƒAƒ‹ƒSƒŠƒYƒ€</summary>
+			''' <summary>DSA ã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ </summary>
 			DSA
 		End Enum
 
-		''' <summary>ˆÃ†‰»‚·‚éƒAƒ‹ƒSƒŠƒYƒ€ƒCƒ“ƒXƒ^ƒ“ƒX</summary>
+		''' <summary>æš—å·åŒ–ã™ã‚‹ã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</summary>
 		Private _asymmetricAlgorithm As AsymmetricAlgorithm
 
 #Region " Constructor/DeConstructor "
 
 		''' <summary>
-		''' ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="hashType">ˆÃ†‰»‚·‚éí•Ê</param>
+		''' <param name="hashType">æš—å·åŒ–ã™ã‚‹ç¨®åˆ¥</param>
 		''' <remarks>
 		''' </remarks>
 		Public Sub New(ByVal hashType As AlgorithmType)

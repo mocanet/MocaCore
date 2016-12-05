@@ -2,23 +2,23 @@
 Namespace Db.CommandWrapper
 
 	''' <summary>
-	''' SELECT•¶‚ğÀs‚µADataSet‚ğg‚Á‚ÄUPDATE‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX
+	''' SELECTæ–‡ã‚’å®Ÿè¡Œã—ã€DataSetã‚’ä½¿ã£ã¦UPDATEã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class Select4UpdateCommandWrapper
 		Inherits SelectCommandWrapper
 		Implements IDbCommandSelect4Update
 
-		''' <summary>ƒAƒ_ƒvƒ^ƒIƒuƒWƒFƒNƒg</summary>
+		''' <summary>ã‚¢ãƒ€ãƒ—ã‚¿ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</summary>
 		Private _adp As IDbDataAdapter
 
 #Region " Constructor/DeConstructor "
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="dba">e‚Æ‚È‚éDBAccessƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <param name="cmd">Às‚·‚éDBCommandƒCƒ“ƒXƒ^ƒ“ƒX</param>
+		''' <param name="dba">è¦ªã¨ãªã‚‹DBAccessã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <param name="cmd">å®Ÿè¡Œã™ã‚‹DBCommandã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
 		''' <remarks>
 		''' </remarks>
 		Friend Sub New(ByVal dba As IDao, ByVal cmd As IDbCommand)
@@ -31,7 +31,7 @@ Namespace Db.CommandWrapper
 #Region " Property "
 
 		''' <summary>
-		''' ƒAƒ_ƒvƒ^ƒCƒ“ƒXƒ^ƒ“ƒX
+		''' ã‚¢ãƒ€ãƒ—ã‚¿ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -45,7 +45,7 @@ Namespace Db.CommandWrapper
 #End Region
 
 		''' <summary>
-		''' Select SQLÀsI
+		''' Select SQLå®Ÿè¡Œï¼
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>
@@ -54,7 +54,7 @@ Namespace Db.CommandWrapper
 		End Function
 
 		''' <summary>
-		''' Adapter Update ÀsI
+		''' Adapter Update å®Ÿè¡Œï¼
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>

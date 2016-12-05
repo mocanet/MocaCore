@@ -2,10 +2,10 @@
 Namespace Db
 
 	''' <summary>
-	''' StoredProcedure�����s����ׂ�DBCommand�����b�s���O����C���^�t�F�[�X
+	''' StoredProcedureを実行する為のDBCommandをラッピングするインタフェース
 	''' </summary>
 	''' <remarks>
-	''' StoredProcedure�����s����Ƃ��Ɏg�p���܂��B<br/>
+	''' StoredProcedureを実行するときに使用します。<br/>
 	''' <example>
 	''' <code lang="vb">
 	''' Using dba As DbAccess = New DbAccess("Connection String")
@@ -27,10 +27,10 @@ Namespace Db
 #Region " Property "
 
 		''' <summary>
-		''' ���s��̖߂�l��Ԃ�
+		''' 実行後の戻り値を返す
 		''' </summary>
 		''' <value></value>
-		''' <returns>�߂�l</returns>
+		''' <returns>戻り値</returns>
 		''' <remarks></remarks>
 		ReadOnly Property ReturnValue() As Object
 
@@ -39,38 +39,38 @@ Namespace Db
 #Region " Methods "
 
 		''' <summary>
-		''' ���̓p�����[�^�l��ݒ肷��
+		''' 入力パラメータ値を設定する
 		''' </summary>
-		''' <param name="index">�p�����[�^�ʒu</param>
-		''' <param name="value">�l</param>
+		''' <param name="index">パラメータ位置</param>
+		''' <param name="value">値</param>
 		''' <remarks>
-		''' �X�g�A�h�̃p�����[�^��ݒ肷��Ƃ��̂ݎg�p�\�ł��B
-		''' �p�����[�^�ʒu�̂O�Ԗڂ�@RETURN_VALUE�ɂȂ�ׁA�w�肳�ꂽ�ʒu�Ɂ{�P����B
+		''' ストアドのパラメータを設定するときのみ使用可能です。
+		''' パラメータ位置の０番目は@RETURN_VALUEになる為、指定された位置に＋１する。
 		''' </remarks>
 		Sub SetParameterValue(ByVal index As Integer, ByVal value As Object)
 
 		''' <summary>
-		''' ���̓p�����[�^�l��ݒ肷��
+		''' 入力パラメータ値を設定する
 		''' </summary>
-		''' <param name="parameterName">�p�����[�^��</param>
-		''' <param name="value">�l</param>
+		''' <param name="parameterName">パラメータ名</param>
+		''' <param name="value">値</param>
 		''' <remarks>
-		''' �X�g�A�h�̃p�����[�^��ݒ肷��Ƃ��̂ݎg�p�\
+		''' ストアドのパラメータを設定するときのみ使用可能
 		''' </remarks>
 		Sub SetParameterValue(ByVal parameterName As String, ByVal value As Object)
 
 		''' <summary>
-		''' ���̓p�����[�^�l�̐ݒ��ǉ�����
+		''' 入力パラメータ値の設定を追加する
 		''' </summary>
 		''' <param name="value"></param>
 		''' <remarks></remarks>
 		''' <exception cref="DbAccessException">
-		''' �w�肳�ꂽ�p�����[�^���������܂��B
+		''' 指定されたパラメータが多すぎます。
 		''' </exception>
 		Sub AddParameterValue(ByVal value As Object)
 
 		''' <summary>
-		''' �X�V�n�̃X�g�A�h�����s�I
+		''' 更新系のストアドを実行！
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>

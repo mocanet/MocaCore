@@ -2,7 +2,7 @@
 Namespace Db
 
 	''' <summary>
-	''' 列情報モデルのコレクション
+	''' 蛻玲ュ蝣ｱ繝｢繝�繝ｫ縺ｮ繧ｳ繝ｬ繧ｯ繧ｷ繝ｧ繝ｳ
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class DbInfoColumnCollection

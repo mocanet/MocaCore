@@ -3,23 +3,23 @@ Imports System.Data.Common
 Namespace Db.Helper
 
 	''' <summary>
-	''' DB�A�N�Z�X�̊e�v���p�C�_�[�ɑΉ������w���p�[�̒��ۃN���X
+	''' DBアクセスの各プロパイダーに対応したヘルパーの抽象クラス
 	''' </summary>
 	''' <remarks>
-	''' �eDB�x���_�[���ɈقȂ镔�����z������ׂ̃N���X�ł��B<br/>
+	''' 各DBベンダー毎に異なる部分を吸収する為のクラスです。<br/>
 	''' </remarks>
 	Public MustInherit Class DbAccessHelper
 		Implements IDisposable
 
-		''' <summary>���ƂȂ�f�[�^�x�[�X�A�N�Z�X�N���X�C���X�^���X</summary>
+		''' <summary>元となるデータベースアクセスクラスインスタンス</summary>
 		Protected targetDba As IDao
-		''' <summary>���N���X�Ŏg�p����f�[�^�x�[�X�A�N�Z�X�N���X�C���X�^���X</summary>
+		''' <summary>当クラスで使用するデータベースアクセスクラスインスタンス</summary>
 		Protected myDba As IDao
 
 		''' <summary>
-		''' �R���X�g���N�^
+		''' コンストラクタ
 		''' </summary>
-		''' <param name="dba">�g�p����f�[�^�x�[�X�A�N�Z�X</param>
+		''' <param name="dba">使用するデータベースアクセス</param>
 		''' <remarks></remarks>
 		Public Sub New(ByVal dba As IDao)
 			Me.targetDba = dba
@@ -28,16 +28,16 @@ Namespace Db.Helper
 
 #Region " IDisposable Support "
 
-		Private disposedValue As Boolean = False		' �d������Ăяo�������o����ɂ�
+		Private disposedValue As Boolean = False		' 重複する呼び出しを検出するには
 
 		' IDisposable
 		Protected Overridable Sub Dispose(ByVal disposing As Boolean)
 			If Not Me.disposedValue Then
 				If disposing Then
-					' TODO: �����I�ɌĂяo���ꂽ�Ƃ��Ƀ}�l�[�W ���\�[�X��������܂�
+					' TODO: 明示的に呼び出されたときにマネージ リソースを解放します
 				End If
 
-				' TODO: ���L�̃A���}�l�[�W ���\�[�X��������܂�
+				' TODO: 共有のアンマネージ リソースを解放します
 				If Me.myDba IsNot Nothing Then
 					Me.myDba.Dispose()
 				End If
@@ -45,9 +45,9 @@ Namespace Db.Helper
 			Me.disposedValue = True
 		End Sub
 
-		' ���̃R�[�h�́A�j���\�ȃp�^�[���𐳂��������ł���悤�� Visual Basic �ɂ���Ēǉ�����܂����B
+		' このコードは、破棄可能なパターンを正しく実装できるように Visual Basic によって追加されました。
 		Public Sub Dispose() Implements IDisposable.Dispose
-			' ���̃R�[�h��ύX���Ȃ��ł��������B�N���[���A�b�v �R�[�h����� Dispose(ByVal disposing As Boolean) �ɋL�q���܂��B
+			' このコードを変更しないでください。クリーンアップ コードを上の Dispose(ByVal disposing As Boolean) に記述します。
 			Dispose(True)
 			GC.SuppressFinalize(Me)
 		End Sub

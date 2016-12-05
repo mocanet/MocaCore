@@ -2,7 +2,7 @@
 Namespace Aop
 
 	''' <summary>
-	''' Interceptorのインターフェイス
+	''' Interceptor縺ｮ繧､繝ｳ繧ｿ繝ｼ繝輔ぉ繧､繧ｹ
 	''' </summary>
 	''' <remarks></remarks>
 	Public Interface IInterceptor

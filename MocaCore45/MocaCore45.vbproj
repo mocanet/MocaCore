@@ -164,11 +164,11 @@
     <Compile Include="..\MocaCore\Attr\AttributeAnalyzer.vb">
       <Link>Attr\AttributeAnalyzer.vb</Link>
     </Compile>
+    <Compile Include="..\MocaCore\Attr\BindControlAttribute.vb">
+      <Link>Attr\BindControlAttribute.vb</Link>
+    </Compile>
     <Compile Include="..\MocaCore\Attr\CaptionAttribute.vb">
       <Link>Attr\CaptionAttribute.vb</Link>
-    </Compile>
-    <Compile Include="..\MocaCore\Attr\ControlAttribute.vb">
-      <Link>Attr\ControlAttribute.vb</Link>
     </Compile>
     <Compile Include="..\MocaCore\Attr\FormatAttribute.vb">
       <Link>Attr\FormatAttribute.vb</Link>

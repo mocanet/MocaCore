@@ -2,7 +2,7 @@
 Namespace Db
 
 	''' <summary>
-	''' ƒXƒgƒAƒhƒvƒƒV[ƒWƒƒî•ñƒ‚ƒfƒ‹‚ÌƒRƒŒƒNƒVƒ‡ƒ“
+	''' ã‚¹ãƒˆã‚¢ãƒ‰ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£æƒ…å ±ãƒ¢ãƒ‡ãƒ«ã®ã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class DbInfoProcedureCollection

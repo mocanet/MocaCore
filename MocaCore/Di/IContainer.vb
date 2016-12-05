@@ -2,48 +2,48 @@
 Namespace Di
 
 	''' <summary>
-	''' ƒRƒ“ƒ|[ƒlƒ“ƒg‚½‚¿‚ÌƒRƒ“ƒeƒiƒCƒ“ƒ^ƒtƒF[ƒX
+	''' ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŸã¡ã®ã‚³ãƒ³ãƒ†ãƒŠã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 	''' </summary>
 	''' <remarks></remarks>
 	Public Interface IContainer
 
 		''' <summary>
-		''' ‰Šú‰»ˆ—
+		''' åˆæœŸåŒ–å‡¦ç†
 		''' </summary>
 		''' <remarks></remarks>
 		Sub Init()
 
 		''' <summary>
-		''' ƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌÁ‹Ž
+		''' ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®æ¶ˆåŽ»
 		''' </summary>
 		''' <remarks></remarks>
 		Sub Destroy()
 
 		''' <summary>
-		''' Ši”[‚µ‚Ä‚¢‚éƒRƒ“ƒ|[ƒlƒ“ƒg‚ð•Ô‚·B
+		''' æ ¼ç´ã—ã¦ã„ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’è¿”ã™ã€‚
 		''' </summary>
-		''' <param name="componentType">Žæ“¾‚·‚éŒ^</param>
-		''' <returns>ŠY“–‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒgBŠY“–‚µ‚È‚¢‚Æ‚«‚Í Nothing ‚ð•Ô‚·B</returns>
+		''' <param name="componentType">å–å¾—ã™ã‚‹åž‹</param>
+		''' <returns>è©²å½“ã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã€‚è©²å½“ã—ãªã„ã¨ãã¯ Nothing ã‚’è¿”ã™ã€‚</returns>
 		''' <remarks></remarks>
 		Function GetComponent(ByVal componentType As Type) As MocaComponent
 
 		''' <summary>
-		''' Ši”[‚µ‚Ä‚¢‚éƒRƒ“ƒ|[ƒlƒ“ƒg‚ð•Ô‚·B
+		''' æ ¼ç´ã—ã¦ã„ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’è¿”ã™ã€‚
 		''' </summary>
-		''' <param name="componentKey">Žæ“¾‚·‚éƒL[</param>
-		''' <returns>ŠY“–‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒgBŠY“–‚µ‚È‚¢‚Æ‚«‚Í Nothing ‚ð•Ô‚·B</returns>
+		''' <param name="componentKey">å–å¾—ã™ã‚‹ã‚­ãƒ¼</param>
+		''' <returns>è©²å½“ã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã€‚è©²å½“ã—ãªã„ã¨ãã¯ Nothing ã‚’è¿”ã™ã€‚</returns>
 		''' <remarks></remarks>
 		Function GetComponent(ByVal componentKey As String) As MocaComponent
 
 		''' <summary>
-		''' ƒRƒ“ƒ|[ƒlƒ“ƒg‚ðŠi”[‚·‚éB
+		''' ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’æ ¼ç´ã™ã‚‹ã€‚
 		''' </summary>
-		''' <param name="component">‘ÎÛ‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg</param>
+		''' <param name="component">å¯¾è±¡ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ</param>
 		''' <remarks></remarks>
 		Sub SetComponent(ByVal component As MocaComponent)
 
 		''' <summary>
-		''' <see cref="MocaComponent"/> ‚ð”½•œˆ—‚·‚é—ñ‹“Žq‚ð•Ô‚µ‚Ü‚·B
+		''' <see cref="MocaComponent"/> ã‚’åå¾©å‡¦ç†ã™ã‚‹åˆ—æŒ™å­ã‚’è¿”ã—ã¾ã™ã€‚
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>

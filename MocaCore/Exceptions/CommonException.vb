@@ -4,26 +4,26 @@ Imports System.Reflection
 Namespace Exceptions
 
 	''' <summary>
-	''' ƒJƒXƒ^ƒ€‹¤’Ê—áŠOƒNƒ‰ƒX
+	''' ã‚«ã‚¹ã‚¿ãƒ å…±é€šä¾‹å¤–ã‚¯ãƒ©ã‚¹
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class CommonException
 		Inherits ApplicationException
 
-		''' <summary>Œ³‚É‚È‚é—áŠO</summary>
+		''' <summary>å…ƒã«ãªã‚‹ä¾‹å¤–</summary>
 		Private _baseException As Exception
-		''' <summary>ƒGƒ‰[ƒƒbƒZ[ƒW</summary>
+		''' <summary>ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸</summary>
 		Protected myMessage As String
 
-		''' <summary>•s—v‚©‚Ç‚¤‚©ŒŸØ’†</summary>
+		''' <summary>ä¸è¦ã‹ã©ã†ã‹æ¤œè¨¼ä¸­</summary>
 		Protected myStatckTrace As StackTrace
 
 #Region " Constructor/DeConstructor "
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="Message">ƒGƒ‰[ƒƒbƒZ[ƒW</param>
+		''' <param name="Message">ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸</param>
 		''' <remarks>
 		''' </remarks>
 		Public Sub New(ByVal Message As String)
@@ -33,9 +33,9 @@ Namespace Exceptions
 		End Sub
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="ex">—áŠOƒCƒ“ƒXƒ^ƒ“ƒX</param>
+		''' <param name="ex">ä¾‹å¤–ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
 		''' <remarks>
 		''' </remarks>
 		Public Sub New(ByVal ex As Exception)
@@ -44,10 +44,10 @@ Namespace Exceptions
 		End Sub
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="ex">—áŠOƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <param name="Message">ƒGƒ‰[ƒƒbƒZ[ƒW</param>
+		''' <param name="ex">ä¾‹å¤–ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <param name="Message">ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸</param>
 		''' <remarks>
 		''' </remarks>
 		Public Sub New(ByVal ex As Exception, ByVal Message As String)
@@ -61,12 +61,12 @@ Namespace Exceptions
 #Region " Overrides "
 
 		''' <summary>
-		''' ƒƒbƒZ[ƒW
+		''' ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
 		''' </summary>
-		''' <value>“–ƒVƒXƒeƒ€—p‚ÌƒƒbƒZ[ƒW‚ÉŒ³‚Ì—áŠO‚ÌƒƒbƒZ[ƒW‚ğ•t‰Á‚µ‚½ƒƒbƒZ[ƒW</value>
+		''' <value>å½“ã‚·ã‚¹ãƒ†ãƒ ç”¨ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã«å…ƒã®ä¾‹å¤–ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’ä»˜åŠ ã—ãŸãƒ¡ãƒƒã‚»ãƒ¼ã‚¸</value>
 		''' <remarks>
-		''' ƒtƒH[ƒ}ƒbƒg‚Í‰º‹L‚Ì‚Æ‚¨‚è
-		''' “–ƒVƒXƒeƒ€—pƒƒbƒZ[ƒWiŒ³‚Ì—áŠOƒƒbƒZ[ƒWj
+		''' ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã¯ä¸‹è¨˜ã®ã¨ãŠã‚Š
+		''' å½“ã‚·ã‚¹ãƒ†ãƒ ç”¨ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ï¼ˆå…ƒã®ä¾‹å¤–ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ï¼‰
 		''' </remarks>
 		Public Overrides ReadOnly Property Message() As String
 			Get
@@ -86,12 +86,12 @@ Namespace Exceptions
 					Return myMessage
 				End If
 
-				Return myMessage & "i" & buf & "j"
+				Return myMessage & "ï¼ˆ" & buf & "ï¼‰"
 			End Get
 		End Property
 
 		''' <summary>
-		''' ƒXƒ^ƒbƒNƒgƒŒ[ƒX
+		''' ã‚¹ã‚¿ãƒƒã‚¯ãƒˆãƒ¬ãƒ¼ã‚¹
 		''' </summary>
 		''' <value></value>
 		''' <remarks>
@@ -110,7 +110,7 @@ Namespace Exceptions
 
 #Region " Properties "
 
-		''' <summary>Œ³‚É‚È‚é—áŠO</summary>
+		''' <summary>å…ƒã«ãªã‚‹ä¾‹å¤–</summary>
 		Public Property BaseException() As Exception
 			Get
 				Return _baseException
@@ -120,9 +120,9 @@ Namespace Exceptions
 			End Set
 		End Property
 		''' <summary>
-		''' ƒGƒ‰[ƒƒbƒZ[ƒWƒƒbƒZ[ƒW
+		''' ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
 		''' </summary>
-		''' <value>“–ƒVƒXƒeƒ€—p‚Éİ’è‚µ‚½ƒƒbƒZ[ƒW</value>
+		''' <value>å½“ã‚·ã‚¹ãƒ†ãƒ ç”¨ã«è¨­å®šã—ãŸãƒ¡ãƒƒã‚»ãƒ¼ã‚¸</value>
 		''' <remarks>
 		''' </remarks>
 		Public WriteOnly Property NewMessage() As String
@@ -132,9 +132,9 @@ Namespace Exceptions
 		End Property
 
 		''' <summary>
-		''' ƒIƒŠƒWƒiƒ‹—áŠO‚ÌƒƒbƒZ[ƒW
+		''' ã‚ªãƒªã‚¸ãƒŠãƒ«ä¾‹å¤–ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
 		''' </summary>
-		''' <value>ƒIƒŠƒWƒiƒ‹—áŠO‚ÌƒƒbƒZ[ƒW“à—e</value>
+		''' <value>ã‚ªãƒªã‚¸ãƒŠãƒ«ä¾‹å¤–ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å†…å®¹</value>
 		''' <remarks>
 		''' </remarks>
 		Public ReadOnly Property OrignalMessage() As String
@@ -150,11 +150,11 @@ Namespace Exceptions
 #End Region
 
 		''' <summary>
-		''' StackTrace‚ğ•Û‘¶‚·‚é
+		''' StackTraceã‚’ä¿å­˜ã™ã‚‹
 		''' </summary>
-		''' <param name="ex">”­¶‚µ‚½—áŠO</param>
+		''' <param name="ex">ç™ºç”Ÿã—ãŸä¾‹å¤–</param>
 		''' <remarks>
-		''' <see cref="Exception"/>‚Ì private field ‚Å‚ ‚é _remoteStackTraceString ‚É InnerException ‚Ì StackTrace ‚ğ•Û‘¶‚·‚éB
+		''' <see cref="Exception"/>ã® private field ã§ã‚ã‚‹ _remoteStackTraceString ã« InnerException ã® StackTrace ã‚’ä¿å­˜ã™ã‚‹ã€‚
 		''' </remarks>
 		Public Shared Sub SaveStackTraceToRemoteStackTraceString(ByVal ex As Exception)
 			Dim remoteStackTraceString As FieldInfo

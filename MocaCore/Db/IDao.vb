@@ -3,10 +3,10 @@ Imports Moca.Db.CommandWrapper
 Namespace Db
 
 	''' <summary>
-	''' Data Access Object ‚ÌƒCƒ“ƒ^ƒtƒF[ƒX
+	''' Data Access Object ã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 	''' </summary>
 	''' <remarks>
-	''' ƒf[ƒ^ƒx[ƒXƒAƒNƒZƒX‚·‚éÛ‚ÉÅ’áŒÀ•K—v‚ÆŽv‚í‚ê‚é‹@”\‚ð’ñ‹Ÿ‚µ‚Ü‚·B<br/>
+	''' ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹éš›ã«æœ€ä½Žé™å¿…è¦ã¨æ€ã‚ã‚Œã‚‹æ©Ÿèƒ½ã‚’æä¾›ã—ã¾ã™ã€‚<br/>
 	''' </remarks>
 	Public Interface IDao
 		Inherits IDisposable
@@ -21,21 +21,21 @@ Namespace Db
 		ReadOnly Property Dbms() As Dbms
 
 		''' <summary>
-		''' ƒRƒlƒNƒVƒ‡ƒ“ƒIƒuƒWƒFƒNƒg
+		''' ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 		''' </summary>
 		''' <value></value>
 		''' <remarks></remarks>
 		ReadOnly Property Connection() As IDbConnection
 
 		''' <summary>
-		''' ƒAƒ_ƒvƒ^ƒIƒuƒWƒFƒNƒg
+		''' ã‚¢ãƒ€ãƒ—ã‚¿ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 		''' </summary>
 		''' <value></value>
 		''' <remarks></remarks>
 		ReadOnly Property Adapter() As IDbDataAdapter
 
 		''' <summary>
-		''' ƒwƒ‹ƒp[ƒNƒ‰ƒX‚ð•Ô‚·
+		''' ãƒ˜ãƒ«ãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’è¿”ã™
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -43,7 +43,7 @@ Namespace Db
 		ReadOnly Property Helper() As IDbAccessHelper
 
 		''' <summary>
-		''' Œ»Ý‚ÌƒRƒ}ƒ“ƒhƒ‰ƒbƒp[ƒNƒ‰ƒX‚ð•Ô‚·
+		''' ç¾åœ¨ã®ã‚³ãƒžãƒ³ãƒ‰ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’è¿”ã™
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -51,7 +51,7 @@ Namespace Db
 		ReadOnly Property CommandWrapper() As IDbCommandSql
 
 		''' <summary>
-		''' ƒRƒ}ƒ“ƒhŽÀs—š—ð—L–³Žw’è
+		''' ã‚³ãƒžãƒ³ãƒ‰å®Ÿè¡Œå±¥æ­´æœ‰ç„¡æŒ‡å®š
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -59,7 +59,7 @@ Namespace Db
 		Property ExecuteHistory() As Boolean
 
 		''' <summary>
-		''' XVƒRƒ}ƒ“ƒhŽÀs—š—ð—L–³Žw’è
+		''' æ›´æ–°ã‚³ãƒžãƒ³ãƒ‰å®Ÿè¡Œå±¥æ­´æœ‰ç„¡æŒ‡å®š
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -67,7 +67,7 @@ Namespace Db
 		Property ExecuteUpdateHistory() As Boolean
 
 		''' <summary>
-		''' ƒRƒ}ƒ“ƒhŽÀs—š—ð
+		''' ã‚³ãƒžãƒ³ãƒ‰å®Ÿè¡Œå±¥æ­´
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -75,7 +75,7 @@ Namespace Db
 		ReadOnly Property ExecuteHistories() As IList(Of String)
 
 		''' <summary>
-		''' ƒ[ƒ‹ƒoƒbƒN—L–³
+		''' ãƒ­ãƒ¼ãƒ«ãƒãƒƒã‚¯æœ‰ç„¡
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -86,13 +86,13 @@ Namespace Db
 #Region " Check "
 
 		''' <summary>
-		''' Ú‘±Šm”F‚Ìˆ×‚Éˆê“xÚ‘±‚µ‚Ä‚Ý‚é
+		''' æŽ¥ç¶šç¢ºèªã®ç‚ºã«ä¸€åº¦æŽ¥ç¶šã—ã¦ã¿ã‚‹
 		''' </summary>
 		''' <remarks>
-		''' Ú‘±o—ˆ‚½‚Æ‚«‚ÍØ’f‚µ‚Ü‚·B
+		''' æŽ¥ç¶šå‡ºæ¥ãŸã¨ãã¯åˆ‡æ–­ã—ã¾ã™ã€‚
 		''' </remarks>
 		''' <exception cref="DbAccessException">
-		''' DBƒAƒNƒZƒX‚ÅƒGƒ‰[‚ª”­¶‚µ‚½
+		''' DBã‚¢ã‚¯ã‚»ã‚¹ã§ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
 		''' </exception>
 		Sub CheckConnect()
 
@@ -100,57 +100,57 @@ Namespace Db
 #Region " Create "
 
 		''' <summary>
-		''' SELECT•¶‚ðŽÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX‚ð¶¬‚·‚éB
+		''' SELECTæ–‡ã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’ç”Ÿæˆã™ã‚‹ã€‚
 		''' </summary>
-		''' <param name="commandText">SELECT•¶•¶Žš—ñ</param>
+		''' <param name="commandText">SELECTæ–‡æ–‡å­—åˆ—</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Function CreateCommandSelect(ByVal commandText As String) As IDbCommandSelect
 
 		''' <summary>
-		''' SELECT•¶‚ðŽÀs‚µADataSet‚ðŽg‚Á‚ÄUPDATE‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX‚ð¶¬‚·‚éB
+		''' SELECTæ–‡ã‚’å®Ÿè¡Œã—ã€DataSetã‚’ä½¿ã£ã¦UPDATEã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’ç”Ÿæˆã™ã‚‹ã€‚
 		''' </summary>
-		''' <param name="commandText">SELECT•¶•¶Žš—ñ</param>
+		''' <param name="commandText">SELECTæ–‡æ–‡å­—åˆ—</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Function CreateCommandSelect4Update(ByVal commandText As String) As IDbCommandSelect4Update
 
 		''' <summary>
-		''' INSERT•¶‚ðŽÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX‚ð¶¬‚·‚éB
+		''' INSERTæ–‡ã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’ç”Ÿæˆã™ã‚‹ã€‚
 		''' </summary>
-		''' <param name="commandText">INSERT•¶•¶Žš—ñ</param>
+		''' <param name="commandText">INSERTæ–‡æ–‡å­—åˆ—</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Function CreateCommandInsert(ByVal commandText As String) As IDbCommandInsert
 
 		''' <summary>
-		''' UPDATE•¶‚ðŽÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX‚ð¶¬‚·‚éB
+		''' UPDATEæ–‡ã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’ç”Ÿæˆã™ã‚‹ã€‚
 		''' </summary>
-		''' <param name="commandText">UPDATE•¶•¶Žš—ñ</param>
+		''' <param name="commandText">UPDATEæ–‡æ–‡å­—åˆ—</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Function CreateCommandUpdate(ByVal commandText As String) As IDbCommandUpdate
 
 		''' <summary>
-		''' DELETE•¶‚ðŽÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX‚ð¶¬‚·‚éB
+		''' DELETEæ–‡ã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’ç”Ÿæˆã™ã‚‹ã€‚
 		''' </summary>
-		''' <param name="commandText">DELETE•¶•¶Žš—ñ</param>
+		''' <param name="commandText">DELETEæ–‡æ–‡å­—åˆ—</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Function CreateCommandDelete(ByVal commandText As String) As IDbCommandDelete
 
 		''' <summary>
-		''' StoredProcedure‚ðŽÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX‚ð¶¬‚·‚éB
+		''' StoredProcedureã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’ç”Ÿæˆã™ã‚‹ã€‚
 		''' </summary>
-		''' <param name="commandText">ƒXƒgƒAƒh–¼</param>
+		''' <param name="commandText">ã‚¹ãƒˆã‚¢ãƒ‰å</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Function CreateCommandStoredProcedure(ByVal commandText As String) As IDbCommandStoredProcedure
 
 		''' <summary>
-		''' DDL‚ðŽÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX‚ð¶¬‚·‚éB
+		''' DDLã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’ç”Ÿæˆã™ã‚‹ã€‚
 		''' </summary>
-		''' <param name="commandText">DDL•¶•¶Žš—ñ</param>
+		''' <param name="commandText">DDLæ–‡æ–‡å­—åˆ—</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Function CreateCommandDDL(ByVal commandText As String) As IDbCommandDDL
@@ -159,73 +159,73 @@ Namespace Db
 #Region " Execute "
 
 		''' <summary>
-		''' ƒNƒGƒŠ‚ðŽÀs‚µA‚»‚ÌƒNƒGƒŠ‚ª•Ô‚·Œ‹‰ÊƒZƒbƒg‚ÌÅ‰‚Ìs‚É‚ ‚éÅ‰‚Ì—ñ‚ð•Ô‚µ‚Ü‚·B—]•ª‚È—ñ‚Ü‚½‚Ís‚Í–³Ž‹‚³‚ê‚Ü‚·B
+		''' ã‚¯ã‚¨ãƒªã‚’å®Ÿè¡Œã—ã€ãã®ã‚¯ã‚¨ãƒªãŒè¿”ã™çµæžœã‚»ãƒƒãƒˆã®æœ€åˆã®è¡Œã«ã‚ã‚‹æœ€åˆã®åˆ—ã‚’è¿”ã—ã¾ã™ã€‚ä½™åˆ†ãªåˆ—ã¾ãŸã¯è¡Œã¯ç„¡è¦–ã•ã‚Œã¾ã™ã€‚
 		''' </summary>
 		''' <param name="commandWrapper"></param>
-		''' <returns>Œ‹‰ÊƒZƒbƒg‚ÌÅ‰‚Ìs‚É‚ ‚éÅ‰‚Ì—ñB</returns>
+		''' <returns>çµæžœã‚»ãƒƒãƒˆã®æœ€åˆã®è¡Œã«ã‚ã‚‹æœ€åˆã®åˆ—ã€‚</returns>
 		''' <remarks>
-		''' “–ƒƒ\ƒbƒh‚Í—\‚ßƒf[ƒ^ƒx[ƒX‚ðƒI[ƒvƒ“‚µ‚Ä‚¨‚­•K—v‚ª‚ ‚è‚Ü‚·‚ªA
-		''' ƒI[ƒvƒ“‚³‚ê‚Ä‚¢‚È‚¢‚Æ‚«‚ÍAŽ©“®‚ÅƒI[ƒvƒ“‚µ‚ÄI—¹Žž‚ÉƒNƒ[ƒY‚µ‚Ü‚·B<br/>
-		''' Ú×‚ÍA<seealso cref="IDbCommand.ExecuteScalar"/> ‚ðŽQÆ‚µ‚Ä‚­‚¾‚³‚¢B
+		''' å½“ãƒ¡ã‚½ãƒƒãƒ‰ã¯äºˆã‚ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‚’ã‚ªãƒ¼ãƒ—ãƒ³ã—ã¦ãŠãå¿…è¦ãŒã‚ã‚Šã¾ã™ãŒã€
+		''' ã‚ªãƒ¼ãƒ—ãƒ³ã•ã‚Œã¦ã„ãªã„ã¨ãã¯ã€è‡ªå‹•ã§ã‚ªãƒ¼ãƒ—ãƒ³ã—ã¦çµ‚äº†æ™‚ã«ã‚¯ãƒ­ãƒ¼ã‚ºã—ã¾ã™ã€‚<br/>
+		''' è©³ç´°ã¯ã€<seealso cref="IDbCommand.ExecuteScalar"/> ã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
 		''' </remarks>
 		Function ExecuteScalar(ByVal commandWrapper As IDbCommandSelect) As Object
 
 		''' <summary>
-		''' SELECT•¶‚ÌŽÀs
+		''' SELECTæ–‡ã®å®Ÿè¡Œ
 		''' </summary>
-		''' <param name="commandWrapper">SELECT•¶‚ðŽÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <returns>ƒf[ƒ^Œ”</returns>
+		''' <param name="commandWrapper">SELECTæ–‡ã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <returns>ãƒ‡ãƒ¼ã‚¿ä»¶æ•°</returns>
 		''' <remarks>
 		''' </remarks>
 		''' <exception cref="DbAccessException">
-		''' DBƒAƒNƒZƒX‚ÅƒGƒ‰[‚ª”­¶‚µ‚½
+		''' DBã‚¢ã‚¯ã‚»ã‚¹ã§ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
 		''' </exception>
 		Function Execute(ByVal commandWrapper As IDbCommandSelect) As Integer
 
 		''' <summary>
-		''' SELECT•¶‚ÌŽÀs
+		''' SELECTæ–‡ã®å®Ÿè¡Œ
 		''' </summary>
-		''' <param name="commandWrapper">SELECT•¶‚ðŽÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <returns>Œ‹‰Ê</returns>
+		''' <param name="commandWrapper">SELECTæ–‡ã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <returns>çµæžœ</returns>
 		''' <remarks>
 		''' </remarks>
 		''' <exception cref="DbAccessException">
-		''' DBƒAƒNƒZƒX‚ÅƒGƒ‰[‚ª”­¶‚µ‚½
+		''' DBã‚¢ã‚¯ã‚»ã‚¹ã§ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
 		''' </exception>
 		Function Execute(Of T)(ByVal commandWrapper As IDbCommandSelect) As ISQLStatementResult
 
 		''' <summary>
-		''' SELECT•¶‚ÌŽÀs(Œã‚ÉAdapter‚ð—˜—p‚µ‚½XV‚ðs‚¤ê‡)
+		''' SELECTæ–‡ã®å®Ÿè¡Œ(å¾Œã«Adapterã‚’åˆ©ç”¨ã—ãŸæ›´æ–°ã‚’è¡Œã†å ´åˆ)
 		''' </summary>
-		''' <param name="commandWrapper">SELECT•¶‚ðŽÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <returns>ƒf[ƒ^Œ”</returns>
+		''' <param name="commandWrapper">SELECTæ–‡ã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <returns>ãƒ‡ãƒ¼ã‚¿ä»¶æ•°</returns>
 		''' <remarks>
-		''' SELECTŽÀsŒã‚Ìƒf[ƒ^XV‚ðDataSet‚ðŽg‚Á‚ÄXV‚·‚éê‡‚ÍA‚±‚¿‚ç‚ðŽg—p‚µ‚Ä‚­‚¾‚³‚¢B<br/>
-		''' —\‚ßAdapter‚ÆCommand‚ðŠÖ˜A•t‚¯‚Ü‚·B
+		''' SELECTå®Ÿè¡Œå¾Œã®ãƒ‡ãƒ¼ã‚¿æ›´æ–°ã‚’DataSetã‚’ä½¿ã£ã¦æ›´æ–°ã™ã‚‹å ´åˆã¯ã€ã“ã¡ã‚‰ã‚’ä½¿ç”¨ã—ã¦ãã ã•ã„ã€‚<br/>
+		''' äºˆã‚Adapterã¨Commandã‚’é–¢é€£ä»˜ã‘ã¾ã™ã€‚
 		''' </remarks>
 		''' <exception cref="DbAccessException">
-		''' DBƒAƒNƒZƒX‚ÅƒGƒ‰[‚ª”­¶‚µ‚½
+		''' DBã‚¢ã‚¯ã‚»ã‚¹ã§ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
 		''' </exception>
 		Function Execute(ByVal commandWrapper As IDbCommandSelect4Update) As Integer
 
 		''' <summary>
-		''' INSERT,UPDATE,DELETE•¶‚ÌŽÀs
+		''' INSERT,UPDATE,DELETEæ–‡ã®å®Ÿè¡Œ
 		''' </summary>
-		''' <param name="commandWrapper">ŽÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <returns>XVŒ”</returns>
+		''' <param name="commandWrapper">å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <returns>æ›´æ–°ä»¶æ•°</returns>
 		''' <remarks>
 		''' </remarks>
 		''' <exception cref="DbAccessException">
-		''' DBƒAƒNƒZƒX‚ÅƒGƒ‰[‚ª”­¶‚µ‚½
+		''' DBã‚¢ã‚¯ã‚»ã‚¹ã§ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
 		''' </exception>
 		Function ExecuteNonQuery(ByVal commandWrapper As IDbCommandSql) As Integer
 
 		''' <summary>
-		''' ƒAƒ_ƒvƒ^[‚É‚æ‚éXV
+		''' ã‚¢ãƒ€ãƒ—ã‚¿ãƒ¼ã«ã‚ˆã‚‹æ›´æ–°
 		''' </summary>
-		''' <param name="ds">XV‚·‚éƒf[ƒ^</param>
-		''' <param name="adp">ƒAƒ_ƒvƒ^[</param>
-		''' <returns>XVŒ”</returns>
+		''' <param name="ds">æ›´æ–°ã™ã‚‹ãƒ‡ãƒ¼ã‚¿</param>
+		''' <param name="adp">ã‚¢ãƒ€ãƒ—ã‚¿ãƒ¼</param>
+		''' <returns>æ›´æ–°ä»¶æ•°</returns>
 		''' <remarks></remarks>
 		Function UpdateAdapter(ByVal ds As DataSet, ByVal adp As IDbDataAdapter) As Integer
 

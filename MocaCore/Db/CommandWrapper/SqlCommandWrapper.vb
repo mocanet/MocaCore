@@ -4,35 +4,35 @@ Imports System.Text.RegularExpressions
 Namespace Db.CommandWrapper
 
 	''' <summary>
-	''' DBCommand‚Ìƒ‰ƒbƒsƒ“ƒO’ŠÛƒNƒ‰ƒX
+	''' DBCommandã®ãƒ©ãƒƒãƒ”ãƒ³ã‚°æŠ½è±¡ã‚¯ãƒ©ã‚¹
 	''' </summary>
 	''' <remarks></remarks>
 	Public MustInherit Class SqlCommandWrapper
 		Implements IDbCommandSql
 
-		''' <summary>e‚Æ‚È‚éDBAccessƒCƒ“ƒXƒ^ƒ“ƒX</summary>
+		''' <summary>è¦ªã¨ãªã‚‹DBAccessã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</summary>
 		Protected dba As IDao
-		''' <summary>Às‚·‚éDBCommandƒCƒ“ƒXƒ^ƒ“ƒX</summary>
+		''' <summary>å®Ÿè¡Œã™ã‚‹DBCommandã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</summary>
 		Protected cmd As IDbCommand
-		''' <summary>ƒRƒ“ƒpƒCƒ‹Ï‚İ‚ÌSQL‚ğg‚¤‚©‚Ç‚¤‚©</summary>
+		''' <summary>ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ¸ˆã¿ã®SQLã‚’ä½¿ã†ã‹ã©ã†ã‹</summary>
 		Private _preparedStatement As Boolean
-		''' <summary>ƒvƒŒ[ƒXƒtƒHƒ‹ƒ_”z—ñ</summary>
+		''' <summary>ãƒ—ãƒ¬ãƒ¼ã‚¹ãƒ•ã‚©ãƒ«ãƒ€é…åˆ—</summary>
 		Private _placeholders() As String
-		''' <summary>SQL•¶‚ÌƒIƒŠƒWƒiƒ‹</summary>
+		''' <summary>SQLæ–‡ã®ã‚ªãƒªã‚¸ãƒŠãƒ«</summary>
 		Private _originalCommandText As String
-		''' <summary>ÀsŒã‚Ì–ß‚è’l</summary>
+		''' <summary>å®Ÿè¡Œå¾Œã®æˆ»ã‚Šå€¤</summary>
 		Private _outputParams As Hashtable
 
-		''' <summary>ƒf[ƒ^ƒx[ƒX‚©‚çæ“¾‚µ‚½ƒf[ƒ^‚ÌŠi”[æ‚Æ‚È‚é Entity ‚ğì¬‚·‚é</summary>
+		''' <summary>ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‹ã‚‰å–å¾—ã—ãŸãƒ‡ãƒ¼ã‚¿ã®æ ¼ç´å…ˆã¨ãªã‚‹ Entity ã‚’ä½œæˆã™ã‚‹</summary>
 		Protected entityBuilder As New EntityBuilder
 
 #Region " Constructor/DeConstructor "
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="dba">e‚Æ‚È‚éDBAccessƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <param name="cmd">Às‚·‚éDBCommandƒCƒ“ƒXƒ^ƒ“ƒX</param>
+		''' <param name="dba">è¦ªã¨ãªã‚‹DBAccessã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <param name="cmd">å®Ÿè¡Œã™ã‚‹DBCommandã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
 		''' <remarks>
 		''' </remarks>
 		Friend Sub New(ByVal dba As IDao, ByVal cmd As IDbCommand)
@@ -47,7 +47,7 @@ Namespace Db.CommandWrapper
 
 #Region " IDisposable Support "
 
-		Private _disposedValue As Boolean = False		' d•¡‚·‚éŒÄ‚Ño‚µ‚ğŒŸo‚·‚é‚É‚Í
+		Private _disposedValue As Boolean = False		' é‡è¤‡ã™ã‚‹å‘¼ã³å‡ºã—ã‚’æ¤œå‡ºã™ã‚‹ã«ã¯
 
 		''' <summary>
 		''' IDisposable
@@ -57,17 +57,17 @@ Namespace Db.CommandWrapper
 		Protected Overridable Sub Dispose(ByVal disposing As Boolean)
 			If Not Me._disposedValue Then
 				If disposing Then
-					' TODO: –¾¦“I‚ÉŒÄ‚Ño‚³‚ê‚½‚Æ‚«‚Éƒ}ƒl[ƒW ƒŠƒ\[ƒX‚ğ‰ğ•ú‚µ‚Ü‚·
+					' TODO: æ˜ç¤ºçš„ã«å‘¼ã³å‡ºã•ã‚ŒãŸã¨ãã«ãƒãƒãƒ¼ã‚¸ ãƒªã‚½ãƒ¼ã‚¹ã‚’è§£æ”¾ã—ã¾ã™
 				End If
 
-				' TODO: ‹¤—L‚ÌƒAƒ“ƒ}ƒl[ƒW ƒŠƒ\[ƒX‚ğ‰ğ•ú‚µ‚Ü‚·
+				' TODO: å…±æœ‰ã®ã‚¢ãƒ³ãƒãƒãƒ¼ã‚¸ ãƒªã‚½ãƒ¼ã‚¹ã‚’è§£æ”¾ã—ã¾ã™
 			End If
 			Me._disposedValue = True
 		End Sub
 
-		' ‚±‚ÌƒR[ƒh‚ÍA”jŠü‰Â”\‚Èƒpƒ^[ƒ“‚ğ³‚µ‚­À‘•‚Å‚«‚é‚æ‚¤‚É Visual Basic ‚É‚æ‚Á‚Ä’Ç‰Á‚³‚ê‚Ü‚µ‚½B
+		' ã“ã®ã‚³ãƒ¼ãƒ‰ã¯ã€ç ´æ£„å¯èƒ½ãªãƒ‘ã‚¿ãƒ¼ãƒ³ã‚’æ­£ã—ãå®Ÿè£…ã§ãã‚‹ã‚ˆã†ã« Visual Basic ã«ã‚ˆã£ã¦è¿½åŠ ã•ã‚Œã¾ã—ãŸã€‚
 		Public Sub Dispose() Implements IDisposable.Dispose
-			' ‚±‚ÌƒR[ƒh‚ğ•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢BƒNƒŠ[ƒ“ƒAƒbƒv ƒR[ƒh‚ğã‚Ì Dispose(ByVal disposing As Boolean) ‚É‹Lq‚µ‚Ü‚·B
+			' ã“ã®ã‚³ãƒ¼ãƒ‰ã‚’å¤‰æ›´ã—ãªã„ã§ãã ã•ã„ã€‚ã‚¯ãƒªãƒ¼ãƒ³ã‚¢ãƒƒãƒ— ã‚³ãƒ¼ãƒ‰ã‚’ä¸Šã® Dispose(ByVal disposing As Boolean) ã«è¨˜è¿°ã—ã¾ã™ã€‚
 			Dispose(True)
 			GC.SuppressFinalize(Me)
 		End Sub
@@ -78,9 +78,9 @@ Namespace Db.CommandWrapper
 #Region " Properties "
 
 		''' <summary>
-		''' Às‚·‚éDBCommandƒCƒ“ƒXƒ^ƒ“ƒX‚ğQÆ
+		''' å®Ÿè¡Œã™ã‚‹DBCommandã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’å‚ç…§
 		''' </summary>
-		''' <value>Às‚·‚éDBCommandƒCƒ“ƒXƒ^ƒ“ƒX</value>
+		''' <value>å®Ÿè¡Œã™ã‚‹DBCommandã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</value>
 		''' <remarks>
 		''' </remarks>
         Public ReadOnly Property Command() As IDbCommand Implements IDbCommandSql.Command
@@ -90,11 +90,11 @@ Namespace Db.CommandWrapper
         End Property
 
 		''' <summary>
-		''' ƒRƒ“ƒpƒCƒ‹Ï‚İ‚ÌSQL‚ğg‚¤‚©‚Ç‚¤‚©‚ğw’è
+		''' ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ¸ˆã¿ã®SQLã‚’ä½¿ã†ã‹ã©ã†ã‹ã‚’æŒ‡å®š
 		''' </summary>
 		''' <value>
-		''' True:g—p‚·‚é
-		''' False:g—p‚µ‚È‚¢
+		''' True:ä½¿ç”¨ã™ã‚‹
+		''' False:ä½¿ç”¨ã—ãªã„
 		''' </value>
 		''' <remarks>
 		''' </remarks>
@@ -108,7 +108,7 @@ Namespace Db.CommandWrapper
         End Property
 
 		''' <summary>
-		''' SQL•¶
+		''' SQLæ–‡
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -124,10 +124,10 @@ Namespace Db.CommandWrapper
 		End Property
 
 		''' <summary>
-		''' ÀsŒã‚Ì–ß‚è’l‚ğ•Ô‚·
+		''' å®Ÿè¡Œå¾Œã®æˆ»ã‚Šå€¤ã‚’è¿”ã™
 		''' </summary>
 		''' <value></value>
-		''' <returns>–ß‚è’l</returns>
+		''' <returns>æˆ»ã‚Šå€¤</returns>
 		''' <remarks></remarks>
 		Public ReadOnly Property ResultOutputParam() As System.Collections.Hashtable Implements IDbCommandSql.ResultOutParameter
 			Get
@@ -140,11 +140,11 @@ Namespace Db.CommandWrapper
 #Region " DbDataParameter "
 
 		''' <summary>
-		''' “ü—Íƒpƒ‰ƒ[ƒ^‚ğİ’è‚·‚é
+		''' å…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®šã™ã‚‹
 		''' </summary>
-		''' <param name="parameterName">ƒpƒ‰ƒ[ƒ^–¼</param>
-		''' <param name="value">’l</param>
-		''' <returns>ƒpƒ‰ƒ[ƒ^ƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+		''' <param name="parameterName">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å</param>
+		''' <param name="value">å€¤</param>
+		''' <returns>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
 		''' <remarks>
 		''' </remarks>
 		Public Function SetParameter(ByVal parameterName As String, ByVal value As Object) As IDbDataParameter Implements IDbCommandSql.SetParameter
@@ -157,14 +157,14 @@ Namespace Db.CommandWrapper
 		End Function
 
 		''' <summary>
-		''' “ü—Íƒpƒ‰ƒ[ƒ^‚ğİ’è‚·‚é
+		''' å…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®šã™ã‚‹
 		''' </summary>
-		''' <param name="parameterName">ƒpƒ‰ƒ[ƒ^–¼</param>
-		''' <param name="values">’l”z—ñ</param>
-		''' <returns>ƒpƒ‰ƒ[ƒ^ƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+		''' <param name="parameterName">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å</param>
+		''' <param name="values">å€¤é…åˆ—</param>
+		''' <returns>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
 		''' <remarks>
-		''' “–ƒƒ\ƒbƒh‚Å‚Í IN ‹å‚ğì¬‚µ‚Ü‚·B
-		''' IN ‹å‚Íƒpƒ‰ƒ[ƒ^‚Æ‚µ‚Ä‚Íˆµ‚¦‚È‚¢‚Ì‚ÅASQL•¶“à‚É‘¶İ‚·‚éƒpƒ‰ƒ[ƒ^–¼•”•ª‚ğ•¶š—ñ•ÏŠ·‚µ‚Ü‚·B
+		''' å½“ãƒ¡ã‚½ãƒƒãƒ‰ã§ã¯ IN å¥ã‚’ä½œæˆã—ã¾ã™ã€‚
+		''' IN å¥ã¯ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã¨ã—ã¦ã¯æ‰±ãˆãªã„ã®ã§ã€SQLæ–‡å†…ã«å­˜åœ¨ã™ã‚‹ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿åéƒ¨åˆ†ã‚’æ–‡å­—åˆ—å¤‰æ›ã—ã¾ã™ã€‚
 		''' </remarks>
 		Public Function SetParameter(ByVal parameterName As String, ByVal values As Array) As String Implements IDbCommandSql.SetParameter
 			Dim sql As String
@@ -193,11 +193,11 @@ Namespace Db.CommandWrapper
 		End Function
 
 		''' <summary>
-		''' “ü—Íƒpƒ‰ƒ[ƒ^‚ğ’Ç‰Á‚·‚é
+		''' å…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¿½åŠ ã™ã‚‹
 		''' </summary>
-		''' <param name="parameterName">ƒpƒ‰ƒ[ƒ^–¼</param>
-		''' <param name="dbTypeValue">ƒpƒ‰ƒ[ƒ^‚ÌŒ^</param>
-		''' <returns>ƒpƒ‰ƒ[ƒ^ƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+		''' <param name="parameterName">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å</param>
+		''' <param name="dbTypeValue">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®å‹</param>
+		''' <returns>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
 		''' <remarks>
 		''' </remarks>
 		Public Function AddInParameter(ByVal parameterName As String, ByVal dbTypeValue As DbType) As IDbDataParameter Implements IDbCommandSql.AddInParameter
@@ -211,12 +211,12 @@ Namespace Db.CommandWrapper
 		End Function
 
 		''' <summary>
-		''' “ü—Íƒpƒ‰ƒ[ƒ^‚ğ’Ç‰Á‚·‚é
+		''' å…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¿½åŠ ã™ã‚‹
 		''' </summary>
-		''' <param name="parameterName">ƒpƒ‰ƒ[ƒ^–¼</param>
-		''' <param name="dbTypeValue">ƒpƒ‰ƒ[ƒ^‚ÌŒ^</param>
-		''' <param name="size">ƒpƒ‰ƒ[ƒ^‚ÌƒTƒCƒY</param>
-		''' <returns>ƒpƒ‰ƒ[ƒ^ƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+		''' <param name="parameterName">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å</param>
+		''' <param name="dbTypeValue">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®å‹</param>
+		''' <param name="size">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®ã‚µã‚¤ã‚º</param>
+		''' <returns>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
 		''' <remarks>
 		''' </remarks>
 		Public Function AddInParameter(ByVal parameterName As String, ByVal dbTypeValue As DbType, ByVal size As Integer) As IDbDataParameter Implements IDbCommandSql.AddInParameter
@@ -229,10 +229,10 @@ Namespace Db.CommandWrapper
 		End Function
 
 		''' <summary>
-		''' o—Íƒpƒ‰ƒ[ƒ^‚ğ’Ç‰Á‚·‚é
+		''' å‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¿½åŠ ã™ã‚‹
 		''' </summary>
-		''' <param name="parameterName">ƒpƒ‰ƒ[ƒ^–¼</param>
-		''' <returns>ƒpƒ‰ƒ[ƒ^ƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+		''' <param name="parameterName">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å</param>
+		''' <returns>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
 		''' <remarks>
 		''' </remarks>
 		Public Function AddOutParameter(ByVal parameterName As String) As IDbDataParameter Implements IDbCommandSql.AddOutParameter
@@ -245,11 +245,11 @@ Namespace Db.CommandWrapper
 		End Function
 
 		''' <summary>
-		''' o—Íƒpƒ‰ƒ[ƒ^‚ğ’Ç‰Á‚·‚é
+		''' å‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¿½åŠ ã™ã‚‹
 		''' </summary>
-		''' <param name="parameterName">ƒpƒ‰ƒ[ƒ^–¼</param>
-		''' <param name="dbTypeValue">ƒpƒ‰ƒ[ƒ^‚ÌŒ^</param>
-		''' <returns>ƒpƒ‰ƒ[ƒ^ƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+		''' <param name="parameterName">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å</param>
+		''' <param name="dbTypeValue">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®å‹</param>
+		''' <returns>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
 		''' <remarks>
 		''' </remarks>
 		Public Function AddOutParameter(ByVal parameterName As String, ByVal dbTypeValue As DbType) As IDbDataParameter Implements IDbCommandSql.AddOutParameter
@@ -263,9 +263,9 @@ Namespace Db.CommandWrapper
 		End Function
 
 		''' <summary>
-		''' ƒpƒ‰ƒ[ƒ^“à‚É–ß‚è’l‚ª‚ ‚é‚©•Ô‚·
+		''' ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å†…ã«æˆ»ã‚Šå€¤ãŒã‚ã‚‹ã‹è¿”ã™
 		''' </summary>
-		''' <returns>True ‚Í–ß‚è’l—L‚èAFalse ‚Í–ß‚è’l–³‚µ</returns>
+		''' <returns>True ã¯æˆ»ã‚Šå€¤æœ‰ã‚Šã€False ã¯æˆ»ã‚Šå€¤ç„¡ã—</returns>
 		''' <remarks></remarks>
 		Public Function HaveOutParameter() As Boolean Implements IDbCommandSql.HaveOutParameter
 			Dim ee As IEnumerator = cmd.Parameters.GetEnumerator
@@ -280,10 +280,10 @@ Namespace Db.CommandWrapper
 		End Function
 
 		''' <summary>
-		''' o—Íƒpƒ‰ƒ[ƒ^‚ğQÆ‚·‚é
+		''' å‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’å‚ç…§ã™ã‚‹
 		''' </summary>
-		''' <param name="parameterName">ƒpƒ‰ƒ[ƒ^–¼</param>
-		''' <returns>o—Íƒpƒ‰ƒ[ƒ^’l</returns>
+		''' <param name="parameterName">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å</param>
+		''' <returns>å‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å€¤</returns>
 		''' <remarks>
 		''' </remarks>
 		Public Function GetParameterValue(ByVal parameterName As String) As Object Implements IDbCommandSql.GetParameterValue
@@ -294,17 +294,17 @@ Namespace Db.CommandWrapper
 #End Region
 
 		''' <summary>
-		''' SQLÀs
+		''' SQLå®Ÿè¡Œ
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Public MustOverride Function Execute() As Integer Implements IDbCommandSql.Execute
 
 		''' <summary>
-		''' ƒRƒ“ƒpƒCƒ‹Ï‚İ‚ÌSQL‚É‚·‚é
+		''' ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ¸ˆã¿ã®SQLã«ã™ã‚‹
 		''' </summary>
 		''' <remarks>
-		''' “–ƒƒ\ƒbƒhÀs‘O‚É—\‚ß <see cref="AddInParameter"/> ‚ğg—p‚µ‚Äƒpƒ‰ƒ[ƒ^‚ğİ’è‚µ‚Ä‚¨‚¢‚Ä‚­‚¾‚³‚¢B<br/>
+		''' å½“ãƒ¡ã‚½ãƒƒãƒ‰å®Ÿè¡Œå‰ã«äºˆã‚ <see cref="AddInParameter"/> ã‚’ä½¿ç”¨ã—ã¦ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®šã—ã¦ãŠã„ã¦ãã ã•ã„ã€‚<br/>
 		''' </remarks>
 		Public Sub Prepare() Implements IDbCommandSql.Prepare
 			cmd.Prepare()
@@ -316,11 +316,11 @@ Namespace Db.CommandWrapper
 #Region " Methods "
 
 		''' <summary>
-		''' ƒpƒ‰ƒ[ƒ^‚ğ’Ç‰Á–”‚Íæ“¾‚·‚é
+		''' ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¿½åŠ åˆã¯å–å¾—ã™ã‚‹
 		''' </summary>
-		''' <param name="parameterName">ƒpƒ‰ƒ[ƒ^–¼</param>
-		''' <param name="value">ƒpƒ‰ƒ[ƒ^‚Ì’l</param>
-		''' <returns>ƒpƒ‰ƒ[ƒ^ƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+		''' <param name="parameterName">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å</param>
+		''' <param name="value">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®å€¤</param>
+		''' <returns>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
 		''' <remarks>
 		''' </remarks>
 		Protected Function addParameter(ByVal parameterName As String, ByVal value As Object) As IDbDataParameter
@@ -342,33 +342,33 @@ Namespace Db.CommandWrapper
 		End Function
 
 		''' <summary>
-		''' ƒvƒŒ[ƒXƒtƒHƒ‹ƒ_‚ğæ“¾
+		''' ãƒ—ãƒ¬ãƒ¼ã‚¹ãƒ•ã‚©ãƒ«ãƒ€ã‚’å–å¾—
 		''' </summary>
 		''' <remarks>
-		''' ¡Œã‚ÌŠg’£‚Ì‚½‚ß‚ÌÀ‘•<br/>
-		''' ‚¾‚ªAƒŠƒŠ[ƒX‚·‚é‚©‚Í•s–¾
+		''' ä»Šå¾Œã®æ‹¡å¼µã®ãŸã‚ã®å®Ÿè£…<br/>
+		''' ã ãŒã€ãƒªãƒªãƒ¼ã‚¹ã™ã‚‹ã‹ã¯ä¸æ˜
 		''' </remarks>
 		Protected Sub cnvPlaceholder()
 			_placeholders = _getPlaceholder()
 		End Sub
 
 		''' <summary>
-		''' SQLƒRƒ}ƒ“ƒh‚ÌƒvƒŒ[ƒXƒtƒHƒ‹ƒ_‚ğ•Ô‚·B
+		''' SQLã‚³ãƒãƒ³ãƒ‰ã®ãƒ—ãƒ¬ãƒ¼ã‚¹ãƒ•ã‚©ãƒ«ãƒ€ã‚’è¿”ã™ã€‚
 		''' </summary>
-		''' <returns>ƒvƒŒ[ƒXƒtƒHƒ‹ƒ_–¼‚Ì”z—ñ</returns>
+		''' <returns>ãƒ—ãƒ¬ãƒ¼ã‚¹ãƒ•ã‚©ãƒ«ãƒ€åã®é…åˆ—</returns>
 		''' <remarks>
-		''' ƒvƒŒ[ƒXƒtƒHƒ‹ƒ_‚Íu/*name*/v‚Æ‚µ‚Ä‚­‚¾‚³‚¢B<br/>
+		''' ãƒ—ãƒ¬ãƒ¼ã‚¹ãƒ•ã‚©ãƒ«ãƒ€ã¯ã€Œ/*name*/ã€ã¨ã—ã¦ãã ã•ã„ã€‚<br/>
 		''' </remarks>
 		Private Function _getPlaceholder() As String()
 			Dim params As ArrayList
 			Dim r As New Regex("/\*(.*?)\*/", RegexOptions.IgnoreCase Or RegexOptions.Singleline)
 
-			' ³‹K•\Œ»‚Æˆê’v‚·‚é‘ÎÛ‚ğ‚·‚×‚ÄŒŸõ 
+			' æ­£è¦è¡¨ç¾ã¨ä¸€è‡´ã™ã‚‹å¯¾è±¡ã‚’ã™ã¹ã¦æ¤œç´¢ 
 			Dim mc As MatchCollection = r.Matches(Me.CommandText)
 
 			params = New ArrayList
 
-			' ³‹K•\Œ»‚Éˆê’v‚µ‚½ƒOƒ‹[ƒv‚Ì•¶š—ñ‚ğ•\¦ 
+			' æ­£è¦è¡¨ç¾ã«ä¸€è‡´ã—ãŸã‚°ãƒ«ãƒ¼ãƒ—ã®æ–‡å­—åˆ—ã‚’è¡¨ç¤º 
 			For Each m As Match In mc
 				If (Not m.Groups(1).Value.StartsWith(" ")) Then
 					params.Add(m.Groups(1).Value)

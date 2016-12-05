@@ -2,113 +2,113 @@
 Namespace Db
 
 	''' <summary>
-	''' DB�A�N�Z�X�̊e�v���p�C�_�[�ɑΉ������w���p�[�̃C���^�t�F�[�X
+	''' DBアクセスの各プロパイダーに対応したヘルパーのインタフェース
 	''' </summary>
 	''' <remarks>
-	''' �eDB�x���_�[���ɈقȂ镔�����z������ׂ̃C���^�t�F�[�X�ł��B<br/>
+	''' 各DBベンダー毎に異なる部分を吸収する為のインタフェースです。<br/>
 	''' </remarks>
 	Public Interface IDbAccessHelper
 		Inherits IDisposable
 
 		''' <summary>
-		''' �G���[�̌�����Ԃ�
+		''' エラーの件数を返す
 		''' </summary>
-		''' <param name="ex">�G���[�������擾��������O</param>
-		''' <returns>�G���[����</returns>
+		''' <param name="ex">エラー件数を取得したい例外</param>
+		''' <returns>エラー件数</returns>
 		''' <remarks>
 		''' </remarks>
 		Function ErrorCount(ByVal ex As Exception) As Integer
 
 		''' <summary>
-		''' �G���[�ԍ���Ԃ�
+		''' エラー番号を返す
 		''' </summary>
-		''' <param name="ex">�G���[�ԍ����擾��������O</param>
-		''' <returns>�G���[�ԍ��z��</returns>
+		''' <param name="ex">エラー番号を取得したい例外</param>
+		''' <returns>エラー番号配列</returns>
 		''' <remarks>
 		''' </remarks>
 		Function ErrorNumbers(ByVal ex As Exception) As String()
 
 		''' <summary>
-		''' �w�肳�ꂽ�G���[�ԍ�������������O�ɑ��݂��邩�Ԃ�
+		''' 指定されたエラー番号が発生した例外に存在するか返す
 		''' </summary>
-		''' <param name="ex">�ΏۂƂȂ��O</param>
-		''' <param name="errorNumber">�G���[�ԍ�</param>
-		''' <returns>True:���݂���AFalse:���݂��Ȃ�</returns>
+		''' <param name="ex">対象となる例外</param>
+		''' <param name="errorNumber">エラー番号</param>
+		''' <returns>True:存在する、False:存在しない</returns>
 		''' <remarks>
 		''' </remarks>
 		Function HasSqlNativeError(ByVal ex As Exception, ByVal errorNumber As Long) As Boolean
 
 		''' <summary>
-		''' �d���G���[������������O�ɑ��݂��邩�Ԃ�
+		''' 重複エラーが発生した例外に存在するか返す
 		''' </summary>
-		''' <param name="ex">�ΏۂƂȂ��O</param>
-		''' <returns>True:���݂���AFalse:���݂��Ȃ�</returns>
+		''' <param name="ex">対象となる例外</param>
+		''' <returns>True:存在する、False:存在しない</returns>
 		''' <remarks>
 		''' </remarks>
 		Function HasSqlNativeErrorDuplicationPKey(ByVal ex As Exception) As Boolean
 
 		''' <summary>
-		''' �^�C���A�E�g�G���[������������O�ɑ��݂��邩�Ԃ�
+		''' タイムアウトエラーが発生した例外に存在するか返す
 		''' </summary>
-		''' <param name="ex">�ΏۂƂȂ��O</param>
-		''' <returns>True:���݂���AFalse:���݂��Ȃ�</returns>
+		''' <param name="ex">対象となる例外</param>
+		''' <returns>True:存在する、False:存在しない</returns>
 		''' <remarks>
 		''' </remarks>
 		Function HasSqlNativeErrorTimtout(ByVal ex As Exception) As Boolean
 
 		''' <summary>
-		''' �X�L�[�}�ɑ��݂���e�[�u�������擾����
+		''' スキーマに存在するテーブル情報を取得する
 		''' </summary>
-		''' <param name="tablename">�擾�������e�[�u����</param>
+		''' <param name="tablename">取得したいテーブル名</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Function GetSchemaTable(ByVal tablename As String) As DbInfoTable
 
 		''' <summary>
-		''' �X�L�[�}�ɑ��݂���e�[�u�������擾����
+		''' スキーマに存在するテーブル情報を取得する
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Function GetSchemaTables() As DbInfoTableCollection
 
 		''' <summary>
-		''' �X�L�[�}�ɑ��݂���e�[�u�������擾����
+		''' スキーマに存在するテーブル情報を取得する
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Function GetSchemaColumns(ByVal table As DbInfoTable) As DbInfoColumnCollection
 
 		''' <summary>
-		''' �X�L�[�}�ɑ��݂���v���V�[�W�������擾����
+		''' スキーマに存在するプロシージャ情報を取得する
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Function GetSchemaProcedures() As DbInfoProcedureCollection
 
 		''' <summary>
-		''' �X�L�[�}�ɑ��݂���֐������擾����
+		''' スキーマに存在する関数情報を取得する
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Function GetSchemaFunctions() As DbInfoFunctionCollection
 
 		''' <summary>
-		''' �X�g�A�h�̃p�����[�^���擾����
+		''' ストアドのパラメータを取得する
 		''' </summary>
-		''' <param name="cmd">���s�Ώۂ�DB�R�}���h</param>
+		''' <param name="cmd">実行対象のDBコマンド</param>
 		''' <remarks></remarks>
 		Sub RefreshProcedureParameters(ByVal cmd As IDbCommand)
 
 		''' <summary>
-		''' SQL�X�e�[�^�X�̃p�����[�^����ϊ�����B
+		''' SQLステータスのパラメータ名を変換する。
 		''' </summary>
-		''' <param name="name">�p�����[�^��</param>
+		''' <param name="name">パラメータ名</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Function CDbParameterName(ByVal name As String) As String
 
 		''' <summary>
-		''' SQL�v���[�X�t�H���_�̃}�[�N��Ԃ��B
+		''' SQLプレースフォルダのマークを返す。
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>

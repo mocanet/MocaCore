@@ -2,7 +2,7 @@
 Namespace Db
 
 	''' <summary>
-	''' DBCommand‚ðƒ‰ƒbƒsƒ“ƒO‚·‚éƒCƒ“ƒ^ƒtƒF[ƒX
+	''' DBCommandã‚’ãƒ©ãƒƒãƒ”ãƒ³ã‚°ã™ã‚‹ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 	''' </summary>
 	''' <remarks></remarks>
 	Public Interface IDbCommandSql
@@ -11,24 +11,24 @@ Namespace Db
 #Region " Property "
 
 		''' <summary>
-		''' ŽÀs‚·‚éDBCommandƒCƒ“ƒXƒ^ƒ“ƒX‚ðŽQÆ
+		''' å®Ÿè¡Œã™ã‚‹DBCommandã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’å‚ç…§
 		''' </summary>
-		''' <value>ŽÀs‚·‚éDBCommandƒCƒ“ƒXƒ^ƒ“ƒX</value>
+		''' <value>å®Ÿè¡Œã™ã‚‹DBCommandã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</value>
 		''' <remarks></remarks>
 		ReadOnly Property Command() As IDbCommand
 
 		''' <summary>
-		''' ƒRƒ“ƒpƒCƒ‹Ï‚Ý‚ÌSQL‚ðŽg‚¤‚©‚Ç‚¤‚©‚ðŽw’è
+		''' ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ¸ˆã¿ã®SQLã‚’ä½¿ã†ã‹ã©ã†ã‹ã‚’æŒ‡å®š
 		''' </summary>
 		''' <value>
-		''' True:Žg—p‚·‚é
-		''' False:Žg—p‚µ‚È‚¢
+		''' True:ä½¿ç”¨ã™ã‚‹
+		''' False:ä½¿ç”¨ã—ãªã„
 		''' </value>
 		''' <remarks></remarks>
 		Property PreparedStatement() As Boolean
 
 		''' <summary>
-		''' SQL•¶
+		''' SQLæ–‡
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -36,10 +36,10 @@ Namespace Db
 		Property CommandText() As String
 
 		''' <summary>
-		''' ŽÀsŒã‚Ìo—Íƒpƒ‰ƒ[ƒ^‚ð•Ô‚·
+		''' å®Ÿè¡Œå¾Œã®å‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¿”ã™
 		''' </summary>
 		''' <value></value>
-		''' <returns>o—Íƒpƒ‰ƒ[ƒ^</returns>
+		''' <returns>å‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿</returns>
 		''' <remarks></remarks>
 		ReadOnly Property ResultOutParameter() As Hashtable
 
@@ -48,89 +48,89 @@ Namespace Db
 #Region " Parameter "
 
 		''' <summary>
-		''' “ü—Íƒpƒ‰ƒ[ƒ^‚ðÝ’è‚·‚é
+		''' å…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®šã™ã‚‹
 		''' </summary>
-		''' <param name="parameterName">ƒpƒ‰ƒ[ƒ^–¼</param>
-		''' <param name="value">’l</param>
-		''' <returns>ƒpƒ‰ƒ[ƒ^ƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+		''' <param name="parameterName">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å</param>
+		''' <param name="value">å€¤</param>
+		''' <returns>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
 		''' <remarks></remarks>
 		Function SetParameter(ByVal parameterName As String, ByVal value As Object) As IDbDataParameter
 
 		''' <summary>
-		''' “ü—Íƒpƒ‰ƒ[ƒ^‚ðÝ’è‚·‚é
+		''' å…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®šã™ã‚‹
 		''' </summary>
-		''' <param name="parameterName">ƒpƒ‰ƒ[ƒ^–¼</param>
-		''' <param name="values">’l”z—ñ</param>
-		''' <returns>ƒpƒ‰ƒ[ƒ^ƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+		''' <param name="parameterName">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å</param>
+		''' <param name="values">å€¤é…åˆ—</param>
+		''' <returns>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
 		''' <remarks>
-		''' “–ƒƒ\ƒbƒh‚Å‚Í IN ‹å‚ðì¬‚µ‚Ü‚·B
-		''' IN ‹å‚Íƒpƒ‰ƒ[ƒ^‚Æ‚µ‚Ä‚Íˆµ‚¦‚È‚¢‚Ì‚ÅASQL•¶“à‚É‘¶Ý‚·‚éƒpƒ‰ƒ[ƒ^–¼•”•ª‚ð•¶Žš—ñ•ÏŠ·‚µ‚Ü‚·B
+		''' å½“ãƒ¡ã‚½ãƒƒãƒ‰ã§ã¯ IN å¥ã‚’ä½œæˆã—ã¾ã™ã€‚
+		''' IN å¥ã¯ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã¨ã—ã¦ã¯æ‰±ãˆãªã„ã®ã§ã€SQLæ–‡å†…ã«å­˜åœ¨ã™ã‚‹ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿åéƒ¨åˆ†ã‚’æ–‡å­—åˆ—å¤‰æ›ã—ã¾ã™ã€‚
 		''' </remarks>
 		Function SetParameter(ByVal parameterName As String, ByVal values As Array) As String
 
 		''' <summary>
-		''' “ü—Íƒpƒ‰ƒ[ƒ^‚ð’Ç‰Á‚·‚é
+		''' å…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¿½åŠ ã™ã‚‹
 		''' </summary>
-		''' <param name="parameterName">ƒpƒ‰ƒ[ƒ^–¼</param>
-		''' <param name="dbTypeValue">ƒpƒ‰ƒ[ƒ^‚ÌŒ^</param>
-		''' <returns>ƒpƒ‰ƒ[ƒ^ƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+		''' <param name="parameterName">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å</param>
+		''' <param name="dbTypeValue">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®åž‹</param>
+		''' <returns>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
 		''' <remarks></remarks>
 		Function AddInParameter(ByVal parameterName As String, ByVal dbTypeValue As DbType) As IDbDataParameter
 
 		''' <summary>
-		''' “ü—Íƒpƒ‰ƒ[ƒ^‚ð’Ç‰Á‚·‚é
+		''' å…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¿½åŠ ã™ã‚‹
 		''' </summary>
-		''' <param name="parameterName">ƒpƒ‰ƒ[ƒ^–¼</param>
-		''' <param name="dbTypeValue">ƒpƒ‰ƒ[ƒ^‚ÌŒ^</param>
-		''' <param name="size">ƒpƒ‰ƒ[ƒ^‚ÌƒTƒCƒY</param>
-		''' <returns>ƒpƒ‰ƒ[ƒ^ƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+		''' <param name="parameterName">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å</param>
+		''' <param name="dbTypeValue">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®åž‹</param>
+		''' <param name="size">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®ã‚µã‚¤ã‚º</param>
+		''' <returns>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
 		''' <remarks></remarks>
 		Function AddInParameter(ByVal parameterName As String, ByVal dbTypeValue As DbType, ByVal size As Integer) As IDbDataParameter
 
 		''' <summary>
-		''' o—Íƒpƒ‰ƒ[ƒ^‚ð’Ç‰Á‚·‚é
+		''' å‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¿½åŠ ã™ã‚‹
 		''' </summary>
-		''' <param name="parameterName">ƒpƒ‰ƒ[ƒ^–¼</param>
-		''' <returns>ƒpƒ‰ƒ[ƒ^ƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+		''' <param name="parameterName">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å</param>
+		''' <returns>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
 		''' <remarks></remarks>
 		Function AddOutParameter(ByVal parameterName As String) As IDbDataParameter
 
 		''' <summary>
-		''' o—Íƒpƒ‰ƒ[ƒ^‚ð’Ç‰Á‚·‚é
+		''' å‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¿½åŠ ã™ã‚‹
 		''' </summary>
-		''' <param name="parameterName">ƒpƒ‰ƒ[ƒ^–¼</param>
-		''' <param name="dbTypeValue">ƒpƒ‰ƒ[ƒ^‚ÌŒ^</param>
-		''' <returns>ƒpƒ‰ƒ[ƒ^ƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+		''' <param name="parameterName">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å</param>
+		''' <param name="dbTypeValue">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®åž‹</param>
+		''' <returns>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
 		''' <remarks></remarks>
 		Function AddOutParameter(ByVal parameterName As String, ByVal dbTypeValue As DbType) As IDbDataParameter
 
 		''' <summary>
-		''' ƒpƒ‰ƒ[ƒ^“à‚É–ß‚è’l‚ª‚ ‚é‚©•Ô‚·
+		''' ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å†…ã«æˆ»ã‚Šå€¤ãŒã‚ã‚‹ã‹è¿”ã™
 		''' </summary>
-		''' <returns>True ‚Í–ß‚è’l—L‚èAFalse ‚Í–ß‚è’l–³‚µ</returns>
+		''' <returns>True ã¯æˆ»ã‚Šå€¤æœ‰ã‚Šã€False ã¯æˆ»ã‚Šå€¤ç„¡ã—</returns>
 		''' <remarks></remarks>
 		Function HaveOutParameter() As Boolean
 
 		''' <summary>
-		''' o—Íƒpƒ‰ƒ[ƒ^‚ðŽQÆ‚·‚é
+		''' å‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’å‚ç…§ã™ã‚‹
 		''' </summary>
-		''' <param name="parameterName">ƒpƒ‰ƒ[ƒ^–¼</param>
-		''' <returns>o—Íƒpƒ‰ƒ[ƒ^’l</returns>
+		''' <param name="parameterName">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å</param>
+		''' <returns>å‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å€¤</returns>
 		''' <remarks></remarks>
 		Function GetParameterValue(ByVal parameterName As String) As Object
 
 #End Region
 
 		''' <summary>
-		''' ƒRƒ“ƒpƒCƒ‹Ï‚Ý‚ÌSQL‚É‚·‚é
+		''' ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ¸ˆã¿ã®SQLã«ã™ã‚‹
 		''' </summary>
 		''' <remarks>
-		''' “–ƒƒ\ƒbƒhŽÀs‘O‚É—\‚ß <see cref="AddInParameter"/> ‚ðŽg—p‚µ‚Äƒpƒ‰ƒ[ƒ^‚ðÝ’è‚µ‚Ä‚¨‚¢‚Ä‚­‚¾‚³‚¢B<br/>
+		''' å½“ãƒ¡ã‚½ãƒƒãƒ‰å®Ÿè¡Œå‰ã«äºˆã‚ <see cref="AddInParameter"/> ã‚’ä½¿ç”¨ã—ã¦ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®šã—ã¦ãŠã„ã¦ãã ã•ã„ã€‚<br/>
 		''' </remarks>
 		Sub Prepare()
 
 		''' <summary>
-		''' SQLŽÀsI
+		''' SQLå®Ÿè¡Œï¼
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>

@@ -2,27 +2,27 @@
 Namespace Db.CommandWrapper
 
 	''' <summary>
-	''' SELECT•¶‚ğÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX
+	''' SELECTæ–‡ã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class SelectCommandWrapper
 		Inherits SqlCommandWrapper
 		Implements IDbCommandSelect
 
-		''' <summary>Œ‹‰Ê‚Ìsƒf[ƒ^</summary>
+		''' <summary>çµæœã®è¡Œãƒ‡ãƒ¼ã‚¿</summary>
 		Private _dtEnum As IEnumerator(Of DataRow)
-		''' <summary>Select•¶‚ğÀs‚µ‚½Œ‹‰Ê</summary>
+		''' <summary>Selectæ–‡ã‚’å®Ÿè¡Œã—ãŸçµæœ</summary>
 		Protected ds As DataSet
-		''' <summary>Select•¶‚ğÀs‚µ‚½Œ‹‰Ê(Reader”Å)</summary>
+		''' <summary>Selectæ–‡ã‚’å®Ÿè¡Œã—ãŸçµæœ(Readerç‰ˆ)</summary>
 		Protected executeResult As ISQLStatementResult
 
 #Region " Constructor/DeConstructor "
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="dba">e‚Æ‚È‚éDBAccessƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <param name="cmd">Às‚·‚éDBCommandƒCƒ“ƒXƒ^ƒ“ƒX</param>
+		''' <param name="dba">è¦ªã¨ãªã‚‹DBAccessã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <param name="cmd">å®Ÿè¡Œã™ã‚‹DBCommandã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
 		''' <remarks>
 		''' </remarks>
         Public Sub New(ByVal dba As IDao, ByVal cmd As IDbCommand)
@@ -31,7 +31,7 @@ Namespace Db.CommandWrapper
         End Sub
 
 		''' <summary>
-		''' ”jŠü
+		''' ç ´æ£„
 		''' </summary>
 		''' <param name="disposing"></param>
 		''' <remarks></remarks>
@@ -48,7 +48,7 @@ Namespace Db.CommandWrapper
 #End Region
 
 		''' <summary>
-		''' SQLÀsI
+		''' SQLå®Ÿè¡Œï¼
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>
@@ -61,20 +61,20 @@ Namespace Db.CommandWrapper
 #Region " Property "
 
 		''' <summary>
-		''' ExecuteReader ‚É“n‚· CommandBehavior
+		''' ExecuteReader ã«æ¸¡ã™ CommandBehavior
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
 		''' <remarks>
-		''' <see cref="Execute"></see>ˆÈŠO‚Å‚Í–³‹‚³‚ê‚Ü‚·B
-		''' <see cref="System.Data.SqlClient.SqlDataReader"></see>‚ğg—p‚µ‚Ä‚¢‚éê‡‚Ì‚İ—LŒøB
+		''' <see cref="Execute"></see>ä»¥å¤–ã§ã¯ç„¡è¦–ã•ã‚Œã¾ã™ã€‚
+		''' <see cref="System.Data.SqlClient.SqlDataReader"></see>ã‚’ä½¿ç”¨ã—ã¦ã„ã‚‹å ´åˆã®ã¿æœ‰åŠ¹ã€‚
 		''' </remarks>
 		Public Property Behavior As CommandBehavior Implements IDbCommandSelect.Behavior
 
 		''' <summary>
-		''' Select•¶‚ğÀs‚µ‚½Œ‹‰Ê‚ğİ’è^QÆ
+		''' Selectæ–‡ã‚’å®Ÿè¡Œã—ãŸçµæœã‚’è¨­å®šï¼å‚ç…§
 		''' </summary>
-		''' <value>Select•¶‚ğÀs‚µ‚½Œ‹‰Ê</value>
+		''' <value>Selectæ–‡ã‚’å®Ÿè¡Œã—ãŸçµæœ</value>
 		''' <remarks>
 		''' </remarks>
 		Public Property ResultDataSet() As DataSet Implements IDbCommandSelect.ResultDataSet
@@ -93,7 +93,7 @@ Namespace Db.CommandWrapper
 		End Property
 
 		''' <summary>
-		''' DataSet“à‚Ìæ“ªƒe[ƒuƒ‹‚ğ•Ô‚·
+		''' DataSetå†…ã®å…ˆé ­ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’è¿”ã™
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -108,7 +108,7 @@ Namespace Db.CommandWrapper
 		End Property
 
 		''' <summary>
-		''' DataSet“à‚Ìæ“ªƒe[ƒuƒ‹‚É‘¶İ‚·‚ésƒf[ƒ^‚ÌEnumerator‚ğ•Ô‚·
+		''' DataSetå†…ã®å…ˆé ­ãƒ†ãƒ¼ãƒ–ãƒ«ã«å­˜åœ¨ã™ã‚‹è¡Œãƒ‡ãƒ¼ã‚¿ã®Enumeratorã‚’è¿”ã™
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -122,13 +122,13 @@ Namespace Db.CommandWrapper
 #End Region
 
 		''' <summary>
-		''' ƒNƒGƒŠ‚ğÀs‚µAw’è‚³‚ê‚½ƒGƒ“ƒeƒBƒeƒB‚É•ÏŠ·‚µ‚Ä•Ô‚µ‚Ü‚·B
+		''' ã‚¯ã‚¨ãƒªã‚’å®Ÿè¡Œã—ã€æŒ‡å®šã•ã‚ŒãŸã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã«å¤‰æ›ã—ã¦è¿”ã—ã¾ã™ã€‚
 		''' </summary>
-		''' <typeparam name="T">ƒGƒ“ƒeƒBƒeƒB</typeparam>
-		''' <returns>ƒGƒ“ƒeƒBƒeƒB‚ÌƒŠƒXƒg</returns>
+		''' <typeparam name="T">ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£</typeparam>
+		''' <returns>ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã®ãƒªã‚¹ãƒˆ</returns>
 		''' <remarks>
-		''' “–ƒƒ\ƒbƒh‚Í—\‚ßƒf[ƒ^ƒx[ƒX‚ğƒI[ƒvƒ“‚µ‚Ä‚¨‚­•K—v‚ª‚ ‚è‚Ü‚·‚ªA
-		''' ƒI[ƒvƒ“‚³‚ê‚Ä‚¢‚È‚¢‚Æ‚«‚ÍA©“®‚ÅƒI[ƒvƒ“‚µ‚ÄI—¹‚ÉƒNƒ[ƒY‚µ‚Ü‚·B<br/>
+		''' å½“ãƒ¡ã‚½ãƒƒãƒ‰ã¯äºˆã‚ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‚’ã‚ªãƒ¼ãƒ—ãƒ³ã—ã¦ãŠãå¿…è¦ãŒã‚ã‚Šã¾ã™ãŒã€
+		''' ã‚ªãƒ¼ãƒ—ãƒ³ã•ã‚Œã¦ã„ãªã„ã¨ãã¯ã€è‡ªå‹•ã§ã‚ªãƒ¼ãƒ—ãƒ³ã—ã¦çµ‚äº†æ™‚ã«ã‚¯ãƒ­ãƒ¼ã‚ºã—ã¾ã™ã€‚<br/>
 		''' </remarks>
 		Public Overridable Overloads Function Execute(Of T)() As System.Collections.Generic.IList(Of T) Implements IDbCommandSelect.Execute
 			executeResult = dba.Execute(Of T)(Me)
@@ -136,39 +136,39 @@ Namespace Db.CommandWrapper
 		End Function
 
 		''' <summary>
-		''' ƒNƒGƒŠ‚ğÀs‚µA‚»‚ÌƒNƒGƒŠ‚ª•Ô‚·Œ‹‰ÊƒZƒbƒg‚ÌÅ‰‚Ìs‚É‚ ‚éÅ‰‚Ì—ñ‚ğ•Ô‚µ‚Ü‚·B—]•ª‚È—ñ‚Ü‚½‚Ís‚Í–³‹‚³‚ê‚Ü‚·B
+		''' ã‚¯ã‚¨ãƒªã‚’å®Ÿè¡Œã—ã€ãã®ã‚¯ã‚¨ãƒªãŒè¿”ã™çµæœã‚»ãƒƒãƒˆã®æœ€åˆã®è¡Œã«ã‚ã‚‹æœ€åˆã®åˆ—ã‚’è¿”ã—ã¾ã™ã€‚ä½™åˆ†ãªåˆ—ã¾ãŸã¯è¡Œã¯ç„¡è¦–ã•ã‚Œã¾ã™ã€‚
 		''' </summary>
-		''' <returns>Œ‹‰ÊƒZƒbƒg‚ÌÅ‰‚Ìs‚É‚ ‚éÅ‰‚Ì—ñB</returns>
+		''' <returns>çµæœã‚»ãƒƒãƒˆã®æœ€åˆã®è¡Œã«ã‚ã‚‹æœ€åˆã®åˆ—ã€‚</returns>
 		''' <remarks>
-		''' “–ƒƒ\ƒbƒh‚Í—\‚ßƒf[ƒ^ƒx[ƒX‚ğƒI[ƒvƒ“‚µ‚Ä‚¨‚­•K—v‚ª‚ ‚è‚Ü‚·‚ªA
-		''' ƒI[ƒvƒ“‚³‚ê‚Ä‚¢‚È‚¢‚Æ‚«‚ÍA©“®‚ÅƒI[ƒvƒ“‚µ‚ÄI—¹‚ÉƒNƒ[ƒY‚µ‚Ü‚·B<br/>
-		''' Ú×‚ÍA<seealso cref="IDbCommand.ExecuteScalar"/> ‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢B
+		''' å½“ãƒ¡ã‚½ãƒƒãƒ‰ã¯äºˆã‚ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‚’ã‚ªãƒ¼ãƒ—ãƒ³ã—ã¦ãŠãå¿…è¦ãŒã‚ã‚Šã¾ã™ãŒã€
+		''' ã‚ªãƒ¼ãƒ—ãƒ³ã•ã‚Œã¦ã„ãªã„ã¨ãã¯ã€è‡ªå‹•ã§ã‚ªãƒ¼ãƒ—ãƒ³ã—ã¦çµ‚äº†æ™‚ã«ã‚¯ãƒ­ãƒ¼ã‚ºã—ã¾ã™ã€‚<br/>
+		''' è©³ç´°ã¯ã€<seealso cref="IDbCommand.ExecuteScalar"/> ã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
 		''' </remarks>
 		Public Overridable Function ExecuteScalar() As Object Implements IDbCommandSelect.ExecuteScalar
 			Return dba.ExecuteScalar(Me)
 		End Function
 
 		''' <summary>
-		''' DataSet“à‚Ìæ“ªƒe[ƒuƒ‹‚É‘¶İ‚·‚ésƒf[ƒ^‚ÌEnumerator‚ğ•Ô‚·
+		''' DataSetå†…ã®å…ˆé ­ãƒ†ãƒ¼ãƒ–ãƒ«ã«å­˜åœ¨ã™ã‚‹è¡Œãƒ‡ãƒ¼ã‚¿ã®Enumeratorã‚’è¿”ã™
 		''' </summary>
 		''' <typeparam name="T"></typeparam>
 		''' <returns></returns>
 		''' <remarks>
-		''' ‘¶İ‚µ‚È‚¢‚Æ‚«‚ÍA‹ó‚Ì”z—ñ‚ğ•Ô‚·B
+		''' å­˜åœ¨ã—ãªã„ã¨ãã¯ã€ç©ºã®é…åˆ—ã‚’è¿”ã™ã€‚
 		''' </remarks>
-		<Obsolete("Execute(Of T)() ‚ğg‚¤‚æ‚¤‚É‚µ‚Ä‚­‚¾‚³‚¢B")> _
+		<Obsolete("Execute(Of T)() ã‚’ä½¿ã†ã‚ˆã†ã«ã—ã¦ãã ã•ã„ã€‚")> _
 		Public Function Result1stTableEntitis(Of T)() As T() Implements IDbCommandSelect.Result1stTableEntitis
 			Return entityBuilder.Create(Of T)(Me.Result1stTable)
 		End Function
 
 		''' <summary>
-		''' DataSet“à‚Ìæ“ªƒe[ƒuƒ‹‚Ìw’è‚³‚ê‚½s‚ğ•Ô‚·
+		''' DataSetå†…ã®å…ˆé ­ãƒ†ãƒ¼ãƒ–ãƒ«ã®æŒ‡å®šã•ã‚ŒãŸè¡Œã‚’è¿”ã™
 		''' </summary>
 		''' <typeparam name="T"></typeparam>
 		''' <param name="index"></param>
-		''' <returns>æ“ªƒe[ƒuƒ‹‚Ìƒf[ƒ^‚ğw’è‚³‚ê‚½Entity‚ğg—p‚µ‚½”z—ñ‚É•ÏŠ·‚µ‚Ä•Ô‚·</returns>
+		''' <returns>å…ˆé ­ãƒ†ãƒ¼ãƒ–ãƒ«ã®ãƒ‡ãƒ¼ã‚¿ã‚’æŒ‡å®šã•ã‚ŒãŸEntityã‚’ä½¿ç”¨ã—ãŸé…åˆ—ã«å¤‰æ›ã—ã¦è¿”ã™</returns>
 		''' <remarks>
-		''' ‘¶İ‚µ‚È‚¢‚Æ‚«‚ÍANothing ‚ğ•Ô‚·B
+		''' å­˜åœ¨ã—ãªã„ã¨ãã¯ã€Nothing ã‚’è¿”ã™ã€‚
 		''' </remarks>
 		Public Function Result1stTableEntity(Of T)(ByVal index As Integer) As T Implements IDbCommandSelect.Result1stTableEntity
 			If Me.Result1stTable.Rows.Count = 0 Then
@@ -183,20 +183,20 @@ Namespace Db.CommandWrapper
 		End Function
 
 		''' <summary>
-		''' ƒL[‚Æ’l‚Ì‚İ‚Ìƒf[ƒ^‚ğ<see cref="ConstantDataSet"></see>‚Å•Ô‚·B
+		''' ã‚­ãƒ¼ã¨å€¤ã®ã¿ã®ãƒ‡ãƒ¼ã‚¿ã‚’<see cref="ConstantDataSet"></see>ã§è¿”ã™ã€‚
 		''' </summary>
-		''' <param name="textColumnName">•¶š—ñ‚Æ‚µ‚Äˆµ‚¤—ñ–¼</param>
-		''' <param name="valueColumnName">’l‚Æ‚µ‚Äˆµ‚¤—ñ–¼</param>
-		''' <param name="blankRow">‹ós—L–³</param>
-		''' <param name="blankValue">‹ó‚Ì‚Ì’l</param>
-		''' <param name="delm">•¶š—ñ‚Æ’l‚Ì‹æØ‚è•¶š</param>
+		''' <param name="textColumnName">æ–‡å­—åˆ—ã¨ã—ã¦æ‰±ã†åˆ—å</param>
+		''' <param name="valueColumnName">å€¤ã¨ã—ã¦æ‰±ã†åˆ—å</param>
+		''' <param name="blankRow">ç©ºè¡Œæœ‰ç„¡</param>
+		''' <param name="blankValue">ç©ºã®æ™‚ã®å€¤</param>
+		''' <param name="delm">æ–‡å­—åˆ—ã¨å€¤ã®åŒºåˆ‡ã‚Šæ–‡å­—</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Public Overloads Function ResultConstantDataSet(textColumnName As String, valueColumnName As String, Optional blankRow As Boolean = False, Optional blankValue As Object = -1, Optional delm As String = " : ") As ConstantDataSet Implements IDbCommandSelect.ResultConstantDataSet
 			Dim vals As ConstantDataSet
 			Dim tblName As String
 
-			' SqlServerCe ‚ª CommandText ‚ğ‹ó‚Å•Ô‚·‚Ì‚Å‚Æ‚è‚ ‚¦‚¸
+			' SqlServerCe ãŒ CommandText ã‚’ç©ºã§è¿”ã™ã®ã§ã¨ã‚Šã‚ãˆãš
 			tblName = IIf(Me.cmd.CommandText = String.Empty, "ConstantData", Me.cmd.CommandText).ToString
 
 			vals = New ConstantDataSet(tblName, blankRow, blankValue, delm)
@@ -208,13 +208,13 @@ Namespace Db.CommandWrapper
 		End Function
 
 		''' <summary>
-		''' ƒL[‚Æ’l‚Ì‚İ‚Ìƒf[ƒ^‚ğ<see cref="ConstantDataSet"></see>‚Å•Ô‚·B
+		''' ã‚­ãƒ¼ã¨å€¤ã®ã¿ã®ãƒ‡ãƒ¼ã‚¿ã‚’<see cref="ConstantDataSet"></see>ã§è¿”ã™ã€‚
 		''' </summary>
-		''' <param name="textColumnIndex">•¶š—ñ‚Æ‚µ‚Äˆµ‚¤—ñˆÊ’u</param>
-		''' <param name="valueColumnIndex">’l‚Æ‚µ‚Äˆµ‚¤—ñˆÊ’u</param>
-		''' <param name="blankRow">‹ós—L–³</param>
-		''' <param name="blankValue">‹ó‚Ì‚Ì’l</param>
-		''' <param name="delm">•¶š—ñ‚Æ’l‚Ì‹æØ‚è•¶š</param>
+		''' <param name="textColumnIndex">æ–‡å­—åˆ—ã¨ã—ã¦æ‰±ã†åˆ—ä½ç½®</param>
+		''' <param name="valueColumnIndex">å€¤ã¨ã—ã¦æ‰±ã†åˆ—ä½ç½®</param>
+		''' <param name="blankRow">ç©ºè¡Œæœ‰ç„¡</param>
+		''' <param name="blankValue">ç©ºã®æ™‚ã®å€¤</param>
+		''' <param name="delm">æ–‡å­—åˆ—ã¨å€¤ã®åŒºåˆ‡ã‚Šæ–‡å­—</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Public Overloads Function ResultConstantDataSet(textColumnIndex As Integer, valueColumnIndex As Integer, Optional blankRow As Boolean = False, Optional blankValue As Object = -1, Optional delm As String = " : ") As ConstantDataSet Implements IDbCommandSelect.ResultConstantDataSet

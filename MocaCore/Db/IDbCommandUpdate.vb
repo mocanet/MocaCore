@@ -2,10 +2,10 @@
 Namespace Db
 
 	''' <summary>
-	''' UPDATE•¶‚ðŽÀs‚·‚éˆ×‚ÌDBCommand‚ðƒ‰ƒbƒsƒ“ƒO‚·‚éƒCƒ“ƒ^ƒtƒF[ƒX
+	''' UPDATEæ–‡ã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã‚’ãƒ©ãƒƒãƒ”ãƒ³ã‚°ã™ã‚‹ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 	''' </summary>
 	''' <remarks>
-	''' UPDATE•¶‚ðŽÀs‚·‚é‚Æ‚«‚ÉŽg—p‚µ‚Ü‚·B<br/>
+	''' UPDATEæ–‡ã‚’å®Ÿè¡Œã™ã‚‹ã¨ãã«ä½¿ç”¨ã—ã¾ã™ã€‚<br/>
 	''' <example>
 	''' <code lang="vb">
 	''' Using dba As DbAccess = New DbAccess("Connection String")

@@ -2,23 +2,23 @@
 Namespace Db.CommandWrapper
 
 	''' <summary>
-	''' StoredProcedure‚ğÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX
+	''' StoredProcedureã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class StoredProcedureCommandWrapper
 		Inherits SelectCommandWrapper
 		Implements IDbCommandStoredProcedure
 
-		''' <summary>ƒpƒ‰ƒ[ƒ^ƒJƒEƒ“ƒ^[</summary>
+		''' <summary>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚«ã‚¦ãƒ³ã‚¿ãƒ¼</summary>
 		Private _addParameterValueCount As Integer
 
 #Region " Constructor/DeConstructor "
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="dba">e‚Æ‚È‚éDBAccessƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <param name="cmd">Às‚·‚éDBCommandƒCƒ“ƒXƒ^ƒ“ƒX</param>
+		''' <param name="dba">è¦ªã¨ãªã‚‹DBAccessã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <param name="cmd">å®Ÿè¡Œã™ã‚‹DBCommandã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
 		''' <remarks>
 		''' </remarks>
 		Protected Friend Sub New(ByVal dba As IDao, ByVal cmd As IDbCommand)
@@ -32,10 +32,10 @@ Namespace Db.CommandWrapper
 #Region " Property "
 
 		''' <summary>
-		''' ÀsŒã‚Ì–ß‚è’l‚ğ•Ô‚·
+		''' å®Ÿè¡Œå¾Œã®æˆ»ã‚Šå€¤ã‚’è¿”ã™
 		''' </summary>
 		''' <value></value>
-		''' <returns>–ß‚è’l</returns>
+		''' <returns>æˆ»ã‚Šå€¤</returns>
 		''' <remarks></remarks>
 		Public ReadOnly Property ReturnValue() As Object Implements IDbCommandStoredProcedure.ReturnValue
 			Get
@@ -49,12 +49,12 @@ Namespace Db.CommandWrapper
 #End Region
 
 		''' <summary>
-		''' “ü—Íƒpƒ‰ƒ[ƒ^’l‚ğİ’è‚·‚é
+		''' å…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å€¤ã‚’è¨­å®šã™ã‚‹
 		''' </summary>
-		''' <param name="parameterName">ƒpƒ‰ƒ[ƒ^–¼</param>
-		''' <param name="value">’l</param>
+		''' <param name="parameterName">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å</param>
+		''' <param name="value">å€¤</param>
 		''' <remarks>
-		''' ƒXƒgƒAƒh‚Ìƒpƒ‰ƒ[ƒ^‚ğİ’è‚·‚é‚Æ‚«‚Ì‚İg—p‰Â”\
+		''' ã‚¹ãƒˆã‚¢ãƒ‰ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®šã™ã‚‹ã¨ãã®ã¿ä½¿ç”¨å¯èƒ½
 		''' </remarks>
 		Public Sub SetParameterValue(ByVal parameterName As String, ByVal value As Object) Implements IDbCommandStoredProcedure.SetParameterValue
 			Dim param As IDbDataParameter
@@ -65,13 +65,13 @@ Namespace Db.CommandWrapper
 		End Sub
 
 		''' <summary>
-		''' “ü—Íƒpƒ‰ƒ[ƒ^’l‚ğİ’è‚·‚é
+		''' å…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å€¤ã‚’è¨­å®šã™ã‚‹
 		''' </summary>
-		''' <param name="index">ƒpƒ‰ƒ[ƒ^ˆÊ’u</param>
-		''' <param name="value">’l</param>
+		''' <param name="index">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ä½ç½®</param>
+		''' <param name="value">å€¤</param>
 		''' <remarks>
-		''' ƒXƒgƒAƒh‚Ìƒpƒ‰ƒ[ƒ^‚ğİ’è‚·‚é‚Æ‚«‚Ì‚İg—p‰Â”\‚Å‚·B
-		''' ƒpƒ‰ƒ[ƒ^ˆÊ’u‚Ì‚O”Ô–Ú‚Í@RETURN_VALUE‚É‚È‚éˆ×Aw’è‚³‚ê‚½ˆÊ’u‚É{‚P‚·‚éB
+		''' ã‚¹ãƒˆã‚¢ãƒ‰ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®šã™ã‚‹ã¨ãã®ã¿ä½¿ç”¨å¯èƒ½ã§ã™ã€‚
+		''' ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ä½ç½®ã®ï¼ç•ªç›®ã¯@RETURN_VALUEã«ãªã‚‹ç‚ºã€æŒ‡å®šã•ã‚ŒãŸä½ç½®ã«ï¼‹ï¼‘ã™ã‚‹ã€‚
 		''' </remarks>
 		Public Sub SetParameterValue(ByVal index As Integer, ByVal value As Object) Implements IDbCommandStoredProcedure.SetParameterValue
 			Dim param As IDbDataParameter
@@ -81,12 +81,12 @@ Namespace Db.CommandWrapper
 		End Sub
 
 		''' <summary>
-		''' “ü—Íƒpƒ‰ƒ[ƒ^’l‚Ìİ’è‚ğ’Ç‰Á‚·‚é
+		''' å…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å€¤ã®è¨­å®šã‚’è¿½åŠ ã™ã‚‹
 		''' </summary>
 		''' <param name="value"></param>
 		''' <remarks></remarks>
 		''' <exception cref="DbAccessException">
-		''' w’è‚³‚ê‚½ƒpƒ‰ƒ[ƒ^‚ª‘½‚·‚¬‚Ü‚·B
+		''' æŒ‡å®šã•ã‚ŒãŸãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãŒå¤šã™ãã¾ã™ã€‚
 		''' </exception>
 		Public Sub AddParameterValue(ByVal value As Object) Implements IDbCommandStoredProcedure.AddParameterValue
 			Dim idx As Integer
@@ -94,7 +94,7 @@ Namespace Db.CommandWrapper
 			idx = _addParameterValueCount
 			idx += 1
 			If Me.cmd.Parameters.Count < idx Then
-				Throw New DbAccessException(Me.dba, "w’è‚³‚ê‚½ƒpƒ‰ƒ[ƒ^‚ª‘½‚·‚¬‚Ü‚·B")
+				Throw New DbAccessException(Me.dba, "æŒ‡å®šã•ã‚ŒãŸãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãŒå¤šã™ãã¾ã™ã€‚")
 			End If
 
 			_addParameterValueCount = idx
@@ -102,7 +102,7 @@ Namespace Db.CommandWrapper
 		End Sub
 
 		''' <summary>
-		''' ƒXƒgƒAƒh ƒvƒƒV[ƒWƒƒ‚©‚çƒpƒ‰ƒ[ƒ^î•ñ‚ğæ“¾‚µAw’è‚µ‚½ SqlCommand ƒIƒuƒWƒFƒNƒg‚Ì Parameters ƒRƒŒƒNƒVƒ‡ƒ“‚Éƒpƒ‰ƒ[ƒ^‚ğŠi”[‚µ‚Ü‚·B
+		''' ã‚¹ãƒˆã‚¢ãƒ‰ ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£ã‹ã‚‰ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿æƒ…å ±ã‚’å–å¾—ã—ã€æŒ‡å®šã—ãŸ SqlCommand ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã® Parameters ã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ã«ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’æ ¼ç´ã—ã¾ã™ã€‚
 		''' </summary>
 		''' <remarks></remarks>
 		Protected Sub getParameters()
@@ -110,7 +110,7 @@ Namespace Db.CommandWrapper
 		End Sub
 
 		''' <summary>
-		''' XVŒn‚ÌƒXƒgƒAƒh‚ğÀsI
+		''' æ›´æ–°ç³»ã®ã‚¹ãƒˆã‚¢ãƒ‰ã‚’å®Ÿè¡Œï¼
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>
@@ -120,7 +120,7 @@ Namespace Db.CommandWrapper
 		End Function
 
 		''' <summary>
-		''' SQLÀsI
+		''' SQLå®Ÿè¡Œï¼
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>
@@ -130,13 +130,13 @@ Namespace Db.CommandWrapper
 		End Function
 
 		''' <summary>
-		''' ƒNƒGƒŠ‚ğÀs‚µAw’è‚³‚ê‚½ƒGƒ“ƒeƒBƒeƒB‚É•ÏŠ·‚µ‚Ä•Ô‚µ‚Ü‚·B
+		''' ã‚¯ã‚¨ãƒªã‚’å®Ÿè¡Œã—ã€æŒ‡å®šã•ã‚ŒãŸã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã«å¤‰æ›ã—ã¦è¿”ã—ã¾ã™ã€‚
 		''' </summary>
-		''' <typeparam name="T">ƒGƒ“ƒeƒBƒeƒB</typeparam>
-		''' <returns>ƒGƒ“ƒeƒBƒeƒB‚ÌƒŠƒXƒg</returns>
+		''' <typeparam name="T">ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£</typeparam>
+		''' <returns>ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã®ãƒªã‚¹ãƒˆ</returns>
 		''' <remarks>
-		''' “–ƒƒ\ƒbƒh‚Í—\‚ßƒf[ƒ^ƒx[ƒX‚ğƒI[ƒvƒ“‚µ‚Ä‚¨‚­•K—v‚ª‚ ‚è‚Ü‚·‚ªA
-		''' ƒI[ƒvƒ“‚³‚ê‚Ä‚¢‚È‚¢‚Æ‚«‚ÍA©“®‚ÅƒI[ƒvƒ“‚µ‚ÄI—¹‚ÉƒNƒ[ƒY‚µ‚Ü‚·B<br/>
+		''' å½“ãƒ¡ã‚½ãƒƒãƒ‰ã¯äºˆã‚ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‚’ã‚ªãƒ¼ãƒ—ãƒ³ã—ã¦ãŠãå¿…è¦ãŒã‚ã‚Šã¾ã™ãŒã€
+		''' ã‚ªãƒ¼ãƒ—ãƒ³ã•ã‚Œã¦ã„ãªã„ã¨ãã¯ã€è‡ªå‹•ã§ã‚ªãƒ¼ãƒ—ãƒ³ã—ã¦çµ‚äº†æ™‚ã«ã‚¯ãƒ­ãƒ¼ã‚ºã—ã¾ã™ã€‚<br/>
 		''' </remarks>
 		Public Overrides Function Execute(Of T)() As System.Collections.Generic.IList(Of T)
 			_addParameterValueCount = 0
@@ -144,13 +144,13 @@ Namespace Db.CommandWrapper
 		End Function
 
 		''' <summary>
-		''' ƒNƒGƒŠ‚ğÀs‚µA‚»‚ÌƒNƒGƒŠ‚ª•Ô‚·Œ‹‰ÊƒZƒbƒg‚ÌÅ‰‚Ìs‚É‚ ‚éÅ‰‚Ì—ñ‚ğ•Ô‚µ‚Ü‚·B—]•ª‚È—ñ‚Ü‚½‚Ís‚Í–³‹‚³‚ê‚Ü‚·B
+		''' ã‚¯ã‚¨ãƒªã‚’å®Ÿè¡Œã—ã€ãã®ã‚¯ã‚¨ãƒªãŒè¿”ã™çµæœã‚»ãƒƒãƒˆã®æœ€åˆã®è¡Œã«ã‚ã‚‹æœ€åˆã®åˆ—ã‚’è¿”ã—ã¾ã™ã€‚ä½™åˆ†ãªåˆ—ã¾ãŸã¯è¡Œã¯ç„¡è¦–ã•ã‚Œã¾ã™ã€‚
 		''' </summary>
-		''' <returns>Œ‹‰ÊƒZƒbƒg‚ÌÅ‰‚Ìs‚É‚ ‚éÅ‰‚Ì—ñB</returns>
+		''' <returns>çµæœã‚»ãƒƒãƒˆã®æœ€åˆã®è¡Œã«ã‚ã‚‹æœ€åˆã®åˆ—ã€‚</returns>
 		''' <remarks>
-		''' “–ƒƒ\ƒbƒh‚Í—\‚ßƒf[ƒ^ƒx[ƒX‚ğƒI[ƒvƒ“‚µ‚Ä‚¨‚­•K—v‚ª‚ ‚è‚Ü‚·‚ªA
-		''' ƒI[ƒvƒ“‚³‚ê‚Ä‚¢‚È‚¢‚Æ‚«‚ÍA©“®‚ÅƒI[ƒvƒ“‚µ‚ÄI—¹‚ÉƒNƒ[ƒY‚µ‚Ü‚·B<br/>
-		''' Ú×‚ÍA<seealso cref="IDbCommand.ExecuteScalar"/> ‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢B
+		''' å½“ãƒ¡ã‚½ãƒƒãƒ‰ã¯äºˆã‚ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‚’ã‚ªãƒ¼ãƒ—ãƒ³ã—ã¦ãŠãå¿…è¦ãŒã‚ã‚Šã¾ã™ãŒã€
+		''' ã‚ªãƒ¼ãƒ—ãƒ³ã•ã‚Œã¦ã„ãªã„ã¨ãã¯ã€è‡ªå‹•ã§ã‚ªãƒ¼ãƒ—ãƒ³ã—ã¦çµ‚äº†æ™‚ã«ã‚¯ãƒ­ãƒ¼ã‚ºã—ã¾ã™ã€‚<br/>
+		''' è©³ç´°ã¯ã€<seealso cref="IDbCommand.ExecuteScalar"/> ã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
 		''' </remarks>
 		Public Overrides Function ExecuteScalar() As Object
 			_addParameterValueCount = 0

@@ -2,19 +2,19 @@
 Namespace Aop
 
 	''' <summary>
-	''' Joinpoint�̂����AAdvice��K�p������Joinpoint�𐳋K�\���Ȃǂ�p�����������g�p���či�荞�ނ��߂̃t�B���^�ł��B
-	''' �Ⴆ�΁AAdvice��K�p�������̂́uadd�v�ł͂��܂郁�\�b�h�����s���ꂽ���������Ƃ���ƁA
-	''' �������uadd*�v�Ƃ��či�荞�܂ꂽaddXxx���\�b�h�����s���ꂽ��������Advice�����s�����悤�ɂ��ł��܂����A
-	''' �w�肳�ꂽ���\�b�h������v����Ƃ�����Advice�����s�����悤�ɂ���Ȃǂ̃t�B���^���쐬���܂��B
+	''' Joinpointのうち、Adviceを適用したいJoinpointを正規表現などを用いた条件を使用して絞り込むためのフィルタです。
+	''' 例えば、Adviceを適用したいのは「add」ではじまるメソッドが実行された時だけだとすると、
+	''' 条件を「add*」として絞り込まれたaddXxxメソッドが実行された時だけにAdviceが実行されるようにもできますし、
+	''' 指定されたメソッド名が一致するときだけAdviceが実行されるようにするなどのフィルタを作成します。
 	''' </summary>
 	''' <remarks></remarks>
 	Public Interface IPointcut
 
 		''' <summary>
-		''' �����œn���ꂽ���\�b�h����Advice��}�����邩�m�F���܂��B
+		''' 引数で渡されたメソッド名にAdviceを挿入するか確認します。
 		''' </summary>
-		''' <param name="pattern">���\�b�h��</param>
-		''' <returns>True�Ȃ�Advice��}������AFalse�Ȃ�Advice�͑}������Ȃ�</returns>
+		''' <param name="pattern">メソッド名</param>
+		''' <returns>TrueならAdviceを挿入する、FalseならAdviceは挿入されない</returns>
 		''' <remarks></remarks>
 		Function IsExecution(ByVal pattern As String) As Boolean
 

@@ -2,7 +2,7 @@
 Namespace Db.CommandWrapper
 
 	''' <summary>
-	''' DELETE•¶‚ğÀs‚·‚éˆ×‚ÌDBCommand‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX
+	''' DELETEæ–‡ã‚’å®Ÿè¡Œã™ã‚‹ç‚ºã®DBCommandã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class DeleteCommandWrapper
@@ -12,10 +12,10 @@ Namespace Db.CommandWrapper
 #Region " Constructor/DeConstructor "
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="dba">e‚Æ‚È‚éDBAccessƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <param name="cmd">Às‚·‚éDBCommandƒCƒ“ƒXƒ^ƒ“ƒX</param>
+		''' <param name="dba">è¦ªã¨ãªã‚‹DBAccessã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <param name="cmd">å®Ÿè¡Œã™ã‚‹DBCommandã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
 		''' <remarks>
 		''' </remarks>
 		Friend Sub New(ByVal dba As IDao, ByVal cmd As IDbCommand)
@@ -25,7 +25,7 @@ Namespace Db.CommandWrapper
 #End Region
 
 		''' <summary>
-		''' SQLÀsI
+		''' SQLå®Ÿè¡Œï¼
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>

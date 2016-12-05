@@ -7,22 +7,22 @@ Imports Moca.Util
 Namespace Db
 
 	''' <summary>
-	''' ƒRƒ}ƒ“ƒhŽí•Ê‚Ì—ñ‹“Œ^
+	''' ã‚³ãƒžãƒ³ãƒ‰ç¨®åˆ¥ã®åˆ—æŒ™åž‹
 	''' </summary>
 	Public Enum SQLCommandTypes
-		''' <summary>SELECT•¶‚ðŽÀs‚·‚é</summary>
+		''' <summary>SELECTæ–‡ã‚’å®Ÿè¡Œã™ã‚‹</summary>
 		SelectText = 0
-		''' <summary>SELECT•¶ŽÀsŒã‚ÉDataSet‚É‚æ‚éUPDATEŽÀs‚·‚é</summary>
+		''' <summary>SELECTæ–‡å®Ÿè¡Œå¾Œã«DataSetã«ã‚ˆã‚‹UPDATEå®Ÿè¡Œã™ã‚‹</summary>
 		Select4Update
-		''' <summary>UPDATE•¶‚ðŽÀs‚·‚é</summary>
+		''' <summary>UPDATEæ–‡ã‚’å®Ÿè¡Œã™ã‚‹</summary>
 		UpdateText
-		''' <summary>INSERT•¶‚ðŽÀs‚·‚é</summary>
+		''' <summary>INSERTæ–‡ã‚’å®Ÿè¡Œã™ã‚‹</summary>
 		InsertText
-		''' <summary>DELETE•¶‚ðŽÀs‚·‚é</summary>
+		''' <summary>DELETEæ–‡ã‚’å®Ÿè¡Œã™ã‚‹</summary>
 		DeleteText
-		''' <summary>ƒXƒgƒAƒhŽÀs‚ðŽÀs‚·‚é</summary>
+		''' <summary>ã‚¹ãƒˆã‚¢ãƒ‰å®Ÿè¡Œã‚’å®Ÿè¡Œã™ã‚‹</summary>
 		StoredProcedure
-		''' <summary>DDLŽÀs‚ðŽÀs‚·‚é</summary>
+		''' <summary>DDLå®Ÿè¡Œã‚’å®Ÿè¡Œã™ã‚‹</summary>
 		DDL
 	End Enum
 

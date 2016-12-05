@@ -6,52 +6,52 @@ Imports Moca.Util
 Namespace Attr
 
 	''' <summary>
-	''' ������͂̃C���^�t�F�[�X
+	''' 属性解析のインタフェース
 	''' </summary>
 	''' <remarks></remarks>
 	Public Interface IAttributeAnalyzer
 
 		''' <summary>
-		''' �N���X���
+		''' クラス解析
 		''' </summary>
-		''' <param name="target">�ΏۂƂȂ�I�u�W�F�N�g</param>
-		''' <returns>�쐬�����R���|�[�l���g</returns>
+		''' <param name="target">対象となるオブジェクト</param>
+		''' <returns>作成したコンポーネント</returns>
 		''' <remarks></remarks>
 		Function Analyze(ByVal target As Type) As MocaComponent
 
 		''' <summary>
-		''' �t�B�[���h���
+		''' フィールド解析
 		''' </summary>
-		''' <param name="target">�ΏۂƂȂ�I�u�W�F�N�g</param>
-		''' <param name="field">�t�B�[���h</param>
-		''' <returns>�쐬�����R���|�[�l���g</returns>
+		''' <param name="target">対象となるオブジェクト</param>
+		''' <param name="field">フィールド</param>
+		''' <returns>作成したコンポーネント</returns>
 		''' <remarks></remarks>
 		Function Analyze(ByVal target As Object, ByVal field As FieldInfo) As MocaComponent
 
 		''' <summary>
-		''' �v���p�e�B���
+		''' プロパティ解析
 		''' </summary>
-		''' <param name="targetType">�ΏۂƂȂ�^�C�v</param>
-		''' <param name="prop">�v���p�e�B</param>
-		''' <returns>�A�X�y�N�g�z��</returns>
+		''' <param name="targetType">対象となるタイプ</param>
+		''' <param name="prop">プロパティ</param>
+		''' <returns>アスペクト配列</returns>
 		''' <remarks></remarks>
 		Function Analyze(ByVal targetType As Type, ByVal prop As PropertyInfo) As IAspect()
 
 		''' <summary>
-		''' ���\�b�h���
+		''' メソッド解析
 		''' </summary>
-		''' <param name="targetType">�ΏۂƂȂ�^�C�v</param>
-		''' <param name="method">���\�b�h</param>
-		''' <returns>�A�X�y�N�g�z��</returns>
+		''' <param name="targetType">対象となるタイプ</param>
+		''' <param name="method">メソッド</param>
+		''' <returns>アスペクト配列</returns>
 		''' <remarks></remarks>
 		Function Analyze(ByVal targetType As Type, ByVal method As MethodInfo) As IAspect()
 
 		''' <summary>
-		''' �C�x���g���
+		''' イベント解析
 		''' </summary>
-		''' <param name="targetType">�ΏۂƂȂ�^�C�v</param>
-		''' <param name="method">�C�x���g</param>
-		''' <returns>�A�X�y�N�g�z��</returns>
+		''' <param name="targetType">対象となるタイプ</param>
+		''' <param name="method">イベント</param>
+		''' <returns>アスペクト配列</returns>
 		''' <remarks></remarks>
 		Function Analyze(ByVal targetType As Type, ByVal method As EventInfo) As IAspect()
 

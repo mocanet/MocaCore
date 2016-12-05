@@ -4,20 +4,20 @@ Imports System.Configuration
 Namespace Security
 
 	''' <summary>
-	''' Dpapi‚ğ—˜—p‚µ‚Äapp.config‚ğˆÃ†‰»‚·‚éˆ×‚ÌƒNƒ‰ƒX
+	''' Dpapiã‚’åˆ©ç”¨ã—ã¦app.configã‚’æš—å·åŒ–ã™ã‚‹ç‚ºã®ã‚¯ãƒ©ã‚¹
 	''' </summary>
 	''' <remarks>
-	''' ‰º‹L‚ÌˆÃ†‰»/•¡‡‰»‚ğƒTƒ|[ƒg‚µ‚Ä‚¢‚Ü‚·B
+	''' ä¸‹è¨˜ã®æš—å·åŒ–/è¤‡åˆåŒ–ã‚’ã‚µãƒãƒ¼ãƒˆã—ã¦ã„ã¾ã™ã€‚
 	''' <list>
 	''' <item>ConnectionStrings</item>
 	''' </list>
 	''' </remarks>
 	Public Class DPAPIConfiguration
 
-		''' <summary>g—p‚·‚éƒvƒƒpƒCƒ_[</summary>
+		''' <summary>ä½¿ç”¨ã™ã‚‹ãƒ—ãƒ­ãƒ‘ã‚¤ãƒ€ãƒ¼</summary>
 		Protected Const C_PROVIDER As String = "DataProtectionConfigurationProvider"
 
-		''' <summary>g—p‚·‚éapp.configƒtƒ@ƒCƒ‹</summary>
+		''' <summary>ä½¿ç”¨ã™ã‚‹app.configãƒ•ã‚¡ã‚¤ãƒ«</summary>
 		Protected config As System.Configuration.Configuration
 
 		''' <summary>log4net logger</summary>
@@ -26,20 +26,20 @@ Namespace Security
 #Region " Constructor/DeConstructor "
 
 		''' <summary>
-		''' ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
 		''' <remarks>
-		''' ‹N“®’†ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Ì\¬ƒtƒ@ƒCƒ‹‚É‘Î‚µ‚Äˆ—‚µ‚Ü‚·B
+		''' èµ·å‹•ä¸­ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®æ§‹æˆãƒ•ã‚¡ã‚¤ãƒ«ã«å¯¾ã—ã¦å‡¦ç†ã—ã¾ã™ã€‚
 		''' </remarks>
 		Public Sub New()
 			config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None)
 		End Sub
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="config">g—p‚·‚éapp.configƒtƒ@ƒCƒ‹</param>
-		''' <remarks>app.configƒtƒ@ƒCƒ‹‚ğw’è‚·‚é‚Ég—p‚·‚éB</remarks>
+		''' <param name="config">ä½¿ç”¨ã™ã‚‹app.configãƒ•ã‚¡ã‚¤ãƒ«</param>
+		''' <remarks>app.configãƒ•ã‚¡ã‚¤ãƒ«ã‚’æŒ‡å®šã™ã‚‹æ™‚ã«ä½¿ç”¨ã™ã‚‹ã€‚</remarks>
 		Public Sub New(ByVal config As System.Configuration.Configuration)
 			Me.config = config
 		End Sub
@@ -49,37 +49,37 @@ Namespace Security
 #Region " DataProtectionConfigurationProvider "
 
 		''' <summary>
-		''' Ú‘±•¶š—ñ‚ğˆÃ†‰»‚µ‚Ü‚·B
+		''' æ¥ç¶šæ–‡å­—åˆ—ã‚’æš—å·åŒ–ã—ã¾ã™ã€‚
 		''' </summary>
 		''' <remarks>
-		''' ƒAƒvƒŠƒP[ƒVƒ‡ƒ“\¬ƒtƒ@ƒCƒ‹‚ÌÚ‘±•¶š—ñƒZƒNƒVƒ‡ƒ“‚É‘Î‚µ‚ÄˆÃ†‰»‚ğs‚¢‚Ü‚·B<br/>
-		''' ‚½‚¾‚µA‰º‹L‚Ìê‡‚ÍˆÃ†‰»‚Ís‚¢‚Ü‚¹‚ñB<br/>
-		''' EÚ‘±•¶š—ñ‚ª–³‚¢<br/>
-		''' EŠù‚ÉˆÃ†‰»‚³‚ê‚Ä‚¢‚é<br/>
-		''' EƒƒbƒN‚³‚ê‚Ä‚¢‚é<br/>
+		''' ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³æ§‹æˆãƒ•ã‚¡ã‚¤ãƒ«ã®æ¥ç¶šæ–‡å­—åˆ—ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã«å¯¾ã—ã¦æš—å·åŒ–ã‚’è¡Œã„ã¾ã™ã€‚<br/>
+		''' ãŸã ã—ã€ä¸‹è¨˜ã®å ´åˆã¯æš—å·åŒ–ã¯è¡Œã„ã¾ã›ã‚“ã€‚<br/>
+		''' ãƒ»æ¥ç¶šæ–‡å­—åˆ—ãŒç„¡ã„æ™‚<br/>
+		''' ãƒ»æ—¢ã«æš—å·åŒ–ã•ã‚Œã¦ã„ã‚‹æ™‚<br/>
+		''' ãƒ»ãƒ­ãƒƒã‚¯ã•ã‚Œã¦ã„ã‚‹æ™‚<br/>
 		''' </remarks>
 		Public Sub ProtectConnectionStrings()
 			Dim section As ConfigurationSection = config.ConnectionStrings
 
-			' Ú‘±•¶š—ñ‚ª–³‚¢‚Í–³‹
+			' æ¥ç¶šæ–‡å­—åˆ—ãŒç„¡ã„æ™‚ã¯ç„¡è¦–
 			If section Is Nothing Then
 				_mylog.Debug(String.Format("Can't get the section {0}", section.SectionInformation.Name))
 				Exit Sub
 			End If
 
-			' Šù‚ÉˆÃ†‰»‚³‚ê‚Ä‚¢‚é‚Í–³‹
+			' æ—¢ã«æš—å·åŒ–ã•ã‚Œã¦ã„ã‚‹æ™‚ã¯ç„¡è¦–
 			If section.SectionInformation.IsProtected Then
 				_mylog.Debug(String.Format("Section {0} is already protected by {1}", section.SectionInformation.Name, section.SectionInformation.ProtectionProvider.Name))
 				Exit Sub
 			End If
 
-			' ƒƒbƒN‚³‚ê‚Ä‚¢‚é‚Í–³‹
+			' ãƒ­ãƒƒã‚¯ã•ã‚Œã¦ã„ã‚‹æ™‚ã¯ç„¡è¦–
 			If section.ElementInformation.IsLocked Then
 				_mylog.Debug(String.Format("Can't protect, section {0} is locked", section.SectionInformation.Name))
 				Exit Sub
 			End If
 
-			' ˆÃ†‰»I
+			' æš—å·åŒ–ï¼
 			section.SectionInformation.ProtectSection(C_PROVIDER)
 			section.SectionInformation.ForceSave = True
 			config.Save(ConfigurationSaveMode.Full)
@@ -88,37 +88,37 @@ Namespace Security
 		End Sub
 
 		''' <summary>
-		''' Ú‘±•¶š—ñ‚ğ•¡‡‰»‚µ‚Ü‚·B
+		''' æ¥ç¶šæ–‡å­—åˆ—ã‚’è¤‡åˆåŒ–ã—ã¾ã™ã€‚
 		''' </summary>
 		''' <remarks>
-		''' ƒAƒvƒŠƒP[ƒVƒ‡ƒ“\¬ƒtƒ@ƒCƒ‹‚ÌÚ‘±•¶š—ñƒZƒNƒVƒ‡ƒ“‚É‘Î‚µ‚Ä•¡‡‰»‚ğs‚¢‚Ü‚·B<br/>
-		''' ‚½‚¾‚µA‰º‹L‚Ìê‡‚Í•¡‡‰»‚Ís‚¢‚Ü‚¹‚ñB<br/>
-		''' EÚ‘±•¶š—ñ‚ª–³‚¢<br/>
-		''' EŠù‚ÉˆÃ†‰»‚³‚ê‚Ä‚¢‚é<br/>
-		''' EƒƒbƒN‚³‚ê‚Ä‚¢‚é<br/>
+		''' ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³æ§‹æˆãƒ•ã‚¡ã‚¤ãƒ«ã®æ¥ç¶šæ–‡å­—åˆ—ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã«å¯¾ã—ã¦è¤‡åˆåŒ–ã‚’è¡Œã„ã¾ã™ã€‚<br/>
+		''' ãŸã ã—ã€ä¸‹è¨˜ã®å ´åˆã¯è¤‡åˆåŒ–ã¯è¡Œã„ã¾ã›ã‚“ã€‚<br/>
+		''' ãƒ»æ¥ç¶šæ–‡å­—åˆ—ãŒç„¡ã„æ™‚<br/>
+		''' ãƒ»æ—¢ã«æš—å·åŒ–ã•ã‚Œã¦ã„ã‚‹æ™‚<br/>
+		''' ãƒ»ãƒ­ãƒƒã‚¯ã•ã‚Œã¦ã„ã‚‹æ™‚<br/>
 		''' </remarks>
 		Public Sub UnProtectConnectionStrings()
 			Dim section As ConfigurationSection = config.ConnectionStrings
 
-			' Ú‘±•¶š—ñ‚ª–³‚¢‚Í–³‹
+			' æ¥ç¶šæ–‡å­—åˆ—ãŒç„¡ã„æ™‚ã¯ç„¡è¦–
 			If section Is Nothing Then
 				_mylog.Debug(String.Format("Can't get the section {0}", section.SectionInformation.Name))
 				Exit Sub
 			End If
 
-			' Šù‚É•¡‡‰»‚³‚ê‚Ä‚¢‚é‚Í–³‹
+			' æ—¢ã«è¤‡åˆåŒ–ã•ã‚Œã¦ã„ã‚‹æ™‚ã¯ç„¡è¦–
 			If Not section.SectionInformation.IsProtected Then
 				_mylog.Debug(String.Format("Section {0} is already unprotected.", section.SectionInformation.Name))
 				Exit Sub
 			End If
 
-			' ƒƒbƒN‚³‚ê‚Ä‚¢‚é‚Í–³‹
+			' ãƒ­ãƒƒã‚¯ã•ã‚Œã¦ã„ã‚‹æ™‚ã¯ç„¡è¦–
 			If section.ElementInformation.IsLocked Then
 				_mylog.Debug(String.Format("Can't unprotect, section {0} is locked", section.SectionInformation.Name))
 				Exit Sub
 			End If
 
-			' •¡‡‰»I
+			' è¤‡åˆåŒ–ï¼
 			section.SectionInformation.UnprotectSection()
 			section.SectionInformation.ForceSave = True
 			config.Save(ConfigurationSaveMode.Full)

@@ -2,16 +2,16 @@
 Namespace Aop
 
 	''' <summary>
-	''' ���\�b�h�ɑ΂���Interceptor�̃C���^�[�t�F�C�X
+	''' メソッドに対するInterceptorのインターフェイス
 	''' </summary>
 	''' <remarks></remarks>
 	Public Interface IMethodInterceptor
 		Inherits IInterceptor
 
 		''' <summary>
-		''' ���\�b�h���s
+		''' メソッド実行
 		''' </summary>
-		''' <param name="invocation">Interceptor����C���^�[�Z�v�g����Ă��郁�\�b�h�̏��</param>
+		''' <param name="invocation">Interceptorからインターセプトされているメソッドの情報</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Function Invoke(ByVal invocation As IMethodInvocation) As Object

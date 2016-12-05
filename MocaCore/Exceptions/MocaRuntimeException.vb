@@ -2,7 +2,7 @@
 Namespace Exceptions
 
 	''' <summary>
-	''' “–ƒ‰ƒCƒuƒ‰ƒŠ‚ÌŽÀsŽž—áŠO‚ÌŠî–{ƒNƒ‰ƒX
+	''' å½“ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®å®Ÿè¡Œæ™‚ä¾‹å¤–ã®åŸºæœ¬ã‚¯ãƒ©ã‚¹
 	''' </summary>
 	''' <remarks></remarks>
 	<Serializable()> _
@@ -12,9 +12,9 @@ Namespace Exceptions
 #Region " Constructor/DeConstructor "
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="Message">ƒGƒ‰[ƒƒbƒZ[ƒW</param>
+		''' <param name="Message">ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸</param>
 		''' <remarks>
 		''' </remarks>
 		Public Sub New(ByVal Message As String)
@@ -22,9 +22,9 @@ Namespace Exceptions
 		End Sub
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="ex">—áŠOƒCƒ“ƒXƒ^ƒ“ƒX</param>
+		''' <param name="ex">ä¾‹å¤–ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
 		''' <remarks>
 		''' </remarks>
 		Public Sub New(ByVal ex As Exception)
@@ -32,10 +32,10 @@ Namespace Exceptions
 		End Sub
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="ex">—áŠOƒCƒ“ƒXƒ^ƒ“ƒX</param>
-		''' <param name="Message">ƒGƒ‰[ƒƒbƒZ[ƒW</param>
+		''' <param name="ex">ä¾‹å¤–ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+		''' <param name="Message">ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸</param>
 		''' <remarks>
 		''' </remarks>
 		Public Sub New(ByVal ex As Exception, ByVal Message As String)

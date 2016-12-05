@@ -2,14 +2,14 @@
 Namespace Aop
 
 	''' <summary>
-	''' ���f�I�Ȋ֐S�������U�镑���i�����̂��Ɓj�ƁA���U�镑����K�p���邩���֘A�t�����܂��B
-	''' Advice(Interceptor)��Pointcut���܂Ƃ߂����̂�Aspect(�A�X�y�N�g)�Ƃ����܂��B
+	''' 横断的な関心事が持つ振る舞い（処理のこと）と、いつ振る舞いを適用するかを関連付けします。
+	''' Advice(Interceptor)とPointcutをまとめたものをAspect(アスペクト)といいます。
 	''' </summary>
 	''' <remarks></remarks>
 	Public Interface IAspect
 
 		''' <summary>
-		''' Advice(Interceptor) �v���p�e�B
+		''' Advice(Interceptor) プロパティ
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -17,7 +17,7 @@ Namespace Aop
 		ReadOnly Property Advice() As IMethodInterceptor
 
 		''' <summary>
-		''' Pointcut �v���p�e�B
+		''' Pointcut プロパティ
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>

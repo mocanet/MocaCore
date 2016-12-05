@@ -2,7 +2,7 @@
 Namespace Db
 
 	''' <summary>
-	''' ƒe[ƒuƒ‹î•ñƒ‚ƒfƒ‹‚ÌƒRƒŒƒNƒVƒ‡ƒ“
+	''' ãƒ†ãƒ¼ãƒ–ãƒ«æƒ…å ±ãƒ¢ãƒ‡ãƒ«ã®ã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class DbInfoTableCollection

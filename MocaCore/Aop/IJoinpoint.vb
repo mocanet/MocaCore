@@ -4,14 +4,14 @@ Imports System.Reflection
 Namespace Aop
 
 	''' <summary>
-	''' �v���p�e�B�����p���ꂽ���⃁�\�b�h���Ăяo���ꂽ���ȂǁAAdvice�i�U�镑���j�����荞�܂��邱�Ƃ��\�ȂƂ��̂��Ƃł��B
-	''' �Ȃ�AOP�̎����ɂ���ẮA�u�v���p�e�B�̗��p��Joinpoint�ɂȂ�Ȃ��v�u���\�b�h���Ăяo���ꂽ�Ƃ�������Joinpoint�ɂȂ�v�Ȃǂ̂悤�ɈقȂ�܂��B
+	''' プロパティが利用された時やメソッドが呼び出された時など、Advice（振る舞い）を割り込ませることが可能なときのことです。
+	''' なおAOPの実装によっては、「プロパティの利用はJoinpointにならない」「メソッドが呼び出されたときだけがJoinpointになる」などのように異なります。
 	''' </summary>
 	''' <remarks></remarks>
 	Public Interface IJoinpoint
 
 		''' <summary>
-		''' ���\�b�h��`
+		''' メソッド定義
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -19,7 +19,7 @@ Namespace Aop
 		ReadOnly Property Method() As MethodBase
 
 		''' <summary>
-		''' ���s�Ώۂ̃C���X�^���X
+		''' 実行対象のインスタンス
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -27,7 +27,7 @@ Namespace Aop
 		ReadOnly Property This() As Object
 
 		''' <summary>
-		''' ���s
+		''' 実行
 		''' </summary>
 		''' <returns></returns>
 		''' <remarks></remarks>
