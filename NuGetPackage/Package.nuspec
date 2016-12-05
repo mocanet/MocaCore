@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
 	<metadata>
-		<version>2.3.1</version>
+		<version>2.3.2-beta1</version>
 		<authors>MiYABiS</authors>
 		<owners>MiYABiS</owners>
 		<dependencies>
@@ -13,7 +13,7 @@
 		<description>DI&amp;AOP framework Moca.NET Core</description>
 		<summary>DI&amp;AOP framework Moca.NET Core</summary>
     <releaseNotes>
-      GitHub issues : #5, #6
+      GitHub issues : #7
     </releaseNotes>
     <copyright>Copyright © 2015 MiYABiS All Rights Reserved.</copyright>
 		<language>en-US</language>
