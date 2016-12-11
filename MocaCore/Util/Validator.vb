@@ -84,8 +84,8 @@ Namespace Util
 			If value Is Nothing Then
 				val = String.Empty
 			Else
-				val = value.ToString.Trim
-			End If
+                val = value.ToString
+            End If
 			rc = ValidateTypes.None
 
 			' 必須
