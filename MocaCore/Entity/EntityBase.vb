@@ -122,7 +122,9 @@ Namespace Entity
 
                 For Each t As Type In info.FieldType.GetInterfaces()
                     If t.IsGenericType AndAlso t.GetGenericTypeDefinition() Is GetType(ICollection(Of )) Or t Is GetType(ICollection) Then
-                        newValue = ClassUtil.NewInstance(value.GetType, New Object() {value})
+                        If value IsNot Nothing Then
+                            newValue = ClassUtil.NewInstance(value.GetType, New Object() {value})
+                        End If
                     End If
                 Next
                 If newValue Is Nothing Then
