@@ -123,7 +123,14 @@ Namespace Entity
                 For Each t As Type In info.FieldType.GetInterfaces()
                     If t.IsGenericType AndAlso t.GetGenericTypeDefinition() Is GetType(ICollection(Of )) Or t Is GetType(ICollection) Then
                         If value IsNot Nothing Then
-                            newValue = ClassUtil.NewInstance(value.GetType, New Object() {value})
+                            If value.GetType.IsArray Then
+                                Dim ary1 As Array = value
+                                Dim ary2 As Array = ClassUtil.NewInstance(value.GetType, New Object() {ary1.Length})
+                                Array.Copy(ary1, ary2, ary1.Length)
+                                newValue = ary2
+                            Else
+                                newValue = ClassUtil.NewInstance(value.GetType, New Object() {value})
+                            End If
                         End If
                     End If
                 Next
