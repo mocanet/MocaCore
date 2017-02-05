@@ -569,9 +569,12 @@ Namespace Db.Helper
 				If typ.Equals("numeric") Then
 					typ = SqlDbType.Decimal.ToString
 				End If
-			End If
+                If typ.Equals("hierarchyid") Then
+                    typ = SqlDbType.Variant.ToString
+                End If
+            End If
 
-			Return DirectCast([Enum].Parse(GetType(T), typ, True), T)
+            Return DirectCast([Enum].Parse(GetType(T), typ, True), T)
 		End Function
 
 		''' <summary>
