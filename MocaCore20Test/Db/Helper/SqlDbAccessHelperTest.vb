@@ -47,22 +47,22 @@ Imports Moca.Db.Attr
 
 #End Region
 
-    <TestMethod()>
-    Public Sub GetTableInfoTest()
-        Dim tbl As Moca.Db.DbInfoTable
-        tbl = dao.GetTableInfo("tbMidasi")
-        For Each col As Moca.Db.DbInfoColumn In tbl.Columns.Values
-            Debug.Print(col.Name)
-            Debug.Print(col.Typ)
-            Debug.WriteLine("")
-        Next
+    '<TestMethod()>
+    'Public Sub GetTableInfoTest()
+    '    Dim tbl As Moca.Db.DbInfoTable
+    '    tbl = dao.GetTableInfo("tbMidasi")
+    '    For Each col As Moca.Db.DbInfoColumn In tbl.Columns.Values
+    '        Debug.Print(col.Name)
+    '        Debug.Print(col.Typ)
+    '        Debug.WriteLine("")
+    '    Next
 
-        Dim lst As IList(Of HogeRow)
-        lst = dao.FindAll()
-        For Each row As HogeRow In lst
-            Debug.WriteLine(row.IdHierarchyid)
-        Next
-    End Sub
+    '    Dim lst As IList(Of HogeRow)
+    '    lst = dao.FindAll()
+    '    For Each row As HogeRow In lst
+    '        Debug.WriteLine(row.IdHierarchyid)
+   '     Next
+    'End Sub
 
 End Class
 
