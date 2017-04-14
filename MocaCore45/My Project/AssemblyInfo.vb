@@ -35,8 +35,8 @@ Imports System.Runtime.InteropServices
 ' 既定値にすることができます:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("4.5.6")>
-<Assembly: AssemblyFileVersion("4.5.6")>
+<Assembly: AssemblyVersion("4.5.0")>
+<Assembly: AssemblyFileVersion("4.5.0")>
 
 ' プログラム要素が CLS (Common Language Specification) に準拠しているかどうかを示します
 <Assembly: System.CLSCompliant(True)> 

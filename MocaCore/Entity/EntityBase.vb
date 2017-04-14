@@ -45,10 +45,10 @@ Namespace Entity
                 Return
             End If
             If _original Is Nothing Then
-                _original = _clone()
+                _original = Clone()
             End If
             If _backup Is Nothing Then
-                _backup = _clone()
+                _backup = Clone()
             End If
             _inTxn = True
         End Sub
@@ -146,7 +146,7 @@ Namespace Entity
         ''' クローン
         ''' </summary>
         ''' <returns></returns>
-        Private Function _clone() As TEntity
+        Public Function Clone() As TEntity
             If Me.GetType.IsSerializable Then
                 Return _copySerializable()
             End If
