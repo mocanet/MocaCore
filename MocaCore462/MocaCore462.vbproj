@@ -106,6 +106,9 @@
     <Compile Include="..\MocaCore35\Entity\SelectedEntity.vb">
       <Link>Entity\SelectedEntity.vb</Link>
     </Compile>
+    <Compile Include="..\MocaCore35\Entity\SortableBindingList.vb">
+      <Link>Entity\SortableBindingList.vb</Link>
+    </Compile>
     <Compile Include="..\MocaCore40\Db\Helper\DbAccessHelperFactory.vb">
       <Link>Db\Helper\DbAccessHelperFactory.vb</Link>
     </Compile>

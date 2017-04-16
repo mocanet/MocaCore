@@ -12,7 +12,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>DI&amp;AOP framework Moca.NET Core</description>
         <summary>DI&amp;AOP framework Moca.NET Core</summary>
-        <releaseNotes>GitHub issues : #9</releaseNotes>
+        <releaseNotes>GitHub issues : #9, #10</releaseNotes>
         <copyright>Copyright © 2015 MiYABiS All Rights Reserved.</copyright>
         <language>en-US</language>
         <dependencies>

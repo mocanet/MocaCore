@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MocaCore", "NuGetPackage\MocaCore.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGetPackage", "NuGetPackage\NuGetPackage.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F1D2851E-A6BD-4B4A-A163-53D59E53782E} = {F1D2851E-A6BD-4B4A-A163-53D59E53782E}
 		{40864C4F-54A0-4920-A743-35139AF8BD88} = {40864C4F-54A0-4920-A743-35139AF8BD88}

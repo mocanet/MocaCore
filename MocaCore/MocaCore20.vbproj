@@ -138,6 +138,7 @@
     <Compile Include="Db\Tx\ScopeTxInterceptor.vb" />
     <Compile Include="Entity\AbstractEntity.vb" />
     <Compile Include="Entity\EntityBase.vb" />
+    <Compile Include="Entity\SortableBindingList.vb" />
     <Compile Include="Entity\UpdateEntityValidateArgs.vb" />
     <Compile Include="Install\ConfigProtectionInstaller.Designer.vb">
       <DependentUpon>ConfigProtectionInstaller.vb</DependentUpon>

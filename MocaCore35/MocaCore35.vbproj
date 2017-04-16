@@ -460,6 +460,7 @@
     <Compile Include="..\MocaCore\Util\ClassUtil.vb">
       <Link>Util\ClassUtil.vb</Link>
     </Compile>
+    <Compile Include="Entity\SortableBindingList.vb" />
     <Compile Include="Util\ConstantDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
