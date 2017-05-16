@@ -417,9 +417,12 @@ Namespace Db.Helper
 				If typ.Equals("VARCHAR2") Then
 					typ = OracleType.VarChar.ToString
 				End If
-			End If
+                If typ.Equals("DATE") Then
+                    typ = OracleType.DateTime.ToString
+                End If
+            End If
 
-			Return DirectCast([Enum].Parse(GetType(T), typ, True), T)
+            Return DirectCast([Enum].Parse(GetType(T), typ, True), T)
 		End Function
 
 		''' <summary>
