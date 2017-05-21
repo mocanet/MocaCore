@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MocaCore35\MocaCore35.vbproj" />
+    <ProjectReference Include="..\MocaCore40\MocaCore40.vbproj" />
+    <ProjectReference Include="..\MocaCore452\MocaCore452.vbproj" />
+    <ProjectReference Include="..\MocaCore45\MocaCore45.vbproj" />
+    <ProjectReference Include="..\MocaCore462\MocaCore462.vbproj" />
+    <ProjectReference Include="..\MocaCore46\MocaCore46.vbproj" />
+    <ProjectReference Include="..\MocaCore47\MocaCore47.vbproj" />
+    <ProjectReference Include="..\MocaCore\MocaCore20.vbproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\MocaCore\moca.xsd">
+      <Link>moca.xsd</Link>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>d9eaf4e3-2b12-4065-b6cd-57fdc29237e1</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!--<NuProjPath Condition=" '$(NuProjPath)' == '' ">$(MSBuildExtensionsPath)\NuProj\</NuProjPath>-->
+  </PropertyGroup>
+  <!--<Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />-->
+  <PropertyGroup Label="Configuration">
+    <Id>Moca.NETCore</Id>
+    <Version>2.3.4</Version>
+    <Title>Moca.NET Core</Title>
+    <Authors>MiYABiS</Authors>
+    <Owners>MiYABiS</Owners>
+    <Summary>DI&amp;amp;AOP framework Moca.NET Core</Summary>
+    <Description>DI&amp;amp;AOP framework Moca.NET Core</Description>
+    <ReleaseNotes>GitHub issues : #9, #10</ReleaseNotes>
+    <ProjectUrl>https://github.com/mocanet/MocaCore</ProjectUrl>
+    <LicenseUrl>https://opensource.org/licenses/MS-PL</LicenseUrl>
+    <Copyright>Copyright © 2015 MiYABiS All Rights Reserved.</Copyright>
+    <Tags>Moca DI AOP</Tags>
+    <IconUrl>https://avatars1.githubusercontent.com/u/14543303</IconUrl>
+    <EmbedSourceFiles>true</EmbedSourceFiles>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NuProjPath>..\packages\NuProj.0.11.14-beta\tools\</NuProjPath>
+  </PropertyGroup>
+  <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
+  <Import Project="$(NuProjPath)\NuProj.targets" />
+</Project>

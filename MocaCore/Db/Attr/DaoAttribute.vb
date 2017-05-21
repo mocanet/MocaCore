@@ -63,9 +63,13 @@ Namespace Db.Attr
 				Throw New ArgumentException(ImplType.FullName & " は、" & GetType(IDao).FullName & " を実装したクラスではありません。")
 			End If
 
-			' DBMS 特定
-			Dim targetDbms As Dbms
-			targetDbms = DbmsManager.GetDbms(Appkey)
+            ' DBMS 特定
+            Dim targetDbms As Dbms
+            Try
+                targetDbms = DbmsManager.GetDbms(Appkey)
+            Catch ex As ArgumentException
+                Throw New ArgumentException(String.Format(ImplType.FullName & " の Dao 属性に誤りがあります。（{0}）", ex.Message), ex)
+            End Try
 
 			Dim aspects As ArrayList
 			Dim fields() As FieldInfo

@@ -83,15 +83,23 @@ Namespace Db.Attr
 
 			' DBMS 特定
 			Dim targetDbms As Dbms
-			targetDbms = DbmsManager.GetDbms(Appkey)
-			' 列情報の取得
-			Dim hlp As IDbAccessHelper
+            Try
+                targetDbms = DbmsManager.GetDbms(Appkey)
+            Catch ex As ArgumentException
+                Throw New ArgumentException(String.Format(field.FieldType.FullName & " の Table 属性に誤りがあります。（{0}）", ex.Message), ex)
+            End Try
+
+            ' 列情報の取得
+            Dim hlp As IDbAccessHelper
 			Dim tblInfo As DbInfoTable
 			Dim colInfos As DbInfoColumnCollection
 			Dim colInfo As DbInfoColumn
 			hlp = targetDbms.CreateDbAccess().Helper
-			tblInfo = hlp.GetSchemaTable(_tableName)
-			colInfos = tblInfo.Columns
+            tblInfo = hlp.GetSchemaTable(_tableName)
+            If tblInfo Is Nothing Then
+                Throw New ArgumentException(String.Format(field.FieldType.FullName & " の Table 属性に誤りがあります。（{0} テーブルは存在しません）", _tableName))
+            End If
+            colInfos = tblInfo.Columns
 
 			' フィールドのインタフェースを解析
 			' プロパティ
