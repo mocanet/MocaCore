@@ -49,7 +49,7 @@
     <EmbedSourceFiles>true</EmbedSourceFiles>
   </PropertyGroup>
   <PropertyGroup>
-    <NuProjPath>..\packages\NuProj.0.11.14-beta\tools\</NuProjPath>
+    <NuProjPath>..\packages\NuProj.0.11.28-beta\tools\</NuProjPath>
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <Import Project="$(NuProjPath)\NuProj.targets" />
