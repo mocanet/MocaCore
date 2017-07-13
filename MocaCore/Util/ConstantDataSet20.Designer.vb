@@ -281,7 +281,8 @@ Partial Public Class ConstantDataSet
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class ConstantDataTable
-        Inherits Global.System.Data.TypedTableBase(Of ConstantRow)
+        Inherits Global.System.Data.DataTable
+        Implements Global.System.Collections.IEnumerable
         
         Private columnText As Global.System.Data.DataColumn
         
@@ -401,6 +402,12 @@ Partial Public Class ConstantDataSet
             rowConstantRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowConstantRow)
             Return rowConstantRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overridable Function GetEnumerator() As Global.System.Collections.IEnumerator Implements Global.System.Collections.IEnumerable.GetEnumerator
+            Return Me.Rows.GetEnumerator
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

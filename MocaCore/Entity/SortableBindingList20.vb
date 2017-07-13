@@ -26,6 +26,9 @@ Public Class SortableBindingList(Of T)
     ''' <param name="list"></param>
     Public Sub New(list As IList(Of T))
         MyBase.New(list)
+        'For Each o As Object In list
+        '    Me.Add(DirectCast(o, T))
+        'Next
     End Sub
 
 #End Region
@@ -38,39 +41,21 @@ Public Class SortableBindingList(Of T)
     ''' <param name="prop"></param>
     ''' <param name="direction"></param>
     Protected Overrides Sub ApplySortCore(prop As PropertyDescriptor, direction As ListSortDirection)
-        Dim interfaceType As Type = prop.PropertyType.GetInterface("IComparable")
+        ' 並べ替えるリストを取得します。
+        Dim items As List(Of T) = TryCast(Me.Items, List(Of T))
 
-        If interfaceType Is Nothing AndAlso prop.PropertyType.IsValueType Then
-            Dim underlyingType As Type = Nullable.GetUnderlyingType(prop.PropertyType)
-
-            If Not (underlyingType Is Nothing) Then
-                interfaceType = underlyingType.GetInterface("IComparable")
-            End If
-        End If
-
-        If Not (interfaceType Is Nothing) Then
-            _sortPropertyValue = prop
-            _sortDirectionValue = direction
-
-            Dim query As IEnumerable(Of T) = MyBase.Items
-
-            If direction = ListSortDirection.Ascending Then
-                query = query.OrderBy(Function(i) prop.GetValue(i))
-            Else
-                query = query.OrderByDescending(Function(i) prop.GetValue(i))
-            End If
-
-            Dim newIndex As Integer = 0
-            For Each item As Object In query
-                Me.Items(newIndex) = DirectCast(item, T)
-                System.Math.Max(System.Threading.Interlocked.Increment(newIndex), newIndex - 1)
-            Next
+        ' 並べ替えるアイテムがある場合は、sort を適用して設定します。
+        If Not (items Is Nothing) Then
+            Dim pc As New PropertyComparer(Of T)(prop, direction)
+            items.Sort(pc)
 
             _isSortedValue = True
-            Me.OnListChanged(New ListChangedEventArgs(ListChangedType.Reset, -1))
         Else
-            Throw New NotSupportedException("Cannot sort by " + prop.Name + ". This" + prop.PropertyType.ToString() + " does not implement IComparable")
+            _isSortedValue = False
         End If
+
+        ' バインドされたコントロールに表示を更新するように指示します。
+        Me.OnListChanged(New ListChangedEventArgs(ListChangedType.Reset, -1))
     End Sub
 
     ''' <summary>
@@ -115,5 +100,38 @@ Public Class SortableBindingList(Of T)
     End Property
 
 #End Region
+
+End Class
+
+
+'汎用コンペアラークラス
+Public Class PropertyComparer(Of T)
+    Implements IComparer(Of T)
+
+    Public Sub New(prop As PropertyDescriptor, direction As ListSortDirection)
+        Me.prop = prop
+        sortDirection = If((direction = ListSortDirection.Ascending), 1, -1)
+    End Sub
+
+    Private prop As PropertyDescriptor
+    Private sortDirection As Integer
+
+
+    Private Function IComparer_Compare(x As T, y As T) As Integer Implements IComparer(Of T).Compare
+        Dim left As IComparable = TryCast(prop.GetValue(x), IComparable)
+        Dim right As IComparable = TryCast(prop.GetValue(y), IComparable)
+
+        Dim result As Integer
+
+        If Not (left Is Nothing) Then
+            result = left.CompareTo(right)
+        ElseIf right Is Nothing Then
+            result = 0
+        Else
+            result = -1
+        End If
+
+        Return result * sortDirection
+    End Function
 
 End Class

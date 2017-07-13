@@ -173,7 +173,9 @@ Namespace Db.Helper
 					results.Add(info.Name, info)
 				Next
 
-				Return results
+                'TODO: ここで SELECT * FROM TableName でスキーマ情報取得する
+
+                Return results
 			Catch ex As Exception
 				Throw New DbAccessException(Me.targetDba, ex)
 			Finally

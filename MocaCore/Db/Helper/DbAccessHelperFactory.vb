@@ -47,7 +47,11 @@ Namespace Db.Helper
                     Return New OracleAccessHelper(dba)
 
                 Case "Oracle.ManagedDataAccess.Client"
+#If net20 OrElse net35 Then
                     Throw New NotSupportedException
+#Else
+                    Return New OracleManagedAccessHelper(dba)
+#End If
 
                 Case "System.Data.OracleClient", "OraOLEDB.Oracle.1"
                     Return New OracleMSAccessHelper(dba)

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{40864C4F-54A0-4920-A743-35139AF8BD88}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Moca</RootNamespace>
+    <AssemblyName>Moca</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <OptionStrict>Off</OptionStrict>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/kmCommonLib/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <BaseIntermediateOutputPath>obj\net452\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\net452\Debug\</OutputPath>
+    <DocumentationFile>Moca.xml</DocumentationFile>
+    <NoWarn>41999,42016,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DefineConstants>net452</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>Full</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\net452\Release\</OutputPath>
+    <DocumentationFile>Moca.xml</DocumentationFile>
+    <NoWarn>41999,42016,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>net452</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\MocaCore\Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Linq.Expressions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Action\ActionManager.vb" />
+    <Compile Include="Ad\AdUtil.vb" />
+    <Compile Include="Aop\AopProxy.vb" />
+    <Compile Include="Aop\Aspect.vb" />
+    <Compile Include="Aop\IAdvice.vb" />
+    <Compile Include="Aop\IAspect.vb" />
+    <Compile Include="Aop\IInterceptor.vb" />
+    <Compile Include="Aop\IInvocation.vb" />
+    <Compile Include="Aop\IJoinpoint.vb" />
+    <Compile Include="Aop\IMethodInterceptor.vb" />
+    <Compile Include="Aop\IMethodInvocation.vb" />
+    <Compile Include="Aop\IPointcut.vb" />
+    <Compile Include="Aop\MethodInvocation.vb" />
+    <Compile Include="Aop\Pointcut.vb" />
+    <Compile Include="Attr\AspectAttribute.vb" />
+    <Compile Include="Attr\AspectAttributeAnalyzer.vb" />
+    <Compile Include="Attr\AttributeAnalyzer.vb" />
+    <Compile Include="Attr\BindControlAttribute.vb" />
+    <Compile Include="Attr\CaptionAttribute.vb" />
+    <Compile Include="Attr\FormatAttribute.vb" />
+    <Compile Include="Attr\IAttributeAnalyzer.vb" />
+    <Compile Include="Attr\ImplementationAttribute.vb" />
+    <Compile Include="Attr\ImplementationAttributeAnalyzer.vb" />
+    <Compile Include="Attr\ValidateAttribute.vb" />
+    <Compile Include="Config\MocaConfiguration.vb" />
+    <Compile Include="Config\MocaSectionHandler.vb" />
+    <Compile Include="Config\TransactionElement.vb" />
+    <Compile Include="Db\AbstractDao.vb" />
+    <Compile Include="Db\Attr\ColumnAttribute.vb" />
+    <Compile Include="Db\Attr\ColumnIgnoreAttribute.vb" />
+    <Compile Include="Db\Attr\DaoAttribute.vb" />
+    <Compile Include="Db\Attr\DaoAttributeAnalyzer.vb" />
+    <Compile Include="Db\Attr\DbmsAttribute.vb" />
+    <Compile Include="Db\Attr\TableAttribute.vb" />
+    <Compile Include="Db\Attr\TableAttributeAnalyzer.vb" />
+    <Compile Include="Db\Attr\TransactionAttribute.vb" />
+    <Compile Include="Db\Attr\TransactionAttributeAnalyzer.vb" />
+    <Compile Include="Db\CommandWrapper\DDLCommandWrapper.vb" />
+    <Compile Include="Db\CommandWrapper\DeleteCommandWrapper.vb" />
+    <Compile Include="Db\CommandWrapper\InsertCommandWrapper.vb" />
+    <Compile Include="Db\CommandWrapper\Select4UpdateCommandWrapper.vb" />
+    <Compile Include="Db\CommandWrapper\SelectCommandWrapper.vb" />
+    <Compile Include="Db\CommandWrapper\SqlCommandWrapper.vb" />
+    <Compile Include="Db\CommandWrapper\StoredProcedureCommandWrapper.vb" />
+    <Compile Include="Db\CommandWrapper\UpdateCommandWrapper.vb" />
+    <Compile Include="Db\DbAccess.vb" />
+    <Compile Include="Db\DbAccessException.vb" />
+    <Compile Include="Db\DbInfo.vb" />
+    <Compile Include="Db\DbInfoColumn.vb" />
+    <Compile Include="Db\DbInfoColumnCollection.vb" />
+    <Compile Include="Db\DbInfoFunction.vb" />
+    <Compile Include="Db\DbInfoFunctionCollection.vb" />
+    <Compile Include="Db\DbInfoProcedure.vb" />
+    <Compile Include="Db\DbInfoProcedureCollection.vb" />
+    <Compile Include="Db\DbInfoTable.vb" />
+    <Compile Include="Db\DbInfoTableCollection.vb" />
+    <Compile Include="Db\Dbms.vb" />
+    <Compile Include="Db\DbmsManager.vb" />
+    <Compile Include="Db\DbSetting.vb" />
+    <Compile Include="Db\DbUtil.vb" />
+    <Compile Include="Db\EntityBuilder.vb" />
+    <Compile Include="Db\ExecuteReaderResult.vb" />
+    <Compile Include="Db\Helper\DbAccessHelper.vb" />
+    <Compile Include="Db\Helper\OdbcAccessHelper.vb" />
+    <Compile Include="Db\Helper\OleDbAccessHelper.vb" />
+    <Compile Include="Db\Helper\OleDbOraAccessHelper.vb" />
+    <Compile Include="Db\Helper\OleDbSQLAccessHelper.vb" />
+    <Compile Include="Db\Helper\OracleAccessHelper.vb" />
+    <Compile Include="Db\Helper\OracleMSAccessHelper.vb" />
+    <Compile Include="Db\Helper\SqlCeDbAccessHelper.vb" />
+    <Compile Include="Db\Helper\SqlDbAccessHelper.vb" />
+    <Compile Include="Db\IDao.vb" />
+    <Compile Include="Db\IDbAccess.vb" />
+    <Compile Include="Db\IDbAccessHelper.vb" />
+    <Compile Include="Db\IDbCommandDDL.vb" />
+    <Compile Include="Db\IDbCommandDelete.vb" />
+    <Compile Include="Db\IDbCommandInsert.vb" />
+    <Compile Include="Db\IDbCommandSelect.vb" />
+    <Compile Include="Db\IDbCommandSelect4Update.vb" />
+    <Compile Include="Db\IDbCommandSql.vb" />
+    <Compile Include="Db\IDbCommandStoredProcedure.vb" />
+    <Compile Include="Db\IDbCommandUpdate.vb" />
+    <Compile Include="Db\Interceptor\AbstractDaoInterceptor.vb" />
+    <Compile Include="Db\Interceptor\ColumnInfoInterceptor.vb" />
+    <Compile Include="Db\Interceptor\TableInfoInterceptor.vb" />
+    <Compile Include="Db\ISQLStatementResult.vb" />
+    <Compile Include="Db\OdbcSetting.vb" />
+    <Compile Include="Db\SQLCommandTypes.vb" />
+    <Compile Include="Db\Tx\ITransactionContext.vb" />
+    <Compile Include="Db\Tx\LocalTxInterceptor.vb" />
+    <Compile Include="Db\Tx\Local\LocalTransactionContext.vb" />
+    <Compile Include="Db\Tx\Local\LocalTransactionManager.vb" />
+    <Compile Include="Db\Tx\Local\LocalTransactionScope.vb" />
+    <Compile Include="Db\Tx\Local\TransactionContext.vb" />
+    <Compile Include="Db\Tx\ScopeTxInterceptor.vb" />
+    <Compile Include="Di\IContainer.vb" />
+    <Compile Include="Di\MocaComponent.vb" />
+    <Compile Include="Di\MocaComponent4Db.vb" />
+    <Compile Include="Di\MocaContainer.vb" />
+    <Compile Include="Di\MocaContainerFactory.vb" />
+    <Compile Include="Di\MocaInjector.vb" />
+    <Compile Include="Entity\AbstractEntity.vb" />
+    <Compile Include="Entity\EntityBase.vb" />
+    <Compile Include="Entity\EntityList.vb" />
+    <Compile Include="Entity\IEntityList.vb" />
+    <Compile Include="Entity\SelectedEntity.vb" />
+    <Compile Include="Entity\SortableBindingList.vb" />
+    <Compile Include="Entity\UpdateEntityValidateArgs.vb" />
+    <Compile Include="Exceptions\CommonException.vb" />
+    <Compile Include="Exceptions\MocaRuntimeException.vb" />
+    <Compile Include="Install\ConfigProtectionInstaller.Designer.vb">
+      <DependentUpon>ConfigProtectionInstaller.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Install\ConfigProtectionInstaller.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interceptor\FieldGetterInterceptor.vb" />
+    <Compile Include="Interceptor\FieldSetterInterceptor.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Net\FtpClient.vb" />
+    <Compile Include="Security\DPAPIConfiguration.vb" />
+    <Compile Include="Security\DPAPICryptosystem.vb" />
+    <Compile Include="Security\HashCryptosystem.vb" />
+    <Compile Include="Security\PublicKeyCryptosystem.vb" />
+    <Compile Include="Serialization\DataSerializer.vb" />
+    <Compile Include="Text\Html\AbstractTag.vb" />
+    <Compile Include="Text\Html\TagTD.vb" />
+    <Compile Include="Text\Html\TagTR.vb" />
+    <Compile Include="Util\ClassUtil.vb" />
+    <Compile Include="Util\ConstantDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConstantDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Db\Helper\DbAccessHelperFactory.vb" />
+    <Compile Include="Db\Helper\OracleManagedAccessHelper.vb" />
+    <Compile Include="Util\ConstantDataSet.vb">
+      <DependentUpon>ConstantDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Util\CultureUtil.vb" />
+    <Compile Include="Util\StopWatch.vb" />
+    <Compile Include="Util\ValidateUtil.vb" />
+    <Compile Include="Util\Validator.vb" />
+    <Compile Include="Util\VBUtil.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+    <None Include="moca.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Settings.settings" />
+    <None Include="packages.MocaCore452.config" />
+    <None Include="Util\ConstantDataSet.xsc">
+      <DependentUpon>ConstantDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Util\ConstantDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConstantDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Util\ConstantDataSet.xss">
+      <DependentUpon>ConstantDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows ?C???X?g?[???[ 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="moca.xml" />
+    <Content Include="My Project\Application.myapp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>????v???W?F?N?g??A????R???s???[?^?[????? NuGet ?p?b?P?[?W??Q??????????B??????_?E?????[?h??????ANuGet ?p?b?P?[?W???????L???????????????B?????????Ahttp://go.microsoft.com/fwlink/?LinkID=322105 ??Q?????????????B?s?????????t?@?C???? {0} ????B</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\NuProj.Common.0.11.28-beta\build\dotnet\NuProj.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NuProj.Common.0.11.28-beta\build\dotnet\NuProj.Common.targets'))" />
+  </Target>
+  <Import Project="..\packages\NuProj.Common.0.11.28-beta\build\dotnet\NuProj.Common.targets" Condition="Exists('..\packages\NuProj.Common.0.11.28-beta\build\dotnet\NuProj.Common.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

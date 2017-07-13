@@ -46,23 +46,27 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\net20\Debug\</OutputPath>
     <DocumentationFile>Moca.xml</DocumentationFile>
     <NoWarn>41999,42016,42353,42354,42355</NoWarn>
     <WarningsAsErrors>
     </WarningsAsErrors>
+    <DefineConstants>net20</DefineConstants>
+    <CodeAnalysisRuleSet>..\FxCop.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>Full</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\net20\Release\</OutputPath>
     <DocumentationFile>Moca.xml</DocumentationFile>
     <NoWarn>41999,42016,42353,42354,42355</NoWarn>
     <WarningsAsErrors>
     </WarningsAsErrors>
     <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>net20</DefineConstants>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -141,7 +145,7 @@
     <Compile Include="Db\Tx\ScopeTxInterceptor.vb" />
     <Compile Include="Entity\AbstractEntity.vb" />
     <Compile Include="Entity\EntityBase.vb" />
-    <Compile Include="Entity\SortableBindingList.vb" />
+    <Compile Include="Entity\SortableBindingList20.vb" />
     <Compile Include="Entity\UpdateEntityValidateArgs.vb" />
     <Compile Include="Install\ConfigProtectionInstaller.Designer.vb">
       <DependentUpon>ConfigProtectionInstaller.vb</DependentUpon>
@@ -181,6 +185,7 @@
     <Compile Include="Exceptions\MocaRuntimeException.vb" />
     <Compile Include="Interceptor\FieldGetterInterceptor.vb" />
     <Compile Include="Interceptor\FieldSetterInterceptor.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="Net\FtpClient.vb" />
     <Compile Include="Serialization\DataSerializer.vb" />
     <Compile Include="Db\Attr\ColumnAttribute.vb" />
@@ -212,7 +217,6 @@
     <Compile Include="Text\Html\AbstractTag.vb" />
     <Compile Include="Text\Html\TagTD.vb" />
     <Compile Include="Text\Html\TagTR.vb" />
-    <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
@@ -233,7 +237,7 @@
     <Compile Include="Security\DPAPICryptosystem.vb" />
     <Compile Include="Security\HashCryptosystem.vb" />
     <Compile Include="Security\PublicKeyCryptosystem.vb" />
-    <Compile Include="Util\ConstantDataSet.Designer.vb">
+    <Compile Include="Util\ConstantDataSet20.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ConstantDataSet.xsd</DependentUpon>
@@ -273,14 +277,14 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="packages.config" />
+    <None Include="packages.MocaCore20.config" />
     <None Include="Util\ConstantDataSet.xsc">
       <DependentUpon>ConstantDataSet.xsd</DependentUpon>
     </None>
     <None Include="Util\ConstantDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ConstantDataSet.Designer.vb</LastGenOutput>
+      <LastGenOutput>ConstantDataSet20.Designer.vb</LastGenOutput>
     </None>
     <None Include="Util\ConstantDataSet.xss">
       <DependentUpon>ConstantDataSet.xsd</DependentUpon>

@@ -11,14 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MocaCore35\MocaCore35.vbproj" />
-    <ProjectReference Include="..\MocaCore40\MocaCore40.vbproj" />
-    <ProjectReference Include="..\MocaCore452\MocaCore452.vbproj" />
-    <ProjectReference Include="..\MocaCore45\MocaCore45.vbproj" />
-    <ProjectReference Include="..\MocaCore462\MocaCore462.vbproj" />
-    <ProjectReference Include="..\MocaCore46\MocaCore46.vbproj" />
-    <ProjectReference Include="..\MocaCore47\MocaCore47.vbproj" />
     <ProjectReference Include="..\MocaCore\MocaCore20.vbproj" />
+    <ProjectReference Include="..\MocaCore\MocaCore35.vbproj" />
+    <ProjectReference Include="..\MocaCore\MocaCore40.vbproj" />
+    <ProjectReference Include="..\MocaCore\MocaCore45.vbproj" />
+    <ProjectReference Include="..\MocaCore\MocaCore452.vbproj" />
+    <ProjectReference Include="..\MocaCore\MocaCore46.vbproj" />
+    <ProjectReference Include="..\MocaCore\MocaCore462.vbproj" />
+    <ProjectReference Include="..\MocaCore\MocaCore47.vbproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\MocaCore\moca.xsd">
@@ -47,6 +47,7 @@
     <Tags>Moca DI AOP</Tags>
     <IconUrl>https://avatars1.githubusercontent.com/u/14543303</IconUrl>
     <EmbedSourceFiles>true</EmbedSourceFiles>
+    <GenerateSymbolPackage>true</GenerateSymbolPackage>
   </PropertyGroup>
   <PropertyGroup>
     <NuProjPath>..\packages\NuProj.0.11.28-beta\tools\</NuProjPath>
