@@ -34,23 +34,23 @@
   <!--<Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />-->
   <PropertyGroup Label="Configuration">
     <Id>Moca.NETCore</Id>
-    <Version>2.3.5</Version>
+    <Version>3.0.0-beta01</Version>
     <Title>Moca.NET Core</Title>
     <Authors>MiYABiS</Authors>
     <Owners>MiYABiS</Owners>
-    <Summary>DI&amp;amp;AOP framework Moca.NET Core</Summary>
-    <Description>DI&amp;amp;AOP framework Moca.NET Core</Description>
+    <Summary>DI with AOP framework Moca.NET Core</Summary>
+    <Description>DI with AOP framework Moca.NET Core</Description>
     <ReleaseNotes>GitHub issues : #9, #10</ReleaseNotes>
     <ProjectUrl>https://github.com/mocanet/MocaCore</ProjectUrl>
     <LicenseUrl>https://opensource.org/licenses/MS-PL</LicenseUrl>
     <Copyright>Copyright © 2015 MiYABiS All Rights Reserved.</Copyright>
-    <Tags>Moca DI AOP</Tags>
-    <IconUrl>https://avatars1.githubusercontent.com/u/14543303</IconUrl>
+    <Tags>Moca.NET DI AOP</Tags>
+    <IconUrl>https://avatars3.githubusercontent.com/u/14543303?s=256</IconUrl>
     <EmbedSourceFiles>true</EmbedSourceFiles>
     <GenerateSymbolPackage>true</GenerateSymbolPackage>
   </PropertyGroup>
   <PropertyGroup>
-    <NuProjPath>..\packages\NuProj.0.11.28-beta\tools\</NuProjPath>
+    <NuProjPath>..\packages\NuProj.0.11.30\tools\</NuProjPath>
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <Import Project="$(NuProjPath)\NuProj.targets" />

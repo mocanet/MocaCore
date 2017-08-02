@@ -5,43 +5,33 @@
 
 DI&amp;AOP framework Moca.NET Core
 
-How to get
-==========
+## How to get
 
 URL:https://www.nuget.org/packages/Moca.NETCore/
 ```
 PM> Install-Package Moca.NETCore
 ```
 
+## Extension for Visual Studio
 
-Moca.NET Templates.
-==========
-
-https://github.com/mocanet/TemplateVSPackage
-
-
-Moca.NET Code snippet
-==========
-
-https://github.com/mocanet/SnippetsVSPackage
+* [Moca.NET Template Extension](https://github.com/mocanet/TemplateVSPackage)
+* [Moca.NET Snippets Extension](https://github.com/mocanet/SnippetsVSPackage)
 
 
-Other Libraries
-==========
+## Other Libraries
 
-* https://github.com/mocanet/MocaWin
-* https://github.com/mocanet/MocaControls
-* https://github.com/mocanet/MocaOffice
-* https://github.com/mocanet/MocaConfiguration
-* https://github.com/mocanet/MocaSQLCLR
- 
+[Moca.NET Organization](https://github.com/mocanet)
+
 ## Old version
 
 https://moca.codeplex.com/
 
 
-License
-=======
+## For Development
+
+* Visual Studio 2017
+
+## License
 
 Microsoft Public License (MS-PL)
 
