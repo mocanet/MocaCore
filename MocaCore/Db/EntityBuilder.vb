@@ -261,6 +261,10 @@ Namespace Db
 				key = DirectCast(keys(colName), String)
 				val = reader.Item(ii)
 
+				If String.IsNullOrEmpty(key) Then
+					Throw New MissingMemberException(typ.FullName, colName)
+				End If
+
 				prop = ClassUtil.GetProperties(typ, key)
 				If Not prop.PropertyType.Equals(GetType(Object)) Then
 					val = DbUtil.CNull(val)
