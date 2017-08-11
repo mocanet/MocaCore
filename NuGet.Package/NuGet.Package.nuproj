@@ -40,7 +40,8 @@
     <Owners>MiYABiS</Owners>
     <Summary>DI with AOP framework Moca.NET Core</Summary>
     <Description>DI with AOP framework Moca.NET Core</Description>
-    <ReleaseNotes>GitHub issues : #9, #10</ReleaseNotes>
+    <ReleaseNotes>
+    </ReleaseNotes>
     <ProjectUrl>https://github.com/mocanet/MocaCore</ProjectUrl>
     <LicenseUrl>https://opensource.org/licenses/MS-PL</LicenseUrl>
     <Copyright>Copyright © 2015 MiYABiS All Rights Reserved.</Copyright>

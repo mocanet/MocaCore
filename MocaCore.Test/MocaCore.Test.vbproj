@@ -16,6 +16,8 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,6 +50,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -91,6 +97,7 @@
     <Compile Include="MocaTestBase.vb" />
     <Compile Include="Models\TestRow.vb" />
     <Compile Include="Models\UserRow.vb" />
+    <Compile Include="My Project\AppConfigTransformAssemblyInfo.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -119,6 +126,25 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="App.Hotfix.config">
+      <DependentUpon>app.config</DependentUpon>
+    </None>
+    <None Include="App.Main.config">
+      <DependentUpon>app.config</DependentUpon>
+    </None>
+    <None Include="App.Release.config">
+      <DependentUpon>app.config</DependentUpon>
+    </None>
+    <None Include="log4net.config" />
+    <None Include="log4net.Hotfix.config">
+      <DependentUpon>log4net.config</DependentUpon>
+    </None>
+    <None Include="log4net.Main.config">
+      <DependentUpon>log4net.config</DependentUpon>
+    </None>
+    <None Include="log4net.Release.config">
+      <DependentUpon>log4net.config</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -128,6 +154,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MocaCore\MocaCore20.vbproj">
@@ -135,7 +162,6 @@
       <Name>MocaCore20</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
@@ -161,6 +187,13 @@
   <PropertyGroup>
     <SsdtUnitTestVersion>2.0</SsdtUnitTestVersion>
   </PropertyGroup>
+  <Import Project="..\packages\MiYABiS.AppConfigTransform.1.0.6\build\MiYABiS.AppConfigTransform.targets" Condition="Exists('..\packages\MiYABiS.AppConfigTransform.1.0.6\build\MiYABiS.AppConfigTransform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MiYABiS.AppConfigTransform.1.0.6\build\MiYABiS.AppConfigTransform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MiYABiS.AppConfigTransform.1.0.6\build\MiYABiS.AppConfigTransform.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
