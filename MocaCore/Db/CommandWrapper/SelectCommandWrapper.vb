@@ -132,7 +132,13 @@ Namespace Db.CommandWrapper
 		''' </remarks>
 		Public Overridable Overloads Function Execute(Of T)() As System.Collections.Generic.IList(Of T) Implements IDbCommandSelect.Execute
 			executeResult = dba.Execute(Of T)(Me)
-			Return executeResult.Result(Of T)()
+			Try
+				Return executeResult.Result(Of T)()
+			Catch ex As DbAccessException
+				Throw ex
+			Catch ex As Exception
+				Throw New DbAccessException(dba, ex)
+			End Try
 		End Function
 
 		''' <summary>

@@ -1,0 +1,730 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IDbCommandSelect
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IDbCommandSelect
+   ">
+    <meta name="generator" content="docfx 2.23.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Moca.Db.IDbCommandSelect">
+  
+  
+  <h1 id="Moca_Db_IDbCommandSelect" data-uid="Moca.Db.IDbCommandSelect" class="text-break">Interface IDbCommandSelect
+  </h1>
+  <div class="markdown level0 summary"><p>SELECT文を実行する為のDBCommandをラッピングするインタフェース</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_Command">IDbCommandSql.Command</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_PreparedStatement">IDbCommandSql.PreparedStatement</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_CommandText">IDbCommandSql.CommandText</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_ResultOutParameter">IDbCommandSql.ResultOutParameter</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_SetParameter_System_String_System_Object_">IDbCommandSql.SetParameter(String, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_SetParameter_System_String_System_Array_">IDbCommandSql.SetParameter(String, Array)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_AddInParameter_System_String_System_Data_DbType_">IDbCommandSql.AddInParameter(String, DbType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_AddInParameter_System_String_System_Data_DbType_System_Int32_">IDbCommandSql.AddInParameter(String, DbType, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_AddOutParameter_System_String_">IDbCommandSql.AddOutParameter(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_AddOutParameter_System_String_System_Data_DbType_">IDbCommandSql.AddOutParameter(String, DbType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_HaveOutParameter">IDbCommandSql.HaveOutParameter()</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_GetParameterValue_System_String_">IDbCommandSql.GetParameterValue(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_Prepare">IDbCommandSql.Prepare()</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_Execute">IDbCommandSql.Execute()</a>
+    </div>
+    <div>
+      <span class="xref">System.IDisposable.Dispose()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Moca.Db.html">Moca.Db</a></h6>
+  <h6><strong>Assembly</strong>: Moca.dll</h6>
+  <h5 id="Moca_Db_IDbCommandSelect_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IDbCommandSelect : IDbCommandSql, IDisposable</code></pre>
+  </div>
+  <h5 id="Moca_Db_IDbCommandSelect_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>データ抽出系のストアド実行でも使用出来ますが、ストアドの時は<a class="xref" href="Moca.Db.IDbCommandStoredProcedure.html">IDbCommandStoredProcedure</a>を使用してください。<br>
+<example><p>
+<pre><code>Using dba As IDbAccess = New DbAccess(&quot;Connection String&quot;)
+    Using cmd As IDbCommandSelect = dba.CreateCommandSelect(&quot;SELECT * FROM TableName&quot;)
+        If cmd.Execute() &lt;= 0 Then
+            Return Nothing
+        End If
+        Return cmd.ResultDataSet
+    End Using
+End Using</code></pre>
+<p></example></p>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_IDbCommandSelect_Behavior.md&amp;value=---%0Auid%3A%20Moca.Db.IDbCommandSelect.Behavior%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/IDbCommandSelect.vb/#L36">View Source</a>
+  </span>
+  <a id="Moca_Db_IDbCommandSelect_Behavior_" data-uid="Moca.Db.IDbCommandSelect.Behavior*"></a>
+  <h4 id="Moca_Db_IDbCommandSelect_Behavior" data-uid="Moca.Db.IDbCommandSelect.Behavior">Behavior</h4>
+  <div class="markdown level1 summary"><p>ExecuteReader に渡す CommandBehavior</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">CommandBehavior Behavior { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.CommandBehavior</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_IDbCommandSelect_Behavior_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_Execute">Execute()</a>以外では無視されます。
+<span class="xref">System.Data.SqlClient.SqlDataReader</span>を使用している場合のみ有効。</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_IDbCommandSelect_Result1stTable.md&amp;value=---%0Auid%3A%20Moca.Db.IDbCommandSelect.Result1stTable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/IDbCommandSelect.vb/#L51">View Source</a>
+  </span>
+  <a id="Moca_Db_IDbCommandSelect_Result1stTable_" data-uid="Moca.Db.IDbCommandSelect.Result1stTable*"></a>
+  <h4 id="Moca_Db_IDbCommandSelect_Result1stTable" data-uid="Moca.Db.IDbCommandSelect.Result1stTable">Result1stTable</h4>
+  <div class="markdown level1 summary"><p>DataSet内の先頭テーブルを返す</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">DataTable Result1stTable { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataTable</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_IDbCommandSelect_Result1stTableRowEnumerator.md&amp;value=---%0Auid%3A%20Moca.Db.IDbCommandSelect.Result1stTableRowEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/IDbCommandSelect.vb/#L59">View Source</a>
+  </span>
+  <a id="Moca_Db_IDbCommandSelect_Result1stTableRowEnumerator_" data-uid="Moca.Db.IDbCommandSelect.Result1stTableRowEnumerator*"></a>
+  <h4 id="Moca_Db_IDbCommandSelect_Result1stTableRowEnumerator" data-uid="Moca.Db.IDbCommandSelect.Result1stTableRowEnumerator">Result1stTableRowEnumerator</h4>
+  <div class="markdown level1 summary"><p>DataSet内の先頭テーブルに存在する行データのEnumeratorを返す</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator&lt;DataRow&gt; Result1stTableRowEnumerator { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;<span class="xref">System.Data.DataRow</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_IDbCommandSelect_ResultDataSet.md&amp;value=---%0Auid%3A%20Moca.Db.IDbCommandSelect.ResultDataSet%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/IDbCommandSelect.vb/#L43">View Source</a>
+  </span>
+  <a id="Moca_Db_IDbCommandSelect_ResultDataSet_" data-uid="Moca.Db.IDbCommandSelect.ResultDataSet*"></a>
+  <h4 id="Moca_Db_IDbCommandSelect_ResultDataSet" data-uid="Moca.Db.IDbCommandSelect.ResultDataSet">ResultDataSet</h4>
+  <div class="markdown level1 summary"><p>Select文を実行した結果を設定／参照</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">DataSet ResultDataSet { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataSet</span></td>
+        <td><p>Select文を実行した結果</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_IDbCommandSelect_Execute__1.md&amp;value=---%0Auid%3A%20Moca.Db.IDbCommandSelect.Execute%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/IDbCommandSelect.vb/#L138">View Source</a>
+  </span>
+  <a id="Moca_Db_IDbCommandSelect_Execute_" data-uid="Moca.Db.IDbCommandSelect.Execute*"></a>
+  <h4 id="Moca_Db_IDbCommandSelect_Execute__1" data-uid="Moca.Db.IDbCommandSelect.Execute``1">Execute&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>クエリを実行し（ExecuteReader）、指定されたエンティティに変換して返します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IList&lt;T&gt; Execute&lt;T&gt;()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;T&gt;</td>
+        <td><p>エンティティのリスト</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>エンティティ</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_IDbCommandSelect_Execute__1_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>当メソッドは予めデータベースをオープンしておく必要がありますが、
+オープンされていないときは、自動でオープンして終了時にクローズします。<br>
+詳細は、<span class="xref">System.Data.IDbCommand.ExecuteReader</span> を参照してください。<br>
+<br>
+なお、当メソッドを使用した場合は結果をエンティティとして扱うことを前提としているため、<span class="xref">System.Data.DataSet</span>や<span class="xref">System.Data.DataTable</span>としては扱えません。<br>
+よって<a class="xref" href="Moca.Db.IDbCommandSelect.html#Moca_Db_IDbCommandSelect_ResultDataSet">ResultDataSet</a>, <a class="xref" href="Moca.Db.IDbCommandSelect.html#Moca_Db_IDbCommandSelect_Result1stTable">Result1stTable</a>などのメソッドは使用できません。<br>
+バッチSQLステートメント時は<a class="xref" href="Moca.Db.IDbCommandSelect.html#Moca_Db_IDbCommandSelect_NextResult__1">NextResult&lt;T&gt;()</a>にて次の結果を取得してください。</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_IDbCommandSelect_ExecuteScalar.md&amp;value=---%0Auid%3A%20Moca.Db.IDbCommandSelect.ExecuteScalar%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/IDbCommandSelect.vb/#L122">View Source</a>
+  </span>
+  <a id="Moca_Db_IDbCommandSelect_ExecuteScalar_" data-uid="Moca.Db.IDbCommandSelect.ExecuteScalar*"></a>
+  <h4 id="Moca_Db_IDbCommandSelect_ExecuteScalar" data-uid="Moca.Db.IDbCommandSelect.ExecuteScalar">ExecuteScalar()</h4>
+  <div class="markdown level1 summary"><p>クエリを実行し（ExecuteScalar）、そのクエリが返す結果セットの最初の行にある最初の列を返します。余分な列または行は無視されます。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object ExecuteScalar()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>結果セットの最初の行にある最初の列。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_IDbCommandSelect_ExecuteScalar_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>当メソッドは予めデータベースをオープンしておく必要がありますが、
+オープンされていないときは、自動でオープンして終了時にクローズします。<br>
+詳細は、<span class="xref">System.Data.IDbCommand.ExecuteScalar</span> を参照してください。</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_IDbCommandSelect_NextResult__1.md&amp;value=---%0Auid%3A%20Moca.Db.IDbCommandSelect.NextResult%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/IDbCommandSelect.vb/#L146">View Source</a>
+  </span>
+  <a id="Moca_Db_IDbCommandSelect_NextResult_" data-uid="Moca.Db.IDbCommandSelect.NextResult*"></a>
+  <h4 id="Moca_Db_IDbCommandSelect_NextResult__1" data-uid="Moca.Db.IDbCommandSelect.NextResult``1">NextResult&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>次の結果を返す</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IList&lt;T&gt; NextResult&lt;T&gt;()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;T&gt;</td>
+        <td><p>存在しないときは Nothing をかえす</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>エンティティ</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_IDbCommandSelect_Result1stTableEntitis__1.md&amp;value=---%0Auid%3A%20Moca.Db.IDbCommandSelect.Result1stTableEntitis%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/IDbCommandSelect.vb/#L73">View Source</a>
+  </span>
+  <a id="Moca_Db_IDbCommandSelect_Result1stTableEntitis_" data-uid="Moca.Db.IDbCommandSelect.Result1stTableEntitis*"></a>
+  <h4 id="Moca_Db_IDbCommandSelect_Result1stTableEntitis__1" data-uid="Moca.Db.IDbCommandSelect.Result1stTableEntitis``1">Result1stTableEntitis&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>DataSet内の先頭テーブルを返す</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Execute(Of T)() &#12434;&#20351;&#12358;&#12424;&#12358;&#12395;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;&quot;)]
+T[] Result1stTableEntitis&lt;T&gt;()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><p>先頭テーブルのデータを指定されたEntityを使用した配列に変換して返す</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_IDbCommandSelect_Result1stTableEntitis__1_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Execute 後に当メソッドでエンティティを取得するより<a class="xref" href="Moca.Db.IDbCommandSelect.html#Moca_Db_IDbCommandSelect_Execute__1">Execute&lt;T&gt;()</a>を使った方が高速でステップを減らせます。</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_IDbCommandSelect_Result1stTableEntity__1_System_Int32_.md&amp;value=---%0Auid%3A%20Moca.Db.IDbCommandSelect.Result1stTableEntity%60%601(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/IDbCommandSelect.vb/#L83">View Source</a>
+  </span>
+  <a id="Moca_Db_IDbCommandSelect_Result1stTableEntity_" data-uid="Moca.Db.IDbCommandSelect.Result1stTableEntity*"></a>
+  <h4 id="Moca_Db_IDbCommandSelect_Result1stTableEntity__1_System_Int32_" data-uid="Moca.Db.IDbCommandSelect.Result1stTableEntity``1(System.Int32)">Result1stTableEntity&lt;T&gt;(Int32)</h4>
+  <div class="markdown level1 summary"><p>DataSet内の先頭テーブルの指定された行を返す</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">T Result1stTableEntity&lt;T&gt;(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>先頭テーブルのデータを指定されたEntityを使用した配列に変換して返す</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_IDbCommandSelect_ResultConstantDataSet_System_Int32_System_Int32_System_Boolean_System_Object_System_String_.md&amp;value=---%0Auid%3A%20Moca.Db.IDbCommandSelect.ResultConstantDataSet(System.Int32%2CSystem.Int32%2CSystem.Boolean%2CSystem.Object%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/IDbCommandSelect.vb/#L111">View Source</a>
+  </span>
+  <a id="Moca_Db_IDbCommandSelect_ResultConstantDataSet_" data-uid="Moca.Db.IDbCommandSelect.ResultConstantDataSet*"></a>
+  <h4 id="Moca_Db_IDbCommandSelect_ResultConstantDataSet_System_Int32_System_Int32_System_Boolean_System_Object_System_String_" data-uid="Moca.Db.IDbCommandSelect.ResultConstantDataSet(System.Int32,System.Int32,System.Boolean,System.Object,System.String)">ResultConstantDataSet(Int32, Int32, Boolean, Object, String)</h4>
+  <div class="markdown level1 summary"><p>DataSet内の先頭テーブルをConstantDataSet型で返す</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ConstantDataSet ResultConstantDataSet(int textColumnIndex, int valueColumnIndex, bool blankRow = false, object blankValue, string delm = &quot; : &quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">textColumnIndex</span></td>
+        <td><p>テキストとして扱う列の位置</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">valueColumnIndex</span></td>
+        <td><p>値として扱う列の位置</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">blankRow</span></td>
+        <td><p>空白行の有無</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">blankValue</span></td>
+        <td><p>空白行有りのときの空白行の値</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">delm</span></td>
+        <td><p>テキストと値の区切り文字</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.ConstantDataSet.html">ConstantDataSet</a></td>
+        <td><p>ConstantDataSet</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_IDbCommandSelect_ResultConstantDataSet_System_Int32_System_Int32_System_Boolean_System_Object_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>主に、コンボボックス等で使用する場合に使えます。</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_IDbCommandSelect_ResultConstantDataSet_System_String_System_String_System_Boolean_System_Object_System_String_.md&amp;value=---%0Auid%3A%20Moca.Db.IDbCommandSelect.ResultConstantDataSet(System.String%2CSystem.String%2CSystem.Boolean%2CSystem.Object%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/IDbCommandSelect.vb/#L97">View Source</a>
+  </span>
+  <a id="Moca_Db_IDbCommandSelect_ResultConstantDataSet_" data-uid="Moca.Db.IDbCommandSelect.ResultConstantDataSet*"></a>
+  <h4 id="Moca_Db_IDbCommandSelect_ResultConstantDataSet_System_String_System_String_System_Boolean_System_Object_System_String_" data-uid="Moca.Db.IDbCommandSelect.ResultConstantDataSet(System.String,System.String,System.Boolean,System.Object,System.String)">ResultConstantDataSet(String, String, Boolean, Object, String)</h4>
+  <div class="markdown level1 summary"><p>DataSet内の先頭テーブルをConstantDataSet型で返す</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ConstantDataSet ResultConstantDataSet(string textColumnName, string valueColumnName, bool blankRow = false, object blankValue, string delm = &quot; : &quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">textColumnName</span></td>
+        <td><p>テキストとして扱う列の名称</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">valueColumnName</span></td>
+        <td><p>値として扱う列の名称</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">blankRow</span></td>
+        <td><p>空白行の有無</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">blankValue</span></td>
+        <td><p>空白行有りのときの空白行の値</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">delm</span></td>
+        <td><p>テキストと値の区切り文字</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.ConstantDataSet.html">ConstantDataSet</a></td>
+        <td><p>ConstantDataSet</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_IDbCommandSelect_ResultConstantDataSet_System_String_System_String_System_Boolean_System_Object_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>主に、コンボボックス等で使用する場合に使えます。</p>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_IDbCommandSelect.md&amp;value=---%0Auid%3A%20Moca.Db.IDbCommandSelect%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/IDbCommandSelect.vb/#L22" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

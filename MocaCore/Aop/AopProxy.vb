@@ -24,17 +24,17 @@ Namespace Aop
 
 #Region " コンストラクタ "
 
-		''' <summary>
-		''' コンストラクタ
-		''' </summary>
-		''' <param name="target">透過的プロクシを作成するインスタンス</param>
-		''' <remarks></remarks>
-		Public Sub New(ByVal target As Object)
-			MyBase.New(target.GetType)
-			_aspects = New List(Of IAspect)
-			_type = target.GetType
-			_target = target
-		End Sub
+		'''' <summary>
+		'''' コンストラクタ
+		'''' </summary>
+		'''' <param name="target">透過的プロクシを作成するインスタンス</param>
+		'''' <remarks></remarks>
+		'Public Sub New(ByVal target As Object)
+		'	MyBase.New(target.GetType)
+		'	_aspects = New List(Of IAspect)
+		'	_type = target.GetType
+		'	_target = target
+		'End Sub
 
 		''' <summary>
 		''' コンストラクタ
@@ -95,7 +95,7 @@ Namespace Aop
 			' インタフェースの以外で実態が無い時はインスタンス化する
 			If Not _type.IsInterface Then
 				If _target Is Nothing Then
-					_target = Activator.CreateInstance(_type)
+					_target = Util.ClassUtil.NewInstance(_type)
 				End If
 			End If
 			' 透過的プロクシを作成するインスタンスが存在しない時は Object 型で仮インスタンスを作成

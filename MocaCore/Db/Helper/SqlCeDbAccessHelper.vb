@@ -124,22 +124,27 @@ Namespace Db.Helper
         ''' </exception>
         Public Function GetSchemaColumns(table As DbInfoTable) As DbInfoColumnCollection Implements IDbAccessHelper.GetSchemaColumns
 			Const C_SQL As String = "SELECT C.* FROM INFORMATION_SCHEMA.COLUMNS C WHERE C.TABLE_NAME = @TABLE_NAME ORDER BY C.ORDINAL_POSITION"
+			Dim dtSchema As DataTable
+			Dim dt As DataTable
 			Dim results As DbInfoColumnCollection
 			Dim info As DbInfoColumn
 
+			dtSchema = Nothing
+			dt = Nothing
 			results = New DbInfoColumnCollection()
 
 			Try
+				dtSchema = FillSchema(table.Name)
+
 				Using cmd As IDbCommandSelect = Me.myDba.CreateCommandSelect(C_SQL)
 					cmd.SetParameter("TABLE_NAME", table.Name)
 					If Me.myDba.Execute(cmd) <= 0 Then
 						Return results
 					End If
 
-					Dim dt As DataTable
 					dt = cmd.ResultDataSet.Tables(0)
 					For ii As Integer = 0 To dt.Rows.Count - 1
-						info = New DbInfoColumn( _
+						info = New DbInfoColumn(
 						   DbUtil.CStrValue(dt.Rows(ii).Item("TABLE_CATALOG"), Nothing) _
 						 , DbUtil.CStrValue(dt.Rows(ii).Item("TABLE_SCHEMA"), Nothing) _
 						 , DbUtil.CStrValue(dt.Rows(ii).Item("COLUMN_NAME"), Nothing) _
@@ -151,6 +156,17 @@ Namespace Db.Helper
 						info.Scale = scale
 						info.UniCode = isUniCode(info.Typ)
 						info.ColumnType = getColumnDbType(Of SqlDbType)(dt.Rows(ii))
+						info.DbColumn = dtSchema.Columns(info.Name)
+#If net20 Then
+						For Each item As DataColumn In dtSchema.PrimaryKey
+							If item.ColumnName.Equals(info.Name) Then
+								info.PrimaryKey = True
+								Exit For
+							End If
+						Next
+#Else
+					info.PrimaryKey = dtSchema.PrimaryKey.Select(Function(x) x.ColumnName.Equals(info.Name)).Count.Equals(1)
+#End If
 						results.Add(info.Name, info)
 					Next
 				End Using
@@ -332,6 +348,10 @@ Namespace Db.Helper
 				Return "@"
 			End Get
 		End Property
+
+		Public Function CnvStatmentParameterName(name As String) As String Implements IDbAccessHelper.CnvStatmentParameterName
+			Return PlaceholderMark & name
+		End Function
 
 		''' <summary>
 		''' プロシージャのパラメータ情報を取得する

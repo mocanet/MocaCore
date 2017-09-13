@@ -1,0 +1,1869 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DbUtil
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DbUtil
+   ">
+    <meta name="generator" content="docfx 2.23.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Moca.Db.DbUtil">
+  
+  
+  <h1 id="Moca_Db_DbUtil" data-uid="Moca.Db.DbUtil" class="text-break">Class DbUtil
+  </h1>
+  <div class="markdown level0 summary"><p>データベースアクセス周りで使用するユーティリティメソッド集</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">DbUtil</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Finalize()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Moca.Db.html">Moca.Db</a></h6>
+  <h6><strong>Assembly</strong>: Moca.dll</h6>
+  <h5 id="Moca_Db_DbUtil_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DbUtil</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CDateValue_System_DateTime_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CDateValue(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L125">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CDateValue_" data-uid="Moca.Db.DbUtil.CDateValue*"></a>
+  <h4 id="Moca_Db_DbUtil_CDateValue_System_DateTime_" data-uid="Moca.Db.DbUtil.CDateValue(System.DateTime)">CDateValue(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Null変換</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static object CDateValue(DateTime Value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">Value</span></td>
+        <td><p>検証値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>変換値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_DbUtil_CDateValue_System_DateTime__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>初期値（Date.MinValue）の時は、Nothingを返す</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CDateValueToNoTimeString_System_Object_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CDateValueToNoTimeString(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L257">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CDateValueToNoTimeString_" data-uid="Moca.Db.DbUtil.CDateValueToNoTimeString*"></a>
+  <h4 id="Moca_Db_DbUtil_CDateValueToNoTimeString_System_Object_" data-uid="Moca.Db.DbUtil.CDateValueToNoTimeString(System.Object)">CDateValueToNoTimeString(Object)</h4>
+  <div class="markdown level1 summary"><p>DBから取得したデータがDate値の場合に日付のみの文字列へ変換</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string CDateValueToNoTimeString(object Value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Value</span></td>
+        <td><p>対象値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>変換値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_DbUtil_CDateValueToNoTimeString_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Nullの場合は、String.Emptyに変換する</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CDateValueToYYYYMM_System_Object_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CDateValueToYYYYMM(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L273">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CDateValueToYYYYMM_" data-uid="Moca.Db.DbUtil.CDateValueToYYYYMM*"></a>
+  <h4 id="Moca_Db_DbUtil_CDateValueToYYYYMM_System_Object_" data-uid="Moca.Db.DbUtil.CDateValueToYYYYMM(System.Object)">CDateValueToYYYYMM(Object)</h4>
+  <div class="markdown level1 summary"><p>DBから取得したデータがDate値の場合に日付のみの文字列へ変換</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string CDateValueToYYYYMM(object Value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Value</span></td>
+        <td><p>対象値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>変換値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_DbUtil_CDateValueToYYYYMM_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Nullの場合は、String.Emptyに変換する</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CDictionary_System_Data_DataRowCollection_System_String_System_String_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CDictionary(System.Data.DataRowCollection%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L329">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CDictionary_" data-uid="Moca.Db.DbUtil.CDictionary*"></a>
+  <h4 id="Moca_Db_DbUtil_CDictionary_System_Data_DataRowCollection_System_String_System_String_" data-uid="Moca.Db.DbUtil.CDictionary(System.Data.DataRowCollection,System.String,System.String)">CDictionary(DataRowCollection, String, String)</h4>
+  <div class="markdown level1 summary"><p>キーと値を保持したコレクションを作成する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IDictionary CDictionary(DataRowCollection rows, string keyColumnName, string valueColumnName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataRowCollection</span></td>
+        <td><span class="parametername">rows</span></td>
+        <td><p>作成元となるデータ</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">keyColumnName</span></td>
+        <td><p>キーとするデータの列名</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">valueColumnName</span></td>
+        <td><p>キーに対して値とするデータの列名</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.IDictionary</span></td>
+        <td><p>コレクション</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CFormat_System_Object_System_String_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CFormat(System.Object%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L311">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CFormat_" data-uid="Moca.Db.DbUtil.CFormat*"></a>
+  <h4 id="Moca_Db_DbUtil_CFormat_System_Object_System_String_" data-uid="Moca.Db.DbUtil.CFormat(System.Object,System.String)">CFormat(Object, String)</h4>
+  <div class="markdown level1 summary"><p>DBから取得したデータを指定されたフォーマットに変換する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string CFormat(object Value, string formatString)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Value</span></td>
+        <td><p>対象値</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">formatString</span></td>
+        <td><p>フォーマット文字列</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>変換値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CIntValue_System_Object_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CIntValue(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L140">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CIntValue_" data-uid="Moca.Db.DbUtil.CIntValue*"></a>
+  <h4 id="Moca_Db_DbUtil_CIntValue_System_Object_" data-uid="Moca.Db.DbUtil.CIntValue(System.Object)">CIntValue(Object)</h4>
+  <div class="markdown level1 summary"><p>DBから取得したデータがInteger値の場合の変換</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int CIntValue(object Value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Value</span></td>
+        <td><p>対象値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>変換値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_DbUtil_CIntValue_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Nullの場合は、０に変換する</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CIntValueToYYYYMM_System_Object_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CIntValueToYYYYMM(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L289">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CIntValueToYYYYMM_" data-uid="Moca.Db.DbUtil.CIntValueToYYYYMM*"></a>
+  <h4 id="Moca_Db_DbUtil_CIntValueToYYYYMM_System_Object_" data-uid="Moca.Db.DbUtil.CIntValueToYYYYMM(System.Object)">CIntValueToYYYYMM(Object)</h4>
+  <div class="markdown level1 summary"><p>DBから取得したデータがInteger値の場合に日付のみの文字列へ変換</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string CIntValueToYYYYMM(object Value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Value</span></td>
+        <td><p>対象値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>変換値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_DbUtil_CIntValueToYYYYMM_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Nullの場合は、String.Emptyに変換する</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CLngValue_System_Object_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CLngValue(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L158">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CLngValue_" data-uid="Moca.Db.DbUtil.CLngValue*"></a>
+  <h4 id="Moca_Db_DbUtil_CLngValue_System_Object_" data-uid="Moca.Db.DbUtil.CLngValue(System.Object)">CLngValue(Object)</h4>
+  <div class="markdown level1 summary"><p>DBから取得したデータがLong値の場合の変換</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long CLngValue(object Value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Value</span></td>
+        <td><p>対象値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>変換値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_DbUtil_CLngValue_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Nullの場合は、０に変換する</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CMoneyValue_System_Object_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CMoneyValue(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L219">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CMoneyValue_" data-uid="Moca.Db.DbUtil.CMoneyValue*"></a>
+  <h4 id="Moca_Db_DbUtil_CMoneyValue_System_Object_" data-uid="Moca.Db.DbUtil.CMoneyValue(System.Object)">CMoneyValue(Object)</h4>
+  <div class="markdown level1 summary"><p>DBから取得したデータが金額の場合の変換</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string CMoneyValue(object Value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Value</span></td>
+        <td><p>対象値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>変換値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_DbUtil_CMoneyValue_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Nullの場合は、String.Emptyに変換する。
+3桁のカンマ区切り文字列として返します。（&quot;###,###,###,###&quot;）</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CMoneyValue_System_Object_System_String_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CMoneyValue(System.Object%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L233">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CMoneyValue_" data-uid="Moca.Db.DbUtil.CMoneyValue*"></a>
+  <h4 id="Moca_Db_DbUtil_CMoneyValue_System_Object_System_String_" data-uid="Moca.Db.DbUtil.CMoneyValue(System.Object,System.String)">CMoneyValue(Object, String)</h4>
+  <div class="markdown level1 summary"><p>DBから取得したデータが金額の場合の変換</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string CMoneyValue(object Value, string formatString)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Value</span></td>
+        <td><p>対象値</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">formatString</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>変換値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_DbUtil_CMoneyValue_System_Object_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Nullの場合は、String.Emptyに変換する。
+指定されたフォーマット文字列に変換して返します。</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CNothing_System_Int32__.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CNothing(System.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L93">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CNothing_" data-uid="Moca.Db.DbUtil.CNothing*"></a>
+  <h4 id="Moca_Db_DbUtil_CNothing_System_Int32__" data-uid="Moca.Db.DbUtil.CNothing(System.Int32@)">CNothing(ref Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static object CNothing(ref int value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CNothing_System_Object__.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CNothing(System.Object%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L77">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CNothing_" data-uid="Moca.Db.DbUtil.CNothing*"></a>
+  <h4 id="Moca_Db_DbUtil_CNothing_System_Object__" data-uid="Moca.Db.DbUtil.CNothing(System.Object@)">CNothing(ref Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static object CNothing(ref object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CNull_System_Int32_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CNull(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L109">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CNull_" data-uid="Moca.Db.DbUtil.CNull*"></a>
+  <h4 id="Moca_Db_DbUtil_CNull_System_Int32_" data-uid="Moca.Db.DbUtil.CNull(System.Int32)">CNull(Int32)</h4>
+  <div class="markdown level1 summary"><p>Null変換</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static object CNull(int Value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">Value</span></td>
+        <td><p>検証値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>変換値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_DbUtil_CNull_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>空の場合は、DBNull.Value を返します。
+0の場合は、DBNull.Value を返します。</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CNull_System_Object_System_Boolean_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CNull(System.Object%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L53">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CNull_" data-uid="Moca.Db.DbUtil.CNull*"></a>
+  <h4 id="Moca_Db_DbUtil_CNull_System_Object_System_Boolean_" data-uid="Moca.Db.DbUtil.CNull(System.Object,System.Boolean)">CNull(Object, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Null変換</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static object CNull(object value, bool emptyDataEqDBNull = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">emptyDataEqDBNull</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>変換値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_DbUtil_CNull_System_Object_System_Boolean__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>空の場合は、DBNull.Value を返します。
+文字列が空の場合は、DBNull.Value を返します。</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CommandDispose_Moca_Db_IDbCommandSql_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CommandDispose(Moca.Db.IDbCommandSql)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L33">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CommandDispose_" data-uid="Moca.Db.DbUtil.CommandDispose*"></a>
+  <h4 id="Moca_Db_DbUtil_CommandDispose_Moca_Db_IDbCommandSql_" data-uid="Moca.Db.DbUtil.CommandDispose(Moca.Db.IDbCommandSql)">CommandDispose(IDbCommandSql)</h4>
+  <div class="markdown level1 summary"><p>DbCommandインスタンスを終了する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CommandDispose(IDbCommandSql cmd)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.IDbCommandSql.html">IDbCommandSql</a></td>
+        <td><span class="parametername">cmd</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_Convert_System_Object_System_Data_DataRow_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.Convert(System.Object%2CSystem.Data.DataRow)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L488">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_Convert_" data-uid="Moca.Db.DbUtil.Convert*"></a>
+  <h4 id="Moca_Db_DbUtil_Convert_System_Object_System_Data_DataRow_" data-uid="Moca.Db.DbUtil.Convert(System.Object,System.Data.DataRow)">Convert(Object, DataRow)</h4>
+  <div class="markdown level1 summary"><p>引数のエンティティから DataRow へ変換</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Convert(object entity, DataRow row)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>変換元</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.DataRow</span></td>
+        <td><span class="parametername">row</span></td>
+        <td><p>変換先</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_Create__1_System_Data_DataRow_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.Create%60%601(System.Data.DataRow)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L451">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_Create_" data-uid="Moca.Db.DbUtil.Create*"></a>
+  <h4 id="Moca_Db_DbUtil_Create__1_System_Data_DataRow_" data-uid="Moca.Db.DbUtil.Create``1(System.Data.DataRow)">Create&lt;T&gt;(DataRow)</h4>
+  <div class="markdown level1 summary"><p>引数の DataRow から指定されたタイプのデータ配列へ変換して返す。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T Create&lt;T&gt;(DataRow row)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataRow</span></td>
+        <td><span class="parametername">row</span></td>
+        <td><p>変換元行データ</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>変換先のタイプ</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_Create__1_System_Data_DataRow_System_Data_DataRowVersion_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.Create%60%601(System.Data.DataRow%2CSystem.Data.DataRowVersion)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L465">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_Create_" data-uid="Moca.Db.DbUtil.Create*"></a>
+  <h4 id="Moca_Db_DbUtil_Create__1_System_Data_DataRow_System_Data_DataRowVersion_" data-uid="Moca.Db.DbUtil.Create``1(System.Data.DataRow,System.Data.DataRowVersion)">Create&lt;T&gt;(DataRow, DataRowVersion)</h4>
+  <div class="markdown level1 summary"><p>引数の DataRow から指定されたタイプのデータ配列へ変換して返す。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T Create&lt;T&gt;(DataRow row, DataRowVersion version)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataRow</span></td>
+        <td><span class="parametername">row</span></td>
+        <td><p>変換元行データ</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.DataRowVersion</span></td>
+        <td><span class="parametername">version</span></td>
+        <td><p>変換するデータのバージョン</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>変換先のタイプ</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_Create__1_System_Data_DataTable_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.Create%60%601(System.Data.DataTable)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L438">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_Create_" data-uid="Moca.Db.DbUtil.Create*"></a>
+  <h4 id="Moca_Db_DbUtil_Create__1_System_Data_DataTable_" data-uid="Moca.Db.DbUtil.Create``1(System.Data.DataTable)">Create&lt;T&gt;(DataTable)</h4>
+  <div class="markdown level1 summary"><p>引数の DataTable から指定されたタイプのデータ配列へ変換して返す。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T[] Create&lt;T&gt;(DataTable tbl)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataTable</span></td>
+        <td><span class="parametername">tbl</span></td>
+        <td><p>変換元テーブルデータ</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>変換先のタイプ</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CreateTable__2_System_String___.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CreateTable%60%602(System.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L425">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CreateTable_" data-uid="Moca.Db.DbUtil.CreateTable*"></a>
+  <h4 id="Moca_Db_DbUtil_CreateTable__2_System_String___" data-uid="Moca.Db.DbUtil.CreateTable``2(System.String[])">CreateTable&lt;T, Order&gt;(String[])</h4>
+  <div class="markdown level1 summary"><p>DataTableのカラム構成を構築する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataTable CreateTable&lt;T, Order&gt;(string[] captions = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">captions</span></td>
+        <td><p>列のキャプションとなる文字列配列</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataTable</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>エンティティとなるクラス</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">Order</span></td>
+        <td><p>項目の順序となる列挙型</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CSngValue_System_Object_System_Single_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CSngValue(System.Object%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L174">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CSngValue_" data-uid="Moca.Db.DbUtil.CSngValue*"></a>
+  <h4 id="Moca_Db_DbUtil_CSngValue_System_Object_System_Single_" data-uid="Moca.Db.DbUtil.CSngValue(System.Object,System.Single)">CSngValue(Object, Single)</h4>
+  <div class="markdown level1 summary"><p>DBから取得したデータがSingle値の場合の変換</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float CSngValue(object Value, float defaultValue = 0F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Value</span></td>
+        <td><p>対象値</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">defaultValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><p>変換値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_DbUtil_CSngValue_System_Object_System_Single__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Nullの場合は、０に変換する</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CStrTrimValue_System_Object_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CStrTrimValue(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L206">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CStrTrimValue_" data-uid="Moca.Db.DbUtil.CStrTrimValue*"></a>
+  <h4 id="Moca_Db_DbUtil_CStrTrimValue_System_Object_" data-uid="Moca.Db.DbUtil.CStrTrimValue(System.Object)">CStrTrimValue(Object)</h4>
+  <div class="markdown level1 summary"><p>DBから取得したデータがString値の場合の変換（Trimあり）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string CStrTrimValue(object Value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Value</span></td>
+        <td><p>対象値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>変換値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_DbUtil_CStrTrimValue_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Nullの場合は、String.Emptyに変換する</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_CStrValue_System_Object_System_String_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.CStrValue(System.Object%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L190">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_CStrValue_" data-uid="Moca.Db.DbUtil.CStrValue*"></a>
+  <h4 id="Moca_Db_DbUtil_CStrValue_System_Object_System_String_" data-uid="Moca.Db.DbUtil.CStrValue(System.Object,System.String)">CStrValue(Object, String)</h4>
+  <div class="markdown level1 summary"><p>DBから取得したデータがString値の場合の変換</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string CStrValue(object Value, string defaultValue = &quot;&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Value</span></td>
+        <td><p>対象値</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">defaultValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>変換値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Moca_Db_DbUtil_CStrValue_System_Object_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Nullの場合は、String.Emptyに変換する</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_GetColumnName_System_Reflection_PropertyInfo_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.GetColumnName(System.Reflection.PropertyInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L387">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_GetColumnName_" data-uid="Moca.Db.DbUtil.GetColumnName*"></a>
+  <h4 id="Moca_Db_DbUtil_GetColumnName_System_Reflection_PropertyInfo_" data-uid="Moca.Db.DbUtil.GetColumnName(System.Reflection.PropertyInfo)">GetColumnName(PropertyInfo)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetColumnName(PropertyInfo prop)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Reflection.PropertyInfo</span></td>
+        <td><span class="parametername">prop</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_GetColumnNames_System_Object_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.GetColumnNames(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L413">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_GetColumnNames_" data-uid="Moca.Db.DbUtil.GetColumnNames*"></a>
+  <h4 id="Moca_Db_DbUtil_GetColumnNames_System_Object_" data-uid="Moca.Db.DbUtil.GetColumnNames(System.Object)">GetColumnNames(Object)</h4>
+  <div class="markdown level1 summary"><p>指定されたオブジェクトのプロパティ名及び、属性から列名を取得する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Hashtable GetColumnNames(object target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>列名を取得したいモデル</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Hashtable</span></td>
+        <td><p>列名配列</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_GetColumnNames_System_Type_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.GetColumnNames(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L368">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_GetColumnNames_" data-uid="Moca.Db.DbUtil.GetColumnNames*"></a>
+  <h4 id="Moca_Db_DbUtil_GetColumnNames_System_Type_" data-uid="Moca.Db.DbUtil.GetColumnNames(System.Type)">GetColumnNames(Type)</h4>
+  <div class="markdown level1 summary"><p>指定されたオブジェクトのプロパティ名及び、属性から列名を取得する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Hashtable GetColumnNames(Type typ)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td><span class="parametername">typ</span></td>
+        <td><p>列名を取得したいモデルのタイプ</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Hashtable</span></td>
+        <td><p>列名配列</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_GetOrderBy_System_String___.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.GetOrderBy(System.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L499">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_GetOrderBy_" data-uid="Moca.Db.DbUtil.GetOrderBy*"></a>
+  <h4 id="Moca_Db_DbUtil_GetOrderBy_System_String___" data-uid="Moca.Db.DbUtil.GetOrderBy(System.String[])">GetOrderBy(String[])</h4>
+  <div class="markdown level1 summary"><p>SQL のソート部分で使用するカラムを作成</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetOrderBy(string[] columns)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">columns</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>SQL のソート文字列</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_GetOrderByColumn_System_String_Moca_Db_SortDirectionValue_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.GetOrderByColumn(System.String%2CMoca.Db.SortDirectionValue)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L526">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_GetOrderByColumn_" data-uid="Moca.Db.DbUtil.GetOrderByColumn*"></a>
+  <h4 id="Moca_Db_DbUtil_GetOrderByColumn_System_String_Moca_Db_SortDirectionValue_" data-uid="Moca.Db.DbUtil.GetOrderByColumn(System.String,Moca.Db.SortDirectionValue)">GetOrderByColumn(String, SortDirectionValue)</h4>
+  <div class="markdown level1 summary"><p>SQL のソート部分で使用するカラムを作成</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetOrderByColumn(string sortExpression, SortDirectionValue sortDirection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sortExpression</span></td>
+        <td><p>ソート項目名</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Moca.Db.SortDirectionValue.html">SortDirectionValue</a></td>
+        <td><span class="parametername">sortDirection</span></td>
+        <td><p>ソート順</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>SQL のソートに使用するカラム文字列</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_MakeSQLWhereLikeList_System_String__System_String____System_String__.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.MakeSQLWhereLikeList(System.String%40%2CSystem.String%5B%5D%40%2CSystem.String%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L348">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_MakeSQLWhereLikeList_" data-uid="Moca.Db.DbUtil.MakeSQLWhereLikeList*"></a>
+  <h4 id="Moca_Db_DbUtil_MakeSQLWhereLikeList_System_String__System_String____System_String__" data-uid="Moca.Db.DbUtil.MakeSQLWhereLikeList(System.String@,System.String[]@,System.String@)">MakeSQLWhereLikeList(ref String, ref String[], ref String)</h4>
+  <div class="markdown level1 summary"><p>SQL文の条件式LIKEを複数作成します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string MakeSQLWhereLikeList(ref string columnName, ref string[] arr, ref string op)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">columnName</span></td>
+        <td><p>列名</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">arr</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">op</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_Replace2NullWithSinQt_System_Object_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.Replace2NullWithSinQt(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L560">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_Replace2NullWithSinQt_" data-uid="Moca.Db.DbUtil.Replace2NullWithSinQt*"></a>
+  <h4 id="Moca_Db_DbUtil_Replace2NullWithSinQt_System_Object_" data-uid="Moca.Db.DbUtil.Replace2NullWithSinQt(System.Object)">Replace2NullWithSinQt(Object)</h4>
+  <div class="markdown level1 summary"><p>Null変換(シングルクォーテーション付き)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Replace2NullWithSinQt(object val)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">val</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_SetColumnInfo_System_Object_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.SetColumnInfo(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L476">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_SetColumnInfo_" data-uid="Moca.Db.DbUtil.SetColumnInfo*"></a>
+  <h4 id="Moca_Db_DbUtil_SetColumnInfo_System_Object_" data-uid="Moca.Db.DbUtil.SetColumnInfo(System.Object)">SetColumnInfo(Object)</h4>
+  <div class="markdown level1 summary"><p>引数のオブジェクト内にTable属性のフィールドが存在する場合は列情報を設定する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetColumnInfo(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>対象のインスタンス</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil_ToStringParameter_System_Data_IDataParameterCollection_.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil.ToStringParameter(System.Data.IDataParameterCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L539">View Source</a>
+  </span>
+  <a id="Moca_Db_DbUtil_ToStringParameter_" data-uid="Moca.Db.DbUtil.ToStringParameter*"></a>
+  <h4 id="Moca_Db_DbUtil_ToStringParameter_System_Data_IDataParameterCollection_" data-uid="Moca.Db.DbUtil.ToStringParameter(System.Data.IDataParameterCollection)">ToStringParameter(IDataParameterCollection)</h4>
+  <div class="markdown level1 summary"><p>DBパラメータをカンマで連結して文字列に変換する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ToStringParameter(IDataParameterCollection params)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDataParameterCollection</span></td>
+        <td><span class="parametername">params</span></td>
+        <td><p>DBパラメータ</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbUtil.md&amp;value=---%0Auid%3A%20Moca.Db.DbUtil%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbUtil.vb/#L20" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

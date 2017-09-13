@@ -144,11 +144,14 @@ Namespace Db.Helper
 		''' DBアクセスでエラーが発生した
 		''' </exception>
 		Public Function GetSchemaColumns(ByVal table As DbInfoTable) As DbInfoColumnCollection Implements IDbAccessHelper.GetSchemaColumns
+			Dim dtSchema As DataTable
 			Dim dt As DataTable
 			Dim results As DbInfoColumnCollection
 			Dim info As DbInfoColumn
 			Dim openFlag As Boolean
 
+			dtSchema = Nothing
+			dt = Nothing
 			results = New DbInfoColumnCollection()
 
 			Try
@@ -156,9 +159,12 @@ Namespace Db.Helper
 					Me._conn.Open()
 					openFlag = True
 				End If
+
+				dtSchema = FillSchema(table.Name)
+
 				dt = Me._conn.GetSchema("Columns", New String() {table.Catalog, table.Schema, table.Name, Nothing})
 				For ii As Integer = 0 To dt.Rows.Count - 1
-					info = New DbInfoColumn( _
+					info = New DbInfoColumn(
 					   CStr(dt.Rows(ii).Item("TABLE_CATALOG")) _
 					 , CStr(dt.Rows(ii).Item("TABLE_SCHEMA")) _
 					 , CStr(dt.Rows(ii).Item("COLUMN_NAME")) _
@@ -170,15 +176,32 @@ Namespace Db.Helper
 					info.Scale = scale
 					info.UniCode = isUniCode(info.Typ)
 					info.ColumnType = getColumnDbType(Of SqlDbType)(dt.Rows(ii))
+					info.DbColumn = dtSchema.Columns(info.Name)
+#If net20 Then
+					For Each item As DataColumn In dtSchema.PrimaryKey
+						If item.ColumnName.Equals(info.Name) Then
+							info.PrimaryKey = True
+							Exit For
+						End If
+					Next
+#Else
+					info.PrimaryKey = dtSchema.PrimaryKey.Select(Function(x) x.ColumnName.Equals(info.Name)).Count.Equals(1)
+#End If
 					results.Add(info.Name, info)
 				Next
 
-                'TODO: ここで SELECT * FROM TableName でスキーマ情報取得する
+				'TODO: ここで SELECT * FROM TableName でスキーマ情報取得する
 
-                Return results
+				Return results
 			Catch ex As Exception
 				Throw New DbAccessException(Me.targetDba, ex)
 			Finally
+				If dtSchema IsNot Nothing Then
+					dtSchema.Dispose()
+				End If
+				If dt IsNot Nothing Then
+					dt.Dispose()
+				End If
 				If openFlag Then
 					Me._conn.Close()
 				End If
@@ -209,7 +232,7 @@ Namespace Db.Helper
 					dt = cmd.ResultDataSet.Tables(0)
 					For ii As Integer = 0 To dt.Rows.Count - 1
 						Dim item As DbInfoFunction
-						item = New DbInfoFunction( _
+						item = New DbInfoFunction(
 						String.Empty _
 						 , String.Empty _
 						 , CStr(dt.Rows(ii).Item("name")) _
@@ -253,7 +276,7 @@ Namespace Db.Helper
 					dt = cmd.ResultDataSet.Tables(0)
 					For ii As Integer = 0 To dt.Rows.Count - 1
 						Dim item As DbInfoProcedure
-						item = New DbInfoProcedure( _
+						item = New DbInfoProcedure(
 						String.Empty _
 						 , String.Empty _
 						 , CStr(dt.Rows(ii).Item("name")) _
@@ -296,7 +319,7 @@ Namespace Db.Helper
 				End If
 				dt = Me._conn.GetSchema("Tables", New String() {Nothing, Nothing, Nothing, Nothing})
 				For ii As Integer = 0 To dt.Rows.Count - 1
-					info = New DbInfoTable( _
+					info = New DbInfoTable(
 					   CStr(dt.Rows(ii).Item("TABLE_CATALOG")) _
 					 , CStr(dt.Rows(ii).Item("TABLE_SCHEMA")) _
 					 , CStr(dt.Rows(ii).Item("TABLE_NAME")) _
@@ -319,17 +342,18 @@ Namespace Db.Helper
 		''' <summary>
 		''' テーブル情報を取得する
 		''' </summary>
-		''' <param name="tablename">テーブル名</param>
+		''' <param name="tableName">テーブル名</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		''' <exception cref="DbAccessException">
 		''' DBアクセスでエラーが発生した
 		''' </exception>
-		Public Function GetSchemaTable(tablename As String) As DbInfoTable Implements IDbAccessHelper.GetSchemaTable
+		Public Function GetSchemaTable(tableName As String) As DbInfoTable Implements IDbAccessHelper.GetSchemaTable
 			Dim dt As DataTable
 			Dim results As DbInfoTable
 			Dim openFlag As Boolean
 
+			dt = Nothing
 			results = Nothing
 
 			Try
@@ -337,9 +361,9 @@ Namespace Db.Helper
 					Me._conn.Open()
 					openFlag = True
 				End If
-				dt = Me._conn.GetSchema("Tables", New String() {Nothing, Nothing, tablename, Nothing})
+				dt = Me._conn.GetSchema("Tables", New String() {Nothing, Nothing, tableName, Nothing})
 				For ii As Integer = 0 To dt.Rows.Count - 1
-					results = New DbInfoTable( _
+					results = New DbInfoTable(
 					 CStr(dt.Rows(ii).Item("TABLE_CATALOG")) _
 					  , CStr(dt.Rows(ii).Item("TABLE_SCHEMA")) _
 					  , CStr(dt.Rows(ii).Item("TABLE_NAME")) _
@@ -352,6 +376,9 @@ Namespace Db.Helper
 			Catch ex As Exception
 				Throw New DbAccessException(Me.targetDba, ex)
 			Finally
+				If dt IsNot Nothing Then
+					dt.Dispose()
+				End If
 				If openFlag Then
 					Me._conn.Close()
 				End If
@@ -418,6 +445,10 @@ Namespace Db.Helper
 				Return "@"
 			End Get
 		End Property
+
+		Public Function CnvStatmentParameterName(name As String) As String Implements IDbAccessHelper.CnvStatmentParameterName
+			Return PlaceholderMark & name
+		End Function
 
 		''' <summary>
 		''' プロシージャのパラメータ情報を取得する
@@ -571,12 +602,12 @@ Namespace Db.Helper
 				If typ.Equals("numeric") Then
 					typ = SqlDbType.Decimal.ToString
 				End If
-                If typ.Equals("hierarchyid") Then
-                    typ = SqlDbType.Variant.ToString
-                End If
-            End If
+				If typ.Equals("hierarchyid") Then
+					typ = SqlDbType.Variant.ToString
+				End If
+			End If
 
-            Return DirectCast([Enum].Parse(GetType(T), typ, True), T)
+			Return DirectCast([Enum].Parse(GetType(T), typ, True), T)
 		End Function
 
 		''' <summary>

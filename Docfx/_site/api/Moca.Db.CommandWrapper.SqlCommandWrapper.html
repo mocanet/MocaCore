@@ -1,0 +1,1011 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SqlCommandWrapper
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SqlCommandWrapper
+   ">
+    <meta name="generator" content="docfx 2.23.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper">
+  
+  
+  <h1 id="Moca_Db_CommandWrapper_SqlCommandWrapper" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper" class="text-break">Class SqlCommandWrapper
+  </h1>
+  <div class="markdown level0 summary"><p>DBCommandのラッピング抽象クラス</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">SqlCommandWrapper</span></div>
+  </div>
+      <div class="level2"><a class="xref" href="Moca.Db.CommandWrapper.DDLCommandWrapper.html">DDLCommandWrapper</a></div>
+      <div class="level2"><a class="xref" href="Moca.Db.CommandWrapper.DeleteCommandWrapper.html">DeleteCommandWrapper</a></div>
+      <div class="level2"><a class="xref" href="Moca.Db.CommandWrapper.InsertCommandWrapper.html">InsertCommandWrapper</a></div>
+      <div class="level2"><a class="xref" href="Moca.Db.CommandWrapper.SelectCommandWrapper.html">SelectCommandWrapper</a></div>
+      <div class="level2"><a class="xref" href="Moca.Db.CommandWrapper.UpdateCommandWrapper.html">UpdateCommandWrapper</a></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Finalize()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Moca.Db.CommandWrapper.html">Moca.Db.CommandWrapper</a></h6>
+  <h6><strong>Assembly</strong>: Moca.dll</h6>
+  <h5 id="Moca_Db_CommandWrapper_SqlCommandWrapper_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class SqlCommandWrapper : IDbCommandSql, IDisposable</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_cmd.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.cmd%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L16">View Source</a>
+  </span>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_cmd" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.cmd">cmd</h4>
+  <div class="markdown level1 summary"><p>実行するDBCommandインスタンス</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IDbCommand cmd</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbCommand</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_dba.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.dba%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L14">View Source</a>
+  </span>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_dba" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.dba">dba</h4>
+  <div class="markdown level1 summary"><p>親となるDBAccessインスタンス</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IDao dba</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.IDao.html">IDao</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_entityBuilder.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.entityBuilder%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L27">View Source</a>
+  </span>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_entityBuilder" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.entityBuilder">entityBuilder</h4>
+  <div class="markdown level1 summary"><p>データベースから取得したデータの格納先となる Entity を作成する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected EntityBuilder entityBuilder</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.EntityBuilder.html">EntityBuilder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_addParameter_System_String_System_Object_.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.addParameter(System.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L326">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_addParameter_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.addParameter*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_addParameter_System_String_System_Object_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.addParameter(System.String,System.Object)">addParameter(String, Object)</h4>
+  <div class="markdown level1 summary"><p>パラメータを追加又は取得する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IDbDataParameter addParameter(string parameterName, object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parameterName</span></td>
+        <td><p>パラメータ名</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>パラメータの値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbDataParameter</span></td>
+        <td><p>パラメータインスタンス</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_cnvPlaceholder.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.cnvPlaceholder%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L351">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_cnvPlaceholder_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.cnvPlaceholder*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_cnvPlaceholder" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.cnvPlaceholder">cnvPlaceholder()</h4>
+  <div class="markdown level1 summary"><p>プレースフォルダを取得</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void cnvPlaceholder()</code></pre>
+  </div>
+  <h5 id="Moca_Db_CommandWrapper_SqlCommandWrapper_cnvPlaceholder_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>今後の拡張のための実装<br>
+だが、リリースするかは不明</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L57">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_Dispose_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.Dispose*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_Dispose_System_Boolean_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+  <div class="markdown level1 summary"><p>IDisposable</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">disposing</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_AddInParameter_System_String_System_Data_DbType_.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.AddInParameter(System.String%2CSystem.Data.DbType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L203">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_AddInParameter_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.AddInParameter*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_AddInParameter_System_String_System_Data_DbType_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.AddInParameter(System.String,System.Data.DbType)">IDbCommandSql.AddInParameter(String, DbType)</h4>
+  <div class="markdown level1 summary"><p>入力パラメータを追加する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDbDataParameter IDbCommandSql.AddInParameter(string parameterName, DbType dbTypeValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parameterName</span></td>
+        <td><p>パラメータ名</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.DbType</span></td>
+        <td><span class="parametername">dbTypeValue</span></td>
+        <td><p>パラメータの型</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbDataParameter</span></td>
+        <td><p>パラメータインスタンス</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_AddInParameter_System_String_System_Data_DbType_">IDbCommandSql.AddInParameter(String, DbType)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_AddInParameter_System_String_System_Data_DbType_System_Int32_.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.AddInParameter(System.String%2CSystem.Data.DbType%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L222">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_AddInParameter_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.AddInParameter*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_AddInParameter_System_String_System_Data_DbType_System_Int32_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.AddInParameter(System.String,System.Data.DbType,System.Int32)">IDbCommandSql.AddInParameter(String, DbType, Int32)</h4>
+  <div class="markdown level1 summary"><p>入力パラメータを追加する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDbDataParameter IDbCommandSql.AddInParameter(string parameterName, DbType dbTypeValue, int size)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parameterName</span></td>
+        <td><p>パラメータ名</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.DbType</span></td>
+        <td><span class="parametername">dbTypeValue</span></td>
+        <td><p>パラメータの型</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">size</span></td>
+        <td><p>パラメータのサイズ</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbDataParameter</span></td>
+        <td><p>パラメータインスタンス</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_AddInParameter_System_String_System_Data_DbType_System_Int32_">IDbCommandSql.AddInParameter(String, DbType, Int32)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_AddOutParameter_System_String_.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.AddOutParameter(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L238">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_AddOutParameter_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.AddOutParameter*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_AddOutParameter_System_String_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.AddOutParameter(System.String)">IDbCommandSql.AddOutParameter(String)</h4>
+  <div class="markdown level1 summary"><p>出力パラメータを追加する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDbDataParameter IDbCommandSql.AddOutParameter(string parameterName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parameterName</span></td>
+        <td><p>パラメータ名</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbDataParameter</span></td>
+        <td><p>パラメータインスタンス</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_AddOutParameter_System_String_">IDbCommandSql.AddOutParameter(String)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_AddOutParameter_System_String_System_Data_DbType_.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.AddOutParameter(System.String%2CSystem.Data.DbType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L255">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_AddOutParameter_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.AddOutParameter*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_AddOutParameter_System_String_System_Data_DbType_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.AddOutParameter(System.String,System.Data.DbType)">IDbCommandSql.AddOutParameter(String, DbType)</h4>
+  <div class="markdown level1 summary"><p>出力パラメータを追加する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDbDataParameter IDbCommandSql.AddOutParameter(string parameterName, DbType dbTypeValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parameterName</span></td>
+        <td><p>パラメータ名</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.DbType</span></td>
+        <td><span class="parametername">dbTypeValue</span></td>
+        <td><p>パラメータの型</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbDataParameter</span></td>
+        <td><p>パラメータインスタンス</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_AddOutParameter_System_String_System_Data_DbType_">IDbCommandSql.AddOutParameter(String, DbType)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_Command.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.Command%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L86">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_Command_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.Command*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_Command" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.Command">IDbCommandSql.Command</h4>
+  <div class="markdown level1 summary"><p>実行するDBCommandインスタンスを参照</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDbCommand IDbCommandSql.Command { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbCommand</span></td>
+        <td><p>実行するDBCommandインスタンス</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_Command">IDbCommandSql.Command</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_CommandText.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.CommandText%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L116">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_CommandText_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.CommandText*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_CommandText" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.CommandText">IDbCommandSql.CommandText</h4>
+  <div class="markdown level1 summary"><p>SQL文</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string IDbCommandSql.CommandText { get; set; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_CommandText">IDbCommandSql.CommandText</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_Dispose.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L69">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_Dispose_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.Dispose*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_Dispose" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.Dispose">IDisposable.Dispose()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void IDisposable.Dispose()</code></pre>
+  </div>
+  <h5 class="implements">Implements</h5>
+      <div><span class="xref">System.IDisposable.Dispose()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_Execute.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.Execute%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L301">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_Execute_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.Execute*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_Execute" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.Execute">IDbCommandSql.Execute()</h4>
+  <div class="markdown level1 summary"><p>SQL実行</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract int IDbCommandSql.Execute()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_Execute">IDbCommandSql.Execute()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_GetParameterValue_System_String_.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.GetParameterValue(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L289">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_GetParameterValue_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.GetParameterValue*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_GetParameterValue_System_String_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.GetParameterValue(System.String)">IDbCommandSql.GetParameterValue(String)</h4>
+  <div class="markdown level1 summary"><p>出力パラメータを参照する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object IDbCommandSql.GetParameterValue(string parameterName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parameterName</span></td>
+        <td><p>パラメータ名</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>出力パラメータ値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_GetParameterValue_System_String_">IDbCommandSql.GetParameterValue(String)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_HaveOutParameter.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.HaveOutParameter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L270">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_HaveOutParameter_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.HaveOutParameter*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_HaveOutParameter" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.HaveOutParameter">IDbCommandSql.HaveOutParameter()</h4>
+  <div class="markdown level1 summary"><p>パラメータ内に戻り値があるか返す</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IDbCommandSql.HaveOutParameter()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True は戻り値有り、False は戻り値無し</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_HaveOutParameter">IDbCommandSql.HaveOutParameter()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_Prepare.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.Prepare%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L309">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_Prepare_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.Prepare*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_Prepare" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.Prepare">IDbCommandSql.Prepare()</h4>
+  <div class="markdown level1 summary"><p>コンパイル済みのSQLにする</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void IDbCommandSql.Prepare()</code></pre>
+  </div>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_Prepare">IDbCommandSql.Prepare()</a></div>
+  <h5 id="Moca_Db_CommandWrapper_SqlCommandWrapper_Prepare_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>当メソッド実行前に予め <a class="xref" href="Moca.Db.CommandWrapper.SqlCommandWrapper.html#Moca_Db_CommandWrapper_SqlCommandWrapper_AddInParameter_System_String_System_Data_DbType_">IDbCommandSql.AddInParameter(String, DbType)</a> を使用してパラメータを設定しておいてください。<br></p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_PreparedStatement.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.PreparedStatement%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L101">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_PreparedStatement_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.PreparedStatement*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_PreparedStatement" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.PreparedStatement">IDbCommandSql.PreparedStatement</h4>
+  <div class="markdown level1 summary"><p>コンパイル済みのSQLを使うかどうかを指定</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IDbCommandSql.PreparedStatement { get; set; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True:使用する
+False:使用しない</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_PreparedStatement">IDbCommandSql.PreparedStatement</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_ResultOutputParam.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.ResultOutputParam%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L132">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_ResultOutputParam_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.ResultOutputParam*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_ResultOutputParam" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.ResultOutputParam">IDbCommandSql.ResultOutParameter</h4>
+  <div class="markdown level1 summary"><p>実行後の戻り値を返す</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Hashtable IDbCommandSql.ResultOutParameter { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Hashtable</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_ResultOutParameter">IDbCommandSql.ResultOutParameter</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_SetParameter_System_String_System_Array_.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.SetParameter(System.String%2CSystem.Array)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L169">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_SetParameter_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.SetParameter*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_SetParameter_System_String_System_Array_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.SetParameter(System.String,System.Array)">IDbCommandSql.SetParameter(String, Array)</h4>
+  <div class="markdown level1 summary"><p>入力パラメータを設定する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string IDbCommandSql.SetParameter(string parameterName, Array values)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parameterName</span></td>
+        <td><p>パラメータ名</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Array</span></td>
+        <td><span class="parametername">values</span></td>
+        <td><p>値配列</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>パラメータインスタンス</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_SetParameter_System_String_System_Array_">IDbCommandSql.SetParameter(String, Array)</a></div>
+  <h5 id="Moca_Db_CommandWrapper_SqlCommandWrapper_SetParameter_System_String_System_Array__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>当メソッドでは IN 句を作成します。
+IN 句はパラメータとしては扱えないので、SQL文内に存在するパラメータ名部分を文字列変換します。</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper_SetParameter_System_String_System_Object_.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper.SetParameter(System.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L150">View Source</a>
+  </span>
+  <a id="Moca_Db_CommandWrapper_SqlCommandWrapper_SetParameter_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.SetParameter*"></a>
+  <h4 id="Moca_Db_CommandWrapper_SqlCommandWrapper_SetParameter_System_String_System_Object_" data-uid="Moca.Db.CommandWrapper.SqlCommandWrapper.SetParameter(System.String,System.Object)">IDbCommandSql.SetParameter(String, Object)</h4>
+  <div class="markdown level1 summary"><p>入力パラメータを設定する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDbDataParameter IDbCommandSql.SetParameter(string parameterName, object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parameterName</span></td>
+        <td><p>パラメータ名</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>値</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbDataParameter</span></td>
+        <td><p>パラメータインスタンス</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_SetParameter_System_String_System_Object_">IDbCommandSql.SetParameter(String, Object)</a></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_CommandWrapper_SqlCommandWrapper.md&amp;value=---%0Auid%3A%20Moca.Db.CommandWrapper.SqlCommandWrapper%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/CommandWrapper/SqlCommandWrapper.vb/#L10" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

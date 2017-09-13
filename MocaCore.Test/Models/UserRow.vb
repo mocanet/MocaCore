@@ -58,11 +58,11 @@ Public Class UserRow
         End Set
     End Property
 
-    ''' <summary> 
-    ''' Name (Name) Property. 
-    ''' </summary> 
-    <Column("Name")>
-    Public Property Name() As String
+	''' <summary> 
+	''' Name (Name) Property. 
+	''' </summary> 
+	<Column("Name")>
+	Public Property Name() As String
         Get
             Return Me._name
         End Get
@@ -72,11 +72,11 @@ Public Class UserRow
         End Set
     End Property
 
-    ''' <summary> 
-    ''' Mail (Mail) Property. 
-    ''' </summary> 
-    <Column("Mail")>
-    Public Property Mail() As String
+	''' <summary> 
+	''' Mail (Mail) Property. 
+	''' </summary> 
+	<Column("Mail")>
+	Public Property Mail() As String
         Get
             Return Me._mail
         End Get
@@ -86,10 +86,10 @@ Public Class UserRow
         End Set
     End Property
 
-    ''' <summary> 
-    ''' Note (Note) Property. 
-    ''' </summary> 
-    <Column("Note")>
+	''' <summary> 
+	''' Note (Note) Property. 
+	''' </summary> 
+	<Column("Note")>
     Public Property Note() As String
         Get
             Return Me._note
@@ -100,10 +100,10 @@ Public Class UserRow
         End Set
     End Property
 
-    ''' <summary> 
-    ''' Admin (Admin) Property. 
-    ''' </summary> 
-    <Column("Admin")>
+	''' <summary> 
+	''' Admin (Admin) Property. 
+	''' </summary> 
+	<Column("Admin")>
     Public Property Admin() As Boolean
         Get
             Return Me._admin
@@ -114,10 +114,10 @@ Public Class UserRow
         End Set
     End Property
 
-    ''' <summary> 
-    ''' InsertDate (InsertDate) Property. 
-    ''' </summary> 
-    <Column("InsertDate")>
+	''' <summary> 
+	''' InsertDate (InsertDate) Property. 
+	''' </summary> 
+	<Column("InsertDate")>
     Public Property InsertDate() As Date
         Get
             Return Me._insertDate
@@ -128,10 +128,10 @@ Public Class UserRow
         End Set
     End Property
 
-    ''' <summary> 
-    ''' UpdateDate (UpdateDate) Property. 
-    ''' </summary> 
-    <Column("UpdateDate")>
+	''' <summary> 
+	''' UpdateDate (UpdateDate) Property. 
+	''' </summary> 
+	<Column("UpdateDate")>
     Public Property UpdateDate() As Date
         Get
             Return Me._updateDate
@@ -141,10 +141,11 @@ Public Class UserRow
             OnPropertyChanged("UpdateDate")
         End Set
     End Property
+
 #End Region
 
 #Region " PropertyChanged "
-    Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
 
     Protected Overridable Sub OnPropertyChanged(ByVal name As String)
         RaiseEvent PropertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(name))

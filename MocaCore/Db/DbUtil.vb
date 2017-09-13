@@ -374,23 +374,12 @@ Namespace Db
 			' プロパティ定義を取得
 			pinfo = ClassUtil.GetProperties(typ)
 			For Each prop As PropertyInfo In pinfo
-				' 未使用属性判定
-				Dim ignore As ColumnIgnoreAttribute
-				ignore = ClassUtil.GetCustomAttribute(Of ColumnIgnoreAttribute)(prop)
-				If ignore IsNot Nothing Then
-					If ignore.Ignore Then
-						Continue For
-					End If
+				Dim key As String
+				key = GetColumnName(prop)
+				If String.IsNullOrEmpty(key) Then
+					Continue For
 				End If
-
-				' 列名属性取得
-				Dim attr As ColumnAttribute
-				attr = ClassUtil.GetCustomAttribute(Of ColumnAttribute)(prop)
-				If attr IsNot Nothing Then
-					hash.Add(attr.ColumnName, prop.Name)
-				Else
-					hash.Add(prop.Name, prop.Name)
-				End If
+				hash.Add(key, prop.Name)
 			Next
 			Return hash
 		End Function

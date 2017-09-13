@@ -1,0 +1,1175 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DbAccess
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DbAccess
+   ">
+    <meta name="generator" content="docfx 2.23.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Moca.Db.DbAccess">
+  
+  
+  <h1 id="Moca_Db_DbAccess" data-uid="Moca.Db.DbAccess" class="text-break">Class DbAccess
+  </h1>
+  <div class="markdown level0 summary"><p>DBへアクセスする為の基本的な機能を提供する</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">System.MarshalByRefObject</span></div>
+    <div class="level2"><a class="xref" href="Moca.Db.AbstractDao.html">AbstractDao</a></div>
+    <div class="level3"><span class="xref">DbAccess</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Finalize">AbstractDao.Finalize()</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Dispose">AbstractDao.IDisposable.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Disposing">AbstractDao.Disposing()</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Connection">AbstractDao.IDao.Connection</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Adapter">AbstractDao.IDao.Adapter</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Dbms">AbstractDao.IDao.Dbms</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Helper">AbstractDao.IDao.Helper</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_CommandWrapper">AbstractDao.IDao.CommandWrapper</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_ExecuteHistory">AbstractDao.IDao.ExecuteHistory</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_ExecuteUpdateHistory">AbstractDao.IDao.ExecuteUpdateHistory</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_ExecuteHistories">AbstractDao.IDao.ExecuteHistories</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_RollbackStatus">AbstractDao.IDao.RollbackStatus</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_CheckConnect">AbstractDao.IDao.CheckConnect()</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_CreateCommandSelect_System_String_">AbstractDao.IDao.CreateCommandSelect(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_CreateCommandSelect4Update_System_String_">AbstractDao.IDao.CreateCommandSelect4Update(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_CreateCommandInsert_System_String_">AbstractDao.IDao.CreateCommandInsert(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_CreateCommandUpdate_System_String_">AbstractDao.IDao.CreateCommandUpdate(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_CreateCommandDelete_System_String_">AbstractDao.IDao.CreateCommandDelete(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_CreateCommandStoredProcedure_System_String_">AbstractDao.IDao.CreateCommandStoredProcedure(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_CreateCommandDDL_System_String_">AbstractDao.IDao.CreateCommandDDL(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_ExecuteScalar_Moca_Db_IDbCommandSelect_">AbstractDao.IDao.ExecuteScalar(IDbCommandSelect)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Execute_Moca_Db_IDbCommandSelect_">AbstractDao.IDao.Execute(IDbCommandSelect)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Execute__1_Moca_Db_IDbCommandSelect_">AbstractDao.IDao.Execute&lt;T&gt;(IDbCommandSelect)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Execute_Moca_Db_IDbCommandSelect4Update_">AbstractDao.IDao.Execute(IDbCommandSelect4Update)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_ExecuteNonQuery_Moca_Db_IDbCommandSql_">AbstractDao.IDao.ExecuteNonQuery(IDbCommandSql)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_UpdateAdapter_System_Data_DataSet_System_Data_IDbDataAdapter_">AbstractDao.IDao.UpdateAdapter(DataSet, IDbDataAdapter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Select__1_System_String_System_Object_">AbstractDao.Select&lt;T&gt;(String, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Scalar_System_String_System_Object_">AbstractDao.Scalar(String, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Insert_System_Object_">AbstractDao.Insert(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Insert__1_System_Collections_Generic_IList___0__">AbstractDao.Insert&lt;T&gt;(IList&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Insert_System_String_System_Object_">AbstractDao.Insert(String, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Insert__1_System_String_System_Collections_Generic_IList___0__">AbstractDao.Insert&lt;T&gt;(String, IList&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_CreateSqlInsert_Moca_Entity_EntityInfo_">AbstractDao.CreateSqlInsert(EntityInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Update_System_String_System_Object_">AbstractDao.Update(String, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Update__1_System_String_System_Collections_Generic_IList___0__">AbstractDao.Update&lt;T&gt;(String, IList&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Delete_System_String_System_Object_">AbstractDao.Delete(String, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Delete__1_System_String_System_Collections_Generic_IList___0__">AbstractDao.Delete&lt;T&gt;(String, IList&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_StoredProcedure__1_System_String_System_Object_">AbstractDao.StoredProcedure&lt;T&gt;(String, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_CNothing_System_String_">AbstractDao.CNothing(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_CNothing_System_Int32_System_Int32_">AbstractDao.CNothing(Int32, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_fill_System_Data_DataSet__">AbstractDao.fill(DataSet)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_fill_System_Data_DataSet__System_Data_IDbDataAdapter_">AbstractDao.fill(DataSet, IDbDataAdapter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_fill_System_Data_DataSet__System_String_System_Data_IDbDataAdapter_">AbstractDao.fill(DataSet, String, IDbDataAdapter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_getResultOutParameter_Moca_Db_IDbCommandSql_">AbstractDao.getResultOutParameter(IDbCommandSql)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_TransactionContext">AbstractDao.TransactionContext</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_ConnectionJoin">AbstractDao.ConnectionJoin</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Cancel">AbstractDao.IDaoCancel.Cancel()</a>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.MemberwiseClone(System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.GetLifetimeService()</span>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.InitializeLifetimeService()</span>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.CreateObjRef(System.Type)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Moca.Db.html">Moca.Db</a></h6>
+  <h6><strong>Assembly</strong>: Moca.dll</h6>
+  <h5 id="Moca_Db_DbAccess_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DbAccess : AbstractDao, IDaoCancel, IDbAccess, IDao, IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess__ctor.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L50">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess__ctor_" data-uid="Moca.Db.DbAccess.#ctor*"></a>
+  <h4 id="Moca_Db_DbAccess__ctor" data-uid="Moca.Db.DbAccess.#ctor">DbAccess()</h4>
+  <div class="markdown level1 summary"><p>デフォルトコンストラクタ</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DbAccess()</code></pre>
+  </div>
+  <h5 id="Moca_Db_DbAccess__ctor_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>外部からは利用不可</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess__ctor_Moca_Db_Dbms_.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.%23ctor(Moca.Db.Dbms)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L58">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess__ctor_" data-uid="Moca.Db.DbAccess.#ctor*"></a>
+  <h4 id="Moca_Db_DbAccess__ctor_Moca_Db_Dbms_" data-uid="Moca.Db.DbAccess.#ctor(Moca.Db.Dbms)">DbAccess(Dbms)</h4>
+  <div class="markdown level1 summary"><p>コンストラクタ</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DbAccess(Dbms myDbms)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.Dbms.html">Dbms</a></td>
+        <td><span class="parametername">myDbms</span></td>
+        <td><p>接続先のDBMS</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess_createCommandWrapper_Moca_Db_SQLCommandTypes_System_String_System_Data_IDbConnection_.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.createCommandWrapper(Moca.Db.SQLCommandTypes%2CSystem.String%2CSystem.Data.IDbConnection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L251">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess_createCommandWrapper_" data-uid="Moca.Db.DbAccess.createCommandWrapper*"></a>
+  <h4 id="Moca_Db_DbAccess_createCommandWrapper_Moca_Db_SQLCommandTypes_System_String_System_Data_IDbConnection_" data-uid="Moca.Db.DbAccess.createCommandWrapper(Moca.Db.SQLCommandTypes,System.String,System.Data.IDbConnection)">createCommandWrapper(SQLCommandTypes, String, IDbConnection)</h4>
+  <div class="markdown level1 summary"><p>指定されたタイプのDbCommandインスタンスを生成する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IDbCommandSql createCommandWrapper(SQLCommandTypes sqlCommandType, string commandText, IDbConnection useConn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.SQLCommandTypes.html">SQLCommandTypes</a></td>
+        <td><span class="parametername">sqlCommandType</span></td>
+        <td><p>コマンド種別</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">commandText</span></td>
+        <td><p>実行するSQL文又は、ストアド名</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.IDbConnection</span></td>
+        <td><span class="parametername">useConn</span></td>
+        <td><p>使用するコネクション</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.IDbCommandSql.html">IDbCommandSql</a></td>
+        <td><p>指定されたタイプのインスタンス</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_createCommandWrapper_Moca_Db_SQLCommandTypes_System_String_System_Data_IDbConnection_">AbstractDao.createCommandWrapper(SQLCommandTypes, String, IDbConnection)</a></div>
+  <h5 id="Moca_Db_DbAccess_createCommandWrapper_Moca_Db_SQLCommandTypes_System_String_System_Data_IDbConnection__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>コマンド種別に該当するISqlCommandのインスタンスを生成します。<br></p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.DbAccessException.html">DbAccessException</a></td>
+        <td><p>DBアクセスでエラーが発生した</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L29">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess_Dispose_" data-uid="Moca.Db.DbAccess.Dispose*"></a>
+  <h4 id="Moca_Db_DbAccess_Dispose_System_Boolean_" data-uid="Moca.Db.DbAccess.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">disposing</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Moca.Db.AbstractDao.html#Moca_Db_AbstractDao_Dispose_System_Boolean_">AbstractDao.Dispose(Boolean)</a></div>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess_ExecuteNonQuery_Moca_Db_IDbCommandDDL_.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.ExecuteNonQuery(Moca.Db.IDbCommandDDL)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L334">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess_ExecuteNonQuery_" data-uid="Moca.Db.DbAccess.ExecuteNonQuery*"></a>
+  <h4 id="Moca_Db_DbAccess_ExecuteNonQuery_Moca_Db_IDbCommandDDL_" data-uid="Moca.Db.DbAccess.ExecuteNonQuery(Moca.Db.IDbCommandDDL)">IDbAccess.ExecuteNonQuery(IDbCommandDDL)</h4>
+  <div class="markdown level1 summary"><p>DDLの実行</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int IDbAccess.ExecuteNonQuery(IDbCommandDDL commandWrapper)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.IDbCommandDDL.html">IDbCommandDDL</a></td>
+        <td><span class="parametername">commandWrapper</span></td>
+        <td><p>DDLを実行する為のDBCommandのラッパーインスタンス</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>更新件数</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbAccess.html#Moca_Db_IDbAccess_ExecuteNonQuery_Moca_Db_IDbCommandDDL_">IDbAccess.ExecuteNonQuery(IDbCommandDDL)</a></div>
+  <h5 id="Moca_Db_DbAccess_ExecuteNonQuery_Moca_Db_IDbCommandDDL__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>当メソッドを使用する場合は、トランザクションの開始<a class="xref" href="Moca.Db.DbAccess.html#Moca_Db_DbAccess_TransactionStart">IDbAccess.TransactionStart()</a>、終了<a class="xref" href="Moca.Db.DbAccess.html#Moca_Db_DbAccess_TransactionEnd">IDbAccess.TransactionEnd()</a>を行ってください。</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.DbAccessException.html">DbAccessException</a></td>
+        <td><p>DBアクセスでエラーが発生した</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess_ExecuteNonQuery_Moca_Db_IDbCommandDelete_.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.ExecuteNonQuery(Moca.Db.IDbCommandDelete)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L304">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess_ExecuteNonQuery_" data-uid="Moca.Db.DbAccess.ExecuteNonQuery*"></a>
+  <h4 id="Moca_Db_DbAccess_ExecuteNonQuery_Moca_Db_IDbCommandDelete_" data-uid="Moca.Db.DbAccess.ExecuteNonQuery(Moca.Db.IDbCommandDelete)">IDbAccess.ExecuteNonQuery(IDbCommandDelete)</h4>
+  <div class="markdown level1 summary"><p>DELETE文の実行</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int IDbAccess.ExecuteNonQuery(IDbCommandDelete commandWrapper)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.IDbCommandDelete.html">IDbCommandDelete</a></td>
+        <td><span class="parametername">commandWrapper</span></td>
+        <td><p>DELETE文を実行する為のDBCommandのラッパーインスタンス</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>更新件数</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbAccess.html#Moca_Db_IDbAccess_ExecuteNonQuery_Moca_Db_IDbCommandDelete_">IDbAccess.ExecuteNonQuery(IDbCommandDelete)</a></div>
+  <h5 id="Moca_Db_DbAccess_ExecuteNonQuery_Moca_Db_IDbCommandDelete__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>当メソッドを使用する場合は、トランザクションの開始<a class="xref" href="Moca.Db.DbAccess.html#Moca_Db_DbAccess_TransactionStart">IDbAccess.TransactionStart()</a>、終了<a class="xref" href="Moca.Db.DbAccess.html#Moca_Db_DbAccess_TransactionEnd">IDbAccess.TransactionEnd()</a>を行ってください。</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.DbAccessException.html">DbAccessException</a></td>
+        <td><p>DBアクセスでエラーが発生した</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess_ExecuteNonQuery_Moca_Db_IDbCommandInsert_.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.ExecuteNonQuery(Moca.Db.IDbCommandInsert)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L274">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess_ExecuteNonQuery_" data-uid="Moca.Db.DbAccess.ExecuteNonQuery*"></a>
+  <h4 id="Moca_Db_DbAccess_ExecuteNonQuery_Moca_Db_IDbCommandInsert_" data-uid="Moca.Db.DbAccess.ExecuteNonQuery(Moca.Db.IDbCommandInsert)">IDbAccess.ExecuteNonQuery(IDbCommandInsert)</h4>
+  <div class="markdown level1 summary"><p>INSERT文の実行</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int IDbAccess.ExecuteNonQuery(IDbCommandInsert commandWrapper)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.IDbCommandInsert.html">IDbCommandInsert</a></td>
+        <td><span class="parametername">commandWrapper</span></td>
+        <td><p>INSERT文を実行する為のDBCommandのラッパーインスタンス</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>更新件数</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbAccess.html#Moca_Db_IDbAccess_ExecuteNonQuery_Moca_Db_IDbCommandInsert_">IDbAccess.ExecuteNonQuery(IDbCommandInsert)</a></div>
+  <h5 id="Moca_Db_DbAccess_ExecuteNonQuery_Moca_Db_IDbCommandInsert__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>当メソッドを使用する場合は、トランザクションの開始<a class="xref" href="Moca.Db.DbAccess.html#Moca_Db_DbAccess_TransactionStart">IDbAccess.TransactionStart()</a>、終了<a class="xref" href="Moca.Db.DbAccess.html#Moca_Db_DbAccess_TransactionEnd">IDbAccess.TransactionEnd()</a>を行ってください。</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.DbAccessException.html">DbAccessException</a></td>
+        <td><p>DBアクセスでエラーが発生した</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess_ExecuteNonQuery_Moca_Db_IDbCommandSelect4Update_.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.ExecuteNonQuery(Moca.Db.IDbCommandSelect4Update)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L347">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess_ExecuteNonQuery_" data-uid="Moca.Db.DbAccess.ExecuteNonQuery*"></a>
+  <h4 id="Moca_Db_DbAccess_ExecuteNonQuery_Moca_Db_IDbCommandSelect4Update_" data-uid="Moca.Db.DbAccess.ExecuteNonQuery(Moca.Db.IDbCommandSelect4Update)">IDbAccess.ExecuteNonQuery(IDbCommandSelect4Update)</h4>
+  <div class="markdown level1 summary"><p>データを更新</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int IDbAccess.ExecuteNonQuery(IDbCommandSelect4Update commandWrapper)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.IDbCommandSelect4Update.html">IDbCommandSelect4Update</a></td>
+        <td><span class="parametername">commandWrapper</span></td>
+        <td><p>更新を実行する為のDBCommandのラッパーインスタンス</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbAccess.html#Moca_Db_IDbAccess_ExecuteNonQuery_Moca_Db_IDbCommandSelect4Update_">IDbAccess.ExecuteNonQuery(IDbCommandSelect4Update)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.DbAccessException.html">DbAccessException</a></td>
+        <td><p>DBアクセスでエラーが発生した</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess_ExecuteNonQuery_Moca_Db_IDbCommandStoredProcedure_.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.ExecuteNonQuery(Moca.Db.IDbCommandStoredProcedure)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L319">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess_ExecuteNonQuery_" data-uid="Moca.Db.DbAccess.ExecuteNonQuery*"></a>
+  <h4 id="Moca_Db_DbAccess_ExecuteNonQuery_Moca_Db_IDbCommandStoredProcedure_" data-uid="Moca.Db.DbAccess.ExecuteNonQuery(Moca.Db.IDbCommandStoredProcedure)">IDbAccess.ExecuteNonQuery(IDbCommandStoredProcedure)</h4>
+  <div class="markdown level1 summary"><p>ストアドの実行</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int IDbAccess.ExecuteNonQuery(IDbCommandStoredProcedure commandWrapper)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.IDbCommandStoredProcedure.html">IDbCommandStoredProcedure</a></td>
+        <td><span class="parametername">commandWrapper</span></td>
+        <td><p>ストアドを実行する為のDBCommandのラッパーインスタンス</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>更新件数</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbAccess.html#Moca_Db_IDbAccess_ExecuteNonQuery_Moca_Db_IDbCommandStoredProcedure_">IDbAccess.ExecuteNonQuery(IDbCommandStoredProcedure)</a></div>
+  <h5 id="Moca_Db_DbAccess_ExecuteNonQuery_Moca_Db_IDbCommandStoredProcedure__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>当メソッドを使用する場合は、トランザクションの開始<a class="xref" href="Moca.Db.DbAccess.html#Moca_Db_DbAccess_TransactionStart">IDbAccess.TransactionStart()</a>、終了<a class="xref" href="Moca.Db.DbAccess.html#Moca_Db_DbAccess_TransactionEnd">IDbAccess.TransactionEnd()</a>を行ってください。</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.DbAccessException.html">DbAccessException</a></td>
+        <td><p>DBアクセスでエラーが発生した</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess_ExecuteNonQuery_Moca_Db_IDbCommandUpdate_.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.ExecuteNonQuery(Moca.Db.IDbCommandUpdate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L289">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess_ExecuteNonQuery_" data-uid="Moca.Db.DbAccess.ExecuteNonQuery*"></a>
+  <h4 id="Moca_Db_DbAccess_ExecuteNonQuery_Moca_Db_IDbCommandUpdate_" data-uid="Moca.Db.DbAccess.ExecuteNonQuery(Moca.Db.IDbCommandUpdate)">IDbAccess.ExecuteNonQuery(IDbCommandUpdate)</h4>
+  <div class="markdown level1 summary"><p>UPDATE文の実行</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int IDbAccess.ExecuteNonQuery(IDbCommandUpdate commandWrapper)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.IDbCommandUpdate.html">IDbCommandUpdate</a></td>
+        <td><span class="parametername">commandWrapper</span></td>
+        <td><p>UPDATE文を実行する為のDBCommandのラッパーインスタンス</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>更新件数</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbAccess.html#Moca_Db_IDbAccess_ExecuteNonQuery_Moca_Db_IDbCommandUpdate_">IDbAccess.ExecuteNonQuery(IDbCommandUpdate)</a></div>
+  <h5 id="Moca_Db_DbAccess_ExecuteNonQuery_Moca_Db_IDbCommandUpdate__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>当メソッドを使用する場合は、トランザクションの開始<a class="xref" href="Moca.Db.DbAccess.html#Moca_Db_DbAccess_TransactionStart">IDbAccess.TransactionStart()</a>、終了<a class="xref" href="Moca.Db.DbAccess.html#Moca_Db_DbAccess_TransactionEnd">IDbAccess.TransactionEnd()</a>を行ってください。</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.DbAccessException.html">DbAccessException</a></td>
+        <td><p>DBアクセスでエラーが発生した</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess_NewTransactionScope.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.NewTransactionScope%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L96">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess_NewTransactionScope_" data-uid="Moca.Db.DbAccess.NewTransactionScope*"></a>
+  <h4 id="Moca_Db_DbAccess_NewTransactionScope" data-uid="Moca.Db.DbAccess.NewTransactionScope">IDbAccess.NewTransactionScope()</h4>
+  <div class="markdown level1 summary"><p>トランザクションスコープを作成する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TransactionScope IDbAccess.NewTransactionScope()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Transactions.TransactionScope</span></td>
+        <td><p>トランザクションスコープ</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbAccess.html#Moca_Db_IDbAccess_NewTransactionScope">IDbAccess.NewTransactionScope()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess_Transaction.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.Transaction%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L82">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess_Transaction_" data-uid="Moca.Db.DbAccess.Transaction*"></a>
+  <h4 id="Moca_Db_DbAccess_Transaction" data-uid="Moca.Db.DbAccess.Transaction">IDbAccess.Transaction</h4>
+  <div class="markdown level1 summary"><p>トランザクションオブジェクト</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IDbTransaction IDbAccess.Transaction { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbTransaction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbAccess.html#Moca_Db_IDbAccess_Transaction">IDbAccess.Transaction</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess_TransactionBinding_Moca_Db_IDbAccess_.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.TransactionBinding(Moca.Db.IDbAccess)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L167">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess_TransactionBinding_" data-uid="Moca.Db.DbAccess.TransactionBinding*"></a>
+  <h4 id="Moca_Db_DbAccess_TransactionBinding_Moca_Db_IDbAccess_" data-uid="Moca.Db.DbAccess.TransactionBinding(Moca.Db.IDbAccess)">IDbAccess.TransactionBinding(IDbAccess)</h4>
+  <div class="markdown level1 summary"><p>他のDBAccessクラスとトランザクションを同じにする</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void IDbAccess.TransactionBinding(IDbAccess dba)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.IDbAccess.html">IDbAccess</a></td>
+        <td><span class="parametername">dba</span></td>
+        <td><p>同期するDbAccessインスタンス</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbAccess.html#Moca_Db_IDbAccess_TransactionBinding_Moca_Db_IDbAccess_">IDbAccess.TransactionBinding(IDbAccess)</a></div>
+  <h5 id="Moca_Db_DbAccess_TransactionBinding_Moca_Db_IDbAccess__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>コネクションオブジェクトとトランザクションオブジェクトを指定されたDbAccessのオブジェクトで上書きします。</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess_TransactionComplete.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.TransactionComplete%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L116">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess_TransactionComplete_" data-uid="Moca.Db.DbAccess.TransactionComplete*"></a>
+  <h4 id="Moca_Db_DbAccess_TransactionComplete" data-uid="Moca.Db.DbAccess.TransactionComplete">IDbAccess.TransactionComplete()</h4>
+  <div class="markdown level1 summary"><p>トランザクションスコープを完了する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void IDbAccess.TransactionComplete()</code></pre>
+  </div>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbAccess.html#Moca_Db_IDbAccess_TransactionComplete">IDbAccess.TransactionComplete()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess_TransactionEnd.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.TransactionEnd%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L181">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess_TransactionEnd_" data-uid="Moca.Db.DbAccess.TransactionEnd*"></a>
+  <h4 id="Moca_Db_DbAccess_TransactionEnd" data-uid="Moca.Db.DbAccess.TransactionEnd">IDbAccess.TransactionEnd()</h4>
+  <div class="markdown level1 summary"><p>トランザクションを終了する（コミット）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void IDbAccess.TransactionEnd()</code></pre>
+  </div>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbAccess.html#Moca_Db_IDbAccess_TransactionEnd">IDbAccess.TransactionEnd()</a></div>
+  <h5 id="Moca_Db_DbAccess_TransactionEnd_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>DBとの接続を切断します。</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.DbAccessException.html">DbAccessException</a></td>
+        <td><p>DBアクセスでエラーが発生した</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess_TransactionRollback.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.TransactionRollback%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L208">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess_TransactionRollback_" data-uid="Moca.Db.DbAccess.TransactionRollback*"></a>
+  <h4 id="Moca_Db_DbAccess_TransactionRollback" data-uid="Moca.Db.DbAccess.TransactionRollback">IDbAccess.TransactionRollback()</h4>
+  <div class="markdown level1 summary"><p>トランザクションをロールバックする</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void IDbAccess.TransactionRollback()</code></pre>
+  </div>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbAccess.html#Moca_Db_IDbAccess_TransactionRollback">IDbAccess.TransactionRollback()</a></div>
+  <h5 id="Moca_Db_DbAccess_TransactionRollback_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>DBとの接続を切断します。</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.DbAccessException.html">DbAccessException</a></td>
+        <td><p>DBアクセスでエラーが発生した</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess_TransactionScope.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.TransactionScope%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L70">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess_TransactionScope_" data-uid="Moca.Db.DbAccess.TransactionScope*"></a>
+  <h4 id="Moca_Db_DbAccess_TransactionScope" data-uid="Moca.Db.DbAccess.TransactionScope">IDbAccess.TransactionScope</h4>
+  <div class="markdown level1 summary"><p>トランザクションスコープオブジェクト</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TransactionScope IDbAccess.TransactionScope { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Transactions.TransactionScope</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbAccess.html#Moca_Db_IDbAccess_TransactionScope">IDbAccess.TransactionScope</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess_TransactionStart.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess.TransactionStart%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L145">View Source</a>
+  </span>
+  <a id="Moca_Db_DbAccess_TransactionStart_" data-uid="Moca.Db.DbAccess.TransactionStart*"></a>
+  <h4 id="Moca_Db_DbAccess_TransactionStart" data-uid="Moca.Db.DbAccess.TransactionStart">IDbAccess.TransactionStart()</h4>
+  <div class="markdown level1 summary"><p>トランザクションを開始する</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void IDbAccess.TransactionStart()</code></pre>
+  </div>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="Moca.Db.IDbAccess.html#Moca_Db_IDbAccess_TransactionStart">IDbAccess.TransactionStart()</a></div>
+  <h5 id="Moca_Db_DbAccess_TransactionStart_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>トランザクションを使用する場合は事前にDBへの接続が必要な為、自動でDBとの接続を行います。</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Moca.Db.DbAccessException.html">DbAccessException</a></td>
+        <td><p>DBアクセスでエラーが発生した</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_DbAccess.md&amp;value=---%0Auid%3A%20Moca.Db.DbAccess%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/DbAccess.vb/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

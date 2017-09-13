@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IDbCommandSelect4Update
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IDbCommandSelect4Update
+   ">
+    <meta name="generator" content="docfx 2.23.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Moca.Db.IDbCommandSelect4Update">
+  
+  
+  <h1 id="Moca_Db_IDbCommandSelect4Update" data-uid="Moca.Db.IDbCommandSelect4Update" class="text-break">Interface IDbCommandSelect4Update
+  </h1>
+  <div class="markdown level0 summary"><p>SELECT文を実行し、DataSetを使ってUPDATEする為のDBCommandのラッピングするインタフェース</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSelect.html#Moca_Db_IDbCommandSelect_Behavior">IDbCommandSelect.Behavior</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSelect.html#Moca_Db_IDbCommandSelect_ResultDataSet">IDbCommandSelect.ResultDataSet</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSelect.html#Moca_Db_IDbCommandSelect_Result1stTable">IDbCommandSelect.Result1stTable</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSelect.html#Moca_Db_IDbCommandSelect_Result1stTableRowEnumerator">IDbCommandSelect.Result1stTableRowEnumerator</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSelect.html#Moca_Db_IDbCommandSelect_Result1stTableEntitis__1">IDbCommandSelect.Result1stTableEntitis&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSelect.html#Moca_Db_IDbCommandSelect_Result1stTableEntity__1_System_Int32_">IDbCommandSelect.Result1stTableEntity&lt;T&gt;(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSelect.html#Moca_Db_IDbCommandSelect_ResultConstantDataSet_System_String_System_String_System_Boolean_System_Object_System_String_">IDbCommandSelect.ResultConstantDataSet(String, String, Boolean, Object, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSelect.html#Moca_Db_IDbCommandSelect_ResultConstantDataSet_System_Int32_System_Int32_System_Boolean_System_Object_System_String_">IDbCommandSelect.ResultConstantDataSet(Int32, Int32, Boolean, Object, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSelect.html#Moca_Db_IDbCommandSelect_ExecuteScalar">IDbCommandSelect.ExecuteScalar()</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSelect.html#Moca_Db_IDbCommandSelect_Execute__1">IDbCommandSelect.Execute&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSelect.html#Moca_Db_IDbCommandSelect_NextResult__1">IDbCommandSelect.NextResult&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_Command">IDbCommandSql.Command</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_PreparedStatement">IDbCommandSql.PreparedStatement</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_CommandText">IDbCommandSql.CommandText</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_ResultOutParameter">IDbCommandSql.ResultOutParameter</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_SetParameter_System_String_System_Object_">IDbCommandSql.SetParameter(String, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_SetParameter_System_String_System_Array_">IDbCommandSql.SetParameter(String, Array)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_AddInParameter_System_String_System_Data_DbType_">IDbCommandSql.AddInParameter(String, DbType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_AddInParameter_System_String_System_Data_DbType_System_Int32_">IDbCommandSql.AddInParameter(String, DbType, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_AddOutParameter_System_String_">IDbCommandSql.AddOutParameter(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_AddOutParameter_System_String_System_Data_DbType_">IDbCommandSql.AddOutParameter(String, DbType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_HaveOutParameter">IDbCommandSql.HaveOutParameter()</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_GetParameterValue_System_String_">IDbCommandSql.GetParameterValue(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_Prepare">IDbCommandSql.Prepare()</a>
+    </div>
+    <div>
+      <a class="xref" href="Moca.Db.IDbCommandSql.html#Moca_Db_IDbCommandSql_Execute">IDbCommandSql.Execute()</a>
+    </div>
+    <div>
+      <span class="xref">System.IDisposable.Dispose()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Moca.Db.html">Moca.Db</a></h6>
+  <h6><strong>Assembly</strong>: Moca.dll</h6>
+  <h5 id="Moca_Db_IDbCommandSelect4Update_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IDbCommandSelect4Update : IDbCommandSelect, IDbCommandSql, IDisposable</code></pre>
+  </div>
+  <h5 id="Moca_Db_IDbCommandSelect4Update_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><example>
+<pre><code>Using dba As IDbAccess = New DbAccess(&quot;Connection String&quot;)
+    Using cmd As IDbCommandSelect4Update = dba.CreateCommandSelect4Update(&quot;SELECT * FROM TableName&quot;)
+        If cmd.Execute() &lt;= 0 Then
+            Return Nothing
+        End If
+
+        ... cmd.ResultDataSet に対して更新処理 ...
+
+        Dim rc As Integer
+        rc = cmd.Update()
+        Debug.Print(rc)
+    End Using
+End Using</code></pre>
+</example>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_IDbCommandSelect4Update_Adapter.md&amp;value=---%0Auid%3A%20Moca.Db.IDbCommandSelect4Update.Adapter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/IDbCommandSelect4Update.vb/#L37">View Source</a>
+  </span>
+  <a id="Moca_Db_IDbCommandSelect4Update_Adapter_" data-uid="Moca.Db.IDbCommandSelect4Update.Adapter*"></a>
+  <h4 id="Moca_Db_IDbCommandSelect4Update_Adapter" data-uid="Moca.Db.IDbCommandSelect4Update.Adapter">Adapter</h4>
+  <div class="markdown level1 summary"><p>アダプタインスタンス</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDbDataAdapter Adapter { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbDataAdapter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_IDbCommandSelect4Update_Update.md&amp;value=---%0Auid%3A%20Moca.Db.IDbCommandSelect4Update.Update%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/IDbCommandSelect4Update.vb/#L46">View Source</a>
+  </span>
+  <a id="Moca_Db_IDbCommandSelect4Update_Update_" data-uid="Moca.Db.IDbCommandSelect4Update.Update*"></a>
+  <h4 id="Moca_Db_IDbCommandSelect4Update_Update" data-uid="Moca.Db.IDbCommandSelect4Update.Update">Update()</h4>
+  <div class="markdown level1 summary"><p>Adapter Update 実行！</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int Update()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/mocanet/MocaCore/new/master/apiSpec/new?filename=Moca_Db_IDbCommandSelect4Update.md&amp;value=---%0Auid%3A%20Moca.Db.IDbCommandSelect4Update%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/mocanet/MocaCore/blob/master/MocaCore/Db/IDbCommandSelect4Update.vb/#L26" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

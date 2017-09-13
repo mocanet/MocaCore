@@ -1,0 +1,2390 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/moka/Source/Repos/Moca.NET/MocaCore/Docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "RAmmrmkz6NKfnsYXV/Ks+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "AZhwIFBkFlEVgJcG6NqctA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "MthxFYC+doDRUguh/vpudA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "Ae1AwST6EhAn0bkp0aLrlg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Accessor-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Accessor-2.html",
+          "hash": "sSCZ4r4W7vip7zcSseZFmw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Action.ActionManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Action.ActionManager.html",
+          "hash": "GBOqOS2NxgS1qlKMIowGsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Action.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Action.html",
+          "hash": "+j65LLHvi/iF+0cKunOLbA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Ad.AdUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Ad.AdUtil.html",
+          "hash": "oGMQ491cKF+XxPsbSQdMBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Ad.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Ad.html",
+          "hash": "1mY/hYvSs9fzRV/kb2xJSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Aop.AopProxy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Aop.AopProxy.html",
+          "hash": "bhwAu5JG9ffw+RooO9U56A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Aop.Aspect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Aop.Aspect.html",
+          "hash": "UK1qJ9Jz5BIK74UZexp+hw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Aop.IAdvice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Aop.IAdvice.html",
+          "hash": "wjVgaDtrQPuECeorfoLwGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Aop.IAspect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Aop.IAspect.html",
+          "hash": "y2kNg+0H46gbKUlhGewqsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Aop.IInterceptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Aop.IInterceptor.html",
+          "hash": "oCnfltXJp4vxx1Y7kSpGrg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Aop.IInvocation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Aop.IInvocation.html",
+          "hash": "YlaPqfDRz1PnA3fOEInjUg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Aop.IJoinpoint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Aop.IJoinpoint.html",
+          "hash": "gphBVwb7Qo0W8VfHlq4peg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Aop.IMethodInterceptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Aop.IMethodInterceptor.html",
+          "hash": "8eJh6bBMR/1jBHzLebJpeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Aop.IMethodInvocation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Aop.IMethodInvocation.html",
+          "hash": "6JQ1epRuQgO0WN8Q7g2xvg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Aop.IPointcut.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Aop.IPointcut.html",
+          "hash": "avuWHpLJdKR6WkhxGCQnJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Aop.MethodInvocation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Aop.MethodInvocation.html",
+          "hash": "uNPCg+/7zRs46pe+xw7d/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Aop.Pointcut.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Aop.Pointcut.html",
+          "hash": "rF74BUO/7j9GhHMz8vbthg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Aop.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Aop.html",
+          "hash": "gqJERzQAobeK7GooUkR7QA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Attr.AspectAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Attr.AspectAttribute.html",
+          "hash": "L2mVm1v4hoF7EBnDrWMIMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Attr.AspectAttributeAnalyzer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Attr.AspectAttributeAnalyzer.html",
+          "hash": "fde4Ywb1IiF2bwT44R0xEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Attr.AttributeAnalyzer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Attr.AttributeAnalyzer.html",
+          "hash": "MIjUavjDnHGPddFICM0a9g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Attr.AttributeAnalyzerTargets.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Attr.AttributeAnalyzerTargets.html",
+          "hash": "TuqxSQTrDHPhNRZxjowQXw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Attr.BindControlAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Attr.BindControlAttribute.html",
+          "hash": "kp4fGwCQNx5AJ3eMKFd3Vw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Attr.CaptionAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Attr.CaptionAttribute.html",
+          "hash": "ftirdr/INhWtij33DPzaXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Attr.FormatAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Attr.FormatAttribute.html",
+          "hash": "CVcnsgjAocVAH0+7ndn+ew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Attr.IAttributeAnalyzer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Attr.IAttributeAnalyzer.html",
+          "hash": "9yBxXLyc2pxWcSyqkDpfCQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Attr.ImplementationAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Attr.ImplementationAttribute.html",
+          "hash": "HHkK6kvdhrSfPVi3OsyMFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Attr.ImplementationAttributeAnalyzer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Attr.ImplementationAttributeAnalyzer.html",
+          "hash": "jAjLKLYKVXVZVT8C7I3S3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Attr.MocaFieldInject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Attr.MocaFieldInject.html",
+          "hash": "WTUkHdfOEJN5C4lQod98UQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Attr.MocaFieldInjectType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Attr.MocaFieldInjectType.html",
+          "hash": "b2vgbjK+v9VfzNLnnN4IWg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Attr.ValidateAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Attr.ValidateAttribute.html",
+          "hash": "67hBDB8BP9a3rNaDC5q9BQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Attr.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Attr.html",
+          "hash": "AbqzZdC6LnLN9IVYhyynVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Config.MocaConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Config.MocaConfiguration.html",
+          "hash": "+zGSySZ2QRJKO1lZpRTbiw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Config.MocaSectionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Config.MocaSectionHandler.html",
+          "hash": "SgUS/Rbe0wjZrYINBGItdg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Config.TransactionElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Config.TransactionElement.html",
+          "hash": "3B8at9VJhDMzFh9geTZ6dw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Config.TransactionType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Config.TransactionType.html",
+          "hash": "28RuCPTNAULJbgtrJHBuYg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Config.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Config.html",
+          "hash": "vCG70IH8GLUo3jUTyKFEzQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.ConstantDataSet.ConstantDataTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.ConstantDataSet.ConstantDataTable.html",
+          "hash": "AuVPIzwOHSSzbFdSNvorkg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.ConstantDataSet.ConstantRow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.ConstantDataSet.ConstantRow.html",
+          "hash": "hv85UZEeOmmS9uS3N4kBaA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.ConstantDataSet.ConstantRowChangeEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.ConstantDataSet.ConstantRowChangeEvent.html",
+          "hash": "JmTFIxCOqpoREi6A3hEYoQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.ConstantDataSet.ConstantRowChangeEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.ConstantDataSet.ConstantRowChangeEventHandler.html",
+          "hash": "HWGs5OoHT91mm7RAKZCElw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.ConstantDataSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.ConstantDataSet.html",
+          "hash": "7ZArXwkqhd2XB4zvV4aG4A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.CultureUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.CultureUtil.html",
+          "hash": "N5FXnVCU8aA4eMirNixAUA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.AbstractDao.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.AbstractDao.html",
+          "hash": "UIoucdg3G3YUweaR85apkg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Attr.ColumnAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Attr.ColumnAttribute.html",
+          "hash": "BroBEBbiSJex071Wpp6+Pg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Attr.ColumnIgnoreAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Attr.ColumnIgnoreAttribute.html",
+          "hash": "UvzN4Tvdg5HYWQgdP+0PFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Attr.DaoAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Attr.DaoAttribute.html",
+          "hash": "0aIfEy+tGdW91NQHbu8w/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Attr.DaoAttributeAnalyzer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Attr.DaoAttributeAnalyzer.html",
+          "hash": "R0njDAjR/bx6q9awbLm1pQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Attr.DbmsAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Attr.DbmsAttribute.html",
+          "hash": "d71UnoC7Kwj+aAw7R/iCmw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Attr.TableAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Attr.TableAttribute.html",
+          "hash": "YiBFXX7lM7G89Qfwp6aZ+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Attr.TableAttributeAnalyzer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Attr.TableAttributeAnalyzer.html",
+          "hash": "nBoudsZCaIbLRoTt98XEeg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Attr.TableDefinitionAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Attr.TableDefinitionAttribute.html",
+          "hash": "lzFRevfnny44J9ZkI8qYXg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Attr.TransactionAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Attr.TransactionAttribute.html",
+          "hash": "gRvVEqQISgG7CkF1TJ/27g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Attr.TransactionAttributeAnalyzer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Attr.TransactionAttributeAnalyzer.html",
+          "hash": "OpxQIZ4JxRY3vGvz7cYKsQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Attr.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Attr.html",
+          "hash": "uvVMCfoOUYJ0JuKYmBNmiQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.CommandWrapper.DDLCommandWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.CommandWrapper.DDLCommandWrapper.html",
+          "hash": "zh5pmQnKwPWr27LNmhgzbw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.CommandWrapper.DeleteCommandWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.CommandWrapper.DeleteCommandWrapper.html",
+          "hash": "84kjgT7jIF8Rvk6rPQWFDQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.CommandWrapper.InsertCommandWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.CommandWrapper.InsertCommandWrapper.html",
+          "hash": "EMZm01QJBdS4ko7Cgg7djg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.CommandWrapper.Select4UpdateCommandWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.CommandWrapper.Select4UpdateCommandWrapper.html",
+          "hash": "zKfrPbAyzix4XpA9NsmLow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.CommandWrapper.SelectCommandWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.CommandWrapper.SelectCommandWrapper.html",
+          "hash": "xrye8TtPHv/42YTvZmWUZw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.CommandWrapper.SqlCommandWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.CommandWrapper.SqlCommandWrapper.html",
+          "hash": "yr4s9czG0yKPT290jy2mwQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.CommandWrapper.StoredProcedureCommandWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.CommandWrapper.StoredProcedureCommandWrapper.html",
+          "hash": "W6YHkL1ty1gG8CCOmbKPHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.CommandWrapper.UpdateCommandWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.CommandWrapper.UpdateCommandWrapper.html",
+          "hash": "TEYNpkHd2t7kR0Cbwqh6rg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.CommandWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.CommandWrapper.html",
+          "hash": "hJodNbkzSTmauMhcxljiAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.DbAccess.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.DbAccess.html",
+          "hash": "Xnh3f08AQIs4ONesnGIERQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.DbAccessException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.DbAccessException.html",
+          "hash": "ytI94z4kESg3dB4OOmBSfQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.DbInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.DbInfo.html",
+          "hash": "fnmmCYHdM7MjdkHroFnO3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.DbInfoColumn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.DbInfoColumn.html",
+          "hash": "2GSEgMUueRLg/ZMad1LedQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.DbInfoColumnCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.DbInfoColumnCollection.html",
+          "hash": "0WyJRz2nnRMTM40CZuoybg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.DbInfoFunction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.DbInfoFunction.html",
+          "hash": "IY/9CiLojioXDa0XW/wEBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.DbInfoFunctionCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.DbInfoFunctionCollection.html",
+          "hash": "VOHs4g6gQiUMC44Hzqg5dg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.DbInfoProcedure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.DbInfoProcedure.html",
+          "hash": "1hKOioeVoKqo9rHHkv4PIQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.DbInfoProcedureCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.DbInfoProcedureCollection.html",
+          "hash": "tom1Y5k6iSflsb9Y3LqBDQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.DbInfoTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.DbInfoTable.html",
+          "hash": "H2VNwWnVFQsSVMxQ1HPNcg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.DbInfoTableCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.DbInfoTableCollection.html",
+          "hash": "1FFfUs5hBfCQnQQOhNPtRA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.DbSetting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.DbSetting.html",
+          "hash": "oXf6S/vOfZhH3Ll4YXSRsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.DbUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.DbUtil.html",
+          "hash": "GoRrEnRWlVjh2VLX5FDQ8A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Dbms.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Dbms.html",
+          "hash": "gl1eY5Im+r2rM9WMBAjMMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.DbmsManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.DbmsManager.html",
+          "hash": "wuQbdweTxdYq0lRGgZXMvA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.EntityBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.EntityBuilder.html",
+          "hash": "DqhKe6mHCOUkL6NBo5/KaA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.ExecuteReaderResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.ExecuteReaderResult.html",
+          "hash": "J3ey+GQLDiUpI+VGxyvEtQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.DbAccessHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.DbAccessHelper.html",
+          "hash": "Pzts1l4nqngLonFhVExxyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.DbAccessHelperFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.DbAccessHelperFactory.html",
+          "hash": "/OVq13EdGt4HB8MhXx6ZFA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.OdbcAccessHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.OdbcAccessHelper.html",
+          "hash": "CJte2KnE5FlFbHZjgqVZnQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.OdbcErrorNumbers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.OdbcErrorNumbers.html",
+          "hash": "pagTjhyEC6h9yYMmFNzjGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.OleDbAccessHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.OleDbAccessHelper.html",
+          "hash": "Us5Zv0ynCGl6bsJF2wf+3w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.OleDbErrorNumbers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.OleDbErrorNumbers.html",
+          "hash": "TgUfICgctWa84lQ8Jz8Dbw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.OleDbOraAccessHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.OleDbOraAccessHelper.html",
+          "hash": "2D9ZoWoVHbWdXDwEq8lmTA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.OleDbOracleErrorNumbers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.OleDbOracleErrorNumbers.html",
+          "hash": "ul3YkiSL0wImmhvsdIkFLg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.OleDbSQLAccessHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.OleDbSQLAccessHelper.html",
+          "hash": "U/PFgpVFsoff4ckJXPFWaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.OracleAccessHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.OracleAccessHelper.html",
+          "hash": "hGWR9jMMX3TDKBe6gSvBMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.OracleErrorNumbers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.OracleErrorNumbers.html",
+          "hash": "//y2pXUo+wxjKM/rt/a9ng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.OracleMSAccessHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.OracleMSAccessHelper.html",
+          "hash": "h0sWx1PhPxZXyrzLi/WzxA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.OracleMSErrorNumbers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.OracleMSErrorNumbers.html",
+          "hash": "jCIqYJ14yOLPseIB9ltrkQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.SqlCeDbAccessHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.SqlCeDbAccessHelper.html",
+          "hash": "HIaCTCjVkfZXPRbZ1G2XmA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.SqlCeErrorNumbers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.SqlCeErrorNumbers.html",
+          "hash": "hYgqfNCcCwtZeT7z+i1S+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.SqlDbAccessHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.SqlDbAccessHelper.html",
+          "hash": "hdQaysEH+GcpQMwbFe6IvA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.SqlDbErrorNumbers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.SqlDbErrorNumbers.html",
+          "hash": "yUWveuyPOnXD5BxY1+r5Bg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Helper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Helper.html",
+          "hash": "gFAHKedfCDhY8XxzaLb72A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.IDao.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.IDao.html",
+          "hash": "apTWXbjyDoF2helQxHKI/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.IDaoCancel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.IDaoCancel.html",
+          "hash": "PB3S9eH/SMaKiUITi8F+xw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.IDbAccess.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.IDbAccess.html",
+          "hash": "EFDtMbU6u/zHQ8LIQRKj9A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.IDbAccessHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.IDbAccessHelper.html",
+          "hash": "PCkE0NvfmFKD0g7Blnlv8w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.IDbCommandDDL.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.IDbCommandDDL.html",
+          "hash": "LZb4Cc88pUUFMYlIvkN15g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.IDbCommandDelete.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.IDbCommandDelete.html",
+          "hash": "DbJLvYMDjNRfshaywXh0yA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.IDbCommandInsert.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.IDbCommandInsert.html",
+          "hash": "03XPnC0yYWPwUnkE6sqllQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.IDbCommandSelect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.IDbCommandSelect.html",
+          "hash": "eaoX9g/YPGSsZlIheRj8og=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.IDbCommandSelect4Update.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.IDbCommandSelect4Update.html",
+          "hash": "QHU7FDsU8Rb13doJqnXlsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.IDbCommandSql.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.IDbCommandSql.html",
+          "hash": "ehgzWo+PkvmwCaW/bz8pmA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.IDbCommandStoredProcedure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.IDbCommandStoredProcedure.html",
+          "hash": "Hf78XmdBzzGWCgtJ9GALwg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.IDbCommandUpdate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.IDbCommandUpdate.html",
+          "hash": "wl/7PXHIx3erEjmiMsQeFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.ISQLStatementResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.ISQLStatementResult.html",
+          "hash": "3GS79Dg6tWceLxnIcX1RbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Interceptor.AbstractDaoInterceptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Interceptor.AbstractDaoInterceptor.html",
+          "hash": "ZyIQJkj3PiOqdf5f+7HI/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Interceptor.ColumnInfoInterceptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Interceptor.ColumnInfoInterceptor.html",
+          "hash": "fli2A592K2N6a0yjclcE9w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Interceptor.TableInfoInterceptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Interceptor.TableInfoInterceptor.html",
+          "hash": "XT1vk5MMbg1nNiXvAjwjJg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Interceptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Interceptor.html",
+          "hash": "fLCyGTvAdco1wzgdvfs2Rg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.OdbcSetting.ProviderType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.OdbcSetting.ProviderType.html",
+          "hash": "2otz/z1QLq8aMGFlSEu6OQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.OdbcSetting.RegistrationType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.OdbcSetting.RegistrationType.html",
+          "hash": "UzixWZGOWHtiIaDZv7n19Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.OdbcSetting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.OdbcSetting.html",
+          "hash": "l7esF/7/0ioZYKsua0Z6Vg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.SQLCommandTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.SQLCommandTypes.html",
+          "hash": "TVu3dq0l0eW3arUdZkNwCA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.SortDirectionValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.SortDirectionValue.html",
+          "hash": "k/VYixNadsz+HBDaPx4nIQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Tx.ITransactionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Tx.ITransactionContext.html",
+          "hash": "1UgSwGGWYPQjsjPEIlRdAg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Tx.Local.LocalTransactionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Tx.Local.LocalTransactionContext.html",
+          "hash": "gLeItH4MtkU0GQOwE2/xUg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Tx.Local.LocalTransactionManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Tx.Local.LocalTransactionManager.html",
+          "hash": "7PbHPRy1lPjEiTXYKQgRHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Tx.Local.LocalTransactionScope.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Tx.Local.LocalTransactionScope.html",
+          "hash": "0GwVkzbBzA5qvKJJyhnsRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Tx.Local.TransactionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Tx.Local.TransactionContext.html",
+          "hash": "VQpAZ0qgEUEwnoF1pjPdCQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Tx.Local.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Tx.Local.html",
+          "hash": "rIqLzrcgNgd9Toc/psTlsQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Tx.LocalTxInterceptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Tx.LocalTxInterceptor.html",
+          "hash": "vO+dWkbDT5QQlGh93Ropxg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Tx.ScopeTxInterceptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Tx.ScopeTxInterceptor.html",
+          "hash": "QF4gBbbrvpCUZA7R3ktg7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.Tx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.Tx.html",
+          "hash": "5xXI2hVXWMBk9GNQ7dGPag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Db.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Db.html",
+          "hash": "6wybcfY+7OBUU/fxkM3KKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Di.IContainer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Di.IContainer.html",
+          "hash": "Ly6VJpR1hrY4KDgO/5G7Vw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Di.MocaComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Di.MocaComponent.html",
+          "hash": "Se5DAiqYW5rqAInN2rXLcA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Di.MocaComponent4Db.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Di.MocaComponent4Db.html",
+          "hash": "N2mqhedZwb//ezEXyCKATQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Di.MocaContainer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Di.MocaContainer.html",
+          "hash": "5d4Iq/2Hr0YibJHdrloFvQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Di.MocaContainerFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Di.MocaContainerFactory.html",
+          "hash": "/7oYzES8QraGOWJZCtrczA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Di.MocaInjector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Di.MocaInjector.html",
+          "hash": "/HVGTvFVVkpW39RJwHEjOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Di.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Di.html",
+          "hash": "/jr4Hl9eYqwi0e2Xys8gyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Entity.AbstractEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Entity.AbstractEntity.html",
+          "hash": "TgTsRaPBOChQ+/Qyq6fk3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Entity.EntityBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Entity.EntityBase-1.html",
+          "hash": "evMemHNUIXQAxlyF7lJg9w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Entity.EntityInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Entity.EntityInfo.html",
+          "hash": "zD/roAV1v74jyrxIxDG4gA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Entity.EntityInfoCache.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Entity.EntityInfoCache.html",
+          "hash": "SQChB8CVhjGhPz/wPSrRGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Entity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Entity.html",
+          "hash": "RtBnj4gj01lZQBW3lvtLWw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.EntityList-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.EntityList-1.html",
+          "hash": "+yCrD9j84opYrPl7yD8gfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.EntityList-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.EntityList-2.html",
+          "hash": "G2iWdT+pFN8zlENOdBBKJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Exceptions.CommonException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Exceptions.CommonException.html",
+          "hash": "ZfXF2ol7mFZDwsbl1VXpZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Exceptions.MocaRuntimeException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Exceptions.MocaRuntimeException.html",
+          "hash": "DMobo+wukDIdpGOpk5hG8w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Exceptions.html",
+          "hash": "bR0ffl7ZADg0ubgSNFhQmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Html.AbstractTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Html.AbstractTag.html",
+          "hash": "xDaH9W2Pu48zQsgz1k3F4g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Html.TagTD.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Html.TagTD.html",
+          "hash": "zlLwUrpmqhIbIHvcxACr6A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Html.TagTR.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Html.TagTR.html",
+          "hash": "sXKdnLBn5CBQzNGlHR3obg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Html.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Html.html",
+          "hash": "7dyu4tCgRE4m6PL83r1pTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.IAccessor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.IAccessor.html",
+          "hash": "apQKPneDksNe+XHfTDg6Mw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.IEntityList-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.IEntityList-1.html",
+          "hash": "ZWsAL0TDPgXdvlPLR9Ba1g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.IEntityList-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.IEntityList-2.html",
+          "hash": "7b0Pq8Gukr93+tJ4ko0SmA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Install.ConfigProtectionInstaller.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Install.ConfigProtectionInstaller.html",
+          "hash": "AuqpHGm5z1lfloypxQMMIw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Install.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Install.html",
+          "hash": "pipHHutQwOM2SOHSQ38qoA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Interceptor.FieldGetterInterceptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Interceptor.FieldGetterInterceptor.html",
+          "hash": "Q1n2ZpiOCNwrP717/dnEZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Interceptor.FieldSetterInterceptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Interceptor.FieldSetterInterceptor.html",
+          "hash": "y15ol++EluML7rqp13c0Nw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Interceptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Interceptor.html",
+          "hash": "BSARmub+6bvr+9S29AIEpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Net.FtpClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Net.FtpClient.html",
+          "hash": "3+ES/nxVtT5BnkLlTvA0iQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Net.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Net.html",
+          "hash": "zZ/dzxX6+K7sDLNeibTpOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Security.DPAPIConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Security.DPAPIConfiguration.html",
+          "hash": "M6GrVDs5AAP6uhAbZSsOYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Security.DPAPICryptosystem.CRYPTPROTECT_PROMPTSTRUCT.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Security.DPAPICryptosystem.CRYPTPROTECT_PROMPTSTRUCT.html",
+          "hash": "2/cXXhciakA6AjCSfFCaTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Security.DPAPICryptosystem.CryptProtectPromptFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Security.DPAPICryptosystem.CryptProtectPromptFlags.html",
+          "hash": "4DxCD0MMXTJI1P61IsAK2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Security.DPAPICryptosystem.DATA_BLOB.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Security.DPAPICryptosystem.DATA_BLOB.html",
+          "hash": "cHBRh9JMXo5cuhpFFUr5iw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Security.DPAPICryptosystem.StoreType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Security.DPAPICryptosystem.StoreType.html",
+          "hash": "gexEHo6LGZRagkQCHIZFCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Security.DPAPICryptosystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Security.DPAPICryptosystem.html",
+          "hash": "cZsVz35tdmcHXtTX8+4C/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Security.HashCryptosystem.ComputeHashDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Security.HashCryptosystem.ComputeHashDelegate.html",
+          "hash": "oMTkvvVd4E53fG3uB19ciA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Security.HashCryptosystem.ComputeHashType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Security.HashCryptosystem.ComputeHashType.html",
+          "hash": "Kj/gvx1vz5E1MJoAc+K3wA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Security.HashCryptosystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Security.HashCryptosystem.html",
+          "hash": "ZqZi2YQhS46PivzvbecaVQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Security.PublicKeyCryptosystem.AlgorithmType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Security.PublicKeyCryptosystem.AlgorithmType.html",
+          "hash": "VE9n9ttQoJRvO6JGE4MZ7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Security.PublicKeyCryptosystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Security.PublicKeyCryptosystem.html",
+          "hash": "PQ6y/mS8R5voVxxFSPySBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Security.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Security.html",
+          "hash": "QLkxomsM2uVQUArhN6Rr6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.SelectedEntity-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.SelectedEntity-1.html",
+          "hash": "eS4uyCTcIrFtMt8x+y1khw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.SelectedEntity-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.SelectedEntity-2.html",
+          "hash": "hslBdZwBSdadny6KP/AqBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Serialization.DataSerializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Serialization.DataSerializer.html",
+          "hash": "lDn+1IG9ZBB1S6gAo5kFMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Serialization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Serialization.html",
+          "hash": "j/7mBck+JTxCrdkV+GmiuQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.SortableBindingList-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.SortableBindingList-1.html",
+          "hash": "YUUvn0MdK6DjG02JCkpLlw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.UpdateEntityValidate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.UpdateEntityValidate.html",
+          "hash": "aglmThJO9IRee9GHQn/8Wg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.UpdateEntityValidateArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.UpdateEntityValidateArgs.html",
+          "hash": "uKTJsuFA7XKtdDMSWGL2Dg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Util.ClassUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Util.ClassUtil.html",
+          "hash": "LK1OU+rgZ33ONkJADkUVNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Util.StopWatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Util.StopWatch.html",
+          "hash": "6FNlgFNuMuj930YYBcbsxg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Util.VBUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Util.VBUtil.html",
+          "hash": "FS5Z3xO0v8wykbeushyvgA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Util.ValidateTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Util.ValidateTypes.html",
+          "hash": "pmUi6gJZvLIExL/+1WNBKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Util.ValidateUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Util.ValidateUtil.html",
+          "hash": "aXJNuj6ie9oDZ6rMXcwBRQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Util.Validator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Util.Validator.html",
+          "hash": "dZ8ykbH7pn/hNDdFc269vg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.Util.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.Util.html",
+          "hash": "JS4e1Rnq5P4sk93Bc+f+7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Moca.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Moca.html",
+          "hash": "vtv6yy7ae8c+PxMGnkTM3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "twbxez9lUjSnLmO4J4EiUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "MDNrC7yOFN/ZIu8PpNhRJw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "RestApiDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {}
+}

@@ -72,94 +72,98 @@ Namespace Db.Helper
             Return dbEx.Errors.Count
         End Function
 
-        'TODO: 未実装
-        Public Function GetSchemaColumns(ByVal table As DbInfoTable) As DbInfoColumnCollection Implements IDbAccessHelper.GetSchemaColumns
-            Return Nothing
-        End Function
+		'TODO: 未実装
+		Public Function GetSchemaColumns(ByVal table As DbInfoTable) As DbInfoColumnCollection Implements IDbAccessHelper.GetSchemaColumns
+			Throw New NotImplementedException()
+		End Function
 
-        'TODO: 未実装
-        Public Function GetSchemaFunctions() As DbInfoFunctionCollection Implements IDbAccessHelper.GetSchemaFunctions
-            Return Nothing
-        End Function
+		'TODO: 未実装
+		Public Function GetSchemaFunctions() As DbInfoFunctionCollection Implements IDbAccessHelper.GetSchemaFunctions
+			Throw New NotImplementedException()
+		End Function
 
-        'TODO: 未実装
-        Public Function GetSchemaProcedures() As DbInfoProcedureCollection Implements IDbAccessHelper.GetSchemaProcedures
-            Return Nothing
-        End Function
+		'TODO: 未実装
+		Public Function GetSchemaProcedures() As DbInfoProcedureCollection Implements IDbAccessHelper.GetSchemaProcedures
+			Throw New NotImplementedException()
+		End Function
 
-        'TODO: 未実装
-        Public Function GetSchemaTables() As DbInfoTableCollection Implements IDbAccessHelper.GetSchemaTables
-            Return Nothing
-        End Function
+		'TODO: 未実装
+		Public Function GetSchemaTables() As DbInfoTableCollection Implements IDbAccessHelper.GetSchemaTables
+			Throw New NotImplementedException()
+		End Function
 
-        'TODO: 未実装
-        Public Function GetSchemaTable(tablename As String) As DbInfoTable Implements IDbAccessHelper.GetSchemaTable
-            Return Nothing
-        End Function
+		'TODO: 未実装
+		Public Function GetSchemaTable(tablename As String) As DbInfoTable Implements IDbAccessHelper.GetSchemaTable
+			Throw New NotImplementedException()
+		End Function
 
-        'TODO: 未実装
-        Public Function HasSqlNativeError(ByVal ex As System.Exception, ByVal errorNumber As Long) As Boolean Implements IDbAccessHelper.HasSqlNativeError
+		'TODO: 未実装
+		Public Function HasSqlNativeError(ByVal ex As System.Exception, ByVal errorNumber As Long) As Boolean Implements IDbAccessHelper.HasSqlNativeError
+			Throw New NotImplementedException()
+		End Function
 
-        End Function
+		'TODO: 未実装
+		Public Function HasSqlNativeErrorDuplicationPKey(ByVal ex As System.Exception) As Boolean Implements IDbAccessHelper.HasSqlNativeErrorDuplicationPKey
+			Throw New NotImplementedException()
+		End Function
 
-        'TODO: 未実装
-        Public Function HasSqlNativeErrorDuplicationPKey(ByVal ex As System.Exception) As Boolean Implements IDbAccessHelper.HasSqlNativeErrorDuplicationPKey
+		'TODO: 未実装
+		Public Function HasSqlNativeErrorTimtout(ByVal ex As System.Exception) As Boolean Implements IDbAccessHelper.HasSqlNativeErrorTimtout
+			Throw New NotImplementedException()
+		End Function
 
-        End Function
-
-        'TODO: 未実装
-        Public Function HasSqlNativeErrorTimtout(ByVal ex As System.Exception) As Boolean Implements IDbAccessHelper.HasSqlNativeErrorTimtout
-
-        End Function
-
-        ''' <summary>
-        ''' SQLプレースフォルダのマークを返す。
-        ''' </summary>
-        ''' <value></value>
-        ''' <returns>「？」</returns>
-        ''' <remarks>「？」1文字固定</remarks>
-        Public ReadOnly Property PlaceholderMark() As String Implements IDbAccessHelper.PlaceholderMark
+		''' <summary>
+		''' SQLプレースフォルダのマークを返す。
+		''' </summary>
+		''' <value></value>
+		''' <returns>「？」</returns>
+		''' <remarks>「？」1文字固定</remarks>
+		Public ReadOnly Property PlaceholderMark() As String Implements IDbAccessHelper.PlaceholderMark
             Get
                 Return "?"
             End Get
         End Property
 
-        ''' <summary>
-        ''' ストアドのパラメータを取得する
-        ''' </summary>
-        ''' <param name="cmd">実行対象のDBコマンド</param>
-        ''' <remarks></remarks>
-        Public Sub RefreshProcedureParameters(ByVal cmd As System.Data.IDbCommand) Implements IDbAccessHelper.RefreshProcedureParameters
-            Try
-                Dim openFlg As Boolean = False
+		Public Function CnvStatmentParameterName(name As String) As String Implements IDbAccessHelper.CnvStatmentParameterName
+			Return PlaceholderMark
+		End Function
 
-                ' コネクションが閉じてる場合は一旦接続する
-                If cmd.Connection.State = ConnectionState.Closed Then
-                    cmd.Connection.Open()
-                    openFlg = True
-                End If
-                OdbcCommandBuilder.DeriveParameters(DirectCast(cmd, OdbcCommand))
-                ' コネクションが閉じてた場合は接続を切る
-                If openFlg Then
-                    cmd.Connection.Close()
-                End If
+		''' <summary>
+		''' ストアドのパラメータを取得する
+		''' </summary>
+		''' <param name="cmd">実行対象のDBコマンド</param>
+		''' <remarks></remarks>
+		Public Sub RefreshProcedureParameters(ByVal cmd As System.Data.IDbCommand) Implements IDbAccessHelper.RefreshProcedureParameters
+			Try
+				Dim openFlg As Boolean = False
 
-                For Each para As IDataParameter In cmd.Parameters
-                    para.Value = DBNull.Value
-                Next
-            Catch ex As Exception
-                Throw New DbAccessException(Me.targetDba, ex)
-            End Try
-        End Sub
+				' コネクションが閉じてる場合は一旦接続する
+				If cmd.Connection.State = ConnectionState.Closed Then
+					cmd.Connection.Open()
+					openFlg = True
+				End If
+				OdbcCommandBuilder.DeriveParameters(DirectCast(cmd, OdbcCommand))
+				' コネクションが閉じてた場合は接続を切る
+				If openFlg Then
+					cmd.Connection.Close()
+				End If
 
-        ''' <summary>
-        ''' エラー番号を返す
-        ''' </summary>
-        ''' <param name="ex">エラー番号を取得したい例外</param>
-        ''' <returns>エラー番号配列</returns>
-        ''' <remarks>
-        ''' </remarks>
-        Public Function ErrorNumbers(ex As System.Exception) As String() Implements IDbAccessHelper.ErrorNumbers
+				For Each para As IDataParameter In cmd.Parameters
+					para.Value = DBNull.Value
+				Next
+			Catch ex As Exception
+				Throw New DbAccessException(Me.targetDba, ex)
+			End Try
+		End Sub
+
+		''' <summary>
+		''' エラー番号を返す
+		''' </summary>
+		''' <param name="ex">エラー番号を取得したい例外</param>
+		''' <returns>エラー番号配列</returns>
+		''' <remarks>
+		''' </remarks>
+		Public Function ErrorNumbers(ex As System.Exception) As String() Implements IDbAccessHelper.ErrorNumbers
             If ErrorCount(ex) <= 0 Then
                 Return Nothing
             End If
@@ -223,6 +227,6 @@ Namespace Db.Helper
 
 #End Region
 
-    End Class
+	End Class
 
 End Namespace

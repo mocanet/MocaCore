@@ -9,14 +9,19 @@ Namespace Di
 	''' <remarks>
 	''' <see cref="ReaderWriterLock"/> を使ってスレッドセーフにしてます。<br/>
 	''' </remarks>
-	Public Class MocaContainer
+	Public NotInheritable Class MocaContainer
 		Implements IContainer, IDisposable
 
 		''' <summary>コンポーネント格納</summary>
 		Private _components As Dictionary(Of Object, MocaComponent)
 
+#If net20 Then
 		''' <summary>ロック用</summary>
 		Private _rwLock As New ReaderWriterLock()
+#Else
+		''' <summary>ロック用</summary>
+		Private _rwLock As New ReaderWriterLockSlim()
+#End If
 
 #Region " コンストラクタ "
 
@@ -30,10 +35,10 @@ Namespace Di
 #End Region
 #Region " IDisposable Support "
 
-		Private disposedValue As Boolean = False		' 重複する呼び出しを検出するには
+		Private disposedValue As Boolean = False        ' 重複する呼び出しを検出するには
 
 		' IDisposable
-		Protected Overridable Sub Dispose(ByVal disposing As Boolean)
+		Protected Sub Dispose(ByVal disposing As Boolean)
 			If Not Me.disposedValue Then
 				If disposing Then
 					' TODO: 明示的に呼び出されたときにマネージ リソースを解放します
@@ -72,7 +77,11 @@ Namespace Di
 		Public Function GetComponent(ByVal componentType As System.Type) As MocaComponent Implements IContainer.GetComponent
 			Try
 				' リーダーロックを取得
+#If net20 Then
 				_rwLock.AcquireReaderLock(Timeout.Infinite)
+#Else
+				_rwLock.EnterReadLock()
+#End If
 
 				If Not _components.ContainsKey(componentType) Then
 					Return Nothing
@@ -80,7 +89,11 @@ Namespace Di
 				Return _components(componentType)
 			Finally
 				' リーダーロックを解放
+#If net20 Then
 				_rwLock.ReleaseReaderLock()
+#Else
+				_rwLock.ExitReadLock()
+#End If
 			End Try
 		End Function
 
@@ -93,7 +106,11 @@ Namespace Di
 		Public Function GetComponent(ByVal componentKey As String) As MocaComponent Implements IContainer.GetComponent
 			Try
 				' リーダーロックを取得
+#If net20 Then
 				_rwLock.AcquireReaderLock(Timeout.Infinite)
+#Else
+				_rwLock.EnterReadLock()
+#End If
 
 				If Not _components.ContainsKey(componentKey) Then
 					Return Nothing
@@ -101,7 +118,11 @@ Namespace Di
 				Return _components(componentKey)
 			Finally
 				' リーダーロックを解放
+#If net20 Then
 				_rwLock.ReleaseReaderLock()
+#Else
+				_rwLock.ExitReadLock()
+#End If
 			End Try
 		End Function
 
@@ -113,25 +134,33 @@ Namespace Di
 		Public Sub SetComponent(ByVal component As MocaComponent) Implements IContainer.SetComponent
 			Try
 				' ライターロックを取得
+#If net20 Then
 				_rwLock.AcquireWriterLock(Timeout.Infinite)
+#Else
+				_rwLock.EnterWriteLock()
+#End If
 
 				If component.ImplType Is Nothing Then
 					' キーで格納
-					If GetComponent(component.Key) IsNot Nothing Then
-						Exit Sub
+					If _components.ContainsKey(component.Key) Then
+						Return
 					End If
 					_components.Add(component.Key, component)
 					Exit Sub
 				End If
 
 				' 型で格納
-				If GetComponent(component.ImplType) IsNot Nothing Then
-					Exit Sub
+				If _components.ContainsKey(component.ImplType) Then
+					Return
 				End If
 				_components.Add(component.ImplType, component)
 			Finally
 				' ライターロックを解放
+#If net20 Then
 				_rwLock.ReleaseWriterLock()
+#Else
+				_rwLock.ExitWriteLock()
+#End If
 			End Try
 		End Sub
 

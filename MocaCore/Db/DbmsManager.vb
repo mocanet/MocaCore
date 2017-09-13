@@ -21,8 +21,8 @@ Namespace Db
 		''' <summary>DBMS のキャッシュ</summary>
 		Private _dbms As New Dictionary(Of String, Dbms)
 
-		''' <summary>AopProxy のキャッシュ</summary>
-		Private _daoProxy As New Dictionary(Of Type, AopProxy)
+		'''' <summary>AopProxy のキャッシュ</summary>
+		'Private _daoProxy As New Dictionary(Of Type, AopProxy)
 
 		''' <summary>DbAccess のキャッシュ</summary>
 		Private _daos As New List(Of IDao)

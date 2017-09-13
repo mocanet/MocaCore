@@ -19,6 +19,10 @@ Namespace Db
 
 		Private _columnType As Object
 
+		Private _dbColumn As DataColumn
+
+		Private _primaryKey As Boolean
+
 #Region " コンストラクタ "
 
 		''' <summary>
@@ -42,7 +46,7 @@ Namespace Db
 			Get
 				Return _maxLength
 			End Get
-			Set(ByVal value As Integer)
+			Friend Set(ByVal value As Integer)
 				_maxLength = value
 			End Set
 		End Property
@@ -52,7 +56,7 @@ Namespace Db
 			Get
 				Return _uniCode
 			End Get
-			Set(ByVal value As Boolean)
+			Friend Set(ByVal value As Boolean)
 				_uniCode = value
 			End Set
 		End Property
@@ -69,7 +73,7 @@ Namespace Db
 			Get
 				Return Me._precision
 			End Get
-			Set(ByVal value As System.Int32)
+			Friend Set(ByVal value As System.Int32)
 				Me._precision = value
 			End Set
 		End Property
@@ -79,7 +83,7 @@ Namespace Db
 			Get
 				Return Me._scale
 			End Get
-			Set(ByVal value As System.Int32)
+			Friend Set(ByVal value As System.Int32)
 				Me._scale = value
 			End Set
 		End Property
@@ -89,8 +93,28 @@ Namespace Db
 			Get
 				Return Me._columnType
 			End Get
-			Set(ByVal value As System.Object)
+			Friend Set(ByVal value As System.Object)
 				Me._columnType = value
+			End Set
+		End Property
+
+		''' <summary>プライマリキーかどうか</summary>
+		Public Property PrimaryKey As Boolean
+			Get
+				Return _primaryKey
+			End Get
+			Friend Set(value As Boolean)
+				_primaryKey = value
+			End Set
+		End Property
+
+		''' <summary>DataColumnオブジェクト</summary>
+		Friend Property DbColumn As DataColumn
+			Get
+				Return _dbColumn
+			End Get
+			Set(value As DataColumn)
+				_dbColumn = value
 			End Set
 		End Property
 

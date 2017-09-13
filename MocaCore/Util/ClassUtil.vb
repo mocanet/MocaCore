@@ -36,6 +36,14 @@ Namespace Util
 			Return Activator.CreateInstance(type, args)
 		End Function
 
+#If net20 Then
+#Else
+
+		Public Shared Function NewInstance(Of T)() As Object
+			Return InstanceCreator(Of T).Create()
+		End Function
+#End If
+
 #End Region
 #Region " プロパティ定義の取得 "
 
@@ -79,7 +87,7 @@ Namespace Util
 		''' <returns>フィールド定義配列</returns>
 		''' <remarks></remarks>
 		Public Shared Function GetFields(ByVal typ As Type) As FieldInfo()
-			Return typ.GetFields(BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.Instance)
+			Return typ.GetFields(BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.Instance Or BindingFlags.Static)
 		End Function
 
 		''' <summary>
@@ -355,10 +363,20 @@ Namespace Util
 			Dim bFlags As BindingFlags
 
 			' フィールドに値をセットする為のBindingFlags
-			bFlags = BindingFlags.Instance Or BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.SetField
+			bFlags = BindingFlags.Instance Or BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.SetField Or BindingFlags.Static
 
 			' インスタンスをフィールドへ注入！
 			target.GetType().InvokeMember(field.Name, bFlags, Nothing, target, args)
+		End Sub
+
+		Public Shared Sub Inject(ByVal target As Type, ByVal field As FieldInfo, ByVal arg As Object)
+			Dim bFlags As BindingFlags
+
+			' フィールドに値をセットする為のBindingFlags
+			bFlags = BindingFlags.Instance Or BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.SetField Or BindingFlags.Static
+
+			' インスタンスをフィールドへ注入！
+			field.SetValue(target, arg)
 		End Sub
 
 #End Region
@@ -386,5 +404,16 @@ Namespace Util
 #End Region
 
 	End Class
+
+
+#If net20 Then
+#Else
+	Friend Class InstanceCreator(Of T)
+
+		Public Shared ReadOnly Property Create As T = Expressions.Expression.Lambda(Of Func(Of T))(Expressions.Expression.[New](GetType(T))).Compile().Invoke()
+
+	End Class
+
+#End If
 
 End Namespace

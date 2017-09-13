@@ -11,23 +11,42 @@ Namespace Db.Impl
         Inherits AbstractDao
         Implements IDaoTest
 
-        Public Function FindTakeTime() As DataTable Implements IDaoTest.FindTakeTime
-            Const sql As String = "select a.* from trnTable a , trnTable b , trnTable c , trnTable d , trnTable e , trnTable f , trnTable g"
+		Public Function FindDataTable() As DataTable Implements IDaoTest.FindDataTable
+			Const sql As String = "select a.* from mstUser a , mstUser b , mstUser c , mstUser d , mstUser e , mstUser f"
+			'Const sql As String = "select a.* from mstUser a , mstUser b , mstUser c , mstUser d , mstUser e"
 
-            Using cmd As IDbCommandSelect = CreateCommandSelect(sql)
-                cmd.Execute()
-                Return cmd.Result1stTable
-            End Using
-        End Function
+			Using cmd As IDbCommandSelect = CreateCommandSelect(sql)
+				cmd.Execute()
+				Return cmd.Result1stTable
+			End Using
+		End Function
 
-        Public Function FindTakeTime2() As IList(Of TestRow) Implements IDaoTest.FindTakeTime2
-            Const sql As String = "select a.* from trnTable a , trnTable b , trnTable c , trnTable d , trnTable e , trnTable f , trnTable g"
+		Public Function FindEntity() As IList(Of UserRow) Implements IDaoTest.FindEntity
+			Const sql As String = "select a.* from mstUser a , mstUser b , mstUser c , mstUser d , mstUser e , mstUser f"
+			'Const sql As String = "select a.* from mstUser a , mstUser b , mstUser c , mstUser d , mstUser e"
 
-            Using cmd As IDbCommandSelect = CreateCommandSelect(sql)
-                Return cmd.Execute(Of TestRow)()
-            End Using
-        End Function
+			Using cmd As IDbCommandSelect = CreateCommandSelect(sql)
+				Return cmd.Execute(Of UserRow)()
+			End Using
+		End Function
 
-    End Class
+		Public Function Find() As DataTable Implements IDaoTest.Find
+			Const sql As String = "select a.*, NULL AS NullValue from mstUser a"
+
+			Using cmd As IDbCommandSelect = CreateCommandSelect(sql)
+				cmd.Execute()
+				Return cmd.Result1stTable
+			End Using
+		End Function
+
+		Public Function FindEntityNoProp() As IList(Of UserRow) Implements IDaoTest.FindEntityNoProp
+			Const sql As String = "select a.*, Null AS NoProp from mstUser a"
+
+			Using cmd As IDbCommandSelect = CreateCommandSelect(sql)
+				Return cmd.Execute(Of UserRow)()
+			End Using
+		End Function
+
+	End Class
 
 End Namespace

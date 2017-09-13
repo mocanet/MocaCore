@@ -17,8 +17,11 @@ Namespace Db
 	''' </remarks>
 	Public Class EntityBuilder
 
-		''' <summary>一度解析したEntityを格納しておく</summary>
-		Private _entityMap As New Hashtable
+		'''' <summary>一度解析したEntityを格納しておく</summary>
+		'Private _entityMapName As New Hashtable
+		'Private _entityMapPropertyInfo As New Hashtable
+
+		Private Shared _objType As Type = GetType(Object)
 
 		''' <summary>
 		''' DataTableのカラム構成を構築する
@@ -32,13 +35,13 @@ Namespace Db
 			Dim ds As New DataSet
 			Dim dt As New DataTable
 			Dim typ As Type
-			Dim keys As Hashtable
+			Dim keys As IDictionary(Of String, String)
 
 			typ = GetType(T)
 
 			ds.Tables.Add(dt)
 
-			keys = _getEntityInfo(typ)
+			keys = Moca.Entity.EntityInfoCache.Store(typ).NameMap
 			For Each key As String In [Enum].GetNames(GetType(Order))
 				Dim prop As PropertyInfo
 				prop = ClassUtil.GetProperties(typ, DirectCast(keys(key), String))
@@ -67,17 +70,19 @@ Namespace Db
 			Dim ary As ArrayList
 			Dim typ As Type
 			Dim entity As T
-			Dim keys As Hashtable
+			Dim keys As IDictionary(Of String, String)
+			Dim props As IDictionary(Of String, PropertyInfo)
 			Dim view As DataView
 
 			typ = GetType(T)
-			keys = _getEntityInfo(typ)
+			keys = Moca.Entity.EntityInfoCache.Store(typ).NameMap
+			props = Moca.Entity.EntityInfoCache.Store(typ).PropertyInfoMap
 			ary = New ArrayList
 
 			view = tbl.DefaultView
 
 			For ii As Integer = 0 To view.Count - 1
-				entity = _create(Of T)(keys, view.Item(ii).Row)
+				entity = _create(Of T)(keys, props, view.Item(ii).Row)
 				ary.Add(entity)
 			Next
 
@@ -94,12 +99,14 @@ Namespace Db
 		Public Function Create(Of T)(ByVal row As DataRow) As T
 			Dim typ As Type
 			Dim entity As T
-			Dim keys As Hashtable
+			Dim keys As IDictionary(Of String, String)
+			Dim props As IDictionary(Of String, PropertyInfo)
 
 			typ = GetType(T)
-			keys = _getEntityInfo(typ)
+			keys = Moca.Entity.EntityInfoCache.Store(typ).NameMap
+			props = Moca.Entity.EntityInfoCache.Store(typ).PropertyInfoMap
 
-			entity = _create(Of T)(keys, row, Nothing)
+			entity = _create(Of T)(keys, props, row, Nothing)
 
 			Return entity
 		End Function
@@ -115,12 +122,14 @@ Namespace Db
 		Public Function Create(Of T)(ByVal row As DataRow, ByVal version As DataRowVersion) As T
 			Dim typ As Type
 			Dim entity As T
-			Dim keys As Hashtable
+			Dim keys As IDictionary(Of String, String)
+			Dim props As IDictionary(Of String, PropertyInfo)
 
 			typ = GetType(T)
-			keys = _getEntityInfo(typ)
+			keys = Moca.Entity.EntityInfoCache.Store(typ).NameMap
+			props = Moca.Entity.EntityInfoCache.Store(typ).PropertyInfoMap
 
-			entity = _create(Of T)(keys, row, version)
+			entity = _create(Of T)(keys, props, row, version)
 
 			Return entity
 		End Function
@@ -136,16 +145,19 @@ Namespace Db
 			Dim lst As IList(Of T)
 			Dim typ As Type
 			Dim entity As T
-			Dim keys As Hashtable
+			Dim keys As IDictionary(Of String, String)
+			Dim props As IDictionary(Of String, PropertyInfo)
 
 			typ = GetType(T)
-			keys = _getEntityInfo(typ)
-			lst = New List(Of T)()
+			keys = Moca.Entity.EntityInfoCache.Store(typ).NameMap
+			props = Moca.Entity.EntityInfoCache.Store(typ).PropertyInfoMap
+			lst = New List(Of T)(256)
 
 			Do While reader.Read()
-				entity = _create(Of T)(keys, reader)
+				entity = _create(Of T)(typ, Moca.Entity.EntityInfoCache.Store(typ), reader)
 				lst.Add(entity)
 			Loop
+			SetColumnInfo(lst(0))
 
 			Return lst
 		End Function
@@ -158,17 +170,26 @@ Namespace Db
 		''' <remarks></remarks>
 		Public Sub Convert(ByVal entity As Object, ByVal row As DataRow)
 			Dim typ As Type
-			Dim keys As Hashtable
+			Dim keys As IDictionary(Of String, String)
+			Dim key As String
+			Dim props As IDictionary(Of String, PropertyInfo)
 
 			typ = entity.GetType
-			keys = _getEntityInfo(typ)
+			keys = Moca.Entity.EntityInfoCache.Store(typ).NameMap
+			props = Moca.Entity.EntityInfoCache.Store(typ).PropertyInfoMap
 
 			For Each col As DataColumn In row.Table.Columns
-				Dim oo As Object = DBNull.Value
+				Dim oo As Object
 				Dim prop As PropertyInfo
 
-				prop = ClassUtil.GetProperties(typ, DirectCast(keys(col.ColumnName), String))
-				oo = typ.InvokeMember(DirectCast(keys(col.ColumnName), String), BindingFlags.GetProperty Or BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.Instance, Nothing, entity, New Object() {})
+				key = keys(col.ColumnName)
+				If String.IsNullOrEmpty(key) Then
+					' エンティティに列が指定されていなかった
+					Throw New MissingMemberException(typ.FullName, col.ColumnName)
+				End If
+				prop = props(col.ColumnName)
+				oo = prop.GetValue(entity, Nothing)
+				oo = DbUtil.CNull(oo)
 
 				row.Item(col.ColumnName) = oo
 			Next
@@ -180,11 +201,11 @@ Namespace Db
 		''' <param name="obj">対象のインスタンス</param>
 		''' <remarks></remarks>
 		Public Sub SetColumnInfo(ByVal obj As Object)
-			Dim analyzer As AttributeAnalyzer
-			analyzer = New AttributeAnalyzer
-			analyzer.Add(AttributeAnalyzerTargets.Field, New TableAttributeAnalyzer)
-			analyzer.Analyze(obj)
+			_analyzer.Add(AttributeAnalyzerTargets.Field, _tblAttrAnalyer)
+			_analyzer.Analyze(obj)
 		End Sub
+		Private _analyzer As New AttributeAnalyzer
+		Private _tblAttrAnalyer As New TableAttributeAnalyzer
 
 		''' <summary>
 		''' Entity をインスタンス化し、行データを Entity へ設定する
@@ -195,13 +216,13 @@ Namespace Db
 		''' <param name="version"></param>
 		''' <returns></returns>
 		''' <remarks></remarks>
-		Private Function _create(Of T)(ByVal keys As Hashtable, ByVal row As DataRow, Optional ByVal version As Object = Nothing) As T
+		Private Function _create(Of T)(ByVal keys As IDictionary(Of String, String), ByVal props As IDictionary(Of String, PropertyInfo), ByVal row As DataRow, Optional ByVal version As Object = Nothing) As T
 			Dim entity As T
 			Dim typ As Type
 			Dim ver As DataRowVersion
 
 			typ = GetType(T)
-			entity = DirectCast(ClassUtil.NewInstance(typ), T)
+			entity = ClassUtil.NewInstance(typ)
 			If version IsNot Nothing Then
 				ver = DirectCast(version, DataRowVersion)
 			End If
@@ -222,12 +243,12 @@ Namespace Db
 					val = row(col.ColumnName, ver)
 				End If
 
-				prop = ClassUtil.GetProperties(typ, DirectCast(keys(col.ColumnName), String))
-				If prop.PropertyType.Equals(GetType(Object)) Then
-					typ.InvokeMember(DirectCast(keys(col.ColumnName), String), BindingFlags.SetProperty Or BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.Instance, Nothing, entity, New Object() {val})
-				Else
-					typ.InvokeMember(DirectCast(keys(col.ColumnName), String), BindingFlags.SetProperty Or BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.Instance, Nothing, entity, New Object() {DbUtil.CNull(val)})
+				prop = props(col.ColumnName)
+
+				If Not prop.PropertyType.Equals(_objType) Then
+					val = DbUtil.CNull(val)
 				End If
+				prop.SetValue(entity, val, Nothing)
 			Next
 			Return entity
 		End Function
@@ -236,77 +257,46 @@ Namespace Db
 		''' 
 		''' </summary>
 		''' <typeparam name="T"></typeparam>
-		''' <param name="keys"></param>
-		''' <param name="reader"></param>
-		''' <param name="version"></param>
 		''' <returns></returns>
 		''' <remarks></remarks>
-		Private Function _create(Of T)(ByVal keys As Hashtable, ByVal reader As IDataReader, Optional ByVal version As Object = Nothing) As T
+		Private Function _create(Of T)(ByVal typ As Type, ByVal entityInfo As Entity.EntityInfo, ByVal reader As IDataRecord) As T
 			Dim entity As T
-			Dim typ As Type
-			Dim ver As DataRowVersion
+			Dim keys As Dictionary(Of String, String) = entityInfo.NameMap
+			Dim props As IDictionary(Of String, PropertyInfo) = entityInfo.PropertyInfoMap
 
-			typ = GetType(T)
-			entity = DirectCast(ClassUtil.NewInstance(typ), T)
-			If version IsNot Nothing Then
-				ver = DirectCast(version, DataRowVersion)
-			End If
+#If net20 Then
+			entity = ClassUtil.NewInstance(typ)
+#Else
+			entity = ClassUtil.NewInstance(Of T)()
+#End If
+
 			For ii As Integer = 0 To reader.FieldCount - 1
-				Dim key As String
 				Dim colName As String
 				Dim val As Object
 				Dim prop As PropertyInfo
 
 				colName = reader.GetName(ii)
-				key = DirectCast(keys(colName), String)
-				val = reader.Item(ii)
 
-				If String.IsNullOrEmpty(key) Then
+				Try
+					prop = props(colName)
+				Catch ex As Exception
+					' エンティティに列が指定されていなかった
 					Throw New MissingMemberException(typ.FullName, colName)
-				End If
+				End Try
 
-				prop = ClassUtil.GetProperties(typ, key)
-				If Not prop.PropertyType.Equals(GetType(Object)) Then
+				val = reader.Item(ii)
+				If Not prop.PropertyType.Equals(_objType) Then
 					val = DbUtil.CNull(val)
 				End If
 
-				typ.InvokeMember(key, BindingFlags.SetProperty Or BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.Instance, Nothing, entity, New Object() {val})
+#If net20 Then
+				prop.SetValue(entity, val, Nothing)
+#Else
+				entityInfo.ProprtyAccessor(colName).SetValue(entity, val)
+#End If
 			Next
 
 			Return entity
-		End Function
-
-		''' <summary>
-		''' Entity をインスタンス化し、行データを Entity へ設定する
-		''' </summary>
-		''' <typeparam name="T"></typeparam>
-		''' <param name="keys"></param>
-		''' <returns></returns>
-		''' <remarks></remarks>
-		Private Function _create(Of T)(ByVal keys As Hashtable) As T
-			Dim entity As T
-			Dim typ As Type
-
-			typ = GetType(T)
-			entity = DirectCast(ClassUtil.NewInstance(typ), T)
-			Return entity
-		End Function
-
-		''' <summary>
-		''' Entity 情報を取得する
-		''' </summary>
-		''' <param name="typ"></param>
-		''' <returns></returns>
-		''' <remarks></remarks>
-		Private Function _getEntityInfo(ByVal typ As Type) As Hashtable
-			Dim keys As Hashtable
-			If _entityMap.ContainsKey(typ) Then
-				keys = DirectCast(_entityMap.Item(typ), Hashtable)
-			Else
-				keys = DbUtil.GetColumnNames(typ)
-				_entityMap.Add(typ, keys)
-			End If
-			Return keys
 		End Function
 
 	End Class

@@ -58,11 +58,14 @@ Namespace Db.Helper
 
                 Case "System.Data.OleDb"
                     Select Case _dbSetting.OleDbProviderName
-                        Case "SQLOLEDB"
-                            Return New OleDbSQLAccessHelper(dba)
+						Case "SQLOLEDB"
+							Return New OleDbSQLAccessHelper(dba)
 
-                        Case "MSDAORA"
-                            Return New OleDbOraAccessHelper(dba)
+						Case "SQLNCLI11"
+							Return New OleDbSQLAccessHelper(dba)
+
+						Case "MSDAORA"
+							Return New OleDbOraAccessHelper(dba)
 
                         Case Else
                             Throw New NotSupportedException

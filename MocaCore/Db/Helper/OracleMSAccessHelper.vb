@@ -85,11 +85,13 @@ Namespace Db.Helper
 		End Function
 
 		Public Function GetSchemaColumns(table As DbInfoTable) As DbInfoColumnCollection Implements IDbAccessHelper.GetSchemaColumns
+			Dim dtSchema As DataTable
 			Dim dt As DataTable
 			Dim results As DbInfoColumnCollection
 			Dim info As DbInfoColumn
 			Dim openFlag As Boolean
 
+			dtSchema = Nothing
 			results = New DbInfoColumnCollection()
 
 			Try
@@ -97,6 +99,9 @@ Namespace Db.Helper
 					Me._conn.Open()
 					openFlag = True
 				End If
+
+				dtSchema = FillSchema(table.Name)
+
 				dt = Me._conn.GetSchema("Columns", New String() {table.Catalog.ToUpper, table.Name, Nothing})
 				For ii As Integer = 0 To dt.Rows.Count - 1
 					info = New DbInfoColumn( _
@@ -111,6 +116,17 @@ Namespace Db.Helper
 					info.Scale = scale
 					info.UniCode = isUniCode(info.Typ)
 					info.ColumnType = getColumnDbType(Of OracleType)(dt.Rows(ii))
+					info.DbColumn = dtSchema.Columns(info.Name)
+#If net20 Then
+					For Each item As DataColumn In dtSchema.PrimaryKey
+						If item.ColumnName.Equals(info.Name) Then
+							info.PrimaryKey = True
+							Exit For
+						End If
+					Next
+#Else
+					info.PrimaryKey = dtSchema.PrimaryKey.Select(Function(x) x.ColumnName.Equals(info.Name)).Count.Equals(1)
+#End If
 					results.Add(info.Name, info)
 				Next
 
@@ -118,6 +134,9 @@ Namespace Db.Helper
 			Catch ex As Exception
 				Throw New DbAccessException(Me.targetDba, ex)
 			Finally
+				If dtSchema IsNot Nothing Then
+					dtSchema.Dispose()
+				End If
 				If openFlag Then
 					Me._conn.Close()
 				End If
@@ -283,6 +302,10 @@ Namespace Db.Helper
 				Return ":"
 			End Get
 		End Property
+
+		Public Function CnvStatmentParameterName(name As String) As String Implements IDbAccessHelper.CnvStatmentParameterName
+			Return PlaceholderMark & name
+		End Function
 
 		Public Sub RefreshProcedureParameters(cmd As System.Data.IDbCommand) Implements IDbAccessHelper.RefreshProcedureParameters
 			Try

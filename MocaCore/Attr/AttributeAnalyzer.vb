@@ -17,6 +17,8 @@ Namespace Attr
 	''' <remarks></remarks>
 	Public Delegate Function MocaFieldInject(ByVal target As Object, ByVal field As FieldInfo, ByVal component As MocaComponent) As Object
 
+	Public Delegate Function MocaFieldInjectType(ByVal target As Type, ByVal field As FieldInfo, ByVal component As MocaComponent) As Object
+
 	''' <summary>
 	''' 実装実験中
 	''' </summary>
@@ -59,6 +61,7 @@ Namespace Attr
 
 		''' <summary>フィールドインジェクトデリゲート</summary>
 		Private _injectMethod As MocaFieldInject
+		Private _injectMethodType As MocaFieldInjectType
 
 		''' <summary>実装中</summary>
 		Private _injectEventDelegate As MocaEventDelegateInject
@@ -189,6 +192,38 @@ Namespace Attr
 			Next
 		End Sub
 
+		Public Sub Analyze(ByVal target As Type)
+			For Each field As FieldInfo In ClassUtil.GetFields(target)
+				Dim component As MocaComponent
+
+				If _isIgnore(field.DeclaringType.ToString) Then
+					Continue For
+				End If
+
+				' 既に存在するかチェック（フィールドの型で）
+				component = MocaContainerFactory.Container().GetComponent(field.FieldType)
+				If component IsNot Nothing Then
+					Analyze(Me.FieldInjectType(target, field, component))
+					Continue For
+				End If
+
+				' フィールドの解析
+				analyze(target, field)
+			Next
+
+			' イベントのデリゲートを解析するかどうか
+			If Me.EventDelegateInject Is Nothing Then
+				Return
+			End If
+
+			'_mylog.DebugFormat("AnalyzeEventDelegate Type={0},Name={1}", target.GetType.Name, "Nothing")
+			'Me.EventDelegateInject.Invoke(target, target)
+
+			For Each prop As PropertyInfo In ClassUtil.GetProperties(target)
+				analyzeEventDelegate(target, prop)
+			Next
+		End Sub
+
 #Region " フィールド解析 "
 
 		''' <summary>
@@ -304,7 +339,7 @@ Namespace Attr
 
 			' フィールドへインスタンスを注入し、
 			' インスタンス化したオブジェクトで解析を再帰
-			Analyze(Me.FieldInject(target, field, component))
+			Analyze(Me.FieldInjectType(target, field, component))
 		End Sub
 
 		Private Function _createFieldGetterSetterAspect() As IAspect()
@@ -665,6 +700,18 @@ Namespace Attr
 			End Set
 		End Property
 
+		Public Property FieldInjectType As MocaFieldInjectType
+			Get
+				If _injectMethodType Is Nothing Then
+					_injectMethodType = AddressOf Me.inject
+				End If
+				Return _injectMethodType
+			End Get
+			Set(value As MocaFieldInjectType)
+				_injectMethodType = value
+			End Set
+		End Property
+
 		''' <summary>
 		''' 実装実験中
 		''' </summary>
@@ -721,6 +768,12 @@ Namespace Attr
 			Dim instance As Object
 			instance = component.Create(target)
 			ClassUtil.Inject(target, field, New Object() {instance})
+			Return instance
+		End Function
+		Protected Function inject(ByVal target As Type, ByVal field As FieldInfo, ByVal component As MocaComponent) As Object
+			Dim instance As Object
+			instance = component.Create(target)
+			ClassUtil.Inject(target, field, instance)
 			Return instance
 		End Function
 

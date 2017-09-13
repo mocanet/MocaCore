@@ -100,12 +100,19 @@ Namespace Db
 		Sub RefreshProcedureParameters(ByVal cmd As IDbCommand)
 
 		''' <summary>
-		''' SQLステータスのパラメータ名を変換する。
+		''' SQLのパラメータ名を変換する。
 		''' </summary>
 		''' <param name="name">パラメータ名</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Function CDbParameterName(ByVal name As String) As String
+
+		''' <summary>
+		''' SQL文のパラメータ名を変換する。
+		''' </summary>
+		''' <param name="name"></param>
+		''' <returns></returns>
+		Function CnvStatmentParameterName(ByVal name As String) As String
 
 		''' <summary>
 		''' SQLプレースフォルダのマークを返す。

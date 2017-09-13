@@ -137,6 +137,7 @@
     <Compile Include="Db\Attr\DbmsAttribute.vb" />
     <Compile Include="Db\Attr\TableAttribute.vb" />
     <Compile Include="Db\Attr\TableAttributeAnalyzer.vb" />
+    <Compile Include="Db\Attr\TableDefinitionAttribute.vb" />
     <Compile Include="Db\Attr\TransactionAttribute.vb" />
     <Compile Include="Db\Attr\TransactionAttributeAnalyzer.vb" />
     <Compile Include="Db\CommandWrapper\DDLCommandWrapper.vb" />
@@ -175,6 +176,7 @@
     <Compile Include="Db\Helper\SqlCeDbAccessHelper.vb" />
     <Compile Include="Db\Helper\SqlDbAccessHelper.vb" />
     <Compile Include="Db\IDao.vb" />
+    <Compile Include="Db\IDaoCancel.vb" />
     <Compile Include="Db\IDbAccess.vb" />
     <Compile Include="Db\IDbAccessHelper.vb" />
     <Compile Include="Db\IDbCommandDDL.vb" />
@@ -206,10 +208,15 @@
     <Compile Include="Di\MocaInjector.vb" />
     <Compile Include="Entity\AbstractEntity.vb" />
     <Compile Include="Entity\EntityBase.vb" />
+    <Compile Include="Entity\EntityInfo.vb" />
+    <Compile Include="Entity\EntityInfoCache.vb" />
     <Compile Include="Entity\SortableBindingList.vb" />
     <Compile Include="Entity\UpdateEntityValidateArgs.vb" />
     <Compile Include="Exceptions\CommonException.vb" />
     <Compile Include="Exceptions\MocaRuntimeException.vb" />
+    <Compile Include="Extension\Accessor.vb" />
+    <Compile Include="Extension\IAccessor.vb" />
+    <Compile Include="Extension\PropertyExtension.vb" />
     <Compile Include="Install\ConfigProtectionInstaller.Designer.vb">
       <DependentUpon>ConfigProtectionInstaller.vb</DependentUpon>
     </Compile>
@@ -300,12 +307,10 @@
     <EmbeddedResource Include="My Project\Resources.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
     <Error Condition="!Exists('..\packages\NuProj.Common.0.11.30\build\portable-net+win+wpa+wp+sl+netmf+MonoAndroid+MonoTouch+Xamarin.iOS\NuProj.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NuProj.Common.0.11.30\build\portable-net+win+wpa+wp+sl+netmf+MonoAndroid+MonoTouch+Xamarin.iOS\NuProj.Common.targets'))" />
   </Target>
   <Import Project="..\packages\NuProj.Common.0.11.30\build\portable-net+win+wpa+wp+sl+netmf+MonoAndroid+MonoTouch+Xamarin.iOS\NuProj.Common.targets" Condition="Exists('..\packages\NuProj.Common.0.11.30\build\portable-net+win+wpa+wp+sl+netmf+MonoAndroid+MonoTouch+Xamarin.iOS\NuProj.Common.targets')" />

@@ -52,11 +52,15 @@ Namespace Db.Helper
 
 #End Region
 
+#Region " Property "
+
 		Protected Friend ReadOnly Property Connection As OleDbConnection
 			Get
 				Return Me._conn
 			End Get
 		End Property
+
+#End Region
 
 #Region " Implements IDbAccessHelper "
 
@@ -239,6 +243,10 @@ Namespace Db.Helper
 				Return "?"
 			End Get
 		End Property
+
+		Public Function CnvStatmentParameterName(name As String) As String Implements IDbAccessHelper.CnvStatmentParameterName
+			Return PlaceholderMark
+		End Function
 
 		''' <summary>
 		''' ストアドのパラメータを取得する

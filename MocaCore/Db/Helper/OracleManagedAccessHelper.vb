@@ -49,20 +49,26 @@ Namespace Db.Helper
         End Function
 
         Public Function GetSchemaColumns(ByVal table As DbInfoTable) As DbInfoColumnCollection Implements IDbAccessHelper.GetSchemaColumns
-            Dim dt As DataTable
-            Dim results As DbInfoColumnCollection
+			Dim dtSchema As DataTable
+			Dim dt As DataTable
+			Dim results As DbInfoColumnCollection
             Dim info As DbInfoColumn
             Dim openFlag As Boolean
 
-            results = New DbInfoColumnCollection()
+			dtSchema = Nothing
+			dt = Nothing
+			results = New DbInfoColumnCollection()
 
-            Try
+			Try
                 If Me._conn.State <> ConnectionState.Open Then
                     Me._conn.Open()
                     openFlag = True
                 End If
-                dt = getSchema("Columns", New String() {table.Catalog, table.Name, Nothing})
-                For ii As Integer = 0 To dt.Rows.Count - 1
+
+				dtSchema = FillSchema(table.Name)
+
+				dt = getSchema("Columns", New String() {table.Catalog, table.Name, Nothing})
+				For ii As Integer = 0 To dt.Rows.Count - 1
                     info = New DbInfoColumn( _
                        CStr(dt.Rows(ii).Item("OWNER")) _
                      , CStr(dt.Rows(ii).Item("OWNER")) _
@@ -75,17 +81,34 @@ Namespace Db.Helper
                     info.Scale = scale
                     info.UniCode = isUniCode(info.Typ)
                     info.ColumnType = getColumnDbType(dt.Rows(ii))
-                    results.Add(info.Name, info)
-                Next
+					info.DbColumn = dtSchema.Columns(info.Name)
+#If net20 Then
+					For Each item As DataColumn In dtSchema.PrimaryKey
+						If item.ColumnName.Equals(info.Name) Then
+							info.PrimaryKey = True
+							Exit For
+						End If
+					Next
+#Else
+					info.PrimaryKey = dtSchema.PrimaryKey.Select(Function(x) x.ColumnName.Equals(info.Name)).Count.Equals(1)
+#End If
+					results.Add(info.Name, info)
+				Next
 
                 Return results
             Catch ex As Exception
                 Throw New DbAccessException(Me.targetDba, ex)
             Finally
-                If openFlag Then
-                    Me._conn.Close()
-                End If
-            End Try
+				If dtSchema IsNot Nothing Then
+					dtSchema.Dispose()
+				End If
+				If dt IsNot Nothing Then
+					dt.Dispose()
+				End If
+				If openFlag Then
+					Me._conn.Close()
+				End If
+			End Try
         End Function
 
         Public Function GetSchemaFunctions() As DbInfoFunctionCollection Implements IDbAccessHelper.GetSchemaFunctions
@@ -248,34 +271,38 @@ Namespace Db.Helper
             End Get
         End Property
 
-        Public Sub RefreshProcedureParameters(ByVal cmd As System.Data.IDbCommand) Implements IDbAccessHelper.RefreshProcedureParameters
-            Try
-                Dim openFlg As Boolean = False
+		Public Function CnvStatmentParameterName(name As String) As String Implements IDbAccessHelper.CnvStatmentParameterName
+			Return PlaceholderMark & name
+		End Function
 
-                ' コネクションが閉じてる場合は一旦接続する
-                If cmd.Connection.State = ConnectionState.Closed Then
-                    cmd.Connection.Open()
-                    openFlg = True
-                End If
+		Public Sub RefreshProcedureParameters(ByVal cmd As System.Data.IDbCommand) Implements IDbAccessHelper.RefreshProcedureParameters
+			Try
+				Dim openFlg As Boolean = False
 
-                Dim typ As Type
-                typ = _conn.GetType.Assembly.GetType("Oracle.ManagedDataAccess.Client.OracleCommandBuilder")
-                typ.InvokeMember("DeriveParameters", Reflection.BindingFlags.InvokeMethod, Nothing, Nothing, New Object() {cmd})
+				' コネクションが閉じてる場合は一旦接続する
+				If cmd.Connection.State = ConnectionState.Closed Then
+					cmd.Connection.Open()
+					openFlg = True
+				End If
 
-                ' コネクションが閉じてた場合は接続を切る
-                If openFlg Then
-                    cmd.Connection.Close()
-                End If
+				Dim typ As Type
+				typ = _conn.GetType.Assembly.GetType("Oracle.ManagedDataAccess.Client.OracleCommandBuilder")
+				typ.InvokeMember("DeriveParameters", Reflection.BindingFlags.InvokeMethod, Nothing, Nothing, New Object() {cmd})
 
-                For Each para As IDataParameter In cmd.Parameters
-                    para.Value = DBNull.Value
-                Next
-            Catch ex As Exception
-                Throw New DbAccessException(Me.targetDba, ex)
-            End Try
-        End Sub
+				' コネクションが閉じてた場合は接続を切る
+				If openFlg Then
+					cmd.Connection.Close()
+				End If
 
-        Public Function ErrorNumbers(ex As System.Exception) As String() Implements IDbAccessHelper.ErrorNumbers
+				For Each para As IDataParameter In cmd.Parameters
+					para.Value = DBNull.Value
+				Next
+			Catch ex As Exception
+				Throw New DbAccessException(Me.targetDba, ex)
+			End Try
+		End Sub
+
+		Public Function ErrorNumbers(ex As System.Exception) As String() Implements IDbAccessHelper.ErrorNumbers
             If ErrorCount(ex) <= 0 Then
                 Return Nothing
             End If

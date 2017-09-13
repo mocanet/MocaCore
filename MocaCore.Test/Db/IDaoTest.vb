@@ -3,16 +3,18 @@ Imports Moca.Db.Attr
 
 Namespace Db
 
-    ''' <summary>
+	''' <summary>
 	''' DaoTest データアクセスインタフェース
-    ''' </summary>
-    ''' <remarks></remarks>
-    <Dao("MocaCore.Test.My.MySettings.Test", GetType(Impl.DaoTest))>
-    Public Interface IDaoTest
+	''' </summary>
+	''' <remarks></remarks>
+	<Dao("MocaCore.Test.My.MySettings.MSSQL", GetType(Impl.DaoTest))>
+	Public Interface IDaoTest
 
-        Function FindTakeTime() As DataTable
-        Function FindTakeTime2() As IList(Of TestRow)
+		Function FindDataTable() As DataTable
+		Function FindEntity() As IList(Of UserRow)
+		Function Find() As DataTable
+		Function FindEntityNoProp() As IList(Of UserRow)
 
-    End Interface
+	End Interface
 
 End Namespace

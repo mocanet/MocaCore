@@ -55,31 +55,55 @@ Namespace Db.Helper
 #Region " Overrides "
 
 		Protected Friend Overrides Function getSchemaOleDbColumns(table As DbInfoTable) As DbInfoColumnCollection
+			Dim dtSchema As DataTable
 			Dim dt As DataTable
 			Dim results As DbInfoColumnCollection
 			Dim info As DbInfoColumn
 
+			dtSchema = Nothing
+			dt = Nothing
 			results = New DbInfoColumnCollection()
 
-			dt = Me.Connection.GetOleDbSchemaTable(OleDbSchemaGuid.Columns, New Object() {Nothing, table.Schema, """" & table.Name & """"})
-			For ii As Integer = 0 To dt.Rows.Count - 1
-				info = New DbInfoColumn( _
-				   DbUtil.CStrValue(dt.Rows(ii).Item("TABLE_CATALOG")) _
-				 , DbUtil.CStrValue(dt.Rows(ii).Item("TABLE_SCHEMA")) _
-				 , DbUtil.CStrValue(dt.Rows(ii).Item("COLUMN_NAME")) _
-				 , DbUtil.CStrValue(dt.Rows(ii).Item("DATA_TYPE")))
-				Dim length As Integer
-				Dim scale As Integer
-				info.MaxLength = getColumnMaxLength(dt.Rows(ii), length, scale)
-				info.Precision = length
-				info.Scale = scale
-				info.UniCode = isUniCode(info.Typ)
-				info.ColumnType = getColumnDbType(Of OleDbType)(dt.Rows(ii))
-				results.Add(info.Name, info)
-				Debug.Print(info.ToString & ": " & dt.Rows(ii).Item("TABLE_NAME").ToString)
-			Next
+			Try
+				dtSchema = FillSchema(table.Name)
 
-			Return results
+				dt = Me.Connection.GetOleDbSchemaTable(OleDbSchemaGuid.Columns, New Object() {Nothing, table.Schema, """" & table.Name & """"})
+				For ii As Integer = 0 To dt.Rows.Count - 1
+					info = New DbInfoColumn(
+					   DbUtil.CStrValue(dt.Rows(ii).Item("TABLE_CATALOG")) _
+					 , DbUtil.CStrValue(dt.Rows(ii).Item("TABLE_SCHEMA")) _
+					 , DbUtil.CStrValue(dt.Rows(ii).Item("COLUMN_NAME")) _
+					 , DbUtil.CStrValue(dt.Rows(ii).Item("DATA_TYPE")))
+					Dim length As Integer
+					Dim scale As Integer
+					info.MaxLength = getColumnMaxLength(dt.Rows(ii), length, scale)
+					info.Precision = length
+					info.Scale = scale
+					info.UniCode = isUniCode(info.Typ)
+					info.ColumnType = getColumnDbType(Of OleDbType)(dt.Rows(ii))
+					info.DbColumn = dtSchema.Columns(info.Name)
+#If net20 Then
+					For Each item As DataColumn In dtSchema.PrimaryKey
+						If item.ColumnName.Equals(info.Name) Then
+							info.PrimaryKey = True
+							Exit For
+						End If
+					Next
+#Else
+					info.PrimaryKey = dtSchema.PrimaryKey.Select(Function(x) x.ColumnName.Equals(info.Name)).Count.Equals(1)
+#End If
+					results.Add(info.Name, info)
+				Next
+
+				Return results
+			Finally
+				If dtSchema IsNot Nothing Then
+					dtSchema.Dispose()
+				End If
+				If dt IsNot Nothing Then
+					dt.Dispose()
+				End If
+			End Try
 		End Function
 
 		Protected Friend Overrides Function getSchemaOleDbFunctions() As DbInfoFunctionCollection
