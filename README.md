@@ -3,6 +3,8 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/kq6o4o1jcia74so0?svg=true)](https://ci.appveyor.com/project/miyabis/mocacore)
 [![NuGet](https://img.shields.io/nuget/v/Moca.NETCore.svg)](https://www.nuget.org/packages/Moca.NETCore/)
 
+## Core Features
+
 * Support for multiple frameworks
 * Easy database access (using custom attribute) 
 * Easy object mapping (using custom attribute)
@@ -18,15 +20,14 @@ URL:https://www.nuget.org/packages/Moca.NETCore/
 PM> Install-Package Moca.NETCore
 ```
 
+## Other Libraries
+
+[Moca.NET Organization](https://github.com/mocanet)
+
 ## Visual Studio Extensions
 
 * [Moca.NET Template Extension](https://marketplace.visualstudio.com/items?itemName=MiYABiS.MocaNETTemplate30)
 * [Moca.NET Snippets Extension](https://marketplace.visualstudio.com/items?itemName=MiYABiS.MocaNETCodeSnippet)
-
-
-## Other Libraries
-
-[Moca.NET Organization](https://github.com/mocanet)
 
 ## Sample
 
