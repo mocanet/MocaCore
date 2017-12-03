@@ -722,16 +722,30 @@ Namespace Db
 		''' </summary>
 		''' <typeparam name="T"></typeparam>
 		''' <param name="sql"></param>
+		''' <returns></returns>
+		Public Function [Select](Of T)(ByVal sql As String) As IList(Of T)
+			Return [Select](Of T)(sql, Nothing)
+		End Function
+
+		''' <summary>
+		''' SELECT文の実行
+		''' </summary>
+		''' <typeparam name="T"></typeparam>
+		''' <param name="sql"></param>
 		''' <param name="value"></param>
 		''' <returns></returns>
 		Public Function [Select](Of T)(ByVal sql As String, ByVal value As Object) As IList(Of T)
-			Dim props As ICollection
-			props = EntityInfoCache.Store(value.GetType).PropertyInfoMap.Values
+			Dim props As ICollection = Nothing
+			If value IsNot Nothing Then
+				props = EntityInfoCache.Store(value.GetType).PropertyInfoMap.Values
+			End If
 
 			Using cmd As IDbCommandSelect = CreateCommandSelect(sql)
-				For Each prop As PropertyInfo In props
-					cmd.SetParameter(prop.Name, prop.GetValue(value, Nothing))
-				Next
+				If props IsNot Nothing Then
+					For Each prop As PropertyInfo In props
+						cmd.SetParameter(prop.Name, prop.GetValue(value, Nothing))
+					Next
+				End If
 
 				Return cmd.Execute(Of T)()
 			End Using
@@ -741,16 +755,29 @@ Namespace Db
 		''' スカラ値SELECT文の実行
 		''' </summary>
 		''' <param name="sql"></param>
+		''' <returns></returns>
+		Public Function Scalar(ByVal sql As String) As Object
+			Return Scalar(sql, Nothing)
+		End Function
+
+		''' <summary>
+		''' スカラ値SELECT文の実行
+		''' </summary>
+		''' <param name="sql"></param>
 		''' <param name="value"></param>
 		''' <returns></returns>
 		Public Function Scalar(ByVal sql As String, ByVal value As Object) As Object
-			Dim props As ICollection
-			props = EntityInfoCache.Store(value.GetType).PropertyInfoMap.Values
+			Dim props As ICollection = Nothing
+			If value IsNot Nothing Then
+				props = EntityInfoCache.Store(value.GetType).PropertyInfoMap.Values
+			End If
 
 			Using cmd As IDbCommandSelect = CreateCommandSelect(sql)
-				For Each prop As PropertyInfo In props
-					cmd.SetParameter(prop.Name, prop.GetValue(value, Nothing))
-				Next
+				If props IsNot Nothing Then
+					For Each prop As PropertyInfo In props
+						cmd.SetParameter(prop.Name, prop.GetValue(value, Nothing))
+					Next
+				End If
 
 				Return cmd.ExecuteScalar()
 			End Using
@@ -967,6 +994,7 @@ Namespace Db
 			End If
 
 			Using cmd As IDbCommandStoredProcedure = CreateCommandStoredProcedure(name)
+				'TODO: DBから取得したパラメータを主体にする
 				For Each prop As PropertyInfo In props
 					cmd.AddParameterValue(prop.GetValue(parameter, Nothing))
 				Next
@@ -992,6 +1020,7 @@ Namespace Db
 			End If
 
 			Using cmd As IDbCommandStoredProcedure = CreateCommandStoredProcedure(name)
+				'TODO: DBから取得したパラメータを主体にする
 				For Each prop As PropertyInfo In props
 					cmd.AddParameterValue(prop.GetValue(parameter, Nothing))
 				Next
@@ -1017,6 +1046,7 @@ Namespace Db
 			End If
 
 			Using cmd As IDbCommandStoredProcedure = CreateCommandStoredProcedure(name)
+				'TODO: DBから取得したパラメータを主体にする
 				For Each prop As PropertyInfo In props
 					cmd.AddParameterValue(prop.GetValue(parameter, Nothing))
 				Next
