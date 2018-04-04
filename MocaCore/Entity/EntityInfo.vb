@@ -55,7 +55,9 @@ Namespace Entity
 				_columnPropertyInfo.Add(name, prop)
 #If net20 Then
 #Else
-				_columnPropertyAccessor.Add(name, prop.ToAccessor())
+				If prop.CanWrite Then
+					_columnPropertyAccessor.Add(name, prop.ToAccessor())
+				End If
 #End If
 			Next
 

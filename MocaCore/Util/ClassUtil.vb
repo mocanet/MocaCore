@@ -39,8 +39,10 @@ Namespace Util
 #If net20 Then
 #Else
 
-		Public Shared Function NewInstance(Of T)() As Object
-			Return InstanceCreator(Of T).Create()
+		Public Shared Function NewInstance(Of T)() As T
+			Dim creator As Func(Of T)
+			creator = InstanceCreator(Of T).Create()
+			Return creator()
 		End Function
 #End If
 
@@ -410,7 +412,7 @@ Namespace Util
 #Else
 	Friend Class InstanceCreator(Of T)
 
-		Public Shared ReadOnly Property Create As T = Expressions.Expression.Lambda(Of Func(Of T))(Expressions.Expression.[New](GetType(T))).Compile().Invoke()
+		Public Shared ReadOnly Property Create As Object = Expression.Lambda(Of Func(Of T))(Expression.[New](GetType(T))).Compile()
 
 	End Class
 
