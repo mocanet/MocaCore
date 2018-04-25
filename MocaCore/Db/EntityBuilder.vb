@@ -157,7 +157,9 @@ Namespace Db
 				entity = _create(Of T)(typ, Moca.Entity.EntityInfoCache.Store(typ), reader)
 				lst.Add(entity)
 			Loop
-			SetColumnInfo(lst(0))
+			If Not lst.Count.Equals(0) Then
+				SetColumnInfo(lst(0))
+			End If
 
 			Return lst
 		End Function
