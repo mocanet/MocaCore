@@ -132,8 +132,10 @@
     <Compile Include="Db\AbstractDao.vb" />
     <Compile Include="Db\Attr\ColumnAttribute.vb" />
     <Compile Include="Db\Attr\ColumnIgnoreAttribute.vb" />
+    <Compile Include="Db\Attr\CrudConditionAttribute.vb" />
     <Compile Include="Db\Attr\DaoAttribute.vb" />
     <Compile Include="Db\Attr\DaoAttributeAnalyzer.vb" />
+    <Compile Include="Db\Attr\DbFunctionAttribute.vb" />
     <Compile Include="Db\Attr\DbmsAttribute.vb" />
     <Compile Include="Db\Attr\TableAttribute.vb" />
     <Compile Include="Db\Attr\TableAttributeAnalyzer.vb" />

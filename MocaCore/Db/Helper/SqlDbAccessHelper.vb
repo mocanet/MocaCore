@@ -185,9 +185,9 @@ Namespace Db.Helper
 						End If
 					Next
 #Else
-					info.PrimaryKey = dtSchema.PrimaryKey.Select(Function(x) x.ColumnName.Equals(info.Name)).Count.Equals(1)
+                    info.PrimaryKey = dtSchema.PrimaryKey.Where(Function(x) x.ColumnName.Equals(info.Name)).Count.Equals(1)
 #End If
-					results.Add(info.Name, info)
+                    results.Add(info.Name, info)
 				Next
 
 				'TODO: ここで SELECT * FROM TableName でスキーマ情報取得する

@@ -4,18 +4,27 @@ Imports System.Runtime.CompilerServices
 
 Module PropertyExtension
 
-	<Extension()>
-	Public Function ToAccessor(ByVal pi As PropertyInfo) As IAccessor
-		Dim getterDelegateType As Type = GetType(Func(Of ,)).MakeGenericType(pi.DeclaringType, pi.PropertyType)
-		Dim getter As [Delegate] = [Delegate].CreateDelegate(getterDelegateType, pi.GetGetMethod())
+    <Extension()>
+    Public Function ToAccessor(ByVal pi As PropertyInfo) As IAccessor
+        Dim getterDelegateType As Type = Nothing
+        Dim getter As [Delegate] = Nothing
 
-		Dim setterDelegateType As Type = GetType(Action(Of ,)).MakeGenericType(pi.DeclaringType, pi.PropertyType)
-		Dim setter As [Delegate] = [Delegate].CreateDelegate(setterDelegateType, pi.GetSetMethod())
+        Dim setterDelegateType As Type = Nothing
+        Dim setter As [Delegate] = Nothing
 
-		Dim accessorType As Type = GetType(Accessor(Of ,)).MakeGenericType(pi.DeclaringType, pi.PropertyType)
-		Dim accessor As IAccessor = Activator.CreateInstance(accessorType, getter, setter)
+        If pi.CanRead Then
+            getterDelegateType = GetType(Func(Of ,)).MakeGenericType(pi.DeclaringType, pi.PropertyType)
+            getter = [Delegate].CreateDelegate(getterDelegateType, pi.GetGetMethod())
+        End If
+        If pi.CanWrite Then
+            setterDelegateType = GetType(Action(Of ,)).MakeGenericType(pi.DeclaringType, pi.PropertyType)
+            setter = [Delegate].CreateDelegate(setterDelegateType, pi.GetSetMethod())
+        End If
 
-		Return accessor
-	End Function
+        Dim accessorType As Type = GetType(Accessor(Of ,)).MakeGenericType(pi.DeclaringType, pi.PropertyType)
+        Dim accessor As IAccessor = Activator.CreateInstance(accessorType, getter, setter)
+
+        Return accessor
+    End Function
 
 End Module

@@ -18,76 +18,167 @@ Namespace Entity
 
 		''' <summary></summary>
 		Private _columnNames As New Dictionary(Of String, String)()
-		''' <summary></summary>
-		Private _columnPropertyInfo As New Dictionary(Of String, PropertyInfo)
+        ''' <summary></summary>
+        Private _columnPropertyInfo As New Dictionary(Of String, PropertyInfo)()
+        'Private _dbColumnPropertyInfo As New Dictionary(Of String, PropertyInfo)()
 #If net20 Then
 #Else
-		Private _columnPropertyAccessor As New Dictionary(Of String, IAccessor)()
+        Private _columnPropertyAccessor As New Dictionary(Of String, IAccessor)()
+        'Private _dbColumnPropertyAccessor As New Dictionary(Of String, IAccessor)()
 #End If
 
-		'Private _columnDefs As New Hashtable()
+        Private _tableName1st As String
+        Private _defProperty1st As String
+        Private _tblDefs As New Dictionary(Of String, Object)()
+        Private _tblDefColumns As New Dictionary(Of String, EntityInfo)()
 
-		Private _tableName1st As String
-		Private _tblDefs As New Hashtable
-		Private _tblDefColumns As New Hashtable
+        Private _sqlInsert As New Dictionary(Of String, String)()
+        Private _sqlDelete As New Dictionary(Of String, String)()
+        Private _sqlUpdate As New Dictionary(Of String, String)()
+
+        Private _columnPropertyDef As New Dictionary(Of String, String)()
+        Private _columnFunctions As New Dictionary(Of String, DbFunctionAttribute)()
+        Private _columnCrudConditions As New Dictionary(Of String, CrudConditionAttribute())()
 
 #End Region
 #Region " コンストラクタ "
 
-		''' <summary>
-		''' コンストラクタ
-		''' </summary>
-		''' <param name="typ"></param>
-		Public Sub New(ByVal typ As Type)
-			_type = typ
+        ''' <summary>
+        ''' コンストラクタ
+        ''' </summary>
+        ''' <param name="typ"></param>
+        Public Sub New(ByVal typ As Type)
+            _type = typ
 
-			Dim pinfo() As PropertyInfo
+            Dim pinfo() As PropertyInfo
 
-			pinfo = ClassUtil.GetProperties(typ)
-			For Each prop As PropertyInfo In pinfo
-				Dim name As String
-				name = DbUtil.GetColumnName(prop)
+            pinfo = ClassUtil.GetProperties(typ)
+            For Each prop As PropertyInfo In pinfo
+                Dim name As String
+                name = DbUtil.GetColumnName(prop)
 
-				If String.IsNullOrEmpty(name) Then
-					Continue For
-				End If
-				_columnNames.Add(name, prop.Name)
-				_columnPropertyInfo.Add(name, prop)
+                If String.IsNullOrEmpty(name) Then
+                    Continue For
+                End If
+                _columnNames.Add(name, prop.Name)
+
+                _columnPropertyInfo.Add(name, prop)
+                '_dbColumnPropertyInfo.Add(name, prop)
 #If net20 Then
 #Else
-				If prop.CanWrite Then
-					_columnPropertyAccessor.Add(name, prop.ToAccessor())
-				End If
+                _columnPropertyAccessor.Add(name, prop.ToAccessor())
+                '_dbColumnPropertyAccessor.Add(name, prop.ToAccessor())
 #End If
-			Next
 
-			_setColumnInfo(typ)
+                Dim attrDbFunc As Moca.Db.Attr.DbFunctionAttribute = ClassUtil.GetCustomAttribute(Of Moca.Db.Attr.DbFunctionAttribute)(prop)
+                If attrDbFunc IsNot Nothing Then
+                    _columnFunctions.Add(name, attrDbFunc)
+                End If
+                Dim attrCrud() As Moca.Db.Attr.CrudConditionAttribute = ClassUtil.GetCustomAttributes(Of Moca.Db.Attr.CrudConditionAttribute)(prop)
+                _columnCrudConditions.Add(name, attrCrud)
+            Next
 
-			Dim fields() As FieldInfo = _type.GetFields(BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.Static)
-			For Each field As FieldInfo In fields
-				Dim attr As Moca.Db.Attr.TableAttribute = ClassUtil.GetCustomAttribute(Of Moca.Db.Attr.TableAttribute)(field.FieldType)
-				If attr Is Nothing Then
-					Continue For
-				End If
-				If String.IsNullOrEmpty(_tableName1st) Then
-					_tableName1st = attr.TableName
-				End If
-				_tblDefs.Add(attr.TableName, field.GetValue(_type))
-				_tblDefColumns.Add(attr.TableName, New EntityInfo(field.FieldType))
-			Next
+            _setColumnInfo(typ)
 
-		End Sub
+            Dim fields() As FieldInfo = _type.GetFields(BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.Static)
+            For Each field As FieldInfo In fields
+                Dim attr As Moca.Db.Attr.TableAttribute = ClassUtil.GetCustomAttribute(Of Moca.Db.Attr.TableAttribute)(field.FieldType)
+                If attr Is Nothing Then
+                    Continue For
+                End If
+                If String.IsNullOrEmpty(_tableName1st) Then
+                    _tableName1st = attr.TableName
+                    _defProperty1st = field.Name
+                End If
+                _columnPropertyDef.Add(attr.TableName, field.Name)
+                _tblDefs.Add(attr.TableName, field.GetValue(_type))
+                _tblDefColumns.Add(attr.TableName, New EntityInfo(field.FieldType))
+            Next
+
+        End Sub
 
 #End Region
 #Region " Property "
 
-		Public ReadOnly Property TableName1st As String
-			Get
-				Return _tableName1st
-			End Get
-		End Property
+        Public ReadOnly Property TableName1st As String
+            Get
+                Return _tableName1st
+            End Get
+        End Property
 
-		Public ReadOnly Property ColumnType As Type
+        Public ReadOnly Property TableDef(ByVal name As String) As Object
+            Get
+                If Not _tblDefs.ContainsKey(name) Then
+                    Return Nothing
+                End If
+                Return _tblDefs(name)
+            End Get
+        End Property
+
+        Public ReadOnly Property TableEntityInfo(ByVal name As String) As EntityInfo
+            Get
+                If Not _tblDefColumns.ContainsKey(name) Then
+                    Return Nothing
+                End If
+                Return _tblDefColumns(name)
+            End Get
+        End Property
+
+        Public Property SqlInsert(ByVal name As String) As String
+            Get
+                If Not _sqlInsert.ContainsKey(name) Then
+                    Return Nothing
+                End If
+                Return _sqlInsert(name)
+            End Get
+            Set(value As String)
+                _sqlInsert(name) = value
+            End Set
+        End Property
+
+        Public Property SqlDelete(ByVal name As String) As String
+            Get
+                If Not _sqlDelete.ContainsKey(name) Then
+                    Return Nothing
+                End If
+                Return _sqlDelete(name)
+            End Get
+            Set(value As String)
+                _sqlDelete(name) = value
+            End Set
+        End Property
+
+        Public Property SqlUpdate(ByVal name As String) As String
+            Get
+                If Not _sqlUpdate.ContainsKey(name) Then
+                    Return Nothing
+                End If
+                Return _sqlUpdate(name)
+            End Get
+            Set(value As String)
+                _sqlUpdate(name) = value
+            End Set
+        End Property
+
+        Public ReadOnly Property ColumnFunctions(ByVal name As String) As DbFunctionAttribute
+            Get
+                If Not _columnFunctions.ContainsKey(name) Then
+                    Return Nothing
+                End If
+                Return _columnFunctions(name)
+            End Get
+        End Property
+
+        Public ReadOnly Property ColumnCrudConditions(ByVal name As String) As CrudConditionAttribute()
+            Get
+                If Not _columnCrudConditions.ContainsKey(name) Then
+                    Return Nothing
+                End If
+                Return _columnCrudConditions(name)
+            End Get
+        End Property
+
+        Public ReadOnly Property ColumnType As Type
 			Get
 				Return _type
 			End Get
@@ -118,8 +209,11 @@ Namespace Entity
 
 		Public ReadOnly Property PropertyName(ByVal columnName As String) As String
 			Get
-				Return _columnNames(columnName)
-			End Get
+                If Not _columnNames.ContainsKey(columnName) Then
+                    Return Nothing
+                End If
+                Return _columnNames(columnName)
+            End Get
 		End Property
 
 		''' <summary>
@@ -128,16 +222,22 @@ Namespace Entity
 		''' <returns></returns>
 		Public ReadOnly Property ProprtyInfo(ByVal columnName As String) As PropertyInfo
 			Get
-				Return _columnPropertyInfo(columnName)
-			End Get
+                If Not _columnPropertyInfo.ContainsKey(columnName) Then
+                    Return Nothing
+                End If
+                Return _columnPropertyInfo(columnName)
+            End Get
 		End Property
 
 #If net20 Then
 #Else
 		Public ReadOnly Property ProprtyAccessor(ByVal columnName As String) As IAccessor
 			Get
-				Return _columnPropertyAccessor(columnName)
-			End Get
+                If Not _columnPropertyAccessor.ContainsKey(columnName) Then
+                    Return Nothing
+                End If
+                Return _columnPropertyAccessor(columnName)
+            End Get
 		End Property
 #End If
 

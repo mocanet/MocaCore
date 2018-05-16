@@ -3,6 +3,7 @@ Imports System.Data.Common
 Imports System.Reflection
 Imports System.Runtime.CompilerServices
 Imports System.Text
+Imports Moca.Db.Attr
 Imports Moca.Db.CommandWrapper
 Imports Moca.Entity
 
@@ -787,7 +788,12 @@ Namespace Db
 #End Region
 #Region " Insert "
 
-		Friend Overloads Function Insert(ByVal value As Object) As Integer
+		''' <summary>
+		''' INSERT 文実行（Insert 文自動生成）
+		''' </summary>
+		''' <param name="value">値</param>
+		''' <returns>更新件数</returns>
+		Public Overloads Function Insert(ByVal value As Object) As Integer
 			Dim sql As String
 			Dim props As ICollection
 			Dim cache As EntityInfo
@@ -795,7 +801,7 @@ Namespace Db
 			cache = EntityInfoCache.Store(value.GetType)
 			props = cache.PropertyInfoMap.Values
 
-			sql = CreateSqlInsert(cache)
+			sql = _createSqlInsert(cache)
 			Using cmd As IDbCommandInsert = CreateCommandInsert(sql)
 				For Each prop As PropertyInfo In props
 					cmd.SetParameter(prop.Name, prop.GetValue(value, Nothing))
@@ -807,7 +813,13 @@ Namespace Db
 			End Using
 		End Function
 
-		Friend Overloads Function Insert(Of T)(ByVal value As IList(Of T)) As Integer
+		''' <summary>
+		''' INSERT 文実行（Insert 文自動生成）
+		''' </summary>
+		''' <typeparam name="T">値のタイプ</typeparam>
+		''' <param name="value">値</param>
+		''' <returns>更新件数</returns>
+		Public Overloads Function Insert(Of T)(ByVal value As IList(Of T)) As Integer
 			Dim typ As Type
 			Dim sql As String
 			Dim props As ICollection
@@ -817,7 +829,7 @@ Namespace Db
 			cache = EntityInfoCache.Store(typ)
 			props = cache.PropertyInfoMap.Values
 
-			sql = CreateSqlInsert(cache)
+			sql = _createSqlInsert(cache)
 			Using cmd As IDbCommandInsert = CreateCommandInsert(sql)
 				cmd.Prepare()
 
@@ -837,8 +849,8 @@ Namespace Db
 		''' <summary>
 		''' INSERT 文実行
 		''' </summary>
-		''' <param name="sql"></param>
-		''' <param name="value"></param>
+		''' <param name="sql">SQL 文</param>
+		''' <param name="value">値</param>
 		''' <returns></returns>
 		Public Overloads Function Insert(ByVal sql As String, ByVal value As Object) As Integer
 			Dim props As ICollection
@@ -858,9 +870,9 @@ Namespace Db
 		''' <summary>
 		''' INSERT 文実行（複数行）
 		''' </summary>
-		''' <typeparam name="T"></typeparam>
-		''' <param name="sql"></param>
-		''' <param name="value"></param>
+		''' <typeparam name="T">値のタイプ</typeparam>
+		''' <param name="sql">SQL 文</param>
+		''' <param name="value">値</param>
 		''' <returns></returns>
 		Public Overloads Function Insert(Of T)(ByVal sql As String, ByVal value As IList(Of T)) As Integer
 			Dim props As ICollection
@@ -881,28 +893,114 @@ Namespace Db
 			End Using
 		End Function
 
-		Private Function CreateSqlInsert(ByVal cache As EntityInfo) As String
+		''' <summary>
+		''' Insert 文作成
+		''' </summary>
+		''' <param name="cache"></param>
+		''' <returns></returns>
+		Private Function _createSqlInsert(ByVal cache As EntityInfo) As String
 			Const cSql As String = "INSERT INTO {0} ({1}) VALUES ({2})"
 			Dim tbl As String
-			Dim cols As ICollection
-			Dim col1 As New StringBuilder(512)
-			Dim col2 As New StringBuilder(512)
+			Dim def As Object
+			Dim defCols As ICollection
+			Dim defCache As EntityInfo
+			Dim sqlInto As New StringBuilder(512)
+			Dim sqlValues As New StringBuilder(512)
+			Dim sql As String
 
 			tbl = cache.TableName1st
-			cols = cache.ColumnNames
-			For Each col As String In cols
-				col1.Append(IIf(col1.Length.Equals(0), String.Empty, ","))
-				col1.Append(col)
-				col2.Append(IIf(col2.Length.Equals(0), String.Empty, ","))
-				col2.Append(Helper.CnvStatmentParameterName(col))
+			If String.IsNullOrEmpty(tbl) Then
+				Throw New ArgumentNullException("TableName", "テーブル定義情報が存在しないときは SQL 自動生成は利用できません。")
+			End If
+
+			sql = cache.SqlInsert(tbl)
+			If Not String.IsNullOrEmpty(sql) Then
+				Return sql
+			End If
+
+			def = cache.TableDef(tbl)
+			defCache = cache.TableEntityInfo(tbl)
+			defCols = defCache.ColumnNames
+			For Each defCol As String In defCols
+				If cache.PropertyName(defCol) Is Nothing Then
+					Continue For
+				End If
+
+				Dim obj As Object
+#If net20 Then
+				obj = defCache.ProprtyInfo(defCol).GetValue(def, Nothing)
+#Else
+				obj = defCache.ProprtyAccessor(defCol).GetValue(def)
+#End If
+
+				If TypeOf obj Is DbInfoColumn Then
+					Continue For
+				End If
+
+				Dim attrCrud() As CrudConditionAttribute = defCache.ColumnCrudConditions(defCol)
+				If Not attrCrud.Length.Equals(0) AndAlso
+						Array.FindAll(Of CrudConditionAttribute)(attrCrud, Function(x) x.Status = DataRowState.Added).Length.Equals(0) Then
+					Continue For
+				End If
+
+				Dim defVal As String = Helper.CnvStatmentParameterName(defCol)
+				Dim attr As DbFunctionAttribute = defCache.ColumnFunctions(defCol)
+				If attr IsNot Nothing Then
+					defVal = String.Format(attr.Function, defVal)
+				End If
+
+				sqlInto.Append(IIf(sqlInto.Length.Equals(0), String.Empty, ", "))
+				sqlInto.Append(defCol)
+				sqlValues.Append(IIf(sqlValues.Length.Equals(0), String.Empty, ", "))
+				sqlValues.Append(defVal)
 			Next
 
-			Return String.Format(cSql, tbl, col1.ToString, col2.ToString)
+			sql = String.Format(cSql, tbl, sqlInto.ToString, sqlValues.ToString)
+			cache.SqlInsert(tbl) = sql
+			Return sql
 		End Function
 
+#If DEBUG Then
+
+		Protected Function createSqlInsert(ByVal value As Object) As String
+			Return _createSqlInsert(EntityInfoCache.Store(value.GetType))
+		End Function
+
+#End If
 #End Region
 #Region " Update "
 
+		''' <summary>
+		''' Update 文実行（Update 文自動生成）
+		''' </summary>
+		''' <param name="value">値</param>
+		''' <returns>更新件数</returns>
+		Public Overloads Function Update(ByVal value As Object) As Integer
+			Dim sql As String
+			Dim props As ICollection
+			Dim cache As EntityInfo
+
+			cache = EntityInfoCache.Store(value.GetType)
+			props = cache.PropertyInfoMap.Values
+
+			sql = _createSqlUpdate(cache)
+			Using cmd As IDbCommandUpdate = CreateCommandUpdate(sql)
+				For Each prop As PropertyInfo In props
+					cmd.SetParameter(prop.Name, prop.GetValue(value, Nothing))
+				Next
+
+				Dim rc As Integer
+				rc = cmd.Execute()
+				Return rc
+			End Using
+		End Function
+
+		''' <summary>
+		''' Update 文実行
+		''' </summary>
+		''' <param name="sql">SQL 文</param>
+		''' <param name="value">値</param>
+		''' <returns>更新件数</returns>
 		Public Overloads Function Update(ByVal sql As String, ByVal value As Object) As Integer
 			Dim props As ICollection
 			props = EntityInfoCache.Store(value.GetType).PropertyInfoMap.Values
@@ -918,6 +1016,13 @@ Namespace Db
 			End Using
 		End Function
 
+		''' <summary>
+		''' Update 文実行（複数行）
+		''' </summary>
+		''' <typeparam name="T">値のタイプ</typeparam>
+		''' <param name="sql">SQL 文</param>
+		''' <param name="value">値</param>
+		''' <returns>更新件数</returns>
 		Public Overloads Function Update(Of T)(ByVal sql As String, ByVal value As IList(Of T)) As Integer
 			Dim props As ICollection
 			props = EntityInfoCache.Store(GetType(T)).PropertyInfoMap.Values
@@ -937,13 +1042,101 @@ Namespace Db
 			End Using
 		End Function
 
+		''' <summary>
+		''' Update 文作成
+		''' </summary>
+		''' <param name="cache"></param>
+		''' <returns></returns>
+		Private Function _createSqlUpdate(ByVal cache As EntityInfo) As String
+			Const cSql As String = "UPDATE {0} SET {1} WHERE {2}"
+			Dim tbl As String
+			Dim def As Object
+			Dim defCols As ICollection
+			Dim defCache As EntityInfo
+			Dim sqlSet As New StringBuilder(512)
+			Dim sqlWhere As New StringBuilder(512)
+			Dim sql As String
+
+			tbl = cache.TableName1st
+			If String.IsNullOrEmpty(tbl) Then
+				Throw New ArgumentNullException("TableName", "テーブル定義情報が存在しないときは SQL 自動生成は利用できません。")
+			End If
+
+			sql = cache.SqlUpdate(tbl)
+			If Not String.IsNullOrEmpty(sql) Then
+				Return sql
+			End If
+
+			def = cache.TableDef(tbl)
+			defCache = cache.TableEntityInfo(tbl)
+			defCols = defCache.ColumnNames
+			For Each defCol As String In defCols
+				If cache.PropertyName(defCol) Is Nothing Then
+					Continue For
+				End If
+
+				Dim obj As Object
+#If net20 Then
+				obj = defCache.ProprtyInfo(defCol).GetValue(def, Nothing)
+#Else
+				obj = defCache.ProprtyAccessor(defCol).GetValue(def)
+#End If
+
+				If TypeOf obj Is DbInfoColumn Then
+					Continue For
+				End If
+
+				Dim defVal As String = Helper.CnvStatmentParameterName(defCol)
+				Dim attrDbFunction As DbFunctionAttribute = defCache.ColumnFunctions(defCol)
+				If attrDbFunction IsNot Nothing Then
+					defVal = String.Format(attrDbFunction.Function, defVal)
+				End If
+
+				Dim infoCol As DbInfoColumn = obj
+				If Not infoCol.PrimaryKey Then
+					Dim attrCrud() As CrudConditionAttribute = defCache.ColumnCrudConditions(defCol)
+					If attrCrud.Length.Equals(0) OrElse
+						Array.FindAll(Of CrudConditionAttribute)(attrCrud, Function(x) x.Status = DataRowState.Modified).Length.Equals(1) Then
+						sqlSet.Append(IIf(sqlSet.Length.Equals(0), String.Empty, ", "))
+						sqlSet.AppendFormat("{0} = {1}", defCol, defVal)
+					End If
+
+					Continue For
+				End If
+
+				sqlWhere.Append(IIf(sqlWhere.Length.Equals(0), String.Empty, " AND "))
+				sqlWhere.AppendFormat("{0} = {1}", defCol, Helper.CnvStatmentParameterName(defCol))
+			Next
+
+			sql = String.Format(cSql, tbl, sqlSet.ToString, sqlWhere.ToString)
+			cache.SqlUpdate(tbl) = sql
+			Return sql
+		End Function
+
+#If DEBUG Then
+
+		Protected Function createSqlUpdate(ByVal value As Object) As String
+			Return _createSqlUpdate(EntityInfoCache.Store(value.GetType))
+		End Function
+
+#End If
 #End Region
 #Region " Delete "
 
-		Public Overloads Function Delete(ByVal sql As String, ByVal value As Object) As Integer
+		''' <summary>
+		''' Delete 文実行（Delete 文自動生成）
+		''' </summary>
+		''' <param name="value"></param>
+		''' <returns>更新件数</returns>
+		Public Overloads Function Delete(ByVal value As Object) As Integer
+			Dim sql As String
 			Dim props As ICollection
-			props = EntityInfoCache.Store(value.GetType).PropertyInfoMap.Values
+			Dim cache As EntityInfo
 
+			cache = EntityInfoCache.Store(value.GetType)
+			props = cache.PropertyInfoMap.Values
+
+			sql = _createSqlDelete(cache)
 			Using cmd As IDbCommandDelete = CreateCommandDelete(sql)
 				For Each prop As PropertyInfo In props
 					cmd.SetParameter(prop.Name, prop.GetValue(value, Nothing))
@@ -955,6 +1148,48 @@ Namespace Db
 			End Using
 		End Function
 
+		''' <summary>
+		''' Delete 文実行
+		''' </summary>
+		''' <param name="sql">SQL 文</param>
+		''' <returns>更新件数</returns>
+		Public Overloads Function Delete(ByVal sql As String) As Integer
+			Return Delete(sql, Nothing)
+		End Function
+
+		''' <summary>
+		''' Delete 文実行
+		''' </summary>
+		''' <param name="sql">SQL 文</param>
+		''' <param name="value">値</param>
+		''' <returns>更新件数</returns>
+		Public Overloads Function Delete(ByVal sql As String, ByVal value As Object) As Integer
+			Dim props As ICollection = Nothing
+
+			If value IsNot Nothing Then
+				props = EntityInfoCache.Store(value.GetType).PropertyInfoMap.Values
+			End If
+
+			Using cmd As IDbCommandDelete = CreateCommandDelete(sql)
+				If props IsNot Nothing Then
+					For Each prop As PropertyInfo In props
+						cmd.SetParameter(prop.Name, prop.GetValue(value, Nothing))
+					Next
+				End If
+
+				Dim rc As Integer
+				rc = cmd.Execute()
+				Return rc
+			End Using
+		End Function
+
+		''' <summary>
+		''' Delete 文実行（複数行）
+		''' </summary>
+		''' <typeparam name="T">値のタイプ</typeparam>
+		''' <param name="sql">SQL 文</param>
+		''' <param name="value">値</param>
+		''' <returns>更新件数</returns>
 		Public Overloads Function Delete(Of T)(ByVal sql As String, ByVal value As IList(Of T)) As Integer
 			Dim props As ICollection
 			props = EntityInfoCache.Store(GetType(T)).PropertyInfoMap.Values
@@ -974,82 +1209,252 @@ Namespace Db
 			End Using
 		End Function
 
+		''' <summary>
+		''' Delete 文作成
+		''' </summary>
+		''' <param name="cache"></param>
+		''' <returns></returns>
+		Private Function _createSqlDelete(ByVal cache As EntityInfo) As String
+			Const cSql As String = "DELETE FROM {0} WHERE {1}"
+			Dim tbl As String
+			Dim def As Object
+			Dim defCols As ICollection
+			Dim defCache As EntityInfo
+			Dim sqlWhere As New StringBuilder(512)
+			Dim sql As String
+
+			tbl = cache.TableName1st
+			If String.IsNullOrEmpty(tbl) Then
+				Throw New ArgumentNullException("TableName", "テーブル定義情報が存在しないときは SQL 自動生成は利用できません。")
+			End If
+
+			sql = cache.SqlDelete(tbl)
+			If Not String.IsNullOrEmpty(sql) Then
+				Return sql
+			End If
+
+			def = cache.TableDef(tbl)
+			defCache = cache.TableEntityInfo(tbl)
+			defCols = defCache.ColumnNames
+			For Each defCol As String In defCols
+				If cache.PropertyName(defCol) Is Nothing Then
+					Continue For
+				End If
+
+				Dim obj As Object
+#If net20 Then
+				obj = defCache.ProprtyInfo(defCol).GetValue(def, Nothing)
+#Else
+				obj = defCache.ProprtyAccessor(defCol).GetValue(def)
+#End If
+
+				If TypeOf obj Is DbInfoColumn Then
+					Continue For
+				End If
+
+				Dim infoCol As DbInfoColumn = obj
+				If Not infoCol.PrimaryKey Then
+					Continue For
+				End If
+
+				sqlWhere.Append(IIf(sqlWhere.Length.Equals(0), String.Empty, " AND "))
+				sqlWhere.AppendFormat("{0} = {1}", infoCol.Name, Helper.CnvStatmentParameterName(infoCol.Name))
+			Next
+
+			sql = String.Format(cSql, tbl, sqlWhere.ToString)
+			cache.SqlDelete(tbl) = sql
+			Return sql
+		End Function
+
+#If DEBUG Then
+
+		Protected Function createSqlDelete(ByVal value As Object) As String
+			Return _createSqlDelete(EntityInfoCache.Store(value.GetType))
+		End Function
+
+#End If
 #End Region
 #Region " Procedure "
 
-#If net20 Or net35 Or net40 Then
+		''' <summary>
+		''' ストアド（クエリ）の実行
+		''' </summary>
+		''' <typeparam name="T">戻すエンティティ</typeparam>
+		''' <param name="storedProcedureName">ストアド名</param>
+		''' <returns></returns>
+		Public Overloads Function QueryProcedure(Of T)(ByVal storedProcedureName As String) As IList(Of T)
+			Return QueryProcedure(Of T)(storedProcedureName, Nothing, Nothing)
+		End Function
+
+		''' <summary>
+		''' ストアド（クエリ）の実行
+		''' </summary>
+		''' <typeparam name="T">戻すエンティティ</typeparam>
+		''' <param name="storedProcedureName">ストアド名</param>
+		''' <param name="commandTimeout">コマンドが実行されるまでの待機時間 (秒)。既定値は 30 秒です。</param>
+		''' <returns></returns>
+		Public Overloads Function QueryProcedure(Of T)(ByVal storedProcedureName As String, ByVal commandTimeout As Integer) As IList(Of T)
+			Return QueryProcedure(Of T)(storedProcedureName, Nothing, commandTimeout)
+		End Function
+
+		''' <summary>
+		''' ストアド（クエリ）の実行
+		''' </summary>
+		''' <typeparam name="T">戻すエンティティ</typeparam>
+		''' <param name="storedProcedureName">ストアド名</param>
+		''' <param name="parameter">ストアドのパラメータ</param>
+		''' <returns></returns>
 		Public Overloads Function QueryProcedure(Of T)(ByVal storedProcedureName As String, ByVal parameter As Object) As IList(Of T)
-#Else
-		Public  Overloads Function StoredProcedure(Of T)(ByVal parameter As Object, <CallerMemberName> Optional ByVal storedProcedureName As String = "") As IList(Of T)
-#End If
-			Dim props As ICollection
-			props = EntityInfoCache.Store(parameter.GetType).PropertyInfoMap.Values
+			Return QueryProcedure(Of T)(storedProcedureName, parameter, Nothing)
+		End Function
 
-			Dim className As String = Me.GetType().Name
-			Dim name As String = storedProcedureName
-
-			If Not storedProcedureName.StartsWith(className) Then
-				Const cSql As String = "{0}_{1}"
-				name = String.Format(cSql, className, storedProcedureName)
+		''' <summary>
+		''' ストアド（クエリ）の実行
+		''' </summary>
+		''' <typeparam name="T">戻すエンティティ</typeparam>
+		''' <param name="storedProcedureName">ストアド名</param>
+		''' <param name="parameter">ストアドのパラメータ</param>
+		''' <param name="commandTimeout">コマンドが実行されるまでの待機時間 (秒)。既定値は 30 秒です。</param>
+		''' <returns></returns>
+		Public Overloads Function QueryProcedure(Of T)(ByVal storedProcedureName As String, ByVal parameter As Object, ByVal commandTimeout As Integer?) As IList(Of T)
+			Dim props As ICollection = Nothing
+			If parameter IsNot Nothing Then
+				props = EntityInfoCache.Store(parameter.GetType).PropertyInfoMap.Values
 			End If
 
-			Using cmd As IDbCommandStoredProcedure = CreateCommandStoredProcedure(name)
-				'TODO: DBから取得したパラメータを主体にする
-				For Each prop As PropertyInfo In props
-					cmd.AddParameterValue(prop.GetValue(parameter, Nothing))
-				Next
+			Using cmd As IDbCommandStoredProcedure = CreateCommandStoredProcedure(storedProcedureName)
+				If commandTimeout IsNot Nothing Then
+					cmd.Command.CommandTimeout = commandTimeout
+				End If
+
+				If props IsNot Nothing Then
+					For Each prop As PropertyInfo In props
+						If Not cmd.Command.Parameters.Contains(Helper.CDbParameterName(prop.Name)) Then
+							Continue For
+						End If
+						cmd.SetParameter(prop.Name, prop.GetValue(parameter, Nothing))
+					Next
+				End If
 
 				Return cmd.Execute(Of T)()
 			End Using
 		End Function
 
-#If net20 Or net35 Or net40 Then
+		''' <summary>
+		''' ストアド（Scalar クエリ）の実行
+		''' </summary>
+		''' <param name="storedProcedureName">ストアド名</param>
+		''' <returns></returns>
+		Public Overloads Function ScalarProcedure(ByVal storedProcedureName As String) As Object
+			Return ScalarProcedure(storedProcedureName, Nothing, Nothing)
+		End Function
+
+		''' <summary>
+		''' ストアド（Scalar クエリ）の実行
+		''' </summary>
+		''' <param name="storedProcedureName">ストアド名</param>
+		''' <param name="commandTimeout">コマンドが実行されるまでの待機時間 (秒)。既定値は 30 秒です。</param>
+		''' <returns></returns>
+		Public Overloads Function ScalarProcedure(ByVal storedProcedureName As String, ByVal commandTimeout As Integer?) As Object
+			Return ScalarProcedure(storedProcedureName, Nothing, commandTimeout)
+		End Function
+
+		''' <summary>
+		''' ストアド（Scalar クエリ）の実行
+		''' </summary>
+		''' <param name="storedProcedureName">ストアド名</param>
+		''' <param name="parameter">ストアドのパラメータ</param>
+		''' <returns></returns>
 		Public Overloads Function ScalarProcedure(ByVal storedProcedureName As String, ByVal parameter As Object) As Object
-#Else
-		Public  Overloads Function ScalarProcedure(ByVal parameter As Object, <CallerMemberName> Optional ByVal storedProcedureName As String = "") As Object
-#End If
-			Dim props As ICollection
-			props = EntityInfoCache.Store(parameter.GetType).PropertyInfoMap.Values
+			Return ScalarProcedure(storedProcedureName, parameter, Nothing)
+		End Function
 
-			Dim className As String = Me.GetType().Name
-			Dim name As String = storedProcedureName
-
-			If Not storedProcedureName.StartsWith(className) Then
-				Const cSql As String = "{0}_{1}"
-				name = String.Format(cSql, className, storedProcedureName)
+		''' <summary>
+		''' ストアド（Scalar クエリ）の実行
+		''' </summary>
+		''' <param name="storedProcedureName">ストアド名</param>
+		''' <param name="parameter">ストアドのパラメータ</param>
+		''' <param name="commandTimeout">コマンドが実行されるまでの待機時間 (秒)。既定値は 30 秒です。</param>
+		''' <returns></returns>
+		Public Overloads Function ScalarProcedure(ByVal storedProcedureName As String, ByVal parameter As Object, ByVal commandTimeout As Integer?) As Object
+			Dim props As ICollection = Nothing
+			If parameter IsNot Nothing Then
+				props = EntityInfoCache.Store(parameter.GetType).PropertyInfoMap.Values
 			End If
 
-			Using cmd As IDbCommandStoredProcedure = CreateCommandStoredProcedure(name)
-				'TODO: DBから取得したパラメータを主体にする
-				For Each prop As PropertyInfo In props
-					cmd.AddParameterValue(prop.GetValue(parameter, Nothing))
-				Next
+			Using cmd As IDbCommandStoredProcedure = CreateCommandStoredProcedure(storedProcedureName)
+				If commandTimeout IsNot Nothing Then
+					cmd.Command.CommandTimeout = commandTimeout
+				End If
+
+				If props IsNot Nothing Then
+					For Each prop As PropertyInfo In props
+						If Not cmd.Command.Parameters.Contains(Helper.CDbParameterName(prop.Name)) Then
+							Continue For
+						End If
+						cmd.SetParameter(prop.Name, prop.GetValue(parameter, Nothing))
+					Next
+				End If
 
 				Return cmd.ExecuteScalar()
 			End Using
 		End Function
 
-#If net20 Or net35 Or net40 Then
+		''' <summary>
+		''' ストアド（更新）の実行
+		''' </summary>
+		''' <param name="storedProcedureName">ストアド名</param>
+		''' <returns>更新対象件数</returns>
+		Public Overloads Function UpdateProcedure(ByVal storedProcedureName As String) As Integer
+			Return UpdateProcedure(storedProcedureName, Nothing, Nothing)
+		End Function
+
+		''' <summary>
+		''' ストアド（更新）の実行
+		''' </summary>
+		''' <param name="storedProcedureName">ストアド名</param>
+		''' <param name="commandTimeout">コマンドが実行されるまでの待機時間 (秒)。既定値は 30 秒です。</param>
+		''' <returns>更新対象件数</returns>
+		Public Overloads Function UpdateProcedure(ByVal storedProcedureName As String, ByVal commandTimeout As Integer?) As Integer
+			Return UpdateProcedure(storedProcedureName, Nothing, commandTimeout)
+		End Function
+
+		''' <summary>
+		''' ストアド（更新）の実行
+		''' </summary>
+		''' <param name="storedProcedureName">ストアド名</param>
+		''' <param name="parameter">ストアドのパラメータ</param>
+		''' <returns>更新対象件数</returns>
 		Public Overloads Function UpdateProcedure(ByVal storedProcedureName As String, ByVal parameter As Object) As Integer
-#Else
-		Public  Overloads Function UpdateProcedure(ByVal parameter As Object, <CallerMemberName> Optional ByVal storedProcedureName As String = "") As Integer
-#End If
-			Dim props As ICollection
-			props = EntityInfoCache.Store(parameter.GetType).PropertyInfoMap.Values
+			Return UpdateProcedure(storedProcedureName, parameter, Nothing)
+		End Function
 
-			Dim className As String = Me.GetType().Name
-			Dim name As String = storedProcedureName
-
-			If Not storedProcedureName.StartsWith(className) Then
-				Const cSql As String = "{0}_{1}"
-				name = String.Format(cSql, className, storedProcedureName)
+		''' <summary>
+		''' ストアド（更新）の実行
+		''' </summary>
+		''' <param name="storedProcedureName">ストアド名</param>
+		''' <param name="parameter">ストアドのパラメータ</param>
+		''' <param name="commandTimeout">コマンドが実行されるまでの待機時間 (秒)。既定値は 30 秒です。</param>
+		''' <returns>更新対象件数</returns>
+		Public Overloads Function UpdateProcedure(ByVal storedProcedureName As String, ByVal parameter As Object, ByVal commandTimeout As Integer?) As Integer
+			Dim props As ICollection = Nothing
+			If parameter IsNot Nothing Then
+				props = EntityInfoCache.Store(parameter.GetType).PropertyInfoMap.Values
 			End If
 
-			Using cmd As IDbCommandStoredProcedure = CreateCommandStoredProcedure(name)
-				'TODO: DBから取得したパラメータを主体にする
-				For Each prop As PropertyInfo In props
-					cmd.AddParameterValue(prop.GetValue(parameter, Nothing))
-				Next
+			Using cmd As IDbCommandStoredProcedure = CreateCommandStoredProcedure(storedProcedureName)
+				If commandTimeout IsNot Nothing Then
+					cmd.Command.CommandTimeout = commandTimeout
+				End If
+
+				If props IsNot Nothing Then
+					For Each prop As PropertyInfo In props
+						If Not cmd.Command.Parameters.Contains(Helper.CDbParameterName(prop.Name)) Then
+							Continue For
+						End If
+						cmd.SetParameter(prop.Name, prop.GetValue(parameter, Nothing))
+					Next
+				End If
 
 				Return cmd.ExecuteNonQuery()
 			End Using
@@ -1261,6 +1666,9 @@ Namespace Db
 
 #Region " Implements IDaoCancel "
 
+		''' <summary>
+		''' 実行中の SQL キャンセル
+		''' </summary>
 		Friend Sub Cancel() Implements IDaoCancel.Cancel
 			_commandWrapper.Command.Cancel()
 		End Sub
