@@ -1145,24 +1145,21 @@ Namespace Db
             End Using
         End Function
 
-#If DEBUG Then
-
-        Protected Friend Function createSqlDelete(ByVal info As EntityInfo) As String
+		Protected Friend Function createSqlDelete(ByVal info As EntityInfo) As String
             Dim createSql As CreateSql = New CreateSql(Helper)
             Return createSql.Delete(info)
         End Function
 
-#End If
 #End Region
 #Region " Procedure "
 
-        ''' <summary>
-        ''' ストアド（クエリ）の実行
-        ''' </summary>
-        ''' <typeparam name="T">戻すエンティティ</typeparam>
-        ''' <param name="storedProcedureName">ストアド名</param>
-        ''' <returns></returns>
-        Public Overloads Function QueryProcedure(Of T)(ByVal storedProcedureName As String) As IList(Of T)
+		''' <summary>
+		''' ストアド（クエリ）の実行
+		''' </summary>
+		''' <typeparam name="T">戻すエンティティ</typeparam>
+		''' <param name="storedProcedureName">ストアド名</param>
+		''' <returns></returns>
+		Public Overloads Function QueryProcedure(Of T)(ByVal storedProcedureName As String) As IList(Of T)
             Return QueryProcedure(Of T)(storedProcedureName, Nothing, Nothing)
         End Function
 
