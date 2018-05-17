@@ -134,7 +134,7 @@
     <Compile Include="Db\AbstractDao.vb" />
     <Compile Include="Db\Attr\ColumnAttribute.vb" />
     <Compile Include="Db\Attr\ColumnIgnoreAttribute.vb" />
-    <Compile Include="Db\Attr\CrudConditionAttribute.vb" />
+    <Compile Include="Db\Attr\CrudAttribute.vb" />
     <Compile Include="Db\Attr\DaoAttribute.vb" />
     <Compile Include="Db\Attr\DaoAttributeAnalyzer.vb" />
     <Compile Include="Db\Attr\DbFunctionAttribute.vb" />
@@ -152,6 +152,7 @@
     <Compile Include="Db\CommandWrapper\SqlCommandWrapper.vb" />
     <Compile Include="Db\CommandWrapper\StoredProcedureCommandWrapper.vb" />
     <Compile Include="Db\CommandWrapper\UpdateCommandWrapper.vb" />
+    <Compile Include="Db\CreateSql.vb" />
     <Compile Include="Db\DbAccess.vb" />
     <Compile Include="Db\DbAccessException.vb" />
     <Compile Include="Db\DbInfo.vb" />

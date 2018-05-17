@@ -38,7 +38,7 @@ Namespace Entity
 
         Private _columnPropertyDef As New Dictionary(Of String, String)()
         Private _columnFunctions As New Dictionary(Of String, DbFunctionAttribute)()
-        Private _columnCrudConditions As New Dictionary(Of String, CrudConditionAttribute())()
+        Private _columnCrudConditions As New Dictionary(Of String, CrudAttribute())()
 
 #End Region
 #Region " コンストラクタ "
@@ -74,7 +74,7 @@ Namespace Entity
                 If attrDbFunc IsNot Nothing Then
                     _columnFunctions.Add(name, attrDbFunc)
                 End If
-                Dim attrCrud() As Moca.Db.Attr.CrudConditionAttribute = ClassUtil.GetCustomAttributes(Of Moca.Db.Attr.CrudConditionAttribute)(prop)
+                Dim attrCrud() As Moca.Db.Attr.CrudAttribute = ClassUtil.GetCustomAttributes(Of Moca.Db.Attr.CrudAttribute)(prop)
                 _columnCrudConditions.Add(name, attrCrud)
             Next
 
@@ -169,7 +169,7 @@ Namespace Entity
             End Get
         End Property
 
-        Public ReadOnly Property ColumnCrudConditions(ByVal name As String) As CrudConditionAttribute()
+        Public ReadOnly Property ColumnCrudConditions(ByVal name As String) As CrudAttribute()
             Get
                 If Not _columnCrudConditions.ContainsKey(name) Then
                     Return Nothing

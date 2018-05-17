@@ -124,9 +124,10 @@
     <Compile Include="Config\MocaConfiguration.vb" />
     <Compile Include="Config\MocaSectionHandler.vb" />
     <Compile Include="Config\TransactionElement.vb" />
-    <Compile Include="Db\Attr\CrudConditionAttribute.vb" />
+    <Compile Include="Db\Attr\CrudAttribute.vb" />
     <Compile Include="Db\Attr\DbFunctionAttribute.vb" />
     <Compile Include="Db\Attr\TableDefinitionAttribute.vb" />
+    <Compile Include="Db\CreateSql.vb" />
     <Compile Include="Db\ExecuteReaderResult.vb" />
     <Compile Include="Db\Helper\DbAccessHelperFactory.vb" />
     <Compile Include="Db\Helper\OdbcAccessHelper.vb" />

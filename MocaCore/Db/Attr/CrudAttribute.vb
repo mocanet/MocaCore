@@ -5,7 +5,7 @@ Namespace Db.Attr
     ''' 列に対してCURDの可能なタイミングを指定する
     ''' </summary>
     <AttributeUsage(AttributeTargets.Property, AllowMultiple:=True)>
-    Public Class CrudConditionAttribute
+    Public Class CrudAttribute
         Inherits Attribute
 
 #Region " コンストラクタ "
