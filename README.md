@@ -2,8 +2,12 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/kq6o4o1jcia74so0?svg=true)](https://ci.appveyor.com/project/miyabis/mocacore)
 [![NuGet](https://img.shields.io/nuget/v/Moca.NETCore.svg)](https://www.nuget.org/packages/Moca.NETCore/)
+[![NuGet Pre Release](https://img.shields.io/nuget/vpre/Moca.NETCore.svg)](https://www.nuget.org/packages/Moca.NETCore/)
+[![NuGet](https://img.shields.io/nuget/dt/Moca.NETCore.svg)](https://www.nuget.org/packages/Moca.NETCore/)
+[![license](https://img.shields.io/badge/License-MS--PL-blue.svg)](https://opensource.org/licenses/MS-PL)
 
-## Core Features
+## Overview
+### Core Features
 
 * Support for multiple frameworks
 * Easy database access (using custom attribute) 
@@ -39,10 +43,6 @@ PM> Install-Package Moca.NETCore
   * http://miyabis.github.io/Moca.NET-WinAppDemo/  
   * https://code.msdn.microsoft.com/vstudio/MocaNET-Framework-Windows-7174d250
 
-
-## Old version
-
-https://moca.codeplex.com/
 
 
 ## For Development
