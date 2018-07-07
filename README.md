@@ -16,6 +16,16 @@
 * AOP & DI (using custom attribute)
 * Other Utility functions
 
+## Support for multiple frameworks
+### Microsoft .NET Framework
+* 2.0
+* 3.5
+* 4.0
+* 4.5
+* 4.5.2
+* 4.6
+* 4.6.2
+* 4.7
 
 ## How to get
 
@@ -42,8 +52,6 @@ PM> Install-Package Moca.NETCore
 * Windows Form Application  
   * http://miyabis.github.io/Moca.NET-WinAppDemo/  
   * https://code.msdn.microsoft.com/vstudio/MocaNET-Framework-Windows-7174d250
-
-
 
 ## For Development
 
