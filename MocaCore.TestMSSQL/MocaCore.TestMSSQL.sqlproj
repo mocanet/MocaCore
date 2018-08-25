@@ -106,6 +106,7 @@
     <Folder Include="Properties" />
     <Folder Include="Tables" />
     <Folder Include="Procedure" />
+    <Folder Include="Function" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\mstUser.sql" />
@@ -121,5 +122,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Tables\mstUser.ora.sql" />
+    <None Include="Tables\mstUser.mysql.sql" />
+    <None Include="Procedure\DaoUser_Find.mysql.sql" />
+    <None Include="Function\funcTest.mysql.sql" />
+    <None Include="Procedure\DaoPostgreSQL_Function.sql" />
+    <None Include="Tables\mstUser.postgresql.sql" />
   </ItemGroup>
 </Project>

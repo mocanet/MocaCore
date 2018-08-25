@@ -121,36 +121,36 @@ Namespace Db.CommandWrapper
 
 #End Region
 
-		''' <summary>
-		''' クエリを実行し、指定されたエンティティに変換して返します。
-		''' </summary>
-		''' <typeparam name="T">エンティティ</typeparam>
-		''' <returns>エンティティのリスト</returns>
-		''' <remarks>
-		''' 当メソッドは予めデータベースをオープンしておく必要がありますが、
-		''' オープンされていないときは、自動でオープンして終了時にクローズします。<br/>
-		''' </remarks>
-		Public Overridable Overloads Function Execute(Of T)() As System.Collections.Generic.IList(Of T) Implements IDbCommandSelect.Execute
-			executeResult = dba.Execute(Of T)(Me)
-			Try
-				Return executeResult.Result(Of T)()
-			Catch ex As DbAccessException
-				Throw ex
-			Catch ex As Exception
-				Throw New DbAccessException(dba, ex)
-			End Try
-		End Function
+        ''' <summary>
+        ''' クエリを実行し、指定されたエンティティに変換して返します。
+        ''' </summary>
+        ''' <typeparam name="T">エンティティ</typeparam>
+        ''' <returns>エンティティのリスト</returns>
+        ''' <remarks>
+        ''' 当メソッドは予めデータベースをオープンしておく必要がありますが、
+        ''' オープンされていないときは、自動でオープンして終了時にクローズします。<br/>
+        ''' </remarks>
+        Public Overridable Overloads Function Execute(Of T)() As IList Implements IDbCommandSelect.Execute
+            executeResult = dba.Execute(Of T)(Me)
+            Try
+                Return executeResult.Result(Of T)()
+            Catch ex As DbAccessException
+                Throw ex
+            Catch ex As Exception
+                Throw New DbAccessException(dba, ex)
+            End Try
+        End Function
 
-		''' <summary>
-		''' クエリを実行し、そのクエリが返す結果セットの最初の行にある最初の列を返します。余分な列または行は無視されます。
-		''' </summary>
-		''' <returns>結果セットの最初の行にある最初の列。</returns>
-		''' <remarks>
-		''' 当メソッドは予めデータベースをオープンしておく必要がありますが、
-		''' オープンされていないときは、自動でオープンして終了時にクローズします。<br/>
-		''' 詳細は、<seealso cref="IDbCommand.ExecuteScalar"/> を参照してください。
-		''' </remarks>
-		Public Overridable Function ExecuteScalar() As Object Implements IDbCommandSelect.ExecuteScalar
+        ''' <summary>
+        ''' クエリを実行し、そのクエリが返す結果セットの最初の行にある最初の列を返します。余分な列または行は無視されます。
+        ''' </summary>
+        ''' <returns>結果セットの最初の行にある最初の列。</returns>
+        ''' <remarks>
+        ''' 当メソッドは予めデータベースをオープンしておく必要がありますが、
+        ''' オープンされていないときは、自動でオープンして終了時にクローズします。<br/>
+        ''' 詳細は、<seealso cref="IDbCommand.ExecuteScalar"/> を参照してください。
+        ''' </remarks>
+        Public Overridable Function ExecuteScalar() As Object Implements IDbCommandSelect.ExecuteScalar
 			Return dba.ExecuteScalar(Me)
 		End Function
 
@@ -233,12 +233,12 @@ Namespace Db.CommandWrapper
 			Return Me.ResultConstantDataSet(textColumnName, valueColumnName, blankRow, blankValue, delm)
 		End Function
 
-		Public Function NextResult(Of T)() As System.Collections.Generic.IList(Of T) Implements IDbCommandSelect.NextResult
-			Return executeResult.NextResult(Of T)()
-		End Function
+        Public Function NextResult(Of T)() As IList Implements IDbCommandSelect.NextResult
+            Return executeResult.NextResult(Of T)()
+        End Function
 
 #End Region
 
-	End Class
+    End Class
 
 End Namespace

@@ -146,6 +146,14 @@ Namespace Db
         ''' <remarks></remarks>
         Public ReadOnly Property Adapter() As System.Data.IDbDataAdapter Implements IDao.Adapter
             Get
+                If _adp Is Nothing Then
+                    Dim factory As DbProviderFactory
+                    factory = DbProviderFactories.GetFactory(_dbms.ConnectionStringSettings.ProviderName)
+                    _adp = factory.CreateDataAdapter()
+                    If _adp Is Nothing Then
+                        _adp = Helper.CreateDataAdapter()
+                    End If
+                End If
                 Return _adp
             End Get
         End Property
@@ -724,7 +732,7 @@ Namespace Db
         ''' <typeparam name="T"></typeparam>
         ''' <param name="sql"></param>
         ''' <returns></returns>
-        Public Function [Select](Of T)(ByVal sql As String) As IList(Of T)
+        Public Function [Select](Of T)(ByVal sql As String) As IList
             Return [Select](Of T)(sql, Nothing)
         End Function
 
@@ -735,7 +743,7 @@ Namespace Db
         ''' <param name="sql"></param>
         ''' <param name="value"></param>
         ''' <returns></returns>
-        Public Function [Select](Of T)(ByVal sql As String, ByVal value As Object) As IList(Of T)
+        Public Function [Select](Of T)(ByVal sql As String, ByVal value As Object) As IList
             Dim props As ICollection = Nothing
             If value IsNot Nothing Then
                 props = EntityInfoCache.Store(value.GetType).PropertyInfoMap.Values
@@ -1153,13 +1161,13 @@ Namespace Db
 #End Region
 #Region " Procedure "
 
-		''' <summary>
-		''' ストアド（クエリ）の実行
-		''' </summary>
-		''' <typeparam name="T">戻すエンティティ</typeparam>
-		''' <param name="storedProcedureName">ストアド名</param>
-		''' <returns></returns>
-		Public Overloads Function QueryProcedure(Of T)(ByVal storedProcedureName As String) As IList(Of T)
+        ''' <summary>
+        ''' ストアド（クエリ）の実行
+        ''' </summary>
+        ''' <typeparam name="T">戻すエンティティ</typeparam>
+        ''' <param name="storedProcedureName">ストアド名</param>
+        ''' <returns></returns>
+        Public Overloads Function QueryProcedure(Of T)(ByVal storedProcedureName As String) As IList
             Return QueryProcedure(Of T)(storedProcedureName, Nothing, Nothing)
         End Function
 
@@ -1170,7 +1178,7 @@ Namespace Db
         ''' <param name="storedProcedureName">ストアド名</param>
         ''' <param name="commandTimeout">コマンドが実行されるまでの待機時間 (秒)。既定値は 30 秒です。</param>
         ''' <returns></returns>
-        Public Overloads Function QueryProcedure(Of T)(ByVal storedProcedureName As String, ByVal commandTimeout As Integer) As IList(Of T)
+        Public Overloads Function QueryProcedure(Of T)(ByVal storedProcedureName As String, ByVal commandTimeout As Integer) As IList
             Return QueryProcedure(Of T)(storedProcedureName, Nothing, commandTimeout)
         End Function
 
@@ -1181,7 +1189,7 @@ Namespace Db
         ''' <param name="storedProcedureName">ストアド名</param>
         ''' <param name="parameter">ストアドのパラメータ</param>
         ''' <returns></returns>
-        Public Overloads Function QueryProcedure(Of T)(ByVal storedProcedureName As String, ByVal parameter As Object) As IList(Of T)
+        Public Overloads Function QueryProcedure(Of T)(ByVal storedProcedureName As String, ByVal parameter As Object) As IList
             Return QueryProcedure(Of T)(storedProcedureName, parameter, Nothing)
         End Function
 
@@ -1193,7 +1201,7 @@ Namespace Db
         ''' <param name="parameter">ストアドのパラメータ</param>
         ''' <param name="commandTimeout">コマンドが実行されるまでの待機時間 (秒)。既定値は 30 秒です。</param>
         ''' <returns></returns>
-        Public Overloads Function QueryProcedure(Of T)(ByVal storedProcedureName As String, ByVal parameter As Object, ByVal commandTimeout As Integer?) As IList(Of T)
+        Public Overloads Function QueryProcedure(Of T)(ByVal storedProcedureName As String, ByVal parameter As Object, ByVal commandTimeout As Integer?) As IList
             Dim props As ICollection = Nothing
             If parameter IsNot Nothing Then
                 props = EntityInfoCache.Store(parameter.GetType).PropertyInfoMap.Values

@@ -371,65 +371,73 @@ Namespace Db.Helper
 			End Try
 		End Sub
 
+        Public Function CreateDataAdapter() As IDbDataAdapter Implements IDbAccessHelper.CreateDataAdapter
+            Return Util.ClassUtil.NewInstance(_conn.GetType.Assembly.GetType("System.Data.SqlServerCe.SqlCeDataAdapter"))
+        End Function
+
+        Public Function QuotationMarks(name As String) As String Implements IDbAccessHelper.QuotationMarks
+            Return name
+        End Function
+
 #End Region
 
 #Region " Methods "
 
-		''' <summary>
-		''' 列の最大桁数を返す
-		''' </summary>
-		''' <param name="row">行データ</param>
-		''' <returns></returns>
-		''' <remarks></remarks>
-		Protected Function getColumnMaxLength(ByVal row As DataRow, ByRef length As Integer, ByRef scale As Integer) As Integer
-			Dim wlength As Object = getColumnLength(row)
+        ''' <summary>
+        ''' 列の最大桁数を返す
+        ''' </summary>
+        ''' <param name="row">行データ</param>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Protected Function getColumnMaxLength(ByVal row As DataRow, ByRef length As Integer, ByRef scale As Integer) As Integer
+            Dim wlength As Object = getColumnLength(row)
 
-			' 桁の指定がある時は、桁設定して終了
-			' （バイナリ データ、文字データ、またはテキスト/イメージ データの最大長）
-			If Not DBNull.Value.Equals(wlength) Then
-				length = 0
-				scale = 0
-				Return CInt(wlength)
-			End If
+            ' 桁の指定がある時は、桁設定して終了
+            ' （バイナリ データ、文字データ、またはテキスト/イメージ データの最大長）
+            If Not DBNull.Value.Equals(wlength) Then
+                length = 0
+                scale = 0
+                Return CInt(wlength)
+            End If
 
-			' 桁の指定が無いとき数値系の桁数を取得
-			wlength = getColumnPrecision(row)
+            ' 桁の指定が無いとき数値系の桁数を取得
+            wlength = getColumnPrecision(row)
 
-			' 桁が存在しない時は桁指定なしで終了
-			If DBNull.Value.Equals(wlength) Then
-				length = 0
-				scale = 0
-				Return length
-			End If
+            ' 桁が存在しない時は桁指定なしで終了
+            If DBNull.Value.Equals(wlength) Then
+                length = 0
+                scale = 0
+                Return length
+            End If
 
-			' 概数データ、真数データ、整数データ、または通貨のとき
-			Dim wscale As Object = getColumnScale(row)
+            ' 概数データ、真数データ、整数データ、または通貨のとき
+            Dim wscale As Object = getColumnScale(row)
 
-			' 小数点がない時
-			If DBNull.Value.Equals(wscale) Then
-				length = CInt(wlength)
-				scale = 0
-				Return length
-			End If
+            ' 小数点がない時
+            If DBNull.Value.Equals(wscale) Then
+                length = CInt(wlength)
+                scale = 0
+                Return length
+            End If
 
-			' 小数点がある時
-			'Return CInt(length) + CInt(scale) + 1
-			length = CInt(wlength)
-			scale = CInt(wscale)
-			Return length + 1
-		End Function
+            ' 小数点がある時
+            'Return CInt(length) + CInt(scale) + 1
+            length = CInt(wlength)
+            scale = CInt(wscale)
+            Return length + 1
+        End Function
 
-		''' <summary>
-		''' 列の桁数を返します。
-		''' </summary>
-		''' <param name="row">行データ</param>
-		''' <returns>テーブル又は列が存在しないときや、桁数の指定が不要な型の時は DBNull.Value を返します。</returns>
-		''' <remarks>
-		''' バイナリ データ、文字データ、またはテキスト/イメージ データの最大長 (文字単位)。
-		''' それ以外の場合は、NULL が返されます。
-		''' 詳細については、『Microsoft SQL Server 2000 Transact-SQL プログラマーズリファレンス上』の「第 3 章 Transact-SQL のデータ型」を参照してください。
-		''' </remarks>
-		Protected Function getColumnLength(ByVal row As DataRow) As Object
+        ''' <summary>
+        ''' 列の桁数を返します。
+        ''' </summary>
+        ''' <param name="row">行データ</param>
+        ''' <returns>テーブル又は列が存在しないときや、桁数の指定が不要な型の時は DBNull.Value を返します。</returns>
+        ''' <remarks>
+        ''' バイナリ データ、文字データ、またはテキスト/イメージ データの最大長 (文字単位)。
+        ''' それ以外の場合は、NULL が返されます。
+        ''' 詳細については、『Microsoft SQL Server 2000 Transact-SQL プログラマーズリファレンス上』の「第 3 章 Transact-SQL のデータ型」を参照してください。
+        ''' </remarks>
+        Protected Function getColumnLength(ByVal row As DataRow) As Object
 			If row Is Nothing Then
 				Return DBNull.Value
 			End If
@@ -538,6 +546,6 @@ Namespace Db.Helper
 
 #End Region
 
-	End Class
+    End Class
 
 End Namespace

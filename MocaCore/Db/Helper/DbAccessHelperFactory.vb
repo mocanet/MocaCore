@@ -74,6 +74,12 @@ Namespace Db.Helper
                 Case "System.Data.Odbc"
                     Return New OdbcAccessHelper(dba)
 
+                Case "MySql.Data.MySqlClient"
+                    Return New MySQLAccessHelper(dba)
+
+                Case "Npgsql"
+                    Return New PostgreSQLAccessHelper(dba)
+
                 Case Else
                     Throw New NotSupportedException
             End Select

@@ -122,6 +122,19 @@ Namespace Db
 		''' <remarks></remarks>
 		ReadOnly Property PlaceholderMark() As String
 
-	End Interface
+        ''' <summary>
+        ''' DbProviderFactory.CreateDataAdapter が使えないときのため
+        ''' </summary>
+        ''' <returns></returns>
+        Function CreateDataAdapter() As IDbDataAdapter
+
+        ''' <summary>
+        ''' オブジェクトに引用符を付けて返す
+        ''' </summary>
+        ''' <param name="name">オブジェクト名</param>
+        ''' <returns></returns>
+        Function QuotationMarks(ByVal name As String) As String
+
+    End Interface
 
 End Namespace

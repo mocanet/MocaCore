@@ -16,22 +16,22 @@ Namespace Db
 		''' <remarks></remarks>
 		ReadOnly Property IsDBOpen As Boolean
 
-		''' <summary>
-		''' 結果を返す
-		''' </summary>
-		''' <typeparam name="T">エンティティ</typeparam>
-		''' <returns></returns>
-		''' <remarks></remarks>
-		Function Result(Of T)() As IList(Of T)
+        ''' <summary>
+        ''' 結果を返す
+        ''' </summary>
+        ''' <typeparam name="T">エンティティ</typeparam>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Function Result(Of T)() As IList
 
-		''' <summary>
-		''' 次の結果を返す
-		''' </summary>
-		''' <typeparam name="T">エンティティ</typeparam>
-		''' <returns>存在しないときは Nothing をかえす</returns>
-		''' <remarks></remarks>
-		Function NextResult(Of T)() As IList(Of T)
+        ''' <summary>
+        ''' 次の結果を返す
+        ''' </summary>
+        ''' <typeparam name="T">エンティティ</typeparam>
+        ''' <returns>存在しないときは Nothing をかえす</returns>
+        ''' <remarks></remarks>
+        Function NextResult(Of T)() As IList
 
-	End Interface
+    End Interface
 
 End Namespace

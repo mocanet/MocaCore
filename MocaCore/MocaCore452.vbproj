@@ -123,6 +123,7 @@
     <Compile Include="Attr\AttributeAnalyzer.vb" />
     <Compile Include="Attr\BindControlAttribute.vb" />
     <Compile Include="Attr\CaptionAttribute.vb" />
+    <Compile Include="Attr\DynamicPropertyAttribute.vb" />
     <Compile Include="Attr\FormatAttribute.vb" />
     <Compile Include="Attr\IAttributeAnalyzer.vb" />
     <Compile Include="Attr\ImplementationAttribute.vb" />
@@ -171,12 +172,14 @@
     <Compile Include="Db\EntityBuilder.vb" />
     <Compile Include="Db\ExecuteReaderResult.vb" />
     <Compile Include="Db\Helper\DbAccessHelper.vb" />
+    <Compile Include="Db\Helper\MySQLAccessHelper.vb" />
     <Compile Include="Db\Helper\OdbcAccessHelper.vb" />
     <Compile Include="Db\Helper\OleDbAccessHelper.vb" />
     <Compile Include="Db\Helper\OleDbOraAccessHelper.vb" />
     <Compile Include="Db\Helper\OleDbSQLAccessHelper.vb" />
     <Compile Include="Db\Helper\OracleAccessHelper.vb" />
     <Compile Include="Db\Helper\OracleMSAccessHelper.vb" />
+    <Compile Include="Db\Helper\PostgreSQLAccessHelper.vb" />
     <Compile Include="Db\Helper\SqlCeDbAccessHelper.vb" />
     <Compile Include="Db\Helper\SqlDbAccessHelper.vb" />
     <Compile Include="Db\IDao.vb" />
@@ -264,6 +267,7 @@
     </Compile>
     <Compile Include="Util\CultureUtil.vb" />
     <Compile Include="Util\StopWatch.vb" />
+    <Compile Include="Util\TypeStore.vb" />
     <Compile Include="Util\ValidateUtil.vb" />
     <Compile Include="Util\Validator.vb" />
     <Compile Include="Util\VBUtil.vb" />

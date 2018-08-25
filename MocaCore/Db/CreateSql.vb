@@ -14,6 +14,10 @@ Namespace Db
 
         Private _helper As IDbAccessHelper
 
+#Region " Logging For Log4net "
+        ''' <summary>Logging For Log4net</summary>
+        Private Shared ReadOnly _mylog As log4net.ILog = log4net.LogManager.GetLogger(String.Empty)
+#End Region
 #End Region
 
 #Region " コンストラクタ "
@@ -50,6 +54,7 @@ Namespace Db
 
             sql = info.SqlInsert(tbl)
             If Not String.IsNullOrEmpty(sql) Then
+                _mylog.Debug(sql)
                 Return sql
             End If
 
@@ -85,12 +90,13 @@ Namespace Db
                 End If
 
                 sqlInto.Append(IIf(sqlInto.Length.Equals(0), String.Empty, ", "))
-                sqlInto.Append(defCol)
+                sqlInto.Append(_helper.QuotationMarks(defCol))
                 sqlValues.Append(IIf(sqlValues.Length.Equals(0), String.Empty, ", "))
                 sqlValues.Append(defVal)
             Next
 
-            sql = String.Format(cSql, tbl, sqlInto.ToString, sqlValues.ToString)
+            sql = String.Format(cSql, _helper.QuotationMarks(tbl), sqlInto.ToString, sqlValues.ToString)
+            _mylog.Debug(sql)
             info.SqlInsert(tbl) = sql
             Return sql
         End Function
@@ -117,6 +123,7 @@ Namespace Db
 
             sql = info.SqlUpdate(tbl)
             If Not String.IsNullOrEmpty(sql) Then
+                _mylog.Debug(sql)
                 Return sql
             End If
 
@@ -151,17 +158,18 @@ Namespace Db
                     If attrCrud.Length.Equals(0) OrElse
                         Array.FindAll(Of CrudAttribute)(attrCrud, Function(x) x.Status = DataRowState.Modified).Length.Equals(1) Then
                         sqlSet.Append(IIf(sqlSet.Length.Equals(0), String.Empty, ", "))
-                        sqlSet.AppendFormat("{0} = {1}", defCol, defVal)
+                        sqlSet.AppendFormat("{0} = {1}", _helper.QuotationMarks(defCol), defVal)
                     End If
 
                     Continue For
                 End If
 
                 sqlWhere.Append(IIf(sqlWhere.Length.Equals(0), String.Empty, " AND "))
-                sqlWhere.AppendFormat("{0} = {1}", defCol, _helper.CnvStatmentParameterName(defCol))
+                sqlWhere.AppendFormat("{0} = {1}", _helper.QuotationMarks(defCol), _helper.CnvStatmentParameterName(defCol))
             Next
 
-            sql = String.Format(cSql, tbl, sqlSet.ToString, sqlWhere.ToString)
+            sql = String.Format(cSql, _helper.QuotationMarks(tbl), sqlSet.ToString, sqlWhere.ToString)
+            _mylog.Debug(sql)
             info.SqlUpdate(tbl) = sql
             Return sql
         End Function
@@ -187,6 +195,7 @@ Namespace Db
 
             sql = info.SqlDelete(tbl)
             If Not String.IsNullOrEmpty(sql) Then
+                _mylog.Debug(sql)
                 Return sql
             End If
 
@@ -215,10 +224,11 @@ Namespace Db
                 End If
 
                 sqlWhere.Append(IIf(sqlWhere.Length.Equals(0), String.Empty, " AND "))
-                sqlWhere.AppendFormat("{0} = {1}", infoCol.Name, _helper.CnvStatmentParameterName(infoCol.Name))
+                sqlWhere.AppendFormat("{0} = {1}", _helper.QuotationMarks(infoCol.Name), _helper.CnvStatmentParameterName(infoCol.Name))
             Next
 
-            sql = String.Format(cSql, tbl, sqlWhere.ToString)
+            sql = String.Format(cSql, _helper.QuotationMarks(tbl), sqlWhere.ToString)
+            _mylog.Debug(sql)
             info.SqlDelete(tbl) = sql
             Return sql
         End Function

@@ -104,6 +104,9 @@
     <Compile Include="Db\MSSql\IDaoMSSql.vb" />
     <Compile Include="Db\MSSql\Impl\DaoMSSql.vb" />
     <Compile Include="Db\MSSql\SqlDbAccessHelperTest.vb" />
+    <Compile Include="Db\MySQL\IDaoMySQL.vb" />
+    <Compile Include="Db\MySQL\Impl\DaoMySQL.vb" />
+    <Compile Include="Db\MySQL\MySQLAccessHelperTest.vb" />
     <Compile Include="Db\SpeedTest.vb" />
     <Compile Include="Migrations\MocaTestDbConfiguration.vb" />
     <Compile Include="Migrations\MocaTestOraDbConfiguration.vb" />
@@ -115,6 +118,8 @@
     <Compile Include="Models\mstUser.vb" />
     <Compile Include="Models\mstUserGroupMap.vb" />
     <Compile Include="Models\UserRow.vb" />
+    <Compile Include="Models\UserRowMysql.vb" />
+    <Compile Include="Models\UserRowPosatgreSql.vb" />
     <Compile Include="My Project\AppConfigTransformAssemblyInfo.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

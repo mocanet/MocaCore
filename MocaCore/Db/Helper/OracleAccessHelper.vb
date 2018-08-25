@@ -332,50 +332,58 @@ Namespace Db.Helper
 			Return DirectCast(ary.ToArray(GetType(String)), String())
 		End Function
 
+        Public Function CreateDataAdapter() As IDbDataAdapter Implements IDbAccessHelper.CreateDataAdapter
+            Return Util.ClassUtil.NewInstance(_conn.GetType.Assembly.GetType("Oracle.DataAccess.Client.OracleDataAdapter"))
+        End Function
+
+        Public Function QuotationMarks(name As String) As String Implements IDbAccessHelper.QuotationMarks
+            Return name
+        End Function
+
 #End Region
 #Region " Methods "
 
-		''' <summary>
-		''' 列の最大桁数を返す
-		''' </summary>
-		''' <param name="row">行データ</param>
-		''' <returns></returns>
-		''' <remarks></remarks>
-		Protected Function GetColumnMaxLength(ByVal row As DataRow, ByRef length As Integer, ByRef scale As Integer) As Integer
-			Dim wlength As Object = GetColumnLength(row)        ' 桁数
-			Dim wprecision As Object = GetColumnPrecision(row)  ' 精度（全体の桁数）
-			Dim wscale As Object = GetColumnScale(row)          ' スケール（小数点以下の桁数）
+        ''' <summary>
+        ''' 列の最大桁数を返す
+        ''' </summary>
+        ''' <param name="row">行データ</param>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Protected Function GetColumnMaxLength(ByVal row As DataRow, ByRef length As Integer, ByRef scale As Integer) As Integer
+            Dim wlength As Object = GetColumnLength(row)        ' 桁数
+            Dim wprecision As Object = GetColumnPrecision(row)  ' 精度（全体の桁数）
+            Dim wscale As Object = GetColumnScale(row)          ' スケール（小数点以下の桁数）
 
-			' 小数点がある
-			If Not DBNull.Value.Equals(wscale) AndAlso Not wscale.Equals(0D) Then
-				length = CInt(wprecision)
-				scale = CInt(wscale)
-				Return length + 1
-			End If
+            ' 小数点がある
+            If Not DBNull.Value.Equals(wscale) AndAlso Not wscale.Equals(0D) Then
+                length = CInt(wprecision)
+                scale = CInt(wscale)
+                Return length + 1
+            End If
 
-			' 小数点がなく精度がある時
-			If Not DBNull.Value.Equals(wprecision) AndAlso Not wprecision.Equals(0D) Then
-				length = CInt(wprecision)
-				scale = 0
-				Return length
-			End If
+            ' 小数点がなく精度がある時
+            If Not DBNull.Value.Equals(wprecision) AndAlso Not wprecision.Equals(0D) Then
+                length = CInt(wprecision)
+                scale = 0
+                Return length
+            End If
 
-			' 小数点と精度がない時
-			length = 0
-			scale = 0
-			Return CInt(wlength)
-		End Function
+            ' 小数点と精度がない時
+            length = 0
+            scale = 0
+            Return CInt(wlength)
+        End Function
 
-		''' <summary>
-		''' 列の桁数を返します。
-		''' </summary>
-		''' <param name="row">行データ</param>
-		''' <returns>テーブル又は列が存在しないときや、桁数の指定が不要な型の時は DBNull.Value を返します。</returns>
-		''' <remarks>
-		''' バイナリ データ、文字データ、またはテキスト/イメージ データの最大長 (文字単位)。
-		''' それ以外の場合は、NULL が返されます。
-		''' </remarks>
-		Protected Function GetColumnLength(ByVal row As DataRow) As Object
+        ''' <summary>
+        ''' 列の桁数を返します。
+        ''' </summary>
+        ''' <param name="row">行データ</param>
+        ''' <returns>テーブル又は列が存在しないときや、桁数の指定が不要な型の時は DBNull.Value を返します。</returns>
+        ''' <remarks>
+        ''' バイナリ データ、文字データ、またはテキスト/イメージ データの最大長 (文字単位)。
+        ''' それ以外の場合は、NULL が返されます。
+        ''' </remarks>
+        Protected Function GetColumnLength(ByVal row As DataRow) As Object
 			If row Is Nothing Then
 				Return DBNull.Value
 			End If

@@ -121,32 +121,32 @@ Namespace Db
 		''' </remarks>
 		Function ExecuteScalar() As Object
 
-		''' <summary>
-		''' クエリを実行し（ExecuteReader）、指定されたエンティティに変換して返します。
-		''' </summary>
-		''' <typeparam name="T">エンティティ</typeparam>
-		''' <returns>エンティティのリスト</returns>
-		''' <remarks>
-		''' 当メソッドは予めデータベースをオープンしておく必要がありますが、
-		''' オープンされていないときは、自動でオープンして終了時にクローズします。<br/>
-		''' 詳細は、<seealso cref="IDbCommand.ExecuteReader"/> を参照してください。<br/>
-		''' <br/>
-		''' なお、当メソッドを使用した場合は結果をエンティティとして扱うことを前提としているため、<see cref="DataSet"></see>や<see cref="DataTable"></see>としては扱えません。<br/>
-		''' よって<see cref="ResultDataSet"></see>, <see cref="Result1stTable"></see>などのメソッドは使用できません。<br/>
-		''' バッチSQLステートメント時は<see cref="NextResult"></see>にて次の結果を取得してください。
-		''' </remarks>
-		Overloads Function Execute(Of T)() As IList(Of T)
+        ''' <summary>
+        ''' クエリを実行し（ExecuteReader）、指定されたエンティティに変換して返します。
+        ''' </summary>
+        ''' <typeparam name="T">エンティティ</typeparam>
+        ''' <returns>エンティティのリスト</returns>
+        ''' <remarks>
+        ''' 当メソッドは予めデータベースをオープンしておく必要がありますが、
+        ''' オープンされていないときは、自動でオープンして終了時にクローズします。<br/>
+        ''' 詳細は、<seealso cref="IDbCommand.ExecuteReader"/> を参照してください。<br/>
+        ''' <br/>
+        ''' なお、当メソッドを使用した場合は結果をエンティティとして扱うことを前提としているため、<see cref="DataSet"></see>や<see cref="DataTable"></see>としては扱えません。<br/>
+        ''' よって<see cref="ResultDataSet"></see>, <see cref="Result1stTable"></see>などのメソッドは使用できません。<br/>
+        ''' バッチSQLステートメント時は<see cref="NextResult"></see>にて次の結果を取得してください。
+        ''' </remarks>
+        Overloads Function Execute(Of T)() As IList
 
-		''' <summary>
-		''' 次の結果を返す
-		''' </summary>
-		''' <typeparam name="T">エンティティ</typeparam>
-		''' <returns>存在しないときは Nothing をかえす</returns>
-		''' <remarks></remarks>
-		Function NextResult(Of T)() As IList(Of T)
+        ''' <summary>
+        ''' 次の結果を返す
+        ''' </summary>
+        ''' <typeparam name="T">エンティティ</typeparam>
+        ''' <returns>存在しないときは Nothing をかえす</returns>
+        ''' <remarks></remarks>
+        Function NextResult(Of T)() As IList
 
 #End Region
 
-	End Interface
+    End Interface
 
 End Namespace

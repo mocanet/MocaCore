@@ -181,6 +181,14 @@ Namespace Db.Helper
             Return DirectCast(ary.ToArray(GetType(String)), String())
         End Function
 
+        Public Function CreateDataAdapter() As IDbDataAdapter Implements IDbAccessHelper.CreateDataAdapter
+            Return New OdbcDataAdapter()
+        End Function
+
+        Public Function QuotationMarks(name As String) As String Implements IDbAccessHelper.QuotationMarks
+            Return name
+        End Function
+
 #End Region
 
 #Region " Debug "

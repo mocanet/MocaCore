@@ -107,18 +107,18 @@ Namespace Db
 
 #End Region
 
-		Public Function NextResult(Of T)() As System.Collections.Generic.IList(Of T) Implements ISQLStatementResult.NextResult
-			If Not _reader.NextResult() Then
-				Return Nothing
-			End If
+        Public Function NextResult(Of T)() As IList Implements ISQLStatementResult.NextResult
+            If Not _reader.NextResult() Then
+                Return Nothing
+            End If
 
-			Return Me.Result(Of T)()
-		End Function
+            Return Me.Result(Of T)()
+        End Function
 
-		Public Function Result(Of T)() As System.Collections.Generic.IList(Of T) Implements ISQLStatementResult.Result
-			Return _builder.Create(Of T)(_reader)
-		End Function
+        Public Function Result(Of T)() As IList Implements ISQLStatementResult.Result
+            Return _builder.Create(Of T)(_reader)
+        End Function
 
-	End Class
+    End Class
 
 End Namespace

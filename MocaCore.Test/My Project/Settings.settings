@@ -58,5 +58,21 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">DATA SOURCE=VMDB;PASSWORD=test;PERSIST SECURITY INFO=True;USER ID=MIYABIS</Value>
     </Setting>
+    <Setting Name="MySQL" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;server=192.168.10.221;user id=miyabis;password=test;persistsecurityinfo=True;database=MocaTest;port=30000;sslmode=None&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">server=192.168.10.221;user id=miyabis;password=test;persistsecurityinfo=True;database=MocaTest;port=30000;sslmode=None</Value>
+    </Setting>
+    <Setting Name="PostgreSQL" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Host=192.168.10.221;Database=MocaTest;Username=miyabis;Password=test;Persist Security Info=True;Port=30002&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;Npgsql&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Host=192.168.10.221;Database=MocaTest;Username=miyabis;Password=test;Persist Security Info=True;Port=30002</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -301,19 +301,27 @@ Namespace Db.Helper
 			Return DirectCast(ary.ToArray(GetType(String)), String())
 		End Function
 
+        Public Function CreateDataAdapter() As IDbDataAdapter Implements IDbAccessHelper.CreateDataAdapter
+            Return New OleDbDataAdapter()
+        End Function
+
+        Public Function QuotationMarks(name As String) As String Implements IDbAccessHelper.QuotationMarks
+            Return name
+        End Function
+
 #End Region
 
 #Region " MustOverrides "
 
-		''' <summary>
-		''' スキーマからカラム情報を取得する
-		''' </summary>
-		''' <param name="table"></param>
-		''' <returns></returns>
-		''' <remarks></remarks>
-		Protected Friend MustOverride Function getSchemaOleDbColumns(ByVal table As DbInfoTable) As DbInfoColumnCollection
+        ''' <summary>
+        ''' スキーマからカラム情報を取得する
+        ''' </summary>
+        ''' <param name="table"></param>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Protected Friend MustOverride Function getSchemaOleDbColumns(ByVal table As DbInfoTable) As DbInfoColumnCollection
 
-		Protected Friend MustOverride Function getSchemaOleDbFunctions() As DbInfoFunctionCollection
+        Protected Friend MustOverride Function getSchemaOleDbFunctions() As DbInfoFunctionCollection
 
 		Protected Friend MustOverride Function getSchemaOleDbProcedures() As DbInfoProcedureCollection
 

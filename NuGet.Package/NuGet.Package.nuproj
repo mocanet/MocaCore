@@ -34,7 +34,7 @@
   <!--<Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />-->
   <PropertyGroup Label="Configuration">
     <Id>Moca.NETCore</Id>
-    <Version>3.0.0-beta07</Version>
+    <Version>3.0.0-beta08</Version>
     <Title>Moca.NET Core</Title>
     <Authors>MiYABiS</Authors>
     <Owners>MiYABiS</Owners>

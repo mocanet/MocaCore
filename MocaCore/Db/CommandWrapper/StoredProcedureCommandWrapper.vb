@@ -129,30 +129,30 @@ Namespace Db.CommandWrapper
 			Return MyBase.Execute()
 		End Function
 
-		''' <summary>
-		''' クエリを実行し、指定されたエンティティに変換して返します。
-		''' </summary>
-		''' <typeparam name="T">エンティティ</typeparam>
-		''' <returns>エンティティのリスト</returns>
-		''' <remarks>
-		''' 当メソッドは予めデータベースをオープンしておく必要がありますが、
-		''' オープンされていないときは、自動でオープンして終了時にクローズします。<br/>
-		''' </remarks>
-		Public Overrides Function Execute(Of T)() As System.Collections.Generic.IList(Of T)
-			_addParameterValueCount = 0
-			Return MyBase.Execute(Of T)()
-		End Function
+        ''' <summary>
+        ''' クエリを実行し、指定されたエンティティに変換して返します。
+        ''' </summary>
+        ''' <typeparam name="T">エンティティ</typeparam>
+        ''' <returns>エンティティのリスト</returns>
+        ''' <remarks>
+        ''' 当メソッドは予めデータベースをオープンしておく必要がありますが、
+        ''' オープンされていないときは、自動でオープンして終了時にクローズします。<br/>
+        ''' </remarks>
+        Public Overrides Function Execute(Of T)() As IList
+            _addParameterValueCount = 0
+            Return MyBase.Execute(Of T)()
+        End Function
 
-		''' <summary>
-		''' クエリを実行し、そのクエリが返す結果セットの最初の行にある最初の列を返します。余分な列または行は無視されます。
-		''' </summary>
-		''' <returns>結果セットの最初の行にある最初の列。</returns>
-		''' <remarks>
-		''' 当メソッドは予めデータベースをオープンしておく必要がありますが、
-		''' オープンされていないときは、自動でオープンして終了時にクローズします。<br/>
-		''' 詳細は、<seealso cref="IDbCommand.ExecuteScalar"/> を参照してください。
-		''' </remarks>
-		Public Overrides Function ExecuteScalar() As Object
+        ''' <summary>
+        ''' クエリを実行し、そのクエリが返す結果セットの最初の行にある最初の列を返します。余分な列または行は無視されます。
+        ''' </summary>
+        ''' <returns>結果セットの最初の行にある最初の列。</returns>
+        ''' <remarks>
+        ''' 当メソッドは予めデータベースをオープンしておく必要がありますが、
+        ''' オープンされていないときは、自動でオープンして終了時にクローズします。<br/>
+        ''' 詳細は、<seealso cref="IDbCommand.ExecuteScalar"/> を参照してください。
+        ''' </remarks>
+        Public Overrides Function ExecuteScalar() As Object
 			_addParameterValueCount = 0
 			Return MyBase.ExecuteScalar()
 		End Function
