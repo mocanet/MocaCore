@@ -59,23 +59,33 @@ Namespace Util
 			Return typ.GetProperties(BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.Instance)
 		End Function
 
-		''' <summary>
-		''' 引数インスタンス内のプロパティ情報を返す
-		''' </summary>
-		''' <param name="target">インスタンス</param>
-		''' <returns>プロパティ定義配列</returns>
-		''' <remarks></remarks>
-		Public Shared Function GetProperties(ByVal target As Object) As PropertyInfo()
-			Return GetProperties(target.GetType)
-		End Function
+        ''' <summary>
+        ''' 引数タイプ内のプロパティ定義を返す
+        ''' </summary>
+        ''' <param name="typ">タイプ</param>
+        ''' <returns>プロパティ定義配列</returns>
+        ''' <remarks></remarks>
+        Public Shared Function GetFlattenProperties(ByVal typ As Type) As PropertyInfo()
+            Return typ.GetProperties(BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.Instance Or BindingFlags.FlattenHierarchy)
+        End Function
 
-		''' <summary>
-		''' 引数タイプ内のプロパティ定義を返す
-		''' </summary>
-		''' <param name="typ">タイプ</param>
-		''' <returns>プロパティ定義配列</returns>
-		''' <remarks></remarks>
-		Public Shared Function GetProperties(ByVal typ As Type, ByVal name As String) As PropertyInfo
+        ''' <summary>
+        ''' 引数インスタンス内のプロパティ情報を返す
+        ''' </summary>
+        ''' <param name="target">インスタンス</param>
+        ''' <returns>プロパティ定義配列</returns>
+        ''' <remarks></remarks>
+        Public Shared Function GetProperties(ByVal target As Object) As PropertyInfo()
+            Return GetProperties(target.GetType)
+        End Function
+
+        ''' <summary>
+        ''' 引数タイプ内のプロパティ定義を返す
+        ''' </summary>
+        ''' <param name="typ">タイプ</param>
+        ''' <returns>プロパティ定義配列</returns>
+        ''' <remarks></remarks>
+        Public Shared Function GetProperties(ByVal typ As Type, ByVal name As String) As PropertyInfo
 			Return typ.GetProperty(name, BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.Instance)
 		End Function
 

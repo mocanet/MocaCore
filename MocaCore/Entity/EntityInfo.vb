@@ -52,7 +52,7 @@ Namespace Entity
 
             Dim pinfo() As PropertyInfo
 
-            pinfo = ClassUtil.GetProperties(typ)
+            pinfo = ClassUtil.GetFlattenProperties(typ)
             For Each prop As PropertyInfo In pinfo
                 Dim name As String
                 name = DbUtil.GetColumnName(prop)
