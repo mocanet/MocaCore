@@ -65,6 +65,21 @@ Public Class MySQLAccessHelperTest
         Dim tables As Moca.Db.DbInfoTableCollection
         tables = _helper.GetSchemaTables()
 
+        For Each tbl As DbInfoTable In tables.Values
+            Debug.Print(tbl.ToString)
+            For Each col As DbInfoColumn In tbl.Columns.Values
+                Debug.Print(vbTab & col.ToString)
+                Debug.Print(vbTab & "Typ : " & col.Typ)
+                Debug.Print(vbTab & "ColumnType : " & col.ColumnType)
+                Debug.Print(vbTab & "MaxLength : " & col.MaxLength)
+                Debug.Print(vbTab & "MaxLengthB : " & col.MaxLengthB)
+                Debug.Print(vbTab & "Precision : " & col.Precision)
+                Debug.Print(vbTab & "PrimaryKey : " & col.PrimaryKey)
+                Debug.Print(vbTab & "Scale : " & col.Scale)
+                Debug.Print(vbTab & "UniCode : " & col.UniCode)
+            Next
+        Next
+
         Assert.AreEqual(1, tables.Count)
         Assert.IsTrue(tables.ContainsKey("def.MocaTest.BASE TABLE.mstUser"))
     End Sub

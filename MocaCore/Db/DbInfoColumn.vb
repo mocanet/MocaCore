@@ -8,10 +8,10 @@ Namespace Db
 	Public Class DbInfoColumn
 		Inherits DbInfo
 
-		''' <summary>最大桁数</summary>
-		Private _maxLength As Integer
+        ''' <summary>最大桁数</summary>
+        Private _maxLength As Long
 
-		Private _precision As Integer
+        Private _precision As Integer
 
 		Private _scale As Integer
 
@@ -41,18 +41,18 @@ Namespace Db
 
 #Region " プロパティ "
 
-		''' <summary>最大桁数</summary>
-		Public Property MaxLength() As Integer
-			Get
-				Return _maxLength
-			End Get
-			Friend Set(ByVal value As Integer)
-				_maxLength = value
-			End Set
-		End Property
+        ''' <summary>最大桁数</summary>
+        Public Property MaxLength() As Long
+            Get
+                Return _maxLength
+            End Get
+            Friend Set(ByVal value As Long)
+                _maxLength = value
+            End Set
+        End Property
 
-		''' <summary>ユニコード文字列かどうか</summary>
-		Public Property UniCode() As Boolean
+        ''' <summary>ユニコード文字列かどうか</summary>
+        Public Property UniCode() As Boolean
 			Get
 				Return _uniCode
 			End Get
@@ -61,15 +61,15 @@ Namespace Db
 			End Set
 		End Property
 
-		''' <summary>最大桁数（半角 1 バイト、全角 2 バイトとして）</summary>
-		Public ReadOnly Property MaxLengthB() As Integer
-			Get
-				Return CInt(IIf(_uniCode, _maxLength, _maxLength * 2))
-			End Get
-		End Property
+        ''' <summary>最大桁数（半角 1 バイト、全角 2 バイトとして）</summary>
+        Public ReadOnly Property MaxLengthB() As Long
+            Get
+                Return CInt(IIf(_uniCode, _maxLength, _maxLength * 2))
+            End Get
+        End Property
 
-		''' <summary>小数点の右側および左側にある保存できる最大文字</summary>
-		Public Property Precision() As System.Int32
+        ''' <summary>小数点の右側および左側にある保存できる最大文字</summary>
+        Public Property Precision() As System.Int32
 			Get
 				Return Me._precision
 			End Get

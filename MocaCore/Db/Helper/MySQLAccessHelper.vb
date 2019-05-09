@@ -362,7 +362,7 @@ Namespace Db.Helper
         ''' <param name="row">行データ</param>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Protected Function GetColumnMaxLength(ByVal row As DataRow, ByRef length As Integer, ByRef scale As Integer) As Integer
+        Protected Function GetColumnMaxLength(ByVal row As DataRow, ByRef length As Integer, ByRef scale As Integer) As Long
             Dim wlength As Object = GetColumnLength(row)        ' 桁数
             Dim wprecision As Object = GetColumnPrecision(row)  ' 精度（全体の桁数）
             Dim wscale As Object = GetColumnScale(row)          ' スケール（小数点以下の桁数）
@@ -384,7 +384,12 @@ Namespace Db.Helper
             ' 小数点と精度がない時
             length = 0
             scale = 0
-            Return CInt(wlength)
+
+            If DBNull.Value.Equals(wlength) Then
+                wlength = 0
+            End If
+
+            Return CLng(wlength)
         End Function
 
         ''' <summary>
@@ -479,6 +484,9 @@ Namespace Db.Helper
             End If
             If typ.ToUpper.Equals("SBYTE") Then
                 typ = "Bit"
+            End If
+            If typ.ToUpper.Equals("INT") Then
+                typ = "Int16"
             End If
 
             Return [Enum].Parse(_conn.GetType.Assembly.GetType("MySql.Data.MySqlClient.MySqlDbType"), typ, True)
