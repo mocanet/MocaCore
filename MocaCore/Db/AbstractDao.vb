@@ -821,27 +821,6 @@ Namespace Db
             End Using
         End Function
 
-        'Public Overloads Function InsertWithReturn(ByVal value As Object) As Tuple(Of Integer, Hashtable)
-        '    Dim sql As String
-        '    Dim props As ICollection
-        '    Dim info As EntityInfo
-
-        '    info = EntityInfoCache.Store(value.GetType)
-        '    props = info.PropertyInfoMap.Values
-
-        '    sql = createSqlInsert(info)
-        '    Using cmd As IDbCommandInsert = CreateCommandInsert(sql)
-        '        For Each prop As PropertyInfo In props
-        '            cmd.SetParameter(prop.Name, prop.GetValue(value, Nothing))
-        '        Next
-
-        '        Dim rc As Integer
-        '        rc = cmd.Execute()
-        '        Return Tuple.Create(rc, cmd.ResultOutParameter)
-        '    End Using
-        'End Function
-
-
         ''' <summary>
         ''' INSERT 文実行（SQL 自動生成）
         ''' </summary>
@@ -892,6 +871,26 @@ Namespace Db
                 Return rc
             End Using
         End Function
+
+        'Public Overloads Function InsertWithReturn(ByVal value As Object) As Tuple(Of Integer, Hashtable)
+        '    Dim sql As String
+        '    Dim props As ICollection
+        '    Dim info As EntityInfo
+
+        '    info = EntityInfoCache.Store(value.GetType)
+        '    props = info.PropertyInfoMap.Values
+
+        '    sql = createSqlInsert(info)
+        '    Using cmd As IDbCommandInsert = CreateCommandInsert(sql)
+        '        For Each prop As PropertyInfo In props
+        '            cmd.SetParameter(prop.Name, prop.GetValue(value, Nothing))
+        '        Next
+
+        '        Dim rc As Integer
+        '        rc = cmd.Execute()
+        '        Return Tuple.Create(rc, cmd.ResultOutParameter)
+        '    End Using
+        'End Function
 
         ''' <summary>
         ''' INSERT 文実行（複数行）
@@ -1342,6 +1341,51 @@ Namespace Db
                 End If
 
                 Return cmd.ExecuteNonQuery()
+            End Using
+        End Function
+
+        ''' <summary>
+        ''' ストアド（更新）の実行
+        ''' </summary>
+        ''' <param name="storedProcedureName">ストアド名</param>
+        ''' <param name="parameters">ストアドのパラメータ配列</param>
+        ''' <returns></returns>
+        Public Overloads Function UpdateProcedure(ByVal storedProcedureName As String, ByVal parameters As ICollection) As Integer
+            Return UpdateProcedure(storedProcedureName, parameters, Nothing)
+        End Function
+
+        ''' <summary>
+        ''' ストアド（更新）の実行
+        ''' </summary>
+        ''' <param name="storedProcedureName">ストアド名</param>
+        ''' <param name="parameters">ストアドのパラメータ配列</param>
+        ''' <param name="commandTimeout">コマンドが実行されるまでの待機時間 (秒)。既定値は 30 秒です。</param>
+        ''' <returns></returns>
+        Public Overloads Function UpdateProcedure(ByVal storedProcedureName As String, ByVal parameters As ICollection, ByVal commandTimeout As Integer?) As Integer
+            Dim props As ICollection = Nothing
+            If parameters IsNot Nothing Then
+                Dim enumerator As IEnumerator = parameters.GetEnumerator()
+                If enumerator.MoveNext Then
+                    props = EntityInfoCache.Store(enumerator.Current.GetType).PropertyInfoMap.Values
+                End If
+            End If
+
+            Using cmd As IDbCommandStoredProcedure = CreateCommandStoredProcedure(storedProcedureName)
+                cmd.Prepare()
+
+                If commandTimeout IsNot Nothing Then
+                    cmd.Command.CommandTimeout = commandTimeout
+                End If
+
+                Dim rc As Integer = 0
+                For Each row As Object In parameters
+                    For Each prop As PropertyInfo In props
+                        cmd.SetParameter(prop.Name, prop.GetValue(row, Nothing))
+                    Next
+
+                    rc += cmd.ExecuteNonQuery()
+                Next
+                Return rc
             End Using
         End Function
 
