@@ -80,35 +80,35 @@ Public Class MySQLAccessHelperTest
             Next
         Next
 
-        Assert.AreEqual(1, tables.Count)
-        Assert.IsTrue(tables.ContainsKey("def.MocaTest.BASE TABLE.mstUser"))
+        Assert.AreEqual(122, tables.Count)
+        Assert.IsTrue(tables.ContainsKey("def.bitnami_redmine.BASE TABLE.app_notifications"))
     End Sub
 
     <TestMethod()>
     Public Sub GetSchemaTableTest()
         Dim table As Moca.Db.DbInfoTable
-        table = _helper.GetSchemaTable("mstUser")
+        table = _helper.GetSchemaTable("app_notifications")
 
-        Assert.AreEqual("mstUser", table.Name)
+        Assert.AreEqual("app_notifications", table.Name)
         Assert.AreEqual(7, table.Columns.Count)
     End Sub
 
     <TestMethod()>
     Public Sub GetSchemaColumnsTest()
-        Dim table As New Moca.Db.DbInfoTable("def", "MocaTest", "mstUser", "BASE TABLE")
+        Dim table As New Moca.Db.DbInfoTable("def", "bitnami_redmine", "app_notifications", "BASE TABLE")
         Dim columns As Moca.Db.DbInfoColumnCollection
         columns = _helper.GetSchemaColumns(table)
 
         Assert.AreEqual(7, columns.Count)
-        Assert.IsTrue(columns.ContainsKey("Id"))
-        Assert.IsTrue(columns.ContainsKey("Name"))
-        Assert.IsTrue(columns.ContainsKey("Mail"))
-        Assert.IsTrue(columns.ContainsKey("Note"))
-        Assert.IsTrue(columns.ContainsKey("Admin"))
-        Assert.IsTrue(columns.ContainsKey("InsertDate"))
-        Assert.IsTrue(columns.ContainsKey("UpdateDate"))
+        Assert.IsTrue(columns.ContainsKey("author_id"))
+        Assert.IsTrue(columns.ContainsKey("created_on"))
+        Assert.IsTrue(columns.ContainsKey("id"))
+        Assert.IsTrue(columns.ContainsKey("issue_id"))
+        Assert.IsTrue(columns.ContainsKey("journal_id"))
+        Assert.IsTrue(columns.ContainsKey("recipient_id"))
+        Assert.IsTrue(columns.ContainsKey("viewed"))
 
-        Assert.IsTrue(columns("Id").PrimaryKey)
+        Assert.IsTrue(columns("id").PrimaryKey)
     End Sub
 
     <TestMethod()>

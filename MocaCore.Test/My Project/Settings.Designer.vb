@@ -131,8 +131,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("server=192.168.10.221;user id=miyabis;password=test;persistsecurityinfo=True;data"& _ 
-            "base=MocaTest;port=30000;sslmode=None")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=miyabis;password=test;persistsecurityinfo=True;database="& _ 
+            "bitnami_redmine;port=3306;sslmode=None")>  _
         Public ReadOnly Property MySQL() As String
             Get
                 Return CType(Me("MySQL"),String)
@@ -142,8 +142,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Host=192.168.10.221;Database=MocaTest;Username=miyabis;Password=test;Persist Secu"& _ 
-            "rity Info=True;Port=30002")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Host=localhost;Database=alfresco;Password=test;Username=alfresco")>  _
         Public ReadOnly Property PostgreSQL() As String
             Get
                 Return CType(Me("PostgreSQL"),String)

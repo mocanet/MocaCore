@@ -64,7 +64,7 @@ Namespace Db
         ''' <summary>最大桁数（半角 1 バイト、全角 2 バイトとして）</summary>
         Public ReadOnly Property MaxLengthB() As Long
             Get
-                Return CInt(IIf(_uniCode, _maxLength, _maxLength * 2))
+                Return CLng(IIf(_uniCode, _maxLength, _maxLength * 2))
             End Get
         End Property
 

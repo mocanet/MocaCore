@@ -488,6 +488,10 @@ Namespace Db.Helper
             If typ.ToUpper.Equals("INT") Then
                 typ = "Int16"
             End If
+            ' 
+            If typ.ToUpper.Equals("BIGINT") Then
+                typ = "Int64"
+            End If
 
             Return [Enum].Parse(_conn.GetType.Assembly.GetType("MySql.Data.MySqlClient.MySqlDbType"), typ, True)
         End Function

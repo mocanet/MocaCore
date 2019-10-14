@@ -23,6 +23,7 @@ Namespace Db.Helper
     ''' <summary>
     ''' PostgreSQL 純正ドライバー用ヘルパークラス
     ''' </summary>
+    <Obsolete()>
     Public Class PostgreSQLAccessHelper
         Inherits DbAccessHelper
         Implements IDbAccessHelper
